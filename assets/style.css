@@ -56,6 +56,9 @@ a{color:inherit;}
 
 /* content that slides over the pinned photo */
 .over{position:relative;z-index:2;}
+/* runway spacers: positive-only scroll pacing (the pinned photo shows through).
+   Tune inline heights on real devices — NEVER negative vh margins (mobile collision bug, July 4). */
+.runway{pointer-events:none;}
 .band{padding:clamp(3rem,8vh,6rem) 6vw;}
 .band--peri{background:var(--peri);color:var(--ink);}
 .band--peri .band-inner{max-width:820px;margin:0 auto;text-align:center;}
