@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://catadoption.in/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-07-06</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://catadoption.in/adopt.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://catadoption.in/adopter-form.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://catadoption.in/blog.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://catadoption.in/about.html</loc>
@@ -19,5 +34,20 @@
     <loc>https://catadoption.in/resources.html</loc>
     <lastmod>2026-07-05</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://catadoption.in/visit.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catadoption.in/litter-box-pune-monsoon.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://catadoption.in/feeding-strays.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>
