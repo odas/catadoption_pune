@@ -2,7 +2,12 @@
 
 Static site for catadoption_pune. No build step, no dependencies — these files ARE the site.
 
-## Go live (one time, ~15 min of clicking + DNS wait)
+## Go live — ✅ DONE 2026-07-06 (kept as a record of the steps)
+
+The site is live at https://catadoption.in — HTTPS enforced, sitemap submitted, GBP linked.
+It grew past the "4 pages" below on go-live evening: 10 sitemap pages + 404 + article
+template + a private `/di` photo-share page (noindex, not in sitemap). Steps below are
+history, not instructions.
 
 Repo: https://github.com/odas/catadoption_pune (this folder is already a git repo with one commit).
 
