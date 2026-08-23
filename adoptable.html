@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- 11 listings, generated 2026-08-21 from the adoptable-cats Sheet's ACCEPTED rows,
+<!-- 15 listings, generated 2026-08-23 from the adoptable-cats Sheet's ACCEPTED rows,
      verified against build/messages.jsonl (see make_adoptable_page.py, docs/fixes.md 2026-08-21).
      Regenerate, don't hand-edit: P-insta-folio/make_adoptable_page.py
 
@@ -19,7 +19,7 @@
 <link rel="icon" href="assets/medallion.jpg" type="image/jpeg">
 <meta property="og:title" content="Cats looking for homes in Pune — catadoption_pune">
 <meta property="og:description" content="Indie cats and kittens brought to us by rescuers across Pune and PCMC. Contact the rescuer directly. Free, always.">
-<meta property="og:image" content="https://catadoption.in/assets/cats/CP-B059-1.jpg">
+<meta property="og:image" content="https://catadoption.in/assets/cats/CP-3341-1.jpg">
 <meta property="og:url" content="https://catadoption.in/adoptable.html">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,7 +65,16 @@
   .why em{font-style:normal;font-weight:600;background:var(--butter);padding:1px 6px;border-radius:4px}
   .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;margin:34px 0 10px}
   .cat{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--white);display:flex;flex-direction:column}
-  .cat-pic{aspect-ratio:4/3;background:var(--sky)}
+  .cat-pic{aspect-ratio:4/3;background:var(--sky);position:relative}
+  /* Adopted: still on the page, unmistakably closed. The word does the work — the card is
+     dimmed a little, never so much that it reads as broken or unreadable. */
+  .cat-adopted{position:absolute;left:12px;top:12px;background:var(--sage);color:var(--ink);
+    border-radius:999px;padding:5px 13px;font:700 12.5px/1 var(--font-body);
+    letter-spacing:.09em;text-transform:uppercase;box-shadow:0 1px 5px rgba(20,17,24,.22)}
+  .cat--adopted{opacity:.86}
+  .cat--adopted .cat-pic img{filter:saturate(.55)}
+  .cat--adopted .cat-title{text-decoration:line-through;text-decoration-thickness:2px;
+    text-decoration-color:var(--sage)}
   .cat-pic img{width:100%;height:100%;object-fit:cover;display:block}
   .cat-nopic{width:100%;height:100%;display:grid;place-items:center;background:var(--sky)}
   .cat-nopic span{font:500 14px var(--font-body);color:var(--ink);opacity:.65}
@@ -135,6 +144,46 @@
 
   <div class="cat-grid">
     <article class="cat">
+      <div class="cat-pic"><img src="assets/cats/CP-3341-1.jpg" alt="2 kittens, looking for a home in Pune" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-3341-2.jpg" alt="" loading="lazy"></div>
+      <div class="cat-body">
+        <h2 class="cat-title">2 kittens<span class="cat-count">2</span></h2>
+        
+        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~5 months (4 months when photographed in July)</dd></div><div class="m"><dt>Sex</dt><dd>Both female</dd></div><div class="m"><dt>Area</dt><dd>Dapodi, PCMC</dd></div></dl>
+        <p class="cat-note">Two sisters, very playful and loving.</p>
+        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Ritasha💕</span> &middot; <a class="tel" href="tel:+918459760402">8459760402</a> &middot; <a class="ig" href="https://www.instagram.com/ritu.pandit__/">@ritu.pandit__</a></dd></dl>
+      </div>
+    </article>
+    <article class="cat">
+      <div class="cat-pic"><img src="assets/cats/CP-3AE6-1.jpg" alt="1 ginger kitten (&quot;Bliss&quot;), looking for a home in Pune" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-3AE6-2.jpg" alt="" loading="lazy"><img src="assets/cats/CP-3AE6-3.jpg" alt="" loading="lazy"></div>
+      <div class="cat-body">
+        <h2 class="cat-title">1 ginger kitten (&quot;Bliss&quot;)</h2>
+        
+        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~2 months (60 days, per rescuer 21 Aug)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Magarpatta, Pune</dd></div></dl>
+        <p class="cat-note">Rescued from the rain at ~40 days old and taken in, but the family has to move out of Pune and works 15-16 hour days. Dewormed, vet-checked and given a CRP shot; too young for vaccination until 3-4 months. Gained 400g to 850g in her first fortnight.</p>
+        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Priya Singh</span> &middot; <a class="tel" href="tel:+918545002034">8545002034</a> &middot; <a class="ig" href="https://www.instagram.com/in_the_lost_space/">@in_the_lost_space</a></dd></dl>
+      </div>
+    </article>
+    <article class="cat">
+      <div class="cat-pic"><img src="assets/cats/CP-12F6-1.jpg" alt="1 kitten (&quot;Puchu&quot;), looking for a home in Pune" loading="lazy"></div>
+      <div class="cat-body">
+        <h2 class="cat-title">1 kitten (&quot;Puchu&quot;)</h2>
+        
+        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2 months</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Sant Tukaram Nagar, Pimpri Chinchwad</dd></div></dl>
+        <p class="cat-note">Found in a box near the rescuer&#x27;s PG. Vaccinated.</p>
+        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">prajaktaborde</span> &middot; <a class="tel" href="tel:+918983510292">8983510292</a></dd></dl>
+      </div>
+    </article>
+    <article class="cat">
+      <div class="cat-pic"><img src="assets/cats/CP-42FB-1.jpg" alt="2 kittens (brother and sister), looking for a home in Pune" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-42FB-2.jpg" alt="" loading="lazy"><img src="assets/cats/CP-42FB-3.jpg" alt="" loading="lazy"></div>
+      <div class="cat-body">
+        <h2 class="cat-title">2 kittens (brother and sister)<span class="cat-count">2</span></h2>
+        
+        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2-3 months</dd></div><div class="m"><dt>Sex</dt><dd>1 male, 1 female</dd></div><div class="m"><dt>Area</dt><dd>Not given yet</dd></div></dl>
+        <p class="cat-note">Siblings found on a society road and taken in because of stray dogs. Both litter trained, and very attached to each other.</p>
+        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Tejaswini Shinde</span> &middot; <a class="tel" href="tel:+917985548602">7985548602</a> &middot; <a class="ig" href="https://www.instagram.com/__tejas_pathak/">@__tejas_pathak</a></dd></dl>
+      </div>
+    </article>
+    <article class="cat">
       <div class="cat-pic"><img src="assets/cats/CP-B059-1.jpg" alt="Five ginger kittens, looking for a home in Pune" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-B059-2.jpg" alt="" loading="lazy"><img src="assets/cats/CP-B059-3.jpg" alt="" loading="lazy"></div>
       <div class="cat-body">
         <h2 class="cat-title">Five ginger kittens<span class="cat-count">5</span></h2>
@@ -195,16 +244,6 @@
       </div>
     </article>
     <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-553B-1.jpg" alt="One kitten, “Chiku”, looking for a home in Pune" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-553B-2.jpg" alt="" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">One kitten, “Chiku”</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~2 months</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Not given yet</dd></div></dl>
-        <p class="cat-note">Her mother was killed in an accident and a sibling died too. The rescuer can&#x27;t keep her.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Kiran M. Abhyankar</span> &middot; <a class="ig" href="https://www.instagram.com/kmabhyankar/">@kmabhyankar</a></dd></dl>
-      </div>
-    </article>
-    <article class="cat">
       <div class="cat-pic"><img src="assets/cats/CP-ABCE-1.jpg" alt="Two kittens, “Chiku” &amp; “Lolo”, looking for a home in Pune" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-ABCE-2.jpg" alt="" loading="lazy"><img src="assets/cats/CP-ABCE-3.jpg" alt="" loading="lazy"></div>
       <div class="cat-body">
         <h2 class="cat-title">Two kittens, “Chiku” &amp; “Lolo”<span class="cat-count">2</span></h2>
@@ -242,6 +281,16 @@
         <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>5–6 months</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Pimpri</dd></div></dl>
         <p class="cat-note">Dewormed, vaccinated and litter trained.</p>
         <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Komal Jadhav</span> &middot; <a class="tel" href="tel:+919762201033">9762201033</a> &middot; <a class="ig" href="https://www.instagram.com/komal12jadhav/">@komal12jadhav</a></dd></dl>
+      </div>
+    </article>
+    <article class="cat cat--adopted">
+      <div class="cat-pic"><img src="assets/cats/CP-553B-1.jpg" alt="One kitten, “Chiku”, has been adopted" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-553B-2.jpg" alt="" loading="lazy"></div>
+      <div class="cat-body">
+        <h2 class="cat-title">One kitten, “Chiku”</h2>
+        
+        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~2 months</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Not given yet</dd></div></dl>
+        <p class="cat-note">Her mother was killed in an accident and a sibling died too. The rescuer can&#x27;t keep her.</p>
+        
       </div>
     </article>
   </div>
