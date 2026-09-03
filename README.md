@@ -34,5 +34,5 @@ Repo: https://github.com/odas/catadoption_pune (this folder is already a git rep
 
 - `learn.html` carries **no affiliate links, ever** (care education = trust layer).
 - New articles: copy `article-template.html`, follow the comments inside it, add to `sitemap.xml`.
-- Design system lives in `assets/style.css` — palette and fonts are locked decisions (see `../project-state-od.md`).
+- Design system lives in `assets/style.css` — the palette and fonts there are locked decisions, recorded outside this repo. Change them only on purpose.
 - The three cat photos in `assets/` are **Unsplash placeholders** — replace with brand-graded real photos (post-live task).
