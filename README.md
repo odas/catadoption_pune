@@ -1,38 +1,32 @@
-# catadoption.in — site
+# catadoption.in
 
-Static site for catadoption_pune. No build step, no dependencies — these files ARE the site.
+The website of **catadoption_pune** — a volunteer-run, Instagram-first adoption network
+for indie cats in Pune and PCMC. Not an NGO, not a shelter. We never charge a rupee, to
+anyone, for anything.
 
-## Go live — ✅ DONE 2026-07-06 (kept as a record of the steps)
+Live at **https://catadoption.in**. Static: no build step, no dependencies, no framework —
+these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 
-The site is live at https://catadoption.in — HTTPS enforced, sitemap submitted, GBP linked.
-It grew past the "4 pages" below on go-live evening: 10 sitemap pages + 404 + article
-template + a private `/di` photo-share page (noindex, not in sitemap). Steps below are
-history, not instructions.
+## Rules baked into this site — don't undo them by accident
 
-Repo: https://github.com/odas/catadoption_pune (this folder is already a git repo with one commit).
+- **`learn.html` carries no affiliate links, ever.** Care education is the trust layer and
+  it stays clean.
+- **New articles copy `article-template.html`**, follow the comments inside it, and get
+  added to `sitemap.xml`.
+- **The palette and fonts in `assets/style.css` are locked decisions**, not defaults.
+  Change them only on purpose.
+- **The three cat photos in `assets/` are Unsplash placeholders** awaiting real,
+  brand-graded photos.
+- **`adoptable.html` is generated, never hand-written.** A script builds it from the
+  adoptable-cats sheet; edit it here and the next run overwrites you.
 
-1. **Push** (from this `site/` folder):
-   ```
-   git remote add origin https://github.com/odas/catadoption_pune.git
-   git push -u origin main
-   ```
-2. **GitHub Pages:** repo → Settings → Pages → Source: *Deploy from a branch* → Branch `main`, folder `/ (root)` → Save.
-3. **Namecheap** → Domain List → catadoption.in → Advanced DNS. Delete parking records, then add:
-   | Type | Host | Value |
-   |---|---|---|
-   | A | @ | 185.199.108.153 |
-   | A | @ | 185.199.109.153 |
-   | A | @ | 185.199.110.153 |
-   | A | @ | 185.199.111.153 |
-   | CNAME | www | odas.github.io. |
-4. **Back in Pages settings:** Custom domain → `catadoption.in` → Save → wait for the DNS check (minutes–hours) → tick **Enforce HTTPS** once it appears.
-5. **Verify:** https://catadoption.in loads all 4 pages on phone + laptop.
-6. **Search Console:** https://search.google.com/search-console → add property `catadoption.in` (Domain type; verify via a Namecheap TXT record) → Sitemaps → submit `https://catadoption.in/sitemap.xml`. Repeat at Bing Webmaster Tools (imports from Search Console).
-7. **Google Business Profile:** add `https://catadoption.in` as the website link.
+## Layout
 
-## Rules baked into this site (don't undo by accident)
+`index` · `about` · `adopt` · `adopter-form` · `learn` · `resources` · `visit` · `blog`
+and the articles · `adoptable.html` (the board) · `article-template.html` · `404.html`.
+Eleven pages are in the sitemap; the template and 404 deliberately are not.
 
-- `learn.html` carries **no affiliate links, ever** (care education = trust layer).
-- New articles: copy `article-template.html`, follow the comments inside it, add to `sitemap.xml`.
-- Design system lives in `assets/style.css` — the palette and fonts there are locked decisions, recorded outside this repo. Change them only on purpose.
-- The three cat photos in `assets/` are **Unsplash placeholders** — replace with brand-graded real photos (post-live task).
+---
+
+*Operating records, decisions and working material for this site are kept privately and
+are not part of this repository.*
