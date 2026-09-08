@@ -133,7 +133,7 @@ a{color:inherit;}
 .card-link{display:block;text-decoration:none;transition:transform 0.25s var(--ease),box-shadow 0.25s var(--ease);}
 .card-link:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,17,24,0.12);}
 .card-thumb{width:100%;height:170px;object-fit:cover;border-radius:12px;margin-bottom:0.9rem;}
-.read-more{font-weight:600;color:var(--peri) !important;margin-top:0.4rem;}
+.read-more{font-weight:600;margin-top:0.4rem;text-decoration:underline;text-decoration-color:var(--peri);text-decoration-thickness:2px;text-underline-offset:3px;} /* was peri text on white, 3.4:1; ink text, peri underline keeps the palette and passes */
 
 /* article template */
 .art-meta{font-size:0.85rem;opacity:0.7;margin-bottom:0.7rem;}
@@ -165,3 +165,14 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
   html{scroll-behavior:auto;}
   .reveal{opacity:1;transform:none;transition:none;}
 }
+
+/* ---------- care hub (learn.html): article cards below the basics ---------- */
+.hub-head{max-width:1020px;margin:0 auto;padding:clamp(2rem,5vh,3rem) 6vw 0;}
+.hub-head h2{font-size:clamp(1.35rem,2.6vw,1.9rem);margin-bottom:0.5rem;}
+.hub-head p{max-width:60ch;opacity:0.85;}
+.hub .res-grid{padding-top:1.4rem;}
+.hub-h2{font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.75;margin:0 0 1rem;}
+/* related strip at the foot of every article, so no page is a dead end */
+.related{margin:2.6rem 0 0;padding:1.2rem 1.4rem;border:1px solid var(--line);border-radius:16px;background:var(--white);}
+.related h2{font-size:1rem;margin:0 0 0.5rem;}
+.related a{display:block;padding:0.35rem 0;font-weight:600;}
