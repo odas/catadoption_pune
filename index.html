@@ -45,21 +45,23 @@
     <a href="adoptable.html">Meet the cats</a>
     <a href="learn.html">Cat care</a>
     <a href="about.html">About</a>
-    <a href="resources.html">Emergency &amp; NGOs</a>
+    <a href="resources.html">Emergency</a>
     <a class="pill" href="https://www.instagram.com/catadoption_pune/">Instagram</a>
   </nav>
 </header>
 
 <!-- SCENE 1 · hero
-     Progressive-reveal pair: the peri band rises over the photo and covers the
-     hero copy bottom-up, so mid-scroll reads "Born on the street." + "We find their person."
+     Progressive-reveal pair: the peri band rises over the photo, so mid-scroll reads
+     "Born on the street." + "We find their person." Since 2026-09-08 the hero copy fades out just
+     before the band reaches it (the scroll handler below), so no line is ever sliced mid-glyph;
+     the headline's three lines are units (.l spans, sized to the column, never wrapped).
      Runway spacers are the pacing knob — positive heights only, tune on real devices. -->
 <section class="scene">
   <div class="pin pin--hero">
     <img src="assets/hero-cat.jpg" alt="Indie cat looking at the camera">
     <div class="hero-copy">
       <p class="eyebrow">catadoption_pune · Pune &amp; PCMC</p>
-      <h1>Born on the street.<br>One person away from home.</h1>
+      <h1><span class="l">Born on the street.</span> <span class="l">One person away</span> <span class="l">from home.</span></h1>
       <p>A volunteer-run virtual adoption centre for Pune's community cats.</p>
     </div>
   </div>
@@ -71,7 +73,7 @@
         <p>Not a shelter — a network. A healthy stray in Pune has no government system waiting for it, only rescuers who refuse to look away. catadoption_pune lists and vets the cats they save — Baner, Kothrud, Viman Nagar, Kharadi, Pimple Saudagar and beyond — and matches each one with a genuinely good home.</p>
       </div>
     </div>
-    <div class="runway" style="height:50vh"></div>
+    <div class="runway" style="height:32vh"></div>
   </div>
 </section>
 
@@ -88,7 +90,7 @@
       <div class="step"><h3>2 · Connect</h3><p>The rescuer's contact is in every post. They know the cat best, and they'll ask a few questions — that's the good-fit check working.</p></div>
       <div class="step"><h3>3 · Adopt</h3><p>Meet the cat, collect the vaccination records, and go home together. Your rescuer stays a message away.</p></div>
     </div>
-    <div class="runway" style="height:55vh"></div>
+    <div class="runway" style="height:36vh"></div>
   </div>
 </section>
 
@@ -142,13 +144,23 @@ function zoom(){
     if(total<=0)return;
     const p=Math.min(1,Math.max(0,-r.top/total));
     const img=s.querySelector('.pin img');
-    if(img)img.style.transform=`scale(${(1+p*0.16).toFixed(4)})`;
+    if(img&&!reduce)img.style.transform=`scale(${(1+p*0.16).toFixed(4)})`;
   });
+  fadeHero();
 }
-if(!reduce){
-  addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(zoom);}},{passive:true});
-  zoom();
+// hero copy fades and lifts as the band approaches, so the band never cuts a line of text
+const heroCopy=document.querySelector('.hero-copy');
+const heroBand=document.querySelector('.scene .band');
+function fadeHero(){
+  if(!heroCopy||!heroBand)return;
+  const gap=heroBand.getBoundingClientRect().top-heroCopy.getBoundingClientRect().bottom;
+  const o=Math.min(1,Math.max(0,gap/140));
+  heroCopy.style.opacity=o.toFixed(3);
+  heroCopy.style.transform=reduce?'none':`translateY(${(-(1-o)*18).toFixed(1)}px)`;
 }
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(zoom);}},{passive:true});
+addEventListener('resize',fadeHero);
+zoom();
 
 // fade-rise reveals
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:0.15});
