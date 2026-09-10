@@ -17,8 +17,11 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   added to `sitemap.xml`.
 - **The palette and fonts in `assets/style.css` are locked decisions**, not defaults.
   Change them only on purpose.
-- **The three cat photos in `assets/` are Unsplash placeholders** awaiting real,
-  brand-graded photos.
+- **`cat-closeup.jpg`, `cat-yawn.jpg` and `hero-cat.jpg` in `assets/` are Unsplash placeholders**
+  awaiting real, brand-graded photos. The in-article photos (day-one, cat hair, accidents,
+  kitten wet food, litter box, feeding strays) are licensed Adobe Stock, free-collection tier,
+  each row logged in `video/adobe/api-log.md`; several are still waiting on OD's own phone
+  shots to replace them (noted in each page's head comment).
 - **`adoptable.html` is generated, never hand-written.** A script builds it from the
   adoptable-cats sheet; edit it here and the next run overwrites you.
 
