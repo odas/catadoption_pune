@@ -22,6 +22,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   kitten wet food, litter box, feeding strays) are licensed Adobe Stock, free-collection tier,
   each row logged in `video/adobe/api-log.md`; several are still waiting on OD's own phone
   shots to replace them (noted in each page's head comment).
+- **`assets/day-one-checklist.mp4` is silent on purpose.** It is the day-one page's hero, cut from the
+  channel's Short; the Short's music is licensed for YouTube only, so the site's copy carries none.
 - **`adoptable.html` is generated, never hand-written.** A script builds it from the
   adoptable-cats sheet; edit it here and the next run overwrites you.
 

@@ -185,3 +185,5 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 /* Article photos (first used 2026-09-10, first-cat-day-one-pune.html): full column width, soft corners. */
 .prose figure{margin:1.4rem 0}
 .prose figure img{display:block;width:100%;height:auto;border-radius:12px}
+/* A vertical Short inside an article: phone width, centred, so it never fills a desktop screen top to bottom */
+.prose figure.clip video{display:block;width:100%;max-width:360px;height:auto;margin:0 auto;border-radius:12px;background:#f8f8a8}
