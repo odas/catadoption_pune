@@ -32,7 +32,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 `index` · `about` · `adopt` · `adopter-form` · `learn` (the care hub) · `resources` (Emergency &
 NGOs) · `visit` · `privacy` and the articles · `adoptable.html` (the board) · `blog.html`
 (redirect) · `article-template.html` · `404.html`.
-Fifteen pages are in the sitemap; the template, the redirect and 404 deliberately are not.
+Sixteen pages are in the sitemap; the template, the redirect and 404 deliberately are not.
 
 ---
 
