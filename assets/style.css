@@ -188,3 +188,67 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 .prose figcaption{font-size:0.92rem;opacity:0.8;margin-top:0.5rem}
 /* A vertical Short inside an article: phone width, centred, so it never fills a desktop screen top to bottom */
 .prose figure.clip video{display:block;width:100%;max-width:360px;height:auto;margin:0 auto;border-radius:12px;background:#f8f8a8}
+
+/* ============================================================
+   THE SKETCHBOOK LAYER — visual-explainer components, added 2026-09-12.
+   Why: OD's ask after reading *The Visual MBA* — let the drawing carry the
+   argument so a page can be understood before it is read. The line rules are
+   the ones video/render/src/icons.tsx already uses (ink strokes, no fill,
+   5 units on a 200-unit box, round caps; red ONLY for prohibition), so one SVG
+   serves the page, the carousel and the Remotion frame.
+   Colour is vocabulary here, not decoration:
+     peri = the situation · yellow = act now · sage = safe/right
+     sky  = wait and watch · butter = the free version · red cross = never.
+   Text stays live text (never drawn), so it is selectable, translatable,
+   readable by a screen reader and findable by search.
+   ============================================================ */
+.ink{stroke:var(--ink);fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.ink-thin{stroke-width:3.5}
+.stop{stroke:#d64545;fill:none;stroke-width:6.5;stroke-linecap:round}
+
+/* The Ladder — a decision the reader walks down. One rung, one question. */
+.ladder{margin:1.6rem 0;display:flex;flex-direction:column}
+.rung{display:flex;align-items:stretch;border:2px solid var(--ink);border-bottom-width:0;color:var(--ink)}
+.rung:last-child{border-bottom-width:2px}
+.rung .pic{width:92px;flex:none;display:flex;align-items:center;justify-content:center;padding:0.6rem;border-right:2px solid var(--ink)}
+.rung .pic svg{width:100%;height:auto}
+.rung .txt{padding:0.9rem 1.05rem;min-width:0}
+.rung .q{font-family:var(--font-head);font-weight:700;font-size:1.08rem;line-height:1.2}
+.rung .a{font-size:0.92rem;margin:0.2rem 0 0;line-height:1.45}
+.rung--peri{background:var(--peri)}
+.rung--yellow{background:var(--yellow)}
+.rung--sage{background:var(--sage)}
+.rung--sky{background:var(--sky)}
+.rung--butter{background:var(--butter)}
+@media(max-width:480px){
+  .rung{flex-direction:column}
+  .rung .pic{width:100%;border-right:0;border-bottom:2px solid var(--ink);max-height:110px}
+  .rung .pic svg{width:auto;height:88px}
+}
+
+/* The Deck — numbered cards, the same geometry as a carousel slide and a Short beat. */
+.deck{display:grid;grid-template-columns:1fr;gap:0.8rem;margin:1.6rem 0}
+/* Explicit counts, not auto-fit: a four-card deck must land 2x2 or 4x1, never 3+1 with an orphan. */
+@media(min-width:430px){.deck{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:780px){.deck{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:780px){.deck--three{grid-template-columns:repeat(3,1fr)}}
+.deck .card{border:2px solid var(--ink);color:var(--ink);padding:0.9rem 0.85rem 1rem;display:flex;flex-direction:column;gap:0.5rem;min-height:186px}
+.deck .card .num{font-size:0.7rem;font-weight:700;letter-spacing:0.14em}
+.deck .card .pic{height:60px;display:flex;align-items:center;justify-content:center}
+.deck .card .pic svg{height:100%;width:auto}
+.deck .card .line{font-family:var(--font-head);font-weight:700;font-size:1rem;line-height:1.15}
+.deck .card .sub{font-size:0.82rem;line-height:1.35;margin-top:auto}
+.deck .c-peri{background:var(--peri)}.deck .c-yellow{background:var(--yellow)}
+.deck .c-sage{background:var(--sage)}.deck .c-sky{background:var(--sky)}
+.deck .c-butter{background:var(--butter)}
+
+/* A landmark word — the eye lands here and has the gist before reading. */
+.landmark{font-family:var(--font-head);font-weight:800;font-size:clamp(2rem,7vw,3.2rem);line-height:1;letter-spacing:-0.02em;margin:1.4rem 0 0.2rem}
+.landmark small{display:block;font-family:var(--font-body);font-size:0.76rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;opacity:0.65;margin-bottom:0.35rem}
+.dashrule{border:0;border-top:2px dashed rgba(20,17,24,0.3);margin:1rem 0}
+
+/* Where the page stops and a professional starts. */
+.boundary{border:2px solid var(--ink);padding:1.1rem 1.2rem;margin:1.8rem 0 0}
+.boundary h3{font-family:var(--font-head);font-size:1.05rem;margin:0 0 0.5rem}
+.boundary ul{margin:0;padding-left:1.15rem}
+.boundary li{margin-bottom:0.4rem}

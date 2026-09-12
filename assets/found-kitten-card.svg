@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340" role="img" aria-label="A kitten sitting alone while the mother cat walks back towards it. The word: WAIT.">
+<!-- Card thumbnail for found-kitten-pune.html, 2026-09-12. The first drawing made for the
+     "informative-graphics pass" parked in learn.html's comment: the picture answers the question
+     for someone who will not read the card. Brunch palette, sky = wait and watch; ink strokes,
+     no fill, round caps, per assets/style.css § THE SKETCHBOOK LAYER. Text is drawn here because
+     this is an image, not a page — the page itself keeps every word as live text. -->
+  <rect width="600" height="340" fill="#94d0e4"/>
+  <g fill="none" stroke="#141118" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- the kitten, left -->
+    <g transform="translate(46,150) scale(1.25)">
+      <path d="M30 36 L34 14 L50 27"/><path d="M70 36 L66 14 L50 27"/>
+      <circle cx="50" cy="42" r="21"/>
+      <path d="M43 40v3M57 40v3" stroke-width="4.5"/><path d="M50 49l-3 3h6z" stroke-width="3.5"/>
+      <path d="M33 60c-7 12-5 28 9 28h16c14 0 16-16 9-28"/><path d="M67 87c16 0 20-13 13-21"/>
+    </g>
+    <!-- she is coming back -->
+    <path d="M212 268c46-52 116-56 160-14" stroke-width="3.5" stroke-dasharray="9 12"/>
+    <path d="M368 250l6 16-17 3" stroke-width="3.5"/>
+    <!-- the mother, right -->
+    <g transform="translate(392,150) scale(1.35)">
+      <path d="M26 40L30 20L45 32"/><path d="M62 40L58 20L45 32"/>
+      <circle cx="44" cy="44" r="17"/><path d="M38 43v3M50 43v3" stroke-width="4.5"/>
+      <path d="M60 52h30c8 0 12 6 12 14v18"/><path d="M30 60v30M52 62v28M78 66v24M100 66v18"/>
+      <path d="M30 60c-2 8 0 20 4 26"/><path d="M102 66c12-4 14-16 8-22"/>
+    </g>
+  </g>
+  <text x="46" y="104" font-family="Martel, Georgia, serif" font-weight="800" font-size="86" letter-spacing="-2" fill="#141118">WAIT.</text>
+  <text x="300" y="100" font-family="Hind, Helvetica, Arial, sans-serif" font-weight="600" font-size="23" fill="#141118">She is usually</text>
+  <text x="300" y="130" font-family="Hind, Helvetica, Arial, sans-serif" font-weight="600" font-size="23" fill="#141118">still nearby.</text>
+</svg>

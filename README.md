@@ -24,6 +24,13 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   shots to replace them (noted in each page's head comment).
 - **`assets/day-one-checklist.mp4` is silent on purpose.** It is the day-one page's hero, cut from the
   channel's Short; the Short's music is licensed for YouTube only, so the site's copy carries none.
+- **The drawings are a system, not decoration.** `assets/style.css` § THE SKETCHBOOK LAYER holds
+  the ladder, the card deck and the line-art rules (ink strokes, no fill, red used only for
+  prohibition), added 2026-09-12 so a page can be understood before it is read. Colour carries
+  meaning there — periwinkle the situation, yellow act now, sage safe, sky wait and watch, butter
+  the free version — so don't recolour a block for looks. Words inside a diagram stay live text,
+  never drawn, so they can be selected, translated and found by search. `found-kitten-pune.html`
+  is the first page built this way and `assets/found-kitten-card.svg` its drawn card image.
 - **`adoptable.html` is generated, never hand-written.** A script builds it from the
   adoptable-cats sheet; edit it here and the next run overwrites you.
 
@@ -32,7 +39,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 `index` · `about` · `adopt` · `adopter-form` · `learn` (the care hub) · `resources` (Emergency &
 NGOs) · `visit` · `privacy` and the articles · `adoptable.html` (the board) · `blog.html`
 (redirect) · `article-template.html` · `404.html`.
-Sixteen pages are in the sitemap; the template, the redirect and 404 deliberately are not.
+Seventeen pages are in the sitemap; the template, the redirect and 404 deliberately are not.
 
 ---
 
