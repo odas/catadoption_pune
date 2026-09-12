@@ -316,3 +316,5 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 .fwd .foot{font-family:var(--font-body);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.65;margin-top:0.9rem;border-top:2px dashed rgba(20,17,24,0.3);padding-top:0.55rem;}
 .spread-h2{font-family:'Kalam',cursive;font-weight:700;font-size:clamp(1.6rem,4vw,2.2rem);margin-top:1.2rem;}
 .spread-p{font-family:var(--font-head);max-width:52ch;margin-top:0.7rem;}
+.closing{margin:2.2rem 0 0;}
+.closing-line{font-family:'Kalam',cursive;font-weight:700;font-size:clamp(2rem,6vw,3.2rem);line-height:1.04;letter-spacing:-0.01em;max-width:16ch;}
