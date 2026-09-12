@@ -30,16 +30,21 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   meaning there — periwinkle the situation, yellow act now, sage safe, sky wait and watch, butter
   the free version — so don't recolour a block for looks. Words inside a diagram stay live text,
   never drawn, so they can be selected, translated and found by search. `found-kitten-pune.html`
-  is the first page built this way and `assets/found-kitten-card.svg` its drawn card image.
+  is the first page built this way and `assets/found-kitten-card.svg` its drawn card image;
+  `send-a-cat.html` is the second, with `assets/send-a-cat-card.svg`. Six of its nine panel
+  drawings are reused from the found-kitten set unchanged — the set is meant to be composed
+  from, not redrawn per page.
 - **`adoptable.html` is generated, never hand-written.** A script builds it from the
   adoptable-cats sheet; edit it here and the next run overwrites you.
 
 ## Layout
 
 `index` · `about` · `adopt` · `adopter-form` · `learn` (the care hub) · `resources` (Emergency &
-NGOs) · `visit` · `privacy` and the articles · `adoptable.html` (the board) · `blog.html`
-(redirect) · `article-template.html` · `404.html`.
-Sixteen pages are in the sitemap (found-kitten-pune.html is a noindex draft and is deliberately out of it until OD clears it); the template, the redirect and 404 deliberately are not.
+NGOs) · `visit` · `send-a-cat` (the rescuer's door) · `privacy` and the articles ·
+`adoptable.html` (the board) · `blog.html` (redirect) · `article-template.html` · `404.html`.
+Sixteen pages are in the sitemap; the template, the redirect and 404 deliberately are not, and
+neither are the two noindex drafts — `found-kitten-pune.html` and `send-a-cat.html` — which stay
+out until OD clears them.
 
 ---
 

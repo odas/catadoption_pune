@@ -10,6 +10,7 @@
   --sky:#94d0e4;
   --butter:#f8f8a8;
   --ink:#141118;
+  --red:#d64545;      /* danger accent, used by the spread panels; was referenced before it existed */
   --white:#ffffff;
   --font-head:'Martel',serif;
   --font-body:'Hind',sans-serif;
@@ -318,5 +319,13 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 .spread-p{font-family:var(--font-head);max-width:52ch;margin-top:0.7rem;}
 .closing{margin:2.2rem 0 0;}
 .closing-line{font-family:'Kalam',cursive;font-weight:700;font-size:clamp(2rem,6vw,3.2rem);line-height:1.04;letter-spacing:-0.01em;max-width:16ch;}
+/* A real screenshot dropped into a drawn page. OD, 2026-09-13: "example picture itself is the
+   best thing, the one at end of adoptable.html" — the specimen beats any drawing of a specimen,
+   so the photo sits above the panels rather than being linked from the bottom. */
+.spread-page .shot{margin:0 0 1.2rem;display:grid;gap:1.2rem;align-items:start;}
+@media(min-width:820px){.spread-page .shot{grid-template-columns:minmax(0,300px) 1fr;gap:2.6rem;}}
+.spread-page .shot img{width:100%;height:auto;display:block;border:2px solid var(--ink);border-radius:10px;box-shadow:6px 6px 0 rgba(20,17,24,.1);}
+.spread-page .shot figcaption{font-family:var(--font-head);font-size:0.99rem;line-height:1.6;max-width:46ch;}
+.spread-page .shot figcaption b{font-family:'Kalam',cursive;font-weight:700;font-size:clamp(1.4rem,3.4vw,1.8rem);display:block;margin-bottom:0.55rem;}
 .spread-hero .hero-art{margin-top:1.6rem;max-width:420px;}
 .spread-hero .hero-art svg{width:100%;height:auto;overflow:visible;}

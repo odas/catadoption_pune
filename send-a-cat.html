@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- DRAFT, 2026-09-13. Written by Claude Code at OD's ask; her ruling that day was that this page
+     ships first and on its own, ahead of the three new articles and the spread rebuilds.
+
+     WHY THIS PAGE EXISTS, mechanically. The footer of every live page, the "Have a cat to rehome?"
+     card on resources.html and the "Found a cat that needs help?" block on visit.html all linked
+     "Send us a cat" to adoptable.html#rescuers - an accordion on a file that
+     P-insta-folio/make_adoptable_page.py REGENERATES. The rescuer door is the supply side of the
+     whole network and it had no page of its own. Those links now point here.
+
+     THE BOARD'S ACCORDION STAYS. adoptable.html is generated and must never be hand-edited, so its
+     six-line version is still the in-context short form for someone already on the board, and this
+     page is the long form. Two surfaces on purpose; if they ever disagree, the board's generator
+     (P-insta-folio) is the one to change, not the generated file.
+
+     WHERE THE CONTENT COMES FROM. instagram/dm-triage-and-posting.md, OD's own unedited account of
+     how she runs the inbox, written 2026-08-17 - read whole, not grepped. Everything here is a
+     restatement of something she already does or already says:
+       . the six-point format and "give it 2-5 days" and the language line are already PUBLIC copy,
+         in adoptable.html's #rescuers accordion
+       . "In Pune people neuter at > 5 months. Vaccines happen at month 2 and month 3. Many rescuers
+         don't have funds to get vet-check or start vaccinations. And anyway adopters prefer to do it
+         themselves so they know cats have for sure had them." -> panel 04
+       . "I don't mix cats with kittens. Cats don't get adopted. Their posts stay open on my page
+         longer. I try to reshare them with more effort." -> panel 07
+       . the neonate matching protocol, including asking watchmen about a nursing stray -> panel 09
+       . the ADOPTED protocol (she pulls the first photo, the only one carrying a phone number, and
+         re-captions) -> the closing block
+       . "They are doing so much and all from their-own-pocket and out of the goodness of their
+         hearts." -> the closing line
+
+     !! TWO .hers BLOCKS ARE FLAGGED FOR OD, NOT CLEARED. Every .hers block on found-kitten-pune.html
+     came from material she had PUBLISHED (her own reel) or said to this chat for the page. The two on
+     this page are verbatim from the internal process doc above - her writing, but written for herself,
+     not for publication:
+       panel 05  "I only facilitate. I don't travel to help cats. I don't foster."
+       panel 06  "I have another full-time job, this is a volunteer only org, I do what I can."
+     She reports saying the second one to rescuers already. The first is a self-description. Both are
+     hers to keep, cut or rewrite. Capture is not promotion.
+
+     ALSO HER CALL, and deliberately NOT decided here: how much of the capacity reality goes public.
+     Her private notes are frank about the ordered/booked piles and about guilt. Panel 06 carries the
+     kind half ("capacity, not a no") and none of the inside baseball. The Google Form
+     (forms.gle/u7tyF8pSCYQqfRQx6) is deliberately absent: her doc records that forms went unfilled
+     and were filled badly when they were. DM first. If she wants the form back it goes below panel 01.
+     The footer email is left as the only non-Instagram door because her process never mentions email.
+
+     DRAWINGS: SIX OF THE NINE ARE REUSED, unchanged, from found-kitten-pune.html - the cold session's
+     work, already checked at three sizes. Panels 02, 04, 05, 07, 08, 09. Composing before drawing is
+     the point; illustrations-preview-2026-09-12.html records which shapes are traps in this style.
+     THREE ARE NEW and have NOT had the cold-eye pass yet (case-study-2026-09-12-drawn-explainers.md
+     section 5: four drawings misread in one session and the author could not see any of them):
+       panel 01  a phone, upright, a cat's face on the screen, three message lines beside it.
+                 Known risk: a rectangle with a cat in it can read as a television or a picture frame.
+       panel 03  a map pin with a cat's face in its circle. Lowest-risk of the three; a teardrop pin
+                 survives 56px.
+       panel 06  a circled "2-5 / days" marker in Kalam, following the established age-marker pattern
+                 (found-kitten panels 03 and 08 already do this). Near-zero misread risk.
+     Ask of each one: what else could this be read as?
+
+     NO AFFILIATE LINK, EVER. This is the adoption loop - START-HERE.md section 1, the hardest rule
+     on the site. No product, no kit, no cross-link to a page that earns.
+
+     A FIX THAT CAME OUT OF BUILDING THIS: panel 08's drawing uses fill="var(--red)" and --red was
+     never defined in assets/style.css, so the exclamation mark rendered BLACK on the live
+     found-kitten page - verified in the browser, computed fill rgb(0,0,0), while the drawing's own
+     aria-label says "a red exclamation mark". --red:#d64545 is now in :root. That also fixes the
+     live page.
+
+     COLOUR, and the limit of the rule. assets/style.css section THE SKETCHBOOK LAYER states a
+     semantics - peri = the situation, yellow = act now, sage = safe/right, sky = wait and watch,
+     butter = the free version, red cross = never - and README.md says not to recolour a block for
+     looks. That scheme governs the SKETCHBOOK pictograms; the approved SPREAD drawings use colour
+     pictorially instead (sky is literal water in the rain panel), so it is not a hard rule here.
+     The three new drawings were still aligned where the mapping is exact: panel 01 yellow (send it),
+     panel 03 peri (the situation), panel 06 sky (wait). Reused drawings keep the colours the cold
+     session gave them.
+
+     FREE NEUTERING IS NOT MENTIONED, AND THAT IS NOW A RULE [OD] 2026-09-13: "Free neuter, don't
+     mention. Its a changing thing. nothing certain. and project mau is overburdened. they still do it,
+     but I prefer giving the info 1:1 rather than on a page." This resolves what had looked like a
+     contradiction between her own sources (found-kitten panel 08 quoting her on free services vs
+     START-HERE.md section 1b's "No free cat sterilization"): neither is wrong, the availability moves,
+     and a page cannot carry a moving fact without setting a false expectation and adding load to an
+     overburdened NGO. So: no page names a free service. She gives that information one-to-one.
+     Applies site-wide, not only here - found-kitten's panel 08 caption was corrected the same day.
+     !! It also closes case-study-2026-09-12-drawn-explainers.md section 8's open item, which read
+     "resources.html names Blue Cross but not Project Mau" as a gap to fill. It is not a gap.
+
+     COLOUR, and the limit of the rule. assets/style.css section THE SKETCHBOOK LAYER states a
+     semantics - peri = the situation, yellow = act now, sage = safe/right, sky = wait and watch,
+     butter = the free version, red cross = never - and README.md says not to recolour a block for
+     looks. That scheme governs the SKETCHBOOK pictograms; the approved SPREAD drawings use colour
+     pictorially instead (sky is literal water in the rain panel), so it is not a hard rule here.
+     The three new drawings were still aligned where the mapping is exact: panel 01 yellow (send it),
+     panel 03 peri (the situation), panel 06 sky (wait). Reused drawings keep the colours the cold
+     session gave them.
+
+     !! A CONTRADICTION FOR OD, FOUND WHILE REUSING PANEL 04'S DRAWING AND DELIBERATELY NOT RESOLVED
+     HERE. On found-kitten-pune.html that same drawing's marker read "5 months / free", and its caption
+     and her own quote say neutering at five months "does not have to cost you anything ... through free
+     services by Blue Cross, Project Mau, etc." But START-HERE.md section 1b states flatly: "No free cat
+     sterilization" in Pune. Both are her material. This page therefore makes NO claim about cost - the
+     marker now reads "2 months", matching this panel's actual subject (vaccines at month 2 and 3), and
+     the caption says only that rescuers are paying themselves. Free neutering is exactly what a
+     cash-strapped rescuer on this page would most want to know, so it is worth her settling, and
+     case-study-2026-09-12-drawn-explainers.md section 8 already notes resources.html names Blue Cross
+     but not Project Mau.
+
+     THE SCREENSHOT IS REDACTED, at her instruction 2026-09-13: "could you add a redact tab in three
+     places in the real screenshot where insta id and contact info show up please." Three opaque bars
+     (brand ink, brand-yellow edge so they read as deliberate rather than as a rendering fault) over
+     the sender's handle at the top, the name and phone number on the Contact line, and the value on
+     the Insta ID line. The LABELS are deliberately left legible - "sent 8 photos", "Contact:",
+     "Insta ID:" - because a rescuer needs to see that a contact is expected, and that is the whole
+     point of showing a specimen. "Location: new sanghvi pune" is also left: an area is what goes on
+     every public post and is part of what a submission has to carry.
+     HOW, since this machine has no Pillow and no ImageMagick: drawn on a canvas in Chrome and POSTed
+     to a throwaway local server, then re-encoded as JPEG - so the text is gone from the PIXELS and is
+     not recoverable from the file. Verified by counting light pixels inside each bar afterwards: zero.
+     NEW FILE, assets/dm-format-redacted.jpg; the original assets/dm-format.jpg is untouched.
+     !! THE BOARD STILL SHOWS THE UNREDACTED ONE. adoptable.html is generated, and
+     P-insta-folio/make_adoptable_page.py emits assets/dm-format.jpg in its rescuer accordion. That is
+     a one-line change in the OTHER repo and it is hers to sequence, not this session's to make. Until
+     she does, the same screenshot with a live phone number is public on the board.
+
+     NO PROMISE ABOUT POSTING TIME - HER RULE, 2026-09-13, second round: "Don't commit to 2-5 days to
+     post in the heading (sometimes I dont work for periods of time, I dont want to commit to it. Make
+     the headline mention how long it takes for adoption - that is something I write in reply to DMs
+     often - warning them them that if you have some urgent need to get rid of cat consider other
+     options, like asking family and friends to care for cat or connect with NGOs."
+     So panel 06 is no longer about the review queue at all. Its headline is the ADOPTION timeline -
+     about a month, give or take - and its caption carries what she actually writes in DMs: if you need
+     the cat gone sooner than that, this is not the route, ask family and friends to hold it, or speak to
+     an NGO. Posting time is still mentioned, but as "a few days, sometimes a good deal longer", with no
+     number, because there are stretches when she is off Instagram entirely. The 2-5 day figure survives
+     ONLY in adoptable.html's own accordion, which is her older public copy; do not reintroduce it here,
+     and do not "helpfully" make the two consistent by putting it back.
+     !! Note the sequence, because it is the useful part: the FIRST fix made the 2-5 days unambiguous
+     (the panel-05-to-06 inheritance). Her second note rejected the number outright. Disambiguating a
+     commitment is not the same as being willing to make it.
+
+     HER READ OF THE FIRST DRAFT, 2026-09-13, and the one thing it got wrong: "after #5 - 2-5 days
+     sounds like how long it will take for kitten to get adopted. (a month -ish, every kitten has a
+     different exp but adoption is never instant). Rest is good." Sitting directly under "the cat stays
+     with you until it is adopted", the 2-5 days read as the adoption timeline. Fixed in three places:
+     the label is now "give US two to five days", the caption opens by saying it is the post and not the
+     adoption, and panel 05 carries her actual timeline. The learn.html card TL;DR said "Give it" too.
+     A number is not ambiguous on its own - it takes its subject from the panel above it.
+
+     SOURCE CLASSES: catadoption-origin - the whole page; every instruction is her practice.
+     observed - the Pune vaccine and neuter timings, hers from running the inbox. synthesis - the
+     ordering of the nine panels, and the "if a week goes past, message again" line, which her doc
+     implies (messages get buried, she goes off Instagram for months) but does not say.
+     NOTHING HERE IS source-backed, because nothing here needed the web. -->
+<meta name="robots" content="noindex">
+<title>Have a cat that needs a home? Send it to us like this — catadoption_pune</title>
+<meta name="description" content="How to send a cat or kittens to catadoption_pune for a post: what to put in the first message, what we can and cannot do, and why the cat stays with you until it is adopted.">
+<link rel="canonical" href="https://catadoption.in/send-a-cat.html">
+<link rel="icon" href="assets/medallion.jpg" type="image/jpeg">
+<meta property="og:title" content="Have a cat that needs a home? Send it to us like this">
+<meta property="og:description" content="What to put in the first message, what we can and cannot do, and why the cat stays with you until it is adopted.">
+<meta property="og:image" content="https://catadoption.in/assets/medallion.jpg">
+<meta property="og:url" content="https://catadoption.in/send-a-cat.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Martel:wght@400;600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="spread-page">
+
+<header class="nav nav--solid">
+  <a class="brand" href="./"><img src="assets/medallion.jpg" alt="catadoption_pune medallion — two cuddling cats">catadoption_pune</a>
+  <nav>
+    <a href="adopt.html">Adopt</a>
+    <a href="adoptable.html">Meet the cats</a>
+    <a href="learn.html">Cat care</a>
+    <a href="about.html">About</a>
+    <a href="resources.html">Emergency</a>
+    <a class="pill" href="https://www.instagram.com/catadoption_pune/">Instagram</a>
+  </nav>
+</header>
+
+<section class="spread-hero">
+  <p class="crumb"><a href="./">Home</a> › Send us a cat</p>
+  <h1>Have a cat that needs a home? <span class="hl">Send it like this.</span></h1>
+  <p class="sub">We are a notice-board, not a shelter. The cat stays with you, and we put it in front of the people in Pune who are looking. Nine things that get a post made faster.</p>
+  <p class="src">This is the long version of the six lines at the bottom of the board. It exists because a DM scrolls away, and nobody should have to remember what we asked for last time.</p>
+</section>
+
+<!-- The wobble: no line straight, no circle round. brand-kit.md section 3. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="wob" x="-14%" y="-14%" width="128%" height="128%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="wob2" x="-14%" y="-14%" width="128%" height="128%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.021" numOctaves="3" seed="23" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.1" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <clipPath id="frame"><rect x="0" y="0" width="300" height="170"/></clipPath>
+  </defs>
+</svg>
+
+<main class="prose-wide">
+
+<figure class="shot">
+  <img src="assets/dm-format-redacted.jpg" loading="lazy" alt="A real rescuer's Instagram message, sent the way that works best: one message carrying the photos and the words together, with the kittens' age, whether they are male or female, whether they are dewormed and litter trained, an area, and a contact — the contact details and the sender's handle are blacked out here.">
+  <figcaption><b>This is a real one.</b>Photos and words in the same message, the age, male or female, a number, an area. Nothing fancy, nothing formatted &mdash; someone typed this on a phone and it got the kittens posted. We have blacked out their number and handle; on the real post, a contact is exactly what goes in. If you would rather copy a shape than start from a blank box, copy this one. Everything below is just this picture, explained.</figcaption>
+</figure>
+
+<hr class="spread-dash">
+
+<section class="panels">
+
+  <article class="panel">
+    <div class="art">
+      <!-- NEW. First version drew the photo and the words as two separate objects side by side,
+           which contradicted the caption ("together, in one message") and read as phone-plus-scribble
+           at 90px. Redrawn so the screen carries BOTH: a framed photo on top, the words under it. -->
+      <svg viewBox="0 0 300 170" role="img" aria-label="A phone whose screen holds a photo of a cat with three lines of writing underneath it">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <ellipse cx="150" cy="86" rx="74" ry="66" fill="var(--yellow)" opacity=".62" transform="rotate(-3 150 86)"/>
+        </g>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the phone. The speaker slot and the home line are what stop it reading as a frame. -->
+          <path d="M108 14h84c8 0 13 6 13 14v114c0 8-5 14-13 14h-84c-8 0-13-6-13-14V28c0-8 5-14 13-14z"/>
+          <path d="M138 24h24" stroke-width="3.4"/>
+          <path d="M134 148h32" stroke-width="3.4"/>
+          <!-- the photo, in a frame of its own inside the screen -->
+          <path d="M108 38h84v52h-84z" stroke-width="3.6"/>
+          <path d="M138 70l2-13 11 9"/><path d="M164 70l-2-13-11 9"/>
+          <circle cx="151" cy="78" r="15"/>
+          <path d="M145 77v3M157 77v3" stroke-width="3.2"/>
+          <!-- the words, underneath it, inside the same screen -->
+          <path d="M110 106h80" stroke-width="4"/>
+          <path d="M110 120h80" stroke-width="4"/>
+          <path d="M110 134h48" stroke-width="4"/>
+        </g>
+      </svg>
+    </div>
+    <p class="label"><span class="n">01</span>One message, with the photos in it.</p>
+    <hr class="spread-dash spread-dash--tight">
+    <p class="cap">Photos and words together, in one message, is what gets a cat posted fastest. Clear daytime pictures — not a flash, not a dark corner, and the whole cat rather than a close-up. Write it in English, Hinglish or Marathi, whichever is comfortable, the way you would tell a friend. Every one of them is read by a person.</p>
+  </article>
+
+  <article class="panel">
+    <div class="art">
+      <svg viewBox="0 0 300 170" role="img" aria-label="A small kitten on the left, a long dotted arrow, and the same cat grown up on the right">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <circle cx="52" cy="124" r="32" fill="var(--sky)" opacity=".8" transform="rotate(-4 52 124)"/>
+          <ellipse cx="230" cy="110" rx="62" ry="52" fill="var(--peri)" opacity=".46" transform="rotate(3 230 110)"/>
+        </g>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 150h280"/>
+          <path d="M40 112l1-11 9 7"/><path d="M60 112l-1-11-9 7"/>
+          <circle cx="50" cy="118" r="14"/>
+          <path d="M45 117v3M55 117v3" stroke-width="3.2"/>
+          <path d="M50 124l-3 3h6z" stroke-width="2.8"/>
+          <path d="M36 132c-9 11-6 18 5 18h18c11 0 14-7 5-18"/>
+          <path d="M59 150c12 0 16-6 11-12" stroke-width="3.6"/>
+          <path d="M210 70V44l22 17"/><path d="M254 70V44l-22 17"/>
+          <circle cx="232" cy="86" r="30"/>
+          <path d="M221 82v5M243 82v5" stroke-width="4"/>
+          <path d="M232 96l-5 5h10z" stroke-width="3.2"/>
+          <path d="M204 114c-14 20-9 36 12 36h32c21 0 26-16 12-36"/>
+          <path d="M248 150c20 0 26-15 17-26"/>
+          <path d="M76 108C106 78 142 66 178 68" stroke-width="3.4" stroke-dasharray="7 9"/>
+          <path d="M170 60l10 8-9 9" stroke-width="3.4"/>
+        </g>
+      </svg>
+    </div>
+    <p class="label"><span class="n">02</span>Age. Your best guess is fine.</p>
+    <hr class="spread-dash spread-dash--tight">
+    <p class="cap">We post kittens from about a month and a half. Almost nobody gets the age right and that is genuinely all right — four and five month olds reach us described as "just born" all the time. If you want to get closer, go by what the kitten can <em>do</em> rather than how small it looks: <a href="found-kitten-pune.html">the stages are here</a>. Under four weeks changes what we can do, so it is worth a second look.</p>
+  </article>
+
+  <article class="panel">
+    <div class="art">
+      <!-- NEW, not yet cold-checked. A teardrop pin is the most size-robust shape of the three. -->
+      <svg viewBox="0 0 300 170" role="img" aria-label="A map pin with a cat's face inside its circle">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <ellipse cx="150" cy="76" rx="58" ry="56" fill="var(--peri)" opacity=".46" transform="rotate(-3 150 76)"/>
+        </g>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the pin: teardrop, point down -->
+          <path d="M150 146c0 0-42-46-42-74a42 42 0 0 1 84 0c0 28-42 74-42 74z"/>
+          <!-- the cat, inside it -->
+          <path d="M136 58l2-13 11 9"/><path d="M164 58l-2-13-11 9"/>
+          <circle cx="150" cy="70" r="19" stroke-width="4"/>
+          <path d="M143 68v3M157 68v3" stroke-width="3.4"/>
+          <path d="M150 77l-3 3h6z" stroke-width="3"/>
+        </g>
+      </svg>
+    </div>
+    <p class="label"><span class="n">03</span>Where, and a number we can put on the post.</p>
+    <hr class="spread-dash spread-dash--tight">
+    <p class="cap">The area is enough — Baner, Kothrud, Kharadi, wherever. And a contact, because it goes into the picture itself and adopters message it directly. Send the one you are happy to have on a public post: usually a phone number, sometimes an Instagram handle. Tell us if you would rather we tagged you instead, and whether we may credit your photos.</p>
+  </article>
+
+  <article class="panel">
+    <div class="art">
+      <svg viewBox="0 0 300 170" role="img" aria-label="A syringe, a tablet, and a mark reading two months">
+        <g style="mix-blend-mode:multiply" opacity=".78">
+          <ellipse cx="96" cy="86" rx="62" ry="44" fill="var(--sky)" transform="rotate(-4 96 86)"/>
+          <circle cx="224" cy="96" r="46" fill="var(--butter)" transform="rotate(6 224 96)"/>
+        </g>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M52 108l44-44"/>
+          <path d="M64 120l-18 6 6-18"/>
+          <path d="M86 54l30 30"/>
+          <path d="M96 44l20 20M106 78l-14-14" stroke-width="3.4"/>
+          <path d="M116 34l18 18" stroke-width="3.4"/>
+          <ellipse cx="150" cy="130" rx="20" ry="13" transform="rotate(-20 150 130)"/>
+          <path d="M138 137l24-14" stroke-width="3.2"/>
+          <circle cx="224" cy="96" r="34"/>
+        </g>
+        <g font-family="Kalam, cursive" font-weight="700" fill="var(--ink)" text-anchor="middle">
+          <text x="224" y="92" font-size="26">2</text>
+          <text x="224" y="114" font-size="14">months</text>
+        </g>
+      </svg>
+    </div>
+    <p class="label"><span class="n">04</span>Dewormed? Vet check? Vaccinated, if over two months?</p>
+    <hr class="spread-dash spread-dash--tight">
+    <p class="cap">Tell us honestly, because "not yet" is not a rejection. In Pune vaccines usually happen at month two and month three, and neutering after five months. Plenty of rescuers are paying for all of it out of their own pocket and simply cannot get to it yet — and plenty of adopters would rather do it themselves so they know for certain it was done. Say where things stand and that goes on the post as it is.</p>
+  </article>
+
+  <article class="panel">
+    <div class="art">
+      <svg viewBox="0 0 300 170" role="img" aria-label="A cardboard carton on its side with a kitten in it and a bowl outside">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <path d="M42 62c56-16 150-18 206 0 16 5 16 78 0 84-58 16-150 14-206-2-14-4-14-78 0-82z" fill="var(--sage)" opacity=".6" transform="rotate(-1 150 104)"/>
+        </g>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M46 68h132v82H46z"/>
+          <path d="M46 68l22-22h132l-22 22"/>
+          <path d="M178 150l22-22V46"/>
+          <path d="M96 108l3-16 13 10"/><path d="M132 108l-3-16-13 10"/>
+          <circle cx="114" cy="118" r="18"/>
+          <path d="M108 116v3M120 116v3" stroke-width="3.6"/>
+          <path d="M214 124c0 14 12 22 26 22s26-8 26-22"/>
+          <path d="M208 124h64"/>
+          <path d="M228 112c4-5-2-8 2-14M248 112c4-5-2-8 2-14" stroke-width="3.2"/>
+        </g>
+      </svg>
+    </div>
+    <p class="label"><span class="n">05</span>The cat stays with you until it is adopted.</p>
+    <hr class="spread-dash spread-dash--tight">
+    <p class="cap">This is the part that surprises people, so we would rather say it early than let you find out later. There is no shelter here — none in Pune as such, not even a government one — so nobody can take the cat off your hands, and that includes us. What we do is put it in front of the people who are looking, and stay in the conversation while that happens.</p>
+    <p class="hers">"I only facilitate. I don't travel to help cats. I don't foster."</p>
+  </article>
+
+  <article class="panel">
+    <div class="art">
+      <!-- NEW, but it follows the established age-marker pattern, so the risk is low. -->
+      <svg viewBox="0 0 300 170" role="img" aria-label="A hand-drawn circle around the words one month, give or take">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <circle cx="150" cy="80" r="58" fill="var(--sky)" opacity=".78" transform="rotate(-4 150 80)"/>
+        </g>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="150" cy="80" r="52"/>
+          <circle cx="150" cy="80" r="60" stroke-width="3" opacity=".45"/>
+        </g>
+        <g font-family="Kalam, cursive" font-weight="700" fill="var(--ink)" text-anchor="middle">
+          <text x="150" y="76" font-size="34">1</text>
+          <text x="150" y="102" font-size="18">month</text>
+          <text x="150" y="152" font-size="16">give or take</text>
+        </g>
+      </svg>
+    </div>
+    <p class="label"><span class="n">06</span>Plan for about a month.</p>
+    <hr class="spread-dash spread-dash--tight">
+    <p class="cap">That is roughly how long it takes a cat to find the right home, and it is never instant. Some go in a week; a shy cat or a grown cat can take considerably longer, and kittens move fastest of all. <strong>If you need the cat out of your house sooner than that, this is not the route, and we would rather tell you now than let you wait.</strong> Ask family and friends whether anyone can keep it in the meantime &mdash; that works more often than people expect &mdash; or speak to an NGO; <a href="resources.html">the numbers are on our emergency page</a>. Getting the post made takes us a few days on top of that, sometimes a good deal longer, and if you have not heard back it is capacity rather than a no. Message again; things get buried and a second message is welcome.</p>
+    <p class="hers">"I have another full-time job, this is a volunteer only org, I do what I can."</p>
+  </article>
+
+  <article class="panel">
+    <div class="art">
+      <svg viewBox="0 0 300 170" role="img" aria-label="An ordinary street cat sitting neatly on an armchair at home">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <path d="M54 152v-48c0-14 10-22 24-24V72c0-14 10-22 24-22h96c14 0 24 8 24 22v8c14 2 24 10 24 24v48z" fill="var(--sage)" opacity=".55" transform="rotate(-1 150 100)"/>
+        </g>
+        <g filter="url(#wob2)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 156h268"/>
+          <path d="M56 150v-46c0-11 9-20 20-20h2V72c0-11 9-20 20-20h104c11 0 20 9 20 20v12h2c11 0 20 9 20 20v46"/>
+          <path d="M78 118h144"/>
+          <path d="M78 134h144" stroke-width="3.6"/>
+          <path d="M66 150v8M234 150v8"/>
+          <path d="M132 48V26l18 14"/><path d="M168 48V26l-18 14"/>
+          <circle cx="150" cy="62" r="24"/>
+          <path d="M141 58v4M159 58v4" stroke-width="3.8"/>
+          <path d="M150 72l-4 4h8z" stroke-width="3"/>
+          <path d="M128 86c-13 17-9 32 11 32h22c20 0 24-15 11-32"/>
+          <path d="M161 118c19 0 24-9 18-17"/>
+        </g>
+        <g fill="var(--ink)" stroke="none" filter="url(#wob)">
+          <path d="M214 26l4 13 13 4-13 4-4 13-4-13-13-4 13-4z"/>
+          <path d="M244 62l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+        </g>
+      </svg>
+    </div>
+    <p class="label"><span class="n">07</span>If it is a grown cat, say so.</p>
+    <hr class="spread-dash spread-dash--tight">
+    <p class="cap">Kittens go quickly. Grown cats wait months for exactly the same message, so we never put them in a post behind a litter of kittens — they get their own, and we reshare them harder and for longer. Knowing it is an adult from the first message changes how we post it, not whether we do. They are very often the easier ones to live with, and we say so every time.</p>
+  </article>
+
+  <article class="panel">
+    <div class="art">
+      <svg viewBox="0 0 300 170" role="img" aria-label="A kitten standing in rising water in heavy rain, with a red exclamation mark">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <ellipse cx="82" cy="118" rx="48" ry="40" fill="var(--butter)" transform="rotate(-3 82 118)"/>
+          <path d="M-24 136c60-8 290-8 348 0v46H-24z" fill="var(--sky)" opacity=".78" transform="rotate(-1 150 156)" clip-path="url(#frame)"/>
+        </g>
+        <g filter="url(#wob2)" fill="none" stroke="var(--ink)" stroke-width="3.4" stroke-linecap="round">
+          <path d="M40 12L26 42M78 8L64 38M116 14l-14 30M154 10l-14 30M192 14l-14 30M230 10l-14 30M268 14l-14 30"/>
+          <path d="M60 54l-10 22M136 52l-10 22M212 56l-10 22M258 60l-9 20" stroke-width="3"/>
+        </g>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M66 104l2-15 13 10"/><path d="M94 104l-2-15-13 10"/>
+          <circle cx="80" cy="112" r="18"/>
+          <path d="M72 111v3M88 111v3" stroke-width="3.4"/>
+          <path d="M80 120l-3 3h6z" stroke-width="3"/>
+          <path d="M60 130c-9 8-7 14 3 14h34c10 0 12-6 3-14"/>
+        </g>
+        <g filter="url(#wob2)" clip-path="url(#frame)" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round">
+          <path d="M-10 144q22-9 44 0t44 0t44 0t44 0t44 0t44 0t44 0t44 0"/>
+          <path d="M-30 158q22-9 44 0t44 0t44 0t44 0t44 0t44 0t44 0t44 0" stroke-width="3.4"/>
+          <path d="M128 150h18M198 152h16M34 152h14M238 148h16" stroke-width="3"/>
+        </g>
+        <g font-family="Kalam, cursive" font-weight="700" fill="var(--red)" text-anchor="middle">
+          <text x="138" y="106" font-size="66">!</text>
+        </g>
+      </svg>
+    </div>
+    <p class="label"><span class="n">08</span>Hurt, or in danger right now? Not us.</p>
+    <hr class="spread-dash spread-dash--tight">
+    <p class="cap">We have no vehicle, no medical setup and nobody on the ground — that is an honest limit, not a brush-off. A cat that is injured, poisoned, hit or stuck needs an NGO with an ambulance, today. <a href="resources.html">The numbers are on our emergency page</a>, and several of them answer at night. Come back to us once it is out of danger and needs a home.</p>
+  </article>
+
+  <article class="panel">
+    <div class="art">
+      <svg viewBox="0 0 300 170" role="img" aria-label="A kitten beside the empty dotted outline of where the mother would be, with a question mark">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <ellipse cx="72" cy="120" rx="52" ry="40" fill="var(--sky)" opacity=".8" transform="rotate(-3 72 120)"/>
+        </g>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 150h280"/>
+          <path d="M58 104l2-15 12 10"/><path d="M84 104l-2-15-12 10"/>
+          <circle cx="71" cy="112" r="17"/>
+          <path d="M64 111v3M78 111v3" stroke-width="3.4"/>
+          <path d="M71 120l-3 3h6z" stroke-width="3"/>
+          <path d="M53 128c-12 14-9 22 6 22h26c15 0 18-8 6-22"/>
+          <path d="M85 150c16 0 21-8 14-16"/>
+        </g>
+        <g filter="url(#wob2)" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 9" opacity=".5">
+          <path d="M196 78V54l20 16"/><path d="M234 78V54l-20 16"/>
+          <circle cx="215" cy="94" r="28"/>
+          <path d="M206 90v5M224 90v5"/>
+          <path d="M215 104l-5 5h10z"/>
+          <path d="M190 118c-13 19-9 32 10 32h30c19 0 23-13 10-32"/>
+          <path d="M230 150c19 0 25-14 17-24"/>
+        </g>
+        <g font-family="Kalam, cursive" font-weight="700" fill="var(--ink)" text-anchor="middle">
+          <text x="145" y="98" font-size="52">?</text>
+        </g>
+      </svg>
+    </div>
+    <p class="label"><span class="n">09</span>A newborn with no mother is a different job.</p>
+    <hr class="spread-dash spread-dash--tight">
+    <p class="cap">Kittens too small to eat on their own cannot be posted for adoption yet, and bottle-feeding one is a two-hourly commitment for weeks. Before anything else, ask around your society — a watchman very often knows of a stray mother who has just had a litter and will accept one more. That works more often than you would expect. Message us either way; <a href="found-kitten-pune.html">and read this first</a>, because the mother is sometimes still around.</p>
+  </article>
+
+</section>
+
+<hr class="spread-dash">
+
+<div class="closing">
+  <p class="closing-line">Rescuers are doing the hard part.</p>
+  <p class="spread-p">Almost everyone who sends us a cat is paying for it themselves, out of their own pocket and out of the goodness of their hearts, while holding down the rest of their life. We are the notice-board. The work is yours, and we know it.</p>
+</div>
+
+<hr class="spread-dash">
+
+<h2 class="spread-h2">One last thing: tell us when the cat is adopted</h2>
+<p class="spread-p">It takes us thirty seconds and it matters more than it sounds. The first photo in every post is the only one carrying a phone number, so when you tell us, we pull that photo down and mark the caption <strong>ADOPTED</strong> — which stops calls arriving for a cat that already has a home, sometimes months later. A message saying just "adopted" is enough. We will be delighted.</p>
+<p class="spread-p">And if you have another litter later, send it the same way. Nothing needs to start over.</p>
+
+<hr class="spread-dash">
+
+<h2 class="spread-h2">Send this to whoever is fostering</h2>
+<p class="spread-p">A screenshot travels through a rescuer WhatsApp group. A link usually does not.</p>
+
+<div class="fwd">
+  <p class="ct">Sending us a cat?</p>
+  <p class="cs">Put this in one message</p>
+  <ol>
+    <li><span class="tick">1</span><span><b>Clear daytime photos.</b><span>The whole cat, no flash, not a dark corner.</span></span></li>
+    <li><span class="tick">2</span><span><b>Age &mdash; best guess is fine.</b><span>We post kittens from about 1&frac12; months.</span></span></li>
+    <li><span class="tick">3</span><span><b>Area, and a contact for the post.</b><span>It goes in the picture, so send a public-safe one.</span></span></li>
+    <li><span class="tick">4</span><span><b>Dewormed? Vet check? Litter-trained?</b><span>"Not yet" is fine. Just say where it stands.</span></span></li>
+    <li><span class="tick">5</span><span><b>Over 2 months &mdash; vaccinated?</b><span>Pune usually does month 2 and month 3.</span></span></li>
+    <li><span class="tick">6</span><span><b>Can you keep them till adopted?</b><span>No shelter here, and it takes about a month. Sooner? Ask family, or an NGO.</span></span></li>
+  </ol>
+  <p class="foot">catadoption.in &nbsp;&middot;&nbsp; @catadoption_pune</p>
+</div>
+
+<hr class="spread-dash">
+
+<h2 class="spread-h2">Ready? Send it on Instagram</h2>
+<p class="spread-p">DMs are how everything here works — we are <a href="https://www.instagram.com/catadoption_pune/">@catadoption_pune</a>. Write in whatever language is comfortable. The example at the top of this page is a real message; <a href="adoptable.html#rescuers">it sits at the bottom of the board</a> too.</p>
+<p><a class="btn" href="https://www.instagram.com/catadoption_pune/">Message us on Instagram</a></p>
+
+<aside class="related" style="margin-top:2.6rem;">
+  <h2>Also on this site</h2>
+  <a href="adoptable.html">The cats looking for homes right now</a>
+  <a href="found-kitten-pune.html">Found a kitten outside alone? Read this first</a>
+  <a href="resources.html">Emergency contacts and Pune NGOs</a>
+  <a href="adopt.html">How adoption works, for the people you send here</a>
+</aside>
+
+</main>
+
+<footer>
+  <strong>catadoption_pune</strong>
+  Volunteer-run virtual adoption network — not an NGO, not a shelter.<br>
+  No public phone number or physical address. For <a href="resources.html">urgent cases, contact a registered NGO</a>.
+  <div class="foot-links">
+    <a href="https://www.instagram.com/catadoption_pune/">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61561193797883">Facebook</a>
+    <a href="https://www.youtube.com/@indiecatadoptionpune">YouTube</a>
+    <a href="send-a-cat.html">Send us a cat</a>
+    <a href="mailto:thecatnipclowder@gmail.com">Email</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <p class="trust">★ 4.2 on Google · 1,000+ on Instagram · ~120 indies rehomed since May 2024</p>
+</footer>
+
+<script defer src="assets/analytics.js"></script>
+</body>
+</html>
