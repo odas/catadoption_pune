@@ -39,7 +39,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 `index` · `about` · `adopt` · `adopter-form` · `learn` (the care hub) · `resources` (Emergency &
 NGOs) · `visit` · `privacy` and the articles · `adoptable.html` (the board) · `blog.html`
 (redirect) · `article-template.html` · `404.html`.
-Seventeen pages are in the sitemap; the template, the redirect and 404 deliberately are not.
+Sixteen pages are in the sitemap (found-kitten-pune.html is a noindex draft and is deliberately out of it until OD clears it); the template, the redirect and 404 deliberately are not.
 
 ---
 

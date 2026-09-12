@@ -252,3 +252,67 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 .boundary h3{font-family:var(--font-head);font-size:1.05rem;margin:0 0 0.5rem}
 .boundary ul{margin:0;padding-left:1.15rem}
 .boundary li{margin-bottom:0.4rem}
+
+/* ============================================================
+   THE SPREAD LAYER — added 2026-09-12, the treatment OD picked after seeing it:
+   "it explains the rules by showing rather than explaining."
+   A drawn article: paper ground, hand lettering, one idea per panel, a dashed rule
+   between the picture and the words. Used by found-kitten-pune.html.
+
+   Three things make the drawings read hand-made rather than generated, and they are
+   the point (brand-kit.md §3):
+     · irregularity — every stroke runs through an feTurbulence displacement, so no
+       line is straight and no circle round. Uniform strokes on a geometric grid are
+       what read as AI to OD on the cat-hair Short (video/lane.md §33).
+     · colour that overshoots the outline, rotated a degree or two, multiply-blended.
+     · Kalam for the lettering: a handwriting face that carries Devanagari, so a
+       Marathi or Hindi version stays possible in the same hand.
+   Words stay live text. Never draw type into the SVG on a web page — it kills
+   selection, translation, screen readers and search. In an EXPORTED image it may be
+   drawn, because that is a different surface.
+   ============================================================ */
+.spread-page{background:#faf7f0;}
+.spread-page .prose-wide{max-width:1080px;margin:0 auto;padding:clamp(2rem,5vh,3rem) 6vw 4rem;}
+
+.spread-hero{background:#faf7f0;padding:clamp(2.4rem,7vh,4rem) 6vw 1.4rem;}
+.spread-hero .crumb{font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;opacity:0.6;margin-bottom:0.8rem;}
+.spread-hero h1{
+  font-family:'Kalam',var(--font-head);font-weight:700;
+  font-size:clamp(2.3rem,7vw,4.1rem);line-height:.98;letter-spacing:-0.01em;max-width:18ch;
+}
+.spread-hero h1 .hl{
+  background:linear-gradient(var(--yellow),var(--yellow));
+  background-size:100% .56em;background-repeat:no-repeat;background-position:0 .64em;padding:0 .06em;
+}
+.spread-hero .sub{max-width:52ch;margin-top:1rem;font-size:clamp(1rem,1.4vw,1.16rem);}
+.spread-hero .src{font-size:0.9rem;opacity:0.66;max-width:56ch;margin-top:0.7rem;}
+
+.spread-dash{border:0;height:0;border-top:2px dashed rgba(20,17,24,0.3);margin:1.5rem 0;}
+.spread-dash--tight{margin:0.9rem 0;}
+
+.panels{display:grid;gap:0;}
+@media(min-width:820px){.panels{grid-template-columns:1fr 1fr;gap:0 3.2rem;}}
+.panel{padding-block:1.9rem;border-top:2px dashed rgba(20,17,24,0.3);}
+.panel:first-child{border-top:0;}
+@media(min-width:820px){.panel:nth-child(-n+2){border-top:0;}}
+.panel .art{display:flex;align-items:center;justify-content:center;min-height:172px;padding:0.4rem 0 1rem;}
+.panel .art svg{width:100%;max-width:330px;height:auto;overflow:visible;}
+.panel .label{font-family:'Kalam',var(--font-head);font-weight:700;font-size:clamp(1.5rem,4.2vw,2.05rem);line-height:1.02;letter-spacing:-0.01em;}
+.panel .label .n{font-family:var(--font-body);font-size:0.62rem;font-weight:700;letter-spacing:0.2em;display:block;opacity:0.55;margin-bottom:0.35rem;}
+.panel .cap{font-family:var(--font-head);font-weight:400;font-size:0.99rem;line-height:1.6;margin-top:0.75rem;max-width:46ch;}
+.panel .no{color:#d64545;}
+/* her own words, kept exactly as she wrote them */
+.hers{font-family:'Kalam',cursive;font-weight:400;font-size:1.16rem;line-height:1.4;margin-top:0.85rem;padding-left:0.9rem;border-left:4px solid var(--peri);max-width:44ch;}
+
+/* the forwardable card: the format that actually travels in a WhatsApp group */
+.fwd{width:min(420px,100%);aspect-ratio:4/5;background:#faf7f0;border:2px solid var(--ink);padding:1.3rem 1.4rem 1.1rem;display:flex;flex-direction:column;box-shadow:6px 6px 0 rgba(20,17,24,.1);}
+.fwd .ct{font-family:'Kalam',cursive;font-weight:700;font-size:1.9rem;line-height:1;}
+.fwd .cs{font-family:var(--font-body);font-size:0.7rem;letter-spacing:0.13em;text-transform:uppercase;opacity:0.6;margin-top:0.35rem;}
+.fwd ol{margin:0.9rem 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0.6rem;flex:1;}
+.fwd li{display:flex;gap:0.6rem;align-items:flex-start;font-family:var(--font-head);font-size:0.86rem;line-height:1.25;}
+.fwd li .tick{font-family:'Kalam',cursive;font-weight:700;font-size:0.95rem;line-height:1;width:1.35rem;height:1.35rem;flex:none;border:2px solid currentColor;display:flex;align-items:center;justify-content:center;margin-top:0.05rem;}
+.fwd li b{font-weight:600;display:block;}
+.fwd li span{display:block;opacity:0.7;font-family:var(--font-body);font-size:0.78rem;line-height:1.3;margin-top:0.1rem;}
+.fwd .foot{font-family:var(--font-body);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.65;margin-top:0.9rem;border-top:2px dashed rgba(20,17,24,0.3);padding-top:0.55rem;}
+.spread-h2{font-family:'Kalam',cursive;font-weight:700;font-size:clamp(1.6rem,4vw,2.2rem);margin-top:1.2rem;}
+.spread-p{font-family:var(--font-head);max-width:52ch;margin-top:0.7rem;}
