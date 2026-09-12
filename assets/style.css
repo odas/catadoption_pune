@@ -318,3 +318,5 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 .spread-p{font-family:var(--font-head);max-width:52ch;margin-top:0.7rem;}
 .closing{margin:2.2rem 0 0;}
 .closing-line{font-family:'Kalam',cursive;font-weight:700;font-size:clamp(2rem,6vw,3.2rem);line-height:1.04;letter-spacing:-0.01em;max-width:16ch;}
+.spread-hero .hero-art{margin-top:1.6rem;max-width:420px;}
+.spread-hero .hero-art svg{width:100%;height:auto;overflow:visible;}

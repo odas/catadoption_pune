@@ -60,9 +60,24 @@
      only service names are the ones she says out loud in her own reel, and resources.html carries the
      contact list.
 
-     ILLUSTRATIONS ARE PROVISIONAL. A separate cold session is redrawing the set, because the previous
-     batch misread badly and the author could not see it - one drawing read as testicles, one as a bat,
-     one as a cloud. Swap the set when it lands; the markup does not change.
+     ILLUSTRATIONS: ten of the eleven, plus the hero, are a COLD SESSION'S work, swapped in 2026-09-12
+     evening. The first batch was mine and misread badly in ways I could not see - a moth that read as
+     testicles (OD caught it), a kitten held to a chest that read as a bat, a hand that read as a cloud.
+     The set it replaced them with is in P-website/illustrations-preview-2026-09-12.html, kept as the
+     dated specimen, with its own notes on what each drawing was checked against. Panel 08's syringe is
+     the one still mine.
+     THREE THINGS THAT SESSION COULD NOT DO, recorded so nobody re-attempts them blind:
+       · Panel 03 cannot show the mother leaving. Side-view cats render as pigs, then as sheep; the
+         whole set's legibility comes from front-facing sitting cats. And front-facing with her smaller
+         behind reads as adult-plus-kitten, the exact inverse. The caption carries "she leaves".
+       · Panel 06 draws ONE hazard, rain and rising water, because that was the only one of the five on
+         the list that survives flat line art at 90px. A road collides with the hero's parked car; dogs
+         and ants vanish at size; a limp kitten is the pity image the brand forbids. The caption lists
+         all five, which is where that work belongs.
+       · Panel 04's held-back hand also reads as a wave. Unfixable without words or motion, so the
+         caption opens "If you really want to do something, here is the something" and carries it.
+     Two circled age markers now appear in one spread (3 months, 5 months free). Deliberate - a circled
+     number reads as an age once the reader has seen the second one - but it is a judgement, not a rule.
 
      SOURCE CLASSES: catadoption-origin - the whole argument, from her reel and her DM practice.
      source-backed - that kittens cannot urinate unaided until about three weeks (she says it herself
@@ -103,6 +118,30 @@
   <h1>You found a kitten outside alone. <span class="hl">Leave it be.</span></h1>
   <p class="sub">Nine times out of ten the mother is a few feet away, waiting for you to go. Here is how to tell, and what to ask yourself before you take one home.</p>
   <p class="src">This is the answer we send most often and get asked about again and again, so it is written out properly here. A DM scrolls away.</p>
+  <div class="hero-art"><svg viewBox="0 0 300 170" role="img" aria-label="A kitten sitting alone on the road under a parked car">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <path d="M-6 92c-6-26 8-46 42-54 48-12 178-14 226-2 34 8 46 30 40 56-98 10-210 10-308 0z" fill="var(--peri)" opacity=".42" transform="rotate(-1 150 66)"/>
+          <ellipse cx="156" cy="145" rx="112" ry="15" fill="var(--sky)" opacity=".62" transform="rotate(1 156 145)"/>
+        </g>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <!-- parked car, cropped by the frame so it reads big -->
+          <path d="M-6 90V66l46-12h36l28-34h92l30 34h40l40 12v24"/>
+          <path d="M-6 90h46a30 30 0 0 1 60 0h120a30 30 0 0 1 60 0h26"/>
+          <circle cx="70" cy="120" r="30"/>
+          <circle cx="250" cy="120" r="30"/>
+          <path d="M76 54h150" stroke-width="3.6"/>
+          <path d="M90 48l18-20h84l18 20z" stroke-width="3.4"/>
+          <path d="M150 28v20" stroke-width="3.4"/>
+          <path d="M0 150h300"/>
+          <!-- the kitten, tucked under between the wheels -->
+          <path d="M148 108l2-13 12 8"/><path d="M172 108l-2-13-12 8"/>
+          <circle cx="160" cy="116" r="16"/>
+          <path d="M154 115v3M166 115v3" stroke-width="3.4"/>
+          <path d="M160 123l-3 3h6z" stroke-width="3"/>
+          <path d="M143 130c-11 14-8 20 6 20h22c14 0 17-6 6-20"/>
+          <path d="M171 150c15 0 19-8 13-15"/>
+        </g>
+      </svg></div>
 </section>
 
 <!-- The wobble: no line straight, no circle round. brand-kit.md section 3. -->
@@ -116,6 +155,8 @@
       <feTurbulence type="fractalNoise" baseFrequency="0.021" numOctaves="3" seed="23" result="n"/>
       <feDisplacementMap in="SourceGraphic" in2="n" scale="3.1" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
+    <clipPath id="abovewall"><rect x="150" y="-30" width="180" height="126"/></clipPath>
+    <clipPath id="frame"><rect x="0" y="0" width="300" height="170"/></clipPath>
   </defs>
 </svg>
 
@@ -125,23 +166,39 @@
 
   <article class="panel">
     <div class="art">
-      <svg viewBox="0 0 300 170" role="img" aria-label="A kitten sitting alone under a parked scooter, with the mother cat watching from the side">
+      <svg viewBox="0 0 300 170" role="img" aria-label="A kitten on the pavement, with the mother cat watching over a wall behind it">
         <g style="mix-blend-mode:multiply" opacity=".8">
-          <ellipse cx="118" cy="112" rx="80" ry="44" fill="#94d0e4" transform="rotate(-2 118 112)"/>
+          <ellipse cx="70" cy="118" rx="52" ry="42" fill="var(--yellow)" opacity=".85" transform="rotate(-3 70 118)"/>
+          <path d="M182 152V96c40-6 84-6 124-2v58z" fill="var(--sage)" opacity=".6" transform="rotate(1 244 124)"/>
         </g>
-        <g filter="url(#wob)" fill="none" stroke="#141118" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 148h260"/>
-          <path d="M44 68h120l26 34H62z"/>
-          <circle cx="78" cy="126" r="18"/><circle cx="176" cy="126" r="18"/>
-          <path d="M96 126h62"/>
-          <path d="M106 100l3-16 13 10"/><path d="M140 100l-3-16-13 10"/>
-          <circle cx="123" cy="112" r="17"/>
-          <path d="M117 110v3M129 110v3" stroke-width="3.6"/>
-          <path d="M123 120l-3 3h6z" stroke-width="3"/>
-          <path d="M236 148V88c0-8 6-14 14-14h24"/>
-          <path d="M252 110l2-14 11 8"/><path d="M274 110l-2-14-11 8"/>
-          <circle cx="263" cy="118" r="14"/>
-          <path d="M258 116v3M268 116v3" stroke-width="3.2"/>
+        <g filter="url(#wob2)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 150h292"/>
+          <!-- the kitten, out in the open, not looking -->
+          <path d="M56 102l2-15 13 10"/><path d="M84 102l-2-15-13 10"/>
+          <circle cx="70" cy="110" r="18"/>
+          <path d="M62 109v3M76 109v3" stroke-width="3.4"/>
+          <path d="M70 118l-3 3h6z" stroke-width="3"/>
+          <path d="M50 128c-13 14-10 22 6 22h28c16 0 19-8 6-22"/>
+          <path d="M84 150c17 0 22-9 15-17"/>
+        </g>
+        <!-- mum, drawn first and clipped at the wall line, so the wall hides her chin -->
+        <g filter="url(#wob2)" clip-path="url(#abovewall)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M222 64V46l16 12"/><path d="M254 64V46l-16 12"/>
+          <circle cx="238" cy="78" r="24"/>
+          <path d="M229 74v4M247 74v4" stroke-width="3.8"/>
+          <path d="M238 86l-4 4h8z" stroke-width="3"/>
+        </g>
+        <g filter="url(#wob2)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the wall, drawn over her -->
+          <path d="M186 150V96h116" stroke-width="5"/>
+          <path d="M186 122h114" stroke-width="3.4"/>
+          <path d="M224 96v26M206 122v28M262 122v28" stroke-width="3.4"/>
+          <!-- her front paws hooked over the top -->
+          <path d="M202 96c0-8 4-13 9-13s9 5 9 13"/>
+          <path d="M258 96c0-8 4-13 9-13s9 5 9 13"/>
+          <path d="M207 88v6M215 88v6M263 88v6M271 88v6" stroke-width="2.4"/>
+          <!-- she is watching it -->
+          <path d="M212 88C180 94 132 102 102 110" stroke-width="3" stroke-dasharray="5 8"/>
         </g>
       </svg>
     </div>
@@ -153,21 +210,32 @@
 
   <article class="panel">
     <div class="art">
-      <svg viewBox="0 0 300 170" role="img" aria-label="A mother cat curled around a very small kitten, tending to it">
-        <g style="mix-blend-mode:multiply" opacity=".78">
-          <ellipse cx="152" cy="106" rx="92" ry="50" fill="#74ac84" opacity=".62" transform="rotate(2 152 106)"/>
+      <svg viewBox="0 0 300 170" role="img" aria-label="A mother cat lying down and washing a very small kitten that faces her">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <path d="M20 152c-8-40 22-64 62-64 32 0 56 18 60 44 1 8-1 14-3 18-40 8-84 8-119 2z" fill="var(--peri)" opacity=".46" transform="rotate(-1 82 122)"/>
+          <ellipse cx="188" cy="136" rx="38" ry="26" fill="var(--butter)" transform="rotate(3 188 136)"/>
         </g>
-        <g filter="url(#wob2)" fill="none" stroke="#141118" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M42 142h190"/>
-          <path d="M64 142c0-32 24-50 60-50 34 0 58 18 58 50"/>
-          <path d="M66 88l2-19 17 13"/><path d="M104 88l-2-19-17 13"/>
-          <circle cx="85" cy="104" r="23"/>
-          <path d="M77 102v3M93 102v3" stroke-width="3.8"/>
-          <path d="M85 112l-3 3h6z" stroke-width="3"/>
-          <circle cx="152" cy="128" r="14"/>
-          <path d="M140 120l1-12 10 8"/><path d="M164 120l-1-12-10 8"/>
-          <path d="M146 127v2M158 127v2" stroke-width="3.2"/>
-          <path d="M182 132c22 0 28-14 22-24" stroke-width="4"/>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 152h280"/>
+          <!-- mum, lying: tail, back, into her head -->
+          <path d="M22 152c-4-36 20-58 58-58 24 0 42 12 50 30"/>
+          <path d="M22 150c-11 2-16-6-9-13" stroke-width="3.6"/>
+          <path d="M128 132c-3 10-3 14-1 20"/>
+          <!-- her head, tilted down over the kitten, eyes closed -->
+          <g transform="rotate(-14 140 104)">
+            <path d="M123 90V68l17 13"/><path d="M157 90V68l-17 13"/>
+            <circle cx="140" cy="104" r="27"/>
+            <path d="M127 100c4-5 10-5 14 0" stroke-width="3.6"/>
+            <path d="M149 100c4-5 10-5 14 0" stroke-width="3.6"/>
+            <path d="M140 118l-4 4h8z" stroke-width="3"/>
+          </g>
+          <!-- the kitten, tucked under her chin, head turned to her -->
+          <path d="M167 120l1-12 10 8"/><path d="M189 120l-1-12-10 8"/>
+          <circle cx="178" cy="126" r="14"/>
+          <path d="M173 125v3M183 125v3" stroke-width="3.2"/>
+          <path d="M178 133l-3 3h6z" stroke-width="2.8"/>
+          <path d="M189 136c14 2 22 7 22 16h-44"/>
+          <path d="M211 152c11 0 14-5 10-11" stroke-width="3.4"/>
         </g>
       </svg>
     </div>
@@ -179,26 +247,28 @@
 
   <article class="panel">
     <div class="art">
-      <svg viewBox="0 0 300 170" role="img" aria-label="A half-grown kitten walking away along a dotted path, with a three months mark">
-        <g style="mix-blend-mode:multiply" opacity=".78">
-          <ellipse cx="112" cy="104" rx="70" ry="46" fill="#74ac84" opacity=".6" transform="rotate(-3 112 104)"/>
-          <circle cx="238" cy="70" r="36" fill="#f8f8a8" transform="rotate(5 238 70)"/>
+      <svg viewBox="0 0 300 170" role="img" aria-label="A half-grown kitten sitting up on its own, beside a three-month mark">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <ellipse cx="182" cy="112" rx="58" ry="48" fill="var(--sage)" opacity=".6" transform="rotate(-2 182 112)"/>
+          <circle cx="70" cy="58" r="32" fill="var(--butter)" transform="rotate(5 70 58)"/>
         </g>
-        <g filter="url(#wob2)" fill="none" stroke="#141118" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M26 146h180"/>
-          <path d="M74 94l3-20 16 13"/><path d="M112 94l-3-20-16 13"/>
-          <circle cx="93" cy="108" r="21"/>
-          <path d="M86 106v3M100 106v3" stroke-width="3.6"/>
-          <path d="M93 115l-3 3h6z" stroke-width="3"/>
-          <path d="M114 120h44c10 0 14 7 14 15v11"/>
-          <path d="M126 146v-9M152 146v-11"/>
-          <path d="M172 140c14-3 17-14 11-21"/>
-          <path d="M40 132c8-6 18-8 28-6" stroke-width="3" stroke-dasharray="6 8"/>
-          <circle cx="238" cy="70" r="27"/>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 150h288"/>
+          <!-- half-grown: body taller than wide and longer in the leg, where the
+               kittens elsewhere are head-dominant and round. -->
+          <path d="M165 82V58l17 14"/><path d="M199 82V58l-17 14"/>
+          <circle cx="182" cy="94" r="23"/>
+          <path d="M173 92v5M191 92v5" stroke-width="3.8"/>
+          <path d="M182 105l-4 4h8z" stroke-width="3"/>
+          <path d="M160 118c-12 20-9 32 8 32h28c17 0 20-12 8-32"/>
+          <path d="M176 132v18M190 132v18" stroke-width="3.2"/>
+          <path d="M196 150c20 0 27-11 19-22"/>
+          <!-- the age -->
+          <circle cx="70" cy="58" r="32"/>
         </g>
-        <g font-family="Kalam, cursive" font-weight="700" fill="#141118" text-anchor="middle">
-          <text x="238" y="66" font-size="22">3</text>
-          <text x="238" y="86" font-size="13">months</text>
+        <g font-family="Kalam, cursive" font-weight="700" fill="var(--ink)" text-anchor="middle">
+          <text x="70" y="56" font-size="26">3</text>
+          <text x="70" y="78" font-size="13">months</text>
         </g>
       </svg>
     </div>
@@ -210,18 +280,33 @@
 
   <article class="panel">
     <div class="art">
-      <svg viewBox="0 0 300 170" role="img" aria-label="An open hand held back, and two footprints walking away">
+      <svg viewBox="0 0 300 170" role="img" aria-label="An open hand held back, and beyond it a kitten sitting undisturbed">
         <g style="mix-blend-mode:multiply" opacity=".8">
-          <ellipse cx="96" cy="94" rx="62" ry="54" fill="#f0c840" transform="rotate(-4 96 94)"/>
+          <ellipse cx="66" cy="124" rx="54" ry="40" fill="var(--sage)" opacity=".6" transform="rotate(-2 66 124)"/>
+          <path d="M174 90c-8-32 6-56 30-62 30-8 62-2 70 18 10 26 8 62-2 92-32 8-74 8-98-2z" fill="var(--butter)" transform="rotate(4 226 96)"/>
         </g>
-        <g filter="url(#wob)" fill="none" stroke="#141118" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M70 142V96c0-8 5-13 11-13s11 5 11 13"/>
-          <path d="M92 96V78c0-8 5-13 11-13s11 5 11 13v18"/>
-          <path d="M114 96V82c0-8 5-13 11-13s11 5 11 13v14"/>
-          <path d="M136 98V88c0-7 5-12 11-12s11 5 11 12v24c0 18-10 30-30 30H92c-14 0-22-10-22-22"/>
-          <path d="M164 60l22-10M172 88l24 2M158 40l12-18" stroke-width="3.4" stroke-dasharray="6 8"/>
-          <ellipse cx="232" cy="120" rx="11" ry="8" transform="rotate(-18 232 120)"/>
-          <ellipse cx="262" cy="96" rx="11" ry="8" transform="rotate(-18 262 96)"/>
+        <g filter="url(#wob2)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 152h146"/>
+          <!-- the kitten, left alone, sitting -->
+          <path d="M50 102l2-15 13 10"/><path d="M78 102l-2-15-13 10"/>
+          <circle cx="64" cy="110" r="18"/>
+          <path d="M56 109v3M70 109v3" stroke-width="3.4"/>
+          <path d="M64 118l-3 3h6z" stroke-width="3"/>
+          <path d="M44 128c-13 14-10 24 6 24h28c16 0 19-10 6-24"/>
+          <path d="M78 152c17 0 22-9 15-17"/>
+        </g>
+        <!-- the hand, foreground, held back -->
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-12 224 110)">
+          <path d="M186 96V56a9 9 0 0 1 18 0v40"/>
+          <path d="M206 96V46a9 9 0 0 1 18 0v50"/>
+          <path d="M226 96V52a9 9 0 0 1 18 0v44"/>
+          <path d="M246 96V64a8 8 0 0 1 16 0v32"/>
+          <!-- palm and thumb are ONE silhouette; a thumb drawn as its own closed
+               shape against the palm reads as a mug handle. -->
+          <path d="M186 96v14c-12 4-24 12-29 21-4 8 1 15 9 13 9-3 17-9 23-16 2 10 6 18 15 18h28c18 0 30-10 30-24V96"/>
+          <!-- plain wrist off the frame edge. Any crossbar here reads as a stool. -->
+          <path d="M204 146c-5 10-7 16-7 24"/>
+          <path d="M232 146c5 10 7 16 7 24"/>
         </g>
       </svg>
     </div>
@@ -233,24 +318,33 @@
 
   <article class="panel">
     <div class="art">
-      <svg viewBox="0 0 300 170" role="img" aria-label="A security cabin and a shop shutter, with a speech bubble holding a cat">
-        <g style="mix-blend-mode:multiply" opacity=".76">
-          <rect x="26" y="60" width="104" height="88" rx="6" fill="#94d0e4" transform="rotate(-2 78 104)"/>
-          <ellipse cx="216" cy="66" rx="72" ry="42" fill="#f0c840" opacity=".8" transform="rotate(3 216 66)"/>
+      <svg viewBox="0 0 300 170" role="img" aria-label="A watchman in a peaked cap, with a speech bubble containing a cat's face and a question mark">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <ellipse cx="64" cy="104" rx="48" ry="58" fill="var(--sky)" opacity=".72" transform="rotate(-3 64 104)"/>
+          <path d="M124 24c50-8 118-8 158 0 8 30 8 62 0 92-44 8-110 8-158 0-8-30-8-62 0-92z" fill="var(--butter)" transform="rotate(2 203 70)"/>
         </g>
-        <g filter="url(#wob)" fill="none" stroke="#141118" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 148h264"/>
-          <path d="M34 148V74h84v74"/>
-          <path d="M28 74l48-22 48 22"/>
-          <path d="M50 92h52v28H50z"/>
-          <path d="M142 148V96h48v52" stroke-width="4"/>
-          <path d="M136 96h60"/>
-          <path d="M148 108h36M148 120h36M148 132h36" stroke-width="3" stroke-dasharray="5 6"/>
-          <path d="M162 66h100c8 0 12-5 12-12V30c0-7-4-12-12-12h-76c-8 0-12 5-12 12v24c0 7 4 12 12 12z"/>
-          <path d="M178 66l-8 16 20-16"/>
-          <path d="M206 48l2-13 11 9"/><path d="M234 48l-2-13-11 9"/>
-          <circle cx="220" cy="44" r="14"/>
-          <path d="M215 42v3M225 42v3" stroke-width="3.2"/>
+        <g filter="url(#wob2)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the watchman: cap, face, shoulders. No cabin, no shutter. -->
+          <path d="M30 152c0-30 15-46 34-46s34 16 34 46"/>
+          <circle cx="64" cy="88" r="22"/>
+          <path d="M56 94v4M72 94v4" stroke-width="3.8"/>
+          <path d="M57 104c4 5 12 5 16 0" stroke-width="3.4"/>
+          <!-- the peak has to sit high on the forehead; dropped onto the eyes it
+               reads as a visor or a blindfold -->
+          <path d="M42 72c0-14 10-24 22-24s22 10 22 24"/>
+          <path d="M40 72h48"/>
+          <path d="M45 72c5 9 34 9 39 0" stroke-width="3.6"/>
+          <path d="M50 124c9 6 21 6 30 0" stroke-width="3.4"/>
+          <!-- what he knows -->
+          <path d="M136 26h130c9 0 16 7 16 16v56c0 9-7 16-16 16H136c-9 0-16-7-16-16V42c0-9 7-16 16-16z"/>
+          <path d="M121 92l-24 12 24 10"/>
+          <path d="M172 54V34l18 14"/><path d="M208 54V34l-18 14"/>
+          <circle cx="190" cy="68" r="26"/>
+          <path d="M181 64v5M199 64v5" stroke-width="3.8"/>
+          <path d="M190 78l-4 4h8z" stroke-width="3"/>
+        </g>
+        <g font-family="Kalam, cursive" font-weight="700" fill="var(--ink)" text-anchor="middle">
+          <text x="248" y="86" font-size="44">?</text>
         </g>
       </svg>
     </div>
@@ -262,14 +356,32 @@
 
   <article class="panel">
     <div class="art">
-      <svg viewBox="0 0 300 170" role="img" aria-label="A warning triangle">
+      <svg viewBox="0 0 300 170" role="img" aria-label="A kitten standing in rising water in heavy rain, with a red exclamation mark">
         <g style="mix-blend-mode:multiply" opacity=".8">
-          <ellipse cx="150" cy="100" rx="72" ry="50" fill="#f0c840" transform="rotate(3 150 100)"/>
+          <ellipse cx="82" cy="118" rx="48" ry="40" fill="var(--butter)" transform="rotate(-3 82 118)"/>
+          <path d="M-24 136c60-8 290-8 348 0v46H-24z" fill="var(--sky)" opacity=".78" transform="rotate(-1 150 156)" clip-path="url(#frame)"/>
         </g>
-        <g filter="url(#wob2)" fill="none" stroke="#141118" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M150 26L242 146H58z"/>
-          <path d="M150 66v42" stroke-width="7"/>
-          <path d="M150 122v3" stroke-width="8"/>
+        <g filter="url(#wob2)" fill="none" stroke="var(--ink)" stroke-width="3.4" stroke-linecap="round">
+          <!-- heavy rain -->
+          <path d="M40 12L26 42M78 8L64 38M116 14l-14 30M154 10l-14 30M192 14l-14 30M230 10l-14 30M268 14l-14 30"/>
+          <path d="M60 54l-10 22M136 52l-10 22M212 56l-10 22M258 60l-9 20" stroke-width="3"/>
+        </g>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <!-- the kitten, standing in it. Body stops at the waterline. -->
+          <path d="M66 104l2-15 13 10"/><path d="M94 104l-2-15-13 10"/>
+          <circle cx="80" cy="112" r="18"/>
+          <path d="M72 111v3M88 111v3" stroke-width="3.4"/>
+          <path d="M80 120l-3 3h6z" stroke-width="3"/>
+          <path d="M60 130c-9 8-7 14 3 14h34c10 0 12-6 3-14"/>
+        </g>
+        <!-- the water, drawn over the kitten so it reads as risen, not as lines on it -->
+        <g filter="url(#wob2)" clip-path="url(#frame)" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round">
+          <path d="M-10 144q22-9 44 0t44 0t44 0t44 0t44 0t44 0t44 0t44 0"/>
+          <path d="M-30 158q22-9 44 0t44 0t44 0t44 0t44 0t44 0t44 0t44 0" stroke-width="3.4"/>
+          <path d="M128 150h18M198 152h16M34 152h14M238 148h16" stroke-width="3"/>
+        </g>
+        <g font-family="Kalam, cursive" font-weight="700" fill="var(--red)" text-anchor="middle">
+          <text x="138" y="106" font-size="66">!</text>
         </g>
       </svg>
     </div>
@@ -280,11 +392,11 @@
 
   <article class="panel">
     <div class="art">
-      <svg viewBox="0 0 300 170" role="img" aria-label="A cardboard carton on its side with a kitten in it and a food bowl outside">
+      <svg viewBox="0 0 300 170" role="img" aria-label="A cardboard carton on its side with a kitten in it and a bowl outside">
         <g style="mix-blend-mode:multiply" opacity=".8">
-          <path d="M42 62c56-16 150-18 206 0 16 5 16 78 0 84-58 16-150 14-206-2-14-4-14-78 0-82z" fill="#74ac84" opacity=".6" transform="rotate(-1 150 104)"/>
+          <path d="M42 62c56-16 150-18 206 0 16 5 16 78 0 84-58 16-150 14-206-2-14-4-14-78 0-82z" fill="var(--sage)" opacity=".6" transform="rotate(-1 150 104)"/>
         </g>
-        <g filter="url(#wob)" fill="none" stroke="#141118" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
           <path d="M46 68h132v82H46z"/>
           <path d="M46 68l22-22h132l-22 22"/>
           <path d="M178 150l22-22V46"/>
@@ -335,22 +447,31 @@
 
   <article class="panel">
     <div class="art">
-      <svg viewBox="0 0 300 170" role="img" aria-label="A kitten between two doorways with a question mark above it">
-        <g style="mix-blend-mode:multiply" opacity=".76">
-          <rect x="34" y="36" width="86" height="112" rx="8" fill="#8c78f4" opacity=".55" transform="rotate(-2 77 92)"/>
-          <rect x="182" y="36" width="86" height="112" rx="8" fill="#f8f8a8" transform="rotate(2 225 92)"/>
+      <svg viewBox="0 0 300 170" role="img" aria-label="A kitten beside the empty dotted outline of where the mother would be, with a question mark">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <ellipse cx="72" cy="120" rx="52" ry="40" fill="var(--sky)" opacity=".8" transform="rotate(-3 72 120)"/>
         </g>
-        <g filter="url(#wob)" fill="none" stroke="#141118" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M40 148V48c0-6 4-10 10-10h56c6 0 10 4 10 10v100"/>
-          <path d="M100 96v6" stroke-width="5"/>
-          <path d="M188 148V48c0-6 4-10 10-10h56c6 0 10 4 10 10v100"/>
-          <path d="M208 96v6" stroke-width="5"/>
-          <path d="M140 122l3-16 13 10"/><path d="M172 122l-3-16-13 10"/>
-          <circle cx="156" cy="132" r="17"/>
-          <path d="M150 130v3M162 130v3" stroke-width="3.6"/>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 150h280"/>
+          <!-- the kitten that is definitely there -->
+          <path d="M58 104l2-15 12 10"/><path d="M84 104l-2-15-12 10"/>
+          <circle cx="71" cy="112" r="17"/>
+          <path d="M64 111v3M78 111v3" stroke-width="3.4"/>
+          <path d="M71 120l-3 3h6z" stroke-width="3"/>
+          <path d="M53 128c-12 14-9 22 6 22h26c15 0 18-8 6-22"/>
+          <path d="M85 150c16 0 21-8 14-16"/>
         </g>
-        <g font-family="Kalam, cursive" font-weight="700" font-size="40" fill="#141118" text-anchor="middle">
-          <text x="156" y="52">?</text>
+        <!-- where mum would be, drawn as absent -->
+        <g filter="url(#wob2)" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 9" opacity=".5">
+          <path d="M196 78V54l20 16"/><path d="M234 78V54l-20 16"/>
+          <circle cx="215" cy="94" r="28"/>
+          <path d="M206 90v5M224 90v5"/>
+          <path d="M215 104l-5 5h10z"/>
+          <path d="M190 118c-13 19-9 32 10 32h30c19 0 23-13 10-32"/>
+          <path d="M230 150c19 0 25-14 17-24"/>
+        </g>
+        <g font-family="Kalam, cursive" font-weight="700" fill="var(--ink)" text-anchor="middle">
+          <text x="145" y="98" font-size="52">?</text>
         </g>
       </svg>
     </div>
@@ -362,26 +483,30 @@
 
   <article class="panel">
     <div class="art">
-      <svg viewBox="0 0 300 170" role="img" aria-label="A small kitten, an arrow, and the same cat grown up, marked ten to fifteen years">
-        <g style="mix-blend-mode:multiply" opacity=".78">
-          <circle cx="62" cy="104" r="34" fill="#94d0e4" transform="rotate(-4 62 104)"/>
-          <ellipse cx="216" cy="100" rx="66" ry="48" fill="#8c78f4" opacity=".5" transform="rotate(3 216 100)"/>
+      <svg viewBox="0 0 300 170" role="img" aria-label="A small kitten on the left, a long dotted arrow, and the same cat grown up on the right">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <circle cx="52" cy="124" r="32" fill="var(--sky)" opacity=".8" transform="rotate(-4 52 124)"/>
+          <ellipse cx="230" cy="110" rx="62" ry="52" fill="var(--peri)" opacity=".46" transform="rotate(3 230 110)"/>
         </g>
-        <g filter="url(#wob2)" fill="none" stroke="#141118" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M50 96l2-14 10 8"/><path d="M74 96l-2-14-10 8"/>
-          <circle cx="62" cy="104" r="15"/>
-          <path d="M57 102v3M67 102v3" stroke-width="3.4"/>
-          <path d="M96 104h34" stroke-width="3.6"/>
-          <path d="M122 96l10 8-10 8" stroke-width="3.6"/>
-          <path d="M170 76l3-22 17 14"/><path d="M212 76l-3-22-17 14"/>
-          <circle cx="191" cy="94" r="27"/>
-          <path d="M183 90v4M199 90v4" stroke-width="4"/>
-          <path d="M191 102l-4 4h8z" stroke-width="3.2"/>
-          <path d="M170 116c-11 19-7 34 10 34h24c17 0 21-15 10-34"/>
-          <path d="M206 148c19 0 24-15 16-26"/>
-        </g>
-        <g font-family="Kalam, cursive" font-weight="700" font-size="17" fill="#141118" text-anchor="middle">
-          <text x="113" y="132">10&#8211;15 yrs</text>
+        <g filter="url(#wob)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 150h280"/>
+          <!-- the kitten -->
+          <path d="M40 112l1-11 9 7"/><path d="M60 112l-1-11-9 7"/>
+          <circle cx="50" cy="118" r="14"/>
+          <path d="M45 117v3M55 117v3" stroke-width="3.2"/>
+          <path d="M50 124l-3 3h6z" stroke-width="2.8"/>
+          <path d="M36 132c-9 11-6 18 5 18h18c11 0 14-7 5-18"/>
+          <path d="M59 150c12 0 16-6 11-12" stroke-width="3.6"/>
+          <!-- the same cat, grown -->
+          <path d="M210 70V44l22 17"/><path d="M254 70V44l-22 17"/>
+          <circle cx="232" cy="86" r="30"/>
+          <path d="M221 82v5M243 82v5" stroke-width="4"/>
+          <path d="M232 96l-5 5h10z" stroke-width="3.2"/>
+          <path d="M204 114c-14 20-9 36 12 36h32c21 0 26-16 12-36"/>
+          <path d="M248 150c20 0 26-15 17-26"/>
+          <!-- the years in between -->
+          <path d="M76 108C106 78 142 66 178 68" stroke-width="3.4" stroke-dasharray="7 9"/>
+          <path d="M170 60l10 8-9 9" stroke-width="3.4"/>
         </g>
       </svg>
     </div>
@@ -393,18 +518,28 @@
 
   <article class="panel">
     <div class="art">
-      <svg viewBox="0 0 300 170" role="img" aria-label="An ordinary cat, seen through a set of bars that distort it">
-        <g style="mix-blend-mode:multiply" opacity=".72">
-          <rect x="150" y="28" width="120" height="122" rx="6" fill="#f0c840" opacity=".7" transform="rotate(1 210 89)"/>
+      <svg viewBox="0 0 300 170" role="img" aria-label="An ordinary street cat sitting neatly on an armchair at home">
+        <g style="mix-blend-mode:multiply" opacity=".8">
+          <path d="M54 152v-48c0-14 10-22 24-24V72c0-14 10-22 24-22h96c14 0 24 8 24 22v8c14 2 24 10 24 24v48z" fill="var(--sage)" opacity=".55" transform="rotate(-1 150 100)"/>
         </g>
-        <g filter="url(#wob)" fill="none" stroke="#141118" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M64 84l3-22 17 14"/><path d="M106 84l-3-22-17 14"/>
-          <circle cx="85" cy="102" r="27"/>
-          <path d="M77 98v4M93 98v4" stroke-width="4"/>
-          <path d="M85 110l-4 4h8z" stroke-width="3.2"/>
-          <path d="M64 124c-9 16-6 28 8 28h26c14 0 17-12 8-28"/>
-          <path d="M102 150c16 0 20-12 14-20"/>
-          <path d="M154 30v120M182 30v120M210 30v120M238 30v120M266 30v120" stroke-width="3.2"/>
+        <g filter="url(#wob2)" fill="none" stroke="var(--ink)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 156h268"/>
+          <!-- armchair -->
+          <path d="M56 150v-46c0-11 9-20 20-20h2V72c0-11 9-20 20-20h104c11 0 20 9 20 20v12h2c11 0 20 9 20 20v46"/>
+          <path d="M78 118h144"/>
+          <path d="M78 134h144" stroke-width="3.6"/>
+          <path d="M66 150v8M234 150v8"/>
+          <!-- the cat, sitting up, perfectly at home -->
+          <path d="M132 48V26l18 14"/><path d="M168 48V26l-18 14"/>
+          <circle cx="150" cy="62" r="24"/>
+          <path d="M141 58v4M159 58v4" stroke-width="3.8"/>
+          <path d="M150 72l-4 4h8z" stroke-width="3"/>
+          <path d="M128 86c-13 17-9 32 11 32h22c20 0 24-15 11-32"/>
+          <path d="M161 118c19 0 24-9 18-17"/>
+        </g>
+        <g fill="var(--ink)" stroke="none" filter="url(#wob)">
+          <path d="M214 26l4 13 13 4-13 4-4 13-4-13-13-4 13-4z"/>
+          <path d="M244 62l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
         </g>
       </svg>
     </div>
