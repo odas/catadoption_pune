@@ -1,30 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340" role="img" aria-label="A kitten sitting alone while the mother cat walks back towards it. The word: WAIT.">
-<!-- Card thumbnail for found-kitten-pune.html, 2026-09-12. The first drawing made for the
-     "informative-graphics pass" parked in learn.html's comment: the picture answers the question
-     for someone who will not read the card. Brunch palette, sky = wait and watch; ink strokes,
-     no fill, round caps, per assets/style.css § THE SKETCHBOOK LAYER. Text is drawn here because
-     this is an image, not a page — the page itself keeps every word as live text. -->
-  <rect width="600" height="340" fill="#94d0e4"/>
-  <g fill="none" stroke="#141118" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- the kitten, left -->
-    <g transform="translate(46,150) scale(1.25)">
-      <path d="M30 36 L34 14 L50 27"/><path d="M70 36 L66 14 L50 27"/>
-      <circle cx="50" cy="42" r="21"/>
-      <path d="M43 40v3M57 40v3" stroke-width="4.5"/><path d="M50 49l-3 3h6z" stroke-width="3.5"/>
-      <path d="M33 60c-7 12-5 28 9 28h16c14 0 16-16 9-28"/><path d="M67 87c16 0 20-13 13-21"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 44 288 163" width="600" height="340" role="img" aria-label="A drawing of a mother cat lying down, washing a much smaller kitten tucked under her chin">
+<!-- Card thumbnail for found-kitten-pune.html. REPLACED 2026-09-13 at OD's word: "the learn.html
+     picture for this article is bad, needs to be changed."
+
+     WHAT WAS WRONG with the 2026-09-12 original, so it is not rebuilt that way again:
+       1. It was drawn in THE SKETCHBOOK LAYER - flat fill, geometric strokes, straight lines - while
+          the page it opens is THE SPREAD LAYER. The card promised one page and opened another.
+       2. Uniform strokes on a geometric grid is what brand-kit.md section 3 names as reading as AI
+          to OD, and what she flagged on the cat-hair Short's line diagrams.
+       3. Its two cats were THE SAME SIZE, so "mother" and "kitten" did not read - the one distinction
+          the page exists to make.
+       4. "WAIT." was set 86px in heavy Martel. START-HERE.md section 1: never shouting.
+
+     WHY THERE ARE NO WORDS ON IT NOW, which was the second attempt's mistake and is worth recording:
+     the replacement first kept "Wait. She is usually still nearby." in Kalam. Opened in a browser,
+     the lettering came out as a fallback SERIF - an SVG used as an <img> is an isolated document and
+     cannot reach the page's Google Fonts link, so the one thing the card existed to promise (the
+     hand) was the one thing it could not show. Embedding the woff2 as base64 would fix it and costs
+     tens of KB in a thumbnail. It is not needed: the card's own <h2> on learn.html already reads
+     "Found a kitten outside alone?" and carries a TL;DR under it, and every other card in that grid
+     is a wordless image. So the card is a picture, like its neighbours, and the words stay live text
+     in the HTML where they can be read, selected and translated.
+
+     The drawing is found-kitten-pune.html panel 02, copied unchanged. The viewBox is CROPPED to the
+     drawing's own bounds (6 44 288 163) rather than the source's full 300x170: at the full box the
+     cats sat in the bottom third with dead paper above them, which a card-sized thumbnail cannot
+     afford. It is the cold session's own work of 2026-09-12, and its mother is about four times the
+     kitten, which settles fault 3 by construction. -->
+  <defs>
+    <filter id="cwob" x="-14%" y="-14%" width="128%" height="128%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <rect x="6" y="44" width="288" height="163" fill="#faf7f0"/>
+  <g>
+    <g style="mix-blend-mode:multiply" opacity=".8">
+      <path d="M20 152c-8-40 22-64 62-64 32 0 56 18 60 44 1 8-1 14-3 18-40 8-84 8-119 2z" fill="#b9b0e8" opacity=".46" transform="rotate(-1 82 122)"/>
+      <ellipse cx="188" cy="136" rx="38" ry="26" fill="#f5e07a" transform="rotate(3 188 136)"/>
     </g>
-    <!-- she is coming back -->
-    <path d="M212 268c46-52 116-56 160-14" stroke-width="3.5" stroke-dasharray="9 12"/>
-    <path d="M368 250l6 16-17 3" stroke-width="3.5"/>
-    <!-- the mother, right -->
-    <g transform="translate(392,150) scale(1.35)">
-      <path d="M26 40L30 20L45 32"/><path d="M62 40L58 20L45 32"/>
-      <circle cx="44" cy="44" r="17"/><path d="M38 43v3M50 43v3" stroke-width="4.5"/>
-      <path d="M60 52h30c8 0 12 6 12 14v18"/><path d="M30 60v30M52 62v28M78 66v24M100 66v18"/>
-      <path d="M30 60c-2 8 0 20 4 26"/><path d="M102 66c12-4 14-16 8-22"/>
+    <g filter="url(#cwob)" fill="none" stroke="#141118" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 152h280"/>
+      <path d="M22 152c-4-36 20-58 58-58 24 0 42 12 50 30"/>
+      <path d="M22 150c-11 2-16-6-9-13" stroke-width="3.6"/>
+      <path d="M128 132c-3 10-3 14-1 20"/>
+      <g transform="rotate(-14 140 104)">
+        <path d="M123 90V68l17 13"/><path d="M157 90V68l-17 13"/>
+        <circle cx="140" cy="104" r="27"/>
+        <path d="M127 100c4-5 10-5 14 0" stroke-width="3.6"/>
+        <path d="M149 100c4-5 10-5 14 0" stroke-width="3.6"/>
+        <path d="M140 118l-4 4h8z" stroke-width="3"/>
+      </g>
+      <path d="M167 120l1-12 10 8"/><path d="M189 120l-1-12-10 8"/>
+      <circle cx="178" cy="126" r="14"/>
+      <path d="M173 125v3M183 125v3" stroke-width="3.2"/>
+      <path d="M178 133l-3 3h6z" stroke-width="2.8"/>
+      <path d="M189 136c14 2 22 7 22 16h-44"/>
+      <path d="M211 152c11 0 14-5 10-11" stroke-width="3.4"/>
     </g>
   </g>
-  <text x="46" y="104" font-family="Martel, Georgia, serif" font-weight="800" font-size="86" letter-spacing="-2" fill="#141118">WAIT.</text>
-  <text x="300" y="100" font-family="Hind, Helvetica, Arial, sans-serif" font-weight="600" font-size="23" fill="#141118">She is usually</text>
-  <text x="300" y="130" font-family="Hind, Helvetica, Arial, sans-serif" font-weight="600" font-size="23" fill="#141118">still nearby.</text>
 </svg>
