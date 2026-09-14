@@ -17,8 +17,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   added to `sitemap.xml`.
 - **The palette and fonts in `assets/style.css` are locked decisions**, not defaults.
   Change them only on purpose.
-- **`cat-closeup.jpg` and `cat-yawn.jpg` in `assets/` are still Unsplash placeholders**
-  awaiting real, brand-graded photos. **`hero-cat.jpg` was replaced 2026-09-14** with
+- **`cat-closeup.jpg`, `cat-yawn.jpg` and `hero-cat.jpg` in `assets/` are still Unsplash
+  placeholders** awaiting real, brand-graded photos — all three are still live on
+  `learn.html` cards, and `cat-closeup.jpg` and `cat-yawn.jpg` on `index.html` bands.
+  **`hero-cat.jpg` lost the one job it was named for on 2026-09-14**: `index.html`'s hero is now
   `assets/ginger-white-cat-tree-skyline.jpg` — one of OD's own cats, from her phone dump
   in `video/assets/cats/originals/` (that folder's `README.md` has the full set, now all
   descriptively named). The in-article photos (day-one, cat hair, accidents,
