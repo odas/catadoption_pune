@@ -13,6 +13,14 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   it stays clean. Since 2026-09-08 it is also the one care hub: the basics, then the article
   cards. `blog.html` is a redirect to it, kept so old links work; a new article gets its card
   on `learn.html`, newest first.
+- **The hero photo is a transparent cutout on flat sage, and that is load-bearing.**
+  `assets/hero-kittens-cutout.webp` is OD's own kittens with the background removed; the field
+  behind them is `.pin--hero`'s own `--sage`. That is what makes the three jobs below succeed at
+  once: the zoom scales the kittens against flat colour, the band rises over colour rather than
+  clutter, and the copy is **ink with no scrim**, because nothing unpredictable sits behind the
+  type. Dropping a rectangular photograph back into this slot re-breaks all three silently.
+  WebP for the alpha channel — 172 KB against 1.2 MB for the same PNG. The full-resolution
+  cutout is kept privately at `video/assets/cats/`, not in this repo.
 - **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
   slides the periwinkle band up over it, so a hero photo has three jobs at once and one that does
   only the first looks shabby the moment the page moves: a subject high enough in the frame to
