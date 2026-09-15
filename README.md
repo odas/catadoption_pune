@@ -37,20 +37,20 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   added to `sitemap.xml`.
 - **The palette and fonts in `assets/style.css` are locked decisions**, not defaults.
   Change them only on purpose.
-- **`cat-closeup.jpg` and `hero-cat.jpg` in `assets/` are still Unsplash
-  placeholders** awaiting real, brand-graded photos — both are still live on `learn.html`
-  cards, and `cat-closeup.jpg` on `index.html`'s second band. **`cat-yawn.jpg` was the third
-  and is gone (2026-09-15)**: a Scottish Fold in novelty sunglasses, sitting under the closing
-  CTA of a site whose whole argument is that indies equal any expensive breed, with alt text that
-  described neither the cat nor the background. Its two slots now carry OD's own photos —
-  `home-cat-asleep.jpg` on `index.html` scene 3 and `visit-cat-window-grille.jpg` on the
-  `learn.html` visit card. **`hero-cat.jpg` lost the one job it was named for on 2026-09-14**: `index.html`'s hero is now
-  `assets/ginger-white-cat-tree-skyline.jpg` — one of OD's own cats, from her phone dump
-  in `video/assets/cats/originals/` (that folder's `README.md` has the full set, now all
-  descriptively named). The in-article photos (day-one, cat hair, accidents,
-  kitten wet food, litter box, feeding strays) are licensed Adobe Stock, free-collection tier,
-  each row logged in `video/adobe/api-log.md`; several are still waiting on OD's own phone
-  shots to replace them (noted in each page's head comment).
+- **`hero-cat.jpg` is the last Unsplash placeholder in `assets/`** — still live on a `learn.html`
+  card, kept deliberately (OD, 2026-09-15: *"in case my kitten photo did not work out"*). Its two
+  siblings are gone: `cat-yawn.jpg` (a Scottish Fold in novelty sunglasses under the closing CTA,
+  on a site whose argument is that indies equal any expensive breed) and `cat-closeup.jpg`, both
+  retired to `P-website/superseded/` on 2026-09-15 and replaced by OD's own photos. The in-article
+  photos (cat hair, accidents, kitten wet food, litter box, feeding strays) are licensed Adobe
+  Stock, free-collection tier, each row logged in `video/adobe/api-log.md`.
+- **Articles may carry a second photo now.** The 2026-09-10 rule was one image at the top, Medium's
+  convention, OD's ask — that is why `day-one-under-bed.jpg` was pulled out of the body. She widened
+  it on 2026-09-15: *"You can add them as additional images when the existing one too is good."* So
+  the top image still leads; a second one earns its place by carrying an argument the text is
+  already making, and it should be one of her own. Four went in that day (monsoon, day-one,
+  cat-hair, netting). Two articles still have no photo of hers that fits — **accidents** and
+  **kitten wet food** — and a forced fit is worse than a stock photo that is on-topic.
 - **`assets/day-one-checklist.mp4` is silent on purpose.** It is the day-one page's hero, cut from the
   channel's Short; the Short's music is licensed for YouTube only, so the site's copy carries none.
 - **The drawings are a system, not decoration.** `assets/style.css` § THE SKETCHBOOK LAYER holds
