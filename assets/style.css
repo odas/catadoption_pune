@@ -44,7 +44,12 @@ a{color:inherit;}
 .pin img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:center center;will-change:transform;}
 
 .pin--hero{background:var(--sage);}
-.pin--hero img{left:auto;right:0;width:56%;object-fit:contain;object-position:right bottom;transform-origin:bottom right;}  /* cutout on the sage field — see index.html SCENE 1 */
+/* Cutout on the sage field — see index.html SCENE 1. The image BLEEDS past the bottom of the
+   pin on purpose: the cutout keeps a lip of the cat bed under the paws, and a flat horizontal
+   cut across the legs on flat colour reads as a mistake. Bleeding it makes the viewport edge
+   the crop, which reads as framing. Phone did this from the start; desktop was showing the
+   whole image and therefore the cut (OD caught it, 2026-09-15). */
+.pin--hero img{left:auto;right:0;width:56%;height:100%;top:auto;bottom:-7%;object-fit:contain;object-position:right bottom;transform-origin:bottom right;}
 .hero-copy{position:relative;z-index:2;align-self:center;padding:0 6vw;width:50%;flex:0 0 50%;container-type:inline-size;will-change:opacity,transform;}
 .eyebrow{font-size:0.78rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);opacity:0.75;margin-bottom:1rem;}
 /* Ink, not white, since 2026-09-15: the hero copy sits on the flat sage field now, not on a
@@ -177,7 +182,7 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
   /* Hero: kittens along the bottom, bled a little past both edges so they read big;
      copy above them on flat sage, in ink. */
   .pin--hero{display:block;height:82vh;height:82svh;}
-  .pin--hero img{width:118%;left:-9%;right:auto;height:58%;top:auto;bottom:-4%;opacity:1;
+  .pin--hero img{width:118%;left:-9%;right:auto;height:60%;top:auto;bottom:-1%;opacity:1;
     object-fit:contain;object-position:center bottom;transform-origin:bottom center;}
   .hero-copy{position:absolute;top:0;left:0;right:0;
     padding-top:calc(102px + env(safe-area-inset-top,0px));}
