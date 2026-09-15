@@ -124,11 +124,12 @@
      HOW, since this machine has no Pillow and no ImageMagick: drawn on a canvas in Chrome and POSTed
      to a throwaway local server, then re-encoded as JPEG - so the text is gone from the PIXELS and is
      not recoverable from the file. Verified by counting light pixels inside each bar afterwards: zero.
-     NEW FILE, assets/dm-format-redacted.jpg; the original assets/dm-format.jpg is untouched.
-     !! THE BOARD STILL SHOWS THE UNREDACTED ONE. adoptable.html is generated, and
-     P-insta-folio/make_adoptable_page.py emits assets/dm-format.jpg in its rescuer accordion. That is
-     a one-line change in the OTHER repo and it is hers to sequence, not this session's to make. Until
-     she does, the same screenshot with a live phone number is public on the board.
+     NEW FILE, assets/dm-format-redacted.jpg.
+     2026-09-15, OD's call: assets/dm-format.jpg is DELETED. It was still tracked here and still served
+     at catadoption.in/assets/dm-format.jpg (checked live, 200) long after every page had switched to
+     the redacted twin - no link to it, just a file anyone could fetch. The generator in the other repo
+     now probes ONLY the "-redacted" stem, so no future run can reach for it. See README.md for the
+     rule and why. NOTE: deleting stops the URL; the blob stays in this repo's history.
 
      NO PROMISE ABOUT POSTING TIME - HER RULE, 2026-09-13, second round: "Don't commit to 2-5 days to
      post in the heading (sometimes I dont work for periods of time, I dont want to commit to it. Make

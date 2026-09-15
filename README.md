@@ -13,14 +13,30 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   it stays clean. Since 2026-09-08 it is also the one care hub: the basics, then the article
   cards. `blog.html` is a redirect to it, kept so old links work; a new article gets its card
   on `learn.html`, newest first.
+- **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
+  slides the periwinkle band up over it, so a hero photo has three jobs at once and one that does
+  only the first looks shabby the moment the page moves: a subject high enough in the frame to
+  survive the 16% scroll zoom; a **calm, low-detail field for the headline to sit on** — on phone
+  the copy sits *over* the photo (`style.css`, the ≤768px block), so the photo itself is the
+  scrim and a `text-shadow` is not a substitute; and something that still reads as *cat* in the
+  thin strip left showing under the band. The flat wall in the old Unsplash hero was doing all
+  three silently — which is why replacing it with a busy phone snapshot broke the page on
+  2026-09-14 without a single line of CSS changing. Judge a candidate by scrolling it, not by
+  looking at it. (Measured 2026-09-15: four candidates stepped through the same scroll positions
+  at 390px, where most of the traffic is.)
+
 - **New articles copy `article-template.html`**, follow the comments inside it, and get
   added to `sitemap.xml`.
 - **The palette and fonts in `assets/style.css` are locked decisions**, not defaults.
   Change them only on purpose.
-- **`cat-closeup.jpg`, `cat-yawn.jpg` and `hero-cat.jpg` in `assets/` are still Unsplash
-  placeholders** awaiting real, brand-graded photos — all three are still live on
-  `learn.html` cards, and `cat-closeup.jpg` and `cat-yawn.jpg` on `index.html` bands.
-  **`hero-cat.jpg` lost the one job it was named for on 2026-09-14**: `index.html`'s hero is now
+- **`cat-closeup.jpg` and `hero-cat.jpg` in `assets/` are still Unsplash
+  placeholders** awaiting real, brand-graded photos — both are still live on `learn.html`
+  cards, and `cat-closeup.jpg` on `index.html`'s second band. **`cat-yawn.jpg` was the third
+  and is gone (2026-09-15)**: a Scottish Fold in novelty sunglasses, sitting under the closing
+  CTA of a site whose whole argument is that indies equal any expensive breed, with alt text that
+  described neither the cat nor the background. Its two slots now carry OD's own photos —
+  `home-cat-asleep.jpg` on `index.html` scene 3 and `visit-cat-window-grille.jpg` on the
+  `learn.html` visit card. **`hero-cat.jpg` lost the one job it was named for on 2026-09-14**: `index.html`'s hero is now
   `assets/ginger-white-cat-tree-skyline.jpg` — one of OD's own cats, from her phone dump
   in `video/assets/cats/originals/` (that folder's `README.md` has the full set, now all
   descriptively named). The in-article photos (day-one, cat hair, accidents,
@@ -39,6 +55,16 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   `send-a-cat.html` is the second, with `assets/send-a-cat-card.svg`. Six of its nine panel
   drawings are reused from the found-kitten set unchanged — the set is meant to be composed
   from, not redrawn per page.
+- **A screenshot of a message never carries a contact.** Only `assets/dm-format-redacted.jpg`
+  is publishable; there is no unredacted twin in this repo and the board generator probes only the
+  `-redacted` stem, so the unsafe path is closed rather than merely discouraged. **The reason is not
+  that the sender objected** — they sent their number precisely so their cats would be seen. It is
+  that the board retires a rescuer's contact when the cat is placed, and a screenshot cannot: it
+  keeps republishing a stranger's phone number for as long as the page exists, after the purpose
+  that justified it has ended, with nobody left who is watching for it. Labels stay legible
+  (`Contact:`, `Insta ID:`) because a rescuer has to see that a contact is expected; the values
+  never do. Same test for any future specimen — a review, a testimonial, a WhatsApp thread.
+
 - **`adoptable.html` is generated, never hand-written.** A script builds it from the
   adoptable-cats sheet; edit it here and the next run overwrites you.
 
