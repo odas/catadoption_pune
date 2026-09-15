@@ -33,6 +33,17 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   looking at it. (Measured 2026-09-15: four candidates stepped through the same scroll positions
   at 390px, where most of the traffic is.)
 
+- **The footer's `<p class="trust">` line is GENERATED — do not hand-edit it.** The three
+  figures in it (Google rating and reviews, Instagram followers, cats rehomed) are written into
+  all 19 pages and into the board generator from one source outside this repo, and a hand edit is
+  silently overwritten on the next run. It exists because the line was hand-typed nineteen times,
+  aged without anyone noticing, and had already drifted into two different wordings. If a number
+  looks wrong, say so in the commit message rather than correcting it here.
+- **`index.html` and `adopt.html` describe the same three steps and must keep agreeing.**
+  Browse · Connect · Adopt, those names, that count, on both pages. They said three and five of
+  the same process until 2026-09-15. If the process changes, change both or neither — the home
+  page is a preview of the adopt page, not a separate claim.
+
 - **New articles copy `article-template.html`**, follow the comments inside it, and get
   added to `sitemap.xml`.
 - **The palette and fonts in `assets/style.css` are locked decisions**, not defaults.
