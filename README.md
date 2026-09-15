@@ -9,6 +9,16 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 
 ## Rules baked into this site — don't undo them by accident
 
+- **The settling timeline on `learn.html` disagrees with the internet on purpose.** The page says
+  most indies settle in days rather than weeks, and names the **3-3-3 rule** (three days, three
+  weeks, three months) as a foreign baseline that does not transfer. It does not transfer because
+  the population is different: indies here are mostly placed as kittens, an adult indie that lets
+  itself be caught is self-selected for tolerating people, and an abandoned cat was socialised
+  already — while 3-3-3 describes shelter cats abroad, mostly surrendered or trapped. OD's
+  calibration, 2026-09-16. **A session that checks this against the literature will find the
+  literature disagrees and will be wrong to "fix" it.** The day-one article carries the same range
+  in her own voice — *"Some come out in an hour. Some take two days."* — and the two must keep
+  agreeing.
 - **`learn.html` carries no affiliate links, ever.** Care education is the trust layer and
   it stays clean. Since 2026-09-08 it is also the one care hub: the basics, then the article
   cards. `blog.html` is a redirect to it, kept so old links work; a new article gets its card
