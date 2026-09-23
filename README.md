@@ -102,7 +102,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 `index` · `about` · `adopt` · `adopter-form` · `learn` (the care hub) · `resources` (Emergency &
 NGOs) · `visit` · `send-a-cat` (the rescuer's door) · `privacy` and the articles ·
 `adoptable.html` (the board) · `blog.html` (redirect) · `article-template.html` · `404.html`.
-Eighteen pages are in the sitemap; the template, the redirect and 404 deliberately are not.
+Nineteen pages are in the sitemap; the template, the redirect and 404 deliberately are not.
 `found-kitten-pune.html` and `send-a-cat.html` were noindex drafts until 2026-09-13 and are now
 indexed like any other page.
 
