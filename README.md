@@ -102,7 +102,13 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 `index` · `about` · `adopt` · `adopter-form` · `learn` (the care hub) · `resources` (Emergency &
 NGOs) · `visit` · `send-a-cat` (the rescuer's door) · `privacy` and the articles ·
 `adoptable.html` (the board) · `blog.html` (redirect) · `article-template.html` · `404.html`.
-Nineteen pages are in the sitemap; the template, the redirect and 404 deliberately are not.
+Nineteen pages are in the sitemap; the template, the redirects and 404 deliberately are not.
+**Short URLs** (2026-09-23): eleven one-line doorways — `/hair` `/clean` `/day-one` `/net`
+`/kitten-food` `/litter` `/feeding` `/found` `/send` `/roti` `/cats` — each redirecting to its
+article with the campaign tag attached. They exist because a tagged URL is ~95 characters and a
+Short's link is not tappable while the video plays, so it has to be *said* and typed. They are
+`noindex` and out of the sitemap. ⛔ **Do not delete one once it has been spoken in a video** —
+the video cannot be edited and the URL is burned into some of them.
 `found-kitten-pune.html` and `send-a-cat.html` were noindex drafts until 2026-09-13 and are now
 indexed like any other page.
 
