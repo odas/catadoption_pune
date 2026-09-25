@@ -57,8 +57,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   guides already link, in her words from that guide, with the free version on butter (the sketchbook layer's
   colour for it), one tagged Amazon link (`aff/shop/<merchant-item>`), and a link back to the guide; each guide's
   "Also on this site" box links to the shop. The Cuelinks links stay on their articles. A card with no guide yet
-  is allowed for the bigger buys only, until their guide exists. It is not in the nav: that placement is the
-  owner's call, because the nav also sits on the board. A video's end card will say `catadoption.in/shop`,
+  is allowed for the bigger buys only, until their guide exists. The nav carries "Shop" on every page
+  except `resources.html` (owner's call, 2026-09-26; the emergency page keeps nothing about money, as with
+  the footer's paid-for link), placed after Emergency so the phone's one-row menu still shows Emergency
+  without a swipe. A video's end card will say `catadoption.in/shop`,
   so the path stays once that video is up.
 - **`index.html` and `adopt.html` describe the same three steps and must keep agreeing.**
   Browse · Connect · Adopt, those names, that count, on both pages. They said three and five of
