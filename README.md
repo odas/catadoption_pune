@@ -1,8 +1,8 @@
 # catadoption.in
 
 The website of **catadoption_pune** — a volunteer-run, Instagram-first adoption network
-for indie cats in Pune and PCMC. Not an NGO, not a shelter. We never charge a rupee, to
-anyone, for anything.
+for indie cats in Pune and PCMC. Not an NGO, not a shelter. Adoption is free — a cat is not a
+commodity.
 
 Live at **https://catadoption.in**. Static: no build step, no dependencies, no framework —
 these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
@@ -45,7 +45,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 
 - **The footer's `<p class="trust">` line is GENERATED — do not hand-edit it.** The three
   figures in it (Google rating and reviews, Instagram followers, cats rehomed) are written into
-  all 19 pages and into the board generator from one source outside this repo, and a hand edit is
+  every page that carries it and into the board generator from one source outside this repo, and a hand edit is
   silently overwritten on the next run. It exists because the line was hand-typed nineteen times,
   aged without anyone noticing, and had already drifted into two different wordings. If a number
   looks wrong, say so in the commit message rather than correcting it here.
@@ -105,7 +105,7 @@ NGOs) · `visit` · `send-a-cat` (the rescuer's door) · `privacy` and the artic
 Nineteen pages are in the sitemap; the template, the redirects and 404 deliberately are not.
 **Short URLs** (2026-09-23): eleven one-line doorways — `/hair` `/clean` `/day-one` `/net`
 `/kitten-food` `/litter` `/feeding` `/found` `/send` `/roti` `/cats` — each redirecting to its
-article with the campaign tag attached. They exist because a tagged URL is ~95 characters and a
+page (`/cats` to the board, the rest to an article) with the campaign tag attached. They exist because a tagged URL is ~95 characters and a
 Short's link is not tappable while the video plays, so it has to be *said* and typed. They are
 `noindex` and out of the sitemap. ⛔ **Do not delete one once it has been spoken in a video** —
 the video cannot be edited and the URL is burned into some of them.
