@@ -49,6 +49,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   silently overwritten on the next run. It exists because the line was hand-typed nineteen times,
   aged without anyone noticing, and had already drifted into two different wordings. If a number
   looks wrong, say so in the commit message rather than correcting it here.
+- **How the site is paid for is said in one place, `about.html#paid-for`**, which the footer links
+  to. The one-sentence ask sits only after the affiliate disclosure, on pages that already carry
+  links. Neither goes on the board or the emergency page: next to a cat, it could read as paying
+  for the cat, and adoption here is free.
 - **`index.html` and `adopt.html` describe the same three steps and must keep agreeing.**
   Browse · Connect · Adopt, those names, that count, on both pages. They said three and five of
   the same process until 2026-09-15. If the process changes, change both or neither — the home
