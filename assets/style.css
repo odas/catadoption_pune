@@ -353,3 +353,38 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 .spread-page .shot figcaption b{font-family:'Kalam',cursive;font-weight:700;font-size:clamp(1.4rem,3.4vw,1.8rem);display:block;margin-bottom:0.55rem;}
 .spread-hero .hero-art{margin-top:1.6rem;max-width:420px;}
 .spread-hero .hero-art svg{width:100%;height:auto;overflow:visible;}
+
+/* ============================================================
+   THE SHOP — shop.html, added 2026-09-26 (OD's ruling, 09-25: "users want to see the products with
+   ease… not after traversing multiple pages"). One card per product. Butter is the free version,
+   as in the sketchbook layer above, so the buy button is ink and never butter. No script: the
+   shelf chips are anchors.
+   ============================================================ */
+.shop-wrap{max-width:1080px;margin:0 auto;padding:clamp(1.8rem,5vh,3rem) 6vw 4rem;}
+.shop-intro{max-width:62ch;}
+.shop-intro .lead{font-size:1.12rem;margin-bottom:1rem;}
+/* Sticky, so on a phone any shelf is one tap away however far down the reader is (18 cards in one column). */
+.shelf-nav{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1.4rem 0 0.4rem;position:sticky;top:0;z-index:5;background:var(--white);padding:0.6rem 0;border-bottom:1px solid var(--line);}
+@media(max-width:620px){.shelf-nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-6vw;padding-inline:6vw;}.shelf-nav::-webkit-scrollbar{display:none;}.shelf-nav a{flex:none;}}
+.shelf-nav a{border:2px solid var(--ink);border-radius:40px;padding:0.35rem 0.95rem;font-weight:600;font-size:0.9rem;text-decoration:none;min-height:40px;display:inline-flex;align-items:center;}
+.shelf-nav a:hover{background:var(--butter);}
+.shelf{padding-top:2.4rem;scroll-margin-top:3.6rem;}
+.shelf-head{display:grid;gap:1rem;align-items:end;margin-bottom:1.2rem;}
+@media(min-width:720px){.shelf-head{grid-template-columns:1fr 260px;}}
+.shelf-head h2{font-size:clamp(1.5rem,3vw,2.1rem);}
+.shelf-head p{margin-top:0.4rem;max-width:56ch;}
+.shelf-head p a{text-decoration-color:var(--peri);text-decoration-thickness:2px;text-underline-offset:3px;font-weight:600;}
+.shelf-head img{width:100%;height:200px;object-fit:cover;object-position:var(--focus,50% 50%);border-radius:12px;border:2px solid var(--ink);}
+.items{display:grid;grid-template-columns:1fr;gap:1rem;}
+@media(min-width:620px){.items{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:980px){.items{grid-template-columns:repeat(3,1fr);}}
+.item{border:2px solid var(--ink);border-radius:14px;padding:1.1rem 1.1rem 1rem;display:flex;flex-direction:column;gap:0.55rem;background:var(--white);}
+.item h3{font-size:1.12rem;}
+.item .ours{font-size:0.85rem;font-weight:600;opacity:0.7;margin-top:-0.3rem;}
+.item .why{font-size:0.95rem;line-height:1.5;}
+.item .free{background:var(--butter);border-radius:10px;padding:0.6rem 0.75rem;font-size:0.9rem;line-height:1.45;}
+.item .free b{display:block;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.1rem;}
+.item .buy{margin-top:auto;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:40px;background:var(--ink);color:var(--white);font-weight:600;text-decoration:none;letter-spacing:0.03em;transition:transform 0.2s var(--ease);}
+.item .buy:hover{transform:translateY(-2px);}
+.item .buy:focus-visible{outline:3px solid var(--peri);outline-offset:3px;}
+.item .from{font-size:0.85rem;text-align:center;text-decoration-color:var(--peri);text-decoration-thickness:2px;text-underline-offset:3px;}

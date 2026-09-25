@@ -53,6 +53,13 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   to. The one-sentence ask sits only after the affiliate disclosure, on pages that already carry
   links. Neither goes on the board or the emergency page: next to a cat, it could read as paying
   for the cat, and adoption here is free.
+- **`shop.html` is Amazon only, and every card carries the free or cheaper version.** One card per product the
+  guides already link, in her words from that guide, with the free version on butter (the sketchbook layer's
+  colour for it), one tagged Amazon link (`aff/shop/<merchant-item>`), and a link back to the guide; each guide's
+  "Also on this site" box links to the shop. The Cuelinks links stay on their articles. A card with no guide yet
+  is allowed for the bigger buys only, until their guide exists. It is not in the nav: that placement is the
+  owner's call, because the nav also sits on the board. A video's end card will say `catadoption.in/shop`,
+  so the path stays once that video is up.
 - **`index.html` and `adopt.html` describe the same three steps and must keep agreeing.**
   Browse · Connect · Adopt, those names, that count, on both pages. They said three and five of
   the same process until 2026-09-15. If the process changes, change both or neither — the home
@@ -103,10 +110,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 
 ## Layout
 
-`index` · `about` · `adopt` · `adopter-form` · `learn` (the care hub) · `resources` (Emergency &
+`index` · `about` · `adopt` · `adopter-form` · `learn` (the care hub) · `shop` · `resources` (Emergency &
 NGOs) · `visit` · `send-a-cat` (the rescuer's door) · `privacy` and the articles ·
 `adoptable.html` (the board) · `blog.html` (redirect) · `article-template.html` · `404.html`.
-Nineteen pages are in the sitemap; the template, the redirects and 404 deliberately are not.
+Twenty pages are in the sitemap (the shop since 2026-09-26); the template, the redirects and 404 deliberately are not.
 **Short URLs** (2026-09-23): eleven one-line doorways — `/hair` `/clean` `/day-one` `/net`
 `/kitten-food` `/litter` `/feeding` `/found` `/send` `/roti` `/cats` — each redirecting to its
 page (`/cats` to the board, the rest to an article) with the campaign tag attached. They exist because a tagged URL is ~95 characters and a
