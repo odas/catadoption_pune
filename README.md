@@ -41,13 +41,17 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   cards. `blog.html` is a redirect to it, kept so old links work; a new article gets its card
   on `learn.html`, newest first.
 - **The hero photo is a transparent cutout on flat sage, and that is load-bearing.**
-  `assets/hero-kittens-cutout.webp` is OD's own kittens with the background removed; the field
+  `assets/hero-kittens-tree.webp` (and `-800` for phones) is OD's own kittens cut out **with the
+  cat-tree bowl they sit in**, the bowl bleeding off the bottom edge. The 09-15 cut-out without the
+  bowl made them float, so keep the bowl in any recut. The field
   behind them is `.pin--hero`'s own `--sage`. That is what makes the three jobs below succeed at
   once: the zoom scales the kittens against flat colour, the band rises over colour rather than
   clutter, and the copy is **ink with no scrim**, because nothing unpredictable sits behind the
   type. Dropping a rectangular photograph back into this slot re-breaks all three silently.
-  WebP for the alpha channel — 172 KB against 1.2 MB for the same PNG. The full-resolution
-  cutout is kept privately at `video/assets/cats/`, not in this repo.
+  WebP for the alpha channel: 69 KB for phones, 127 KB for desktop. The source photo is kept privately
+  with the owner's originals, not in this repo. **On a phone the hero doesn't pin** and the band
+  follows it rather than sliding over it (2026-09-26): the phone band is taller than the space
+  above the kittens, so it always came to rest over their faces. Desktop keeps the slide.
 - **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
   slides the periwinkle band up over it, so a hero photo has three jobs at once and one that does
   only the first looks shabby the moment the page moves: a subject high enough in the frame to

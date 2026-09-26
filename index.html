@@ -53,7 +53,7 @@
 <!-- SCENE 1 · hero: the photo is a transparent cutout on .pin--hero's own sage field, so the scroll zoom scales the kittens against flat colour and the copy needs no scrim. A rectangular photo here re-breaks all three; see README.md "The index.html hero is a scroll sequence". Runway spacers are the pacing knob: positive heights only, tune on real devices. -->
 <section class="scene">
   <div class="pin pin--hero">
-    <img src="assets/hero-kittens-cutout.webp" alt="Two cream-point indie kittens sitting side by side, one looking straight at you" width="1400" height="1367" fetchpriority="high">
+    <img src="assets/hero-kittens-tree.webp" srcset="assets/hero-kittens-tree-800.webp 800w, assets/hero-kittens-tree.webp 1200w" sizes="(max-width: 768px) 118vw, 56vw" alt="Two cream-point indie kittens sitting together in the bowl of a cat tree, one looking straight at you" width="1200" height="1348" fetchpriority="high">
     <div class="hero-copy">
       <p class="eyebrow">catadoption_pune · Pune &amp; PCMC</p>
       <h1><span class="l">Born on the street.</span> <span class="l">One person away</span> <span class="l">from home.</span></h1>
@@ -62,14 +62,14 @@
   </div>
   <div class="over">
     <div class="runway" style="height:10vh"></div>
-    <div class="band band--peri reveal">
+    <div class="band band--peri">
       <div class="band-inner">
         <h2>We find their person.</h2>
         <p>It's a network, not a shelter — a healthy stray in Pune has no government system waiting for it, only rescuers who refuse to look away. catadoption_pune posts the cats they save — Baner, Kothrud, Viman Nagar, Kharadi, Pimple Saudagar and beyond — after a basic check with each rescuer, so a genuinely good home can find them.</p>
       </div>
     </div>
-    <!-- 12vh, not 32: at 32 the band finished above the kittens' eyes (measured on a 760px desktop viewport). Keep the eyes visible. -->
-    <div class="runway" style="height:12vh"></div>
+    <!-- This gap decides where the band comes to rest. Its height is in style.css (.runway--hero-tail), per screen size: the band has to stop above the kittens' eyes. -->
+    <div class="runway runway--hero-tail"></div>
   </div>
 </section>
 
