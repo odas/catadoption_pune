@@ -82,9 +82,15 @@ a{color:inherit;}
 .hero-copy p{color:var(--ink);font-size:clamp(1rem,1.4vw,1.15rem);max-width:34ch;}
 
 .pin--yellow{background:var(--yellow);}
-.pin--yellow img{left:auto;right:0;width:70%;}
+/* Scene 2: the lying cat is a cut-out on the flat yellow, sitting on the bottom edge, like the hero. The field IS the
+   background, so no photo edge or page white can show while the panels slide over it (2026-09-26). */
+.pin--yellow img{left:auto;right:0;width:62%;height:auto;top:auto;bottom:0;object-fit:contain;}
 .pin--sky{background:var(--sky);}
-.pin--sky img{width:78%;left:auto;right:0;}
+/* Scene 3: the sleeping cat stays a photograph (a cut-out from above reads as falling); it sits on the bottom edge of
+   the sky field and its top edge, a pale blue wall, fades into the field. */
+.pin--sky img{width:62%;left:auto;right:0;height:auto;max-height:100%;top:auto;bottom:0;object-fit:contain;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%),linear-gradient(to right,transparent 0,#000 20%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0,#000 22%),linear-gradient(to right,transparent 0,#000 20%);mask-composite:intersect;}
 
 /* content that slides over the pinned photo */
 .over{position:relative;z-index:2;}
@@ -194,11 +200,13 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 
 /* ---------- mobile ---------- */
 @media(max-width:768px){
-  .pin{height:72vh;height:72svh;}
-  .pin--yellow img,.pin--sky img{width:100%;opacity:0.92;}
+  /* Full height: at 72% the bottom of the screen showed the page's white while the spacers scrolled past (the "white strips"). */
+  .pin{height:100vh;height:100lvh;}
+  .pin--yellow img{width:150%;left:-12%;right:auto;}
+  .pin--sky img{width:100%;left:0;right:auto;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%);mask-image:linear-gradient(to bottom,transparent 0,#000 22%);}
   .hero-copy{width:100%;flex-basis:100%;padding:0 7vw;}
   .hero-copy h1{font-size:clamp(1.9rem,10.2cqw,3rem);}
-  /* scenes 2 and 3 are still photographs, so their copy stays white over them */
   .glass{width:100%;margin:0;}
   /* The nav was three wrapped tiers — 155px of a 608px hero, with ink links sitting on
      whatever the photo happened to be. One row, scrollable, every link kept. */
