@@ -135,6 +135,7 @@ a{color:inherit;}
 .res-card{border:1px solid var(--line);border-radius:16px;padding:1.4rem;background:var(--white);}
 .res-card--warn{background:var(--butter);border-color:transparent;}
 .res-card--form{background:var(--sage);border-color:transparent;}
+.res-card--wide{grid-column:1/-1;}
 .res-card h2{font-size:1.12rem;margin-bottom:0.7rem;}
 .res-card ul{list-style:none;}
 .res-card li{padding:0.3rem 0;border-bottom:1px dashed var(--line);font-size:0.95rem;}
