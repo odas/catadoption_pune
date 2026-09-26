@@ -91,6 +91,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   Browse · Connect · Adopt, those names, that count, on both pages. They said three and five of
   the same process until 2026-09-15. If the process changes, change both or neither — the home
   page is a preview of the adopt page, not a separate claim.
+  Since 2026-09-26 the home page draws them: two unnumbered rows first (no shelter, a rescuer's home),
+  then the three steps with those names. The unnumbered rows are context, not steps.
 
 - **New articles copy `article-template.html`**, follow the comments inside it, and get
   added to `sitemap.xml`.
@@ -122,6 +124,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   `send-a-cat.html` is the second, with `assets/send-a-cat-card.svg`. Six of its nine panel
   drawings are reused from the found-kitten set unchanged — the set is meant to be composed
   from, not redrawn per page.
+  The home page's drawings come from the same library as the YouTube videos: what sits between an
+  `art:` marker pair is generated from outside this repo, so an edit made here is overwritten on the
+  next export. Their colour is multiplied, so each sits on its own white card, never straight on a
+  coloured panel. The draw-on runs once, on reveal; with reduced motion or no script the drawing is simply there.
 - **A screenshot of a message never carries a contact.** Only `assets/dm-format-redacted.jpg`
   is publishable; there is no unredacted twin in this repo and the board generator probes only the
   `-redacted` stem, so the unsafe path is closed rather than merely discouraged. **The reason is not
