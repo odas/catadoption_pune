@@ -3,163 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Written 2026-09-13 by Claude Code at OD's ask; her ruling that day was that this page ships
-     first and on its own, ahead of the three new articles and the spread rebuilds. Drafted noindex,
-     then CLEARED BY HER the same day ("remove noindex on both plz"): the robots meta is gone and the
-     page is in sitemap.xml at priority 0.8, dated 2026-09-13. Indexable and live at her next PUBLISH.
-
-     WHY THIS PAGE EXISTS, mechanically. The footer of every live page, the "Have a cat to rehome?"
-     card on resources.html and the "Found a cat that needs help?" block on visit.html all linked
-     "Send us a cat" to adoptable.html#rescuers - an accordion on a file that
-     P-insta-folio/make_adoptable_page.py REGENERATES. The rescuer door is the supply side of the
-     whole network and it had no page of its own. Those links now point here.
-
-     THE BOARD'S ACCORDION STAYS. adoptable.html is generated and must never be hand-edited, so its
-     six-line version is still the in-context short form for someone already on the board, and this
-     page is the long form. Two surfaces on purpose; if they ever disagree, the board's generator
-     (P-insta-folio) is the one to change, not the generated file.
-
-     WHERE THE CONTENT COMES FROM. instagram/dm-triage-and-posting.md, OD's own unedited account of
-     how she runs the inbox, written 2026-08-17 - read whole, not grepped. Everything here is a
-     restatement of something she already does or already says:
-       . the six-point format and "give it 2-5 days" and the language line are already PUBLIC copy,
-         in adoptable.html's #rescuers accordion
-       . "In Pune people neuter at > 5 months. Vaccines happen at month 2 and month 3. Many rescuers
-         don't have funds to get vet-check or start vaccinations. And anyway adopters prefer to do it
-         themselves so they know cats have for sure had them." -> panel 04
-       . "I don't mix cats with kittens. Cats don't get adopted. Their posts stay open on my page
-         longer. I try to reshare them with more effort." -> panel 07
-       . the neonate matching protocol, including asking watchmen about a nursing stray -> panel 09
-       . the ADOPTED protocol (she pulls the first photo, the only one carrying a phone number, and
-         re-captions) -> the closing block
-       . "They are doing so much and all from their-own-pocket and out of the goodness of their
-         hearts." -> the closing line
-
-     !! TWO .hers BLOCKS ARE FLAGGED FOR OD, NOT CLEARED. Every .hers block on found-kitten-pune.html
-     came from material she had PUBLISHED (her own reel) or said to this chat for the page. The two on
-     this page are verbatim from the internal process doc above - her writing, but written for herself,
-     not for publication:
-       panel 05  "I only facilitate. I don't travel to help cats. I don't foster."
-       panel 06  "I have another full-time job, this is a volunteer only org, I do what I can."
-     She reports saying the second one to rescuers already. The first is a self-description. Both are
-     hers to keep, cut or rewrite. Capture is not promotion.
-
-     ALSO HER CALL, and deliberately NOT decided here: how much of the capacity reality goes public.
-     Her private notes are frank about the ordered/booked piles and about guilt. Panel 06 carries the
-     kind half ("capacity, not a no") and none of the inside baseball. The Google Form
-     (forms.gle/u7tyF8pSCYQqfRQx6) is deliberately absent: her doc records that forms went unfilled
-     and were filled badly when they were. DM first. If she wants the form back it goes below panel 01.
-     The footer email is left as the only non-Instagram door because her process never mentions email.
-
-     DRAWINGS: SIX OF THE NINE ARE REUSED, unchanged, from found-kitten-pune.html - the cold session's
-     work, already checked at three sizes. Panels 02, 04, 05, 07, 08, 09. Composing before drawing is
-     the point; illustrations-preview-2026-09-12.html records which shapes are traps in this style.
-     THREE ARE NEW and have NOT had the cold-eye pass yet (case-study-2026-09-12-drawn-explainers.md
-     section 5: four drawings misread in one session and the author could not see any of them):
-       panel 01  a phone, upright, a cat's face on the screen, three message lines beside it.
-                 Known risk: a rectangle with a cat in it can read as a television or a picture frame.
-       panel 03  a map pin with a cat's face in its circle. Lowest-risk of the three; a teardrop pin
-                 survives 56px.
-       panel 06  a circled "2-5 / days" marker in Kalam, following the established age-marker pattern
-                 (found-kitten panels 03 and 08 already do this). Near-zero misread risk.
-     Ask of each one: what else could this be read as?
-
-     NO AFFILIATE LINK, EVER. This is the adoption loop - START-HERE.md section 1, the hardest rule
-     on the site. No product, no kit, no cross-link to a page that earns.
-
-     A FIX THAT CAME OUT OF BUILDING THIS: panel 08's drawing uses fill="var(--red)" and --red was
-     never defined in assets/style.css, so the exclamation mark rendered BLACK on the live
-     found-kitten page - verified in the browser, computed fill rgb(0,0,0), while the drawing's own
-     aria-label says "a red exclamation mark". --red:#d64545 is now in :root. That also fixes the
-     live page.
-
-     COLOUR, and the limit of the rule. assets/style.css section THE SKETCHBOOK LAYER states a
-     semantics - peri = the situation, yellow = act now, sage = safe/right, sky = wait and watch,
-     butter = the free version, red cross = never - and README.md says not to recolour a block for
-     looks. That scheme governs the SKETCHBOOK pictograms; the approved SPREAD drawings use colour
-     pictorially instead (sky is literal water in the rain panel), so it is not a hard rule here.
-     The three new drawings were still aligned where the mapping is exact: panel 01 yellow (send it),
-     panel 03 peri (the situation), panel 06 sky (wait). Reused drawings keep the colours the cold
-     session gave them.
-
-     FREE NEUTERING IS NOT MENTIONED, AND THAT IS NOW A RULE [OD] 2026-09-13: "Free neuter, don't
-     mention. Its a changing thing. nothing certain. and project mau is overburdened. they still do it,
-     but I prefer giving the info 1:1 rather than on a page." This resolves what had looked like a
-     contradiction between her own sources (found-kitten panel 08 quoting her on free services vs
-     START-HERE.md section 1b's "No free cat sterilization"): neither is wrong, the availability moves,
-     and a page cannot carry a moving fact without setting a false expectation and adding load to an
-     overburdened NGO. So: no page names a free service. She gives that information one-to-one.
-     Applies site-wide, not only here - found-kitten's panel 08 caption was corrected the same day.
-     !! It also closes case-study-2026-09-12-drawn-explainers.md section 8's open item, which read
-     "resources.html names Blue Cross but not Project Mau" as a gap to fill. It is not a gap.
-
-     COLOUR, and the limit of the rule. assets/style.css section THE SKETCHBOOK LAYER states a
-     semantics - peri = the situation, yellow = act now, sage = safe/right, sky = wait and watch,
-     butter = the free version, red cross = never - and README.md says not to recolour a block for
-     looks. That scheme governs the SKETCHBOOK pictograms; the approved SPREAD drawings use colour
-     pictorially instead (sky is literal water in the rain panel), so it is not a hard rule here.
-     The three new drawings were still aligned where the mapping is exact: panel 01 yellow (send it),
-     panel 03 peri (the situation), panel 06 sky (wait). Reused drawings keep the colours the cold
-     session gave them.
-
-     !! A CONTRADICTION FOR OD, FOUND WHILE REUSING PANEL 04'S DRAWING AND DELIBERATELY NOT RESOLVED
-     HERE. On found-kitten-pune.html that same drawing's marker read "5 months / free", and its caption
-     and her own quote say neutering at five months "does not have to cost you anything ... through free
-     services by Blue Cross, Project Mau, etc." But START-HERE.md section 1b states flatly: "No free cat
-     sterilization" in Pune. Both are her material. This page therefore makes NO claim about cost - the
-     marker now reads "2 months", matching this panel's actual subject (vaccines at month 2 and 3), and
-     the caption says only that rescuers are paying themselves. Free neutering is exactly what a
-     cash-strapped rescuer on this page would most want to know, so it is worth her settling, and
-     case-study-2026-09-12-drawn-explainers.md section 8 already notes resources.html names Blue Cross
-     but not Project Mau.
-
-     THE SCREENSHOT IS REDACTED, at her instruction 2026-09-13: "could you add a redact tab in three
-     places in the real screenshot where insta id and contact info show up please." Three opaque bars
-     (brand ink, brand-yellow edge so they read as deliberate rather than as a rendering fault) over
-     the sender's handle at the top, the name and phone number on the Contact line, and the value on
-     the Insta ID line. The LABELS are deliberately left legible - "sent 8 photos", "Contact:",
-     "Insta ID:" - because a rescuer needs to see that a contact is expected, and that is the whole
-     point of showing a specimen. "Location: new sanghvi pune" is also left: an area is what goes on
-     every public post and is part of what a submission has to carry.
-     HOW, since this machine has no Pillow and no ImageMagick: drawn on a canvas in Chrome and POSTed
-     to a throwaway local server, then re-encoded as JPEG - so the text is gone from the PIXELS and is
-     not recoverable from the file. Verified by counting light pixels inside each bar afterwards: zero.
-     NEW FILE, assets/dm-format-redacted.jpg.
-     2026-09-15, OD's call: assets/dm-format.jpg is DELETED. It was still tracked here and still served
-     at catadoption.in/assets/dm-format.jpg (checked live, 200) long after every page had switched to
-     the redacted twin - no link to it, just a file anyone could fetch. The generator in the other repo
-     now probes ONLY the "-redacted" stem, so no future run can reach for it. See README.md for the
-     rule and why. NOTE: deleting stops the URL; the blob stays in this repo's history.
-
-     NO PROMISE ABOUT POSTING TIME - HER RULE, 2026-09-13, second round: "Don't commit to 2-5 days to
-     post in the heading (sometimes I dont work for periods of time, I dont want to commit to it. Make
-     the headline mention how long it takes for adoption - that is something I write in reply to DMs
-     often - warning them them that if you have some urgent need to get rid of cat consider other
-     options, like asking family and friends to care for cat or connect with NGOs."
-     So panel 06 is no longer about the review queue at all. Its headline is the ADOPTION timeline -
-     about a month, give or take - and its caption carries what she actually writes in DMs: if you need
-     the cat gone sooner than that, this is not the route, ask family and friends to hold it, or speak to
-     an NGO. Posting time is still mentioned, but as "a few days, sometimes a good deal longer", with no
-     number, because there are stretches when she is off Instagram entirely. The 2-5 day figure survives
-     ONLY in adoptable.html's own accordion, which is her older public copy; do not reintroduce it here,
-     and do not "helpfully" make the two consistent by putting it back.
-     !! Note the sequence, because it is the useful part: the FIRST fix made the 2-5 days unambiguous
-     (the panel-05-to-06 inheritance). Her second note rejected the number outright. Disambiguating a
-     commitment is not the same as being willing to make it.
-
-     HER READ OF THE FIRST DRAFT, 2026-09-13, and the one thing it got wrong: "after #5 - 2-5 days
-     sounds like how long it will take for kitten to get adopted. (a month -ish, every kitten has a
-     different exp but adoption is never instant). Rest is good." Sitting directly under "the cat stays
-     with you until it is adopted", the 2-5 days read as the adoption timeline. Fixed in three places:
-     the label is now "give US two to five days", the caption opens by saying it is the post and not the
-     adoption, and panel 05 carries her actual timeline. The learn.html card TL;DR said "Give it" too.
-     A number is not ambiguous on its own - it takes its subject from the panel above it.
-
-     SOURCE CLASSES: catadoption-origin - the whole page; every instruction is her practice.
-     observed - the Pune vaccine and neuter timings, hers from running the inbox. synthesis - the
-     ordering of the nine panels, and the "if a week goes past, message again" line, which her doc
-     implies (messages get buried, she goes off Instagram for months) but does not say.
-     NOTHING HERE IS source-backed, because nothing here needed the web. -->
+<!-- No posting-time promise on this page, on purpose. The board's accordion still says 2-5 days; don't copy it here to make the two match. That accordion is generated: change it in its generator, never in adoptable.html. -->
 <title>Have a cat that needs a home? Send it to us like this — catadoption_pune</title>
 <meta name="description" content="How to send a cat or kittens to catadoption_pune for a post: what to put in the first message, what we can and cannot do, and why the cat stays with you until it is adopted.">
 <link rel="canonical" href="https://catadoption.in/send-a-cat.html">
@@ -224,9 +68,7 @@
 
   <article class="panel">
     <div class="art">
-      <!-- NEW. First version drew the photo and the words as two separate objects side by side,
-           which contradicted the caption ("together, in one message") and read as phone-plus-scribble
-           at 90px. Redrawn so the screen carries BOTH: a framed photo on top, the words under it. -->
+      <!-- The screen carries both the photo and the words, to match the caption ("together, in one message"). -->
       <svg viewBox="0 0 300 170" role="img" aria-label="A phone whose screen holds a photo of a cat with three lines of writing underneath it">
         <g style="mix-blend-mode:multiply" opacity=".8">
           <ellipse cx="150" cy="86" rx="74" ry="66" fill="var(--yellow)" opacity=".62" transform="rotate(-3 150 86)"/>
@@ -286,7 +128,7 @@
 
   <article class="panel">
     <div class="art">
-      <!-- NEW, not yet cold-checked. A teardrop pin is the most size-robust shape of the three. -->
+      <!-- A teardrop pin is the most size-robust shape of the three. -->
       <svg viewBox="0 0 300 170" role="img" aria-label="A map pin with a cat's face inside its circle">
         <g style="mix-blend-mode:multiply" opacity=".8">
           <ellipse cx="150" cy="76" rx="58" ry="56" fill="var(--peri)" opacity=".46" transform="rotate(-3 150 76)"/>
@@ -362,7 +204,6 @@
 
   <article class="panel">
     <div class="art">
-      <!-- NEW, but it follows the established age-marker pattern, so the risk is low. -->
       <svg viewBox="0 0 300 170" role="img" aria-label="A hand-drawn circle around the words one month, give or take">
         <g style="mix-blend-mode:multiply" opacity=".8">
           <circle cx="150" cy="80" r="58" fill="var(--sky)" opacity=".78" transform="rotate(-4 150 80)"/>

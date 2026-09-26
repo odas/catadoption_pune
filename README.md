@@ -9,6 +9,11 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 
 ## Rules baked into this site — don't undo them by accident
 
+- **A comment in a page is public.** Anyone can read it in the page source or in this repo. Keep
+  each one short and about the code beside it: a label on a drawing, or a line that stops a
+  well-meaning edit. A page's history, the reasons behind it and the owner's own words are kept
+  privately, outside this repo. Commit messages are public too: say what changed and why, without
+  quoting her.
 - **The settling timeline on `learn.html` disagrees with the internet on purpose.** The page says
   most indies settle in days rather than weeks, and names the **3-3-3 rule** (three days, three
   weeks, three months) as a foreign baseline that does not transfer. It does not transfer because

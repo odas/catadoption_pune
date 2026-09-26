@@ -51,17 +51,7 @@
   </nav>
 </header>
 
-<!-- SCENE 1 · hero
-     2026-09-15: the photo is a TRANSPARENT CUTOUT (OD's own kittens, background removed via the
-     Adobe connector) and the FIELD is .pin--hero's own sage. So the scroll zoom scales the kittens
-     against flat brand colour, the band rises over colour rather than clutter, and the copy is ink
-     — no scrim, because there is nothing unpredictable behind the type. Swapping in a rectangular
-     photo here re-breaks all three; see README.md "The index.html hero is a scroll sequence".
-     Progressive-reveal pair: the peri band rises over the photo, so mid-scroll reads
-     "Born on the street." + "We find their person." Since 2026-09-08 the hero copy fades out just
-     before the band reaches it (the scroll handler below), so no line is ever sliced mid-glyph;
-     the headline's three lines are units (.l spans, sized to the column, never wrapped).
-     Runway spacers are the pacing knob — positive heights only, tune on real devices. -->
+<!-- SCENE 1 · hero: the photo is a transparent cutout on .pin--hero's own sage field, so the scroll zoom scales the kittens against flat colour and the copy needs no scrim. A rectangular photo here re-breaks all three; see README.md "The index.html hero is a scroll sequence". Runway spacers are the pacing knob: positive heights only, tune on real devices. -->
 <section class="scene">
   <div class="pin pin--hero">
     <img src="assets/hero-kittens-cutout.webp" alt="Two cream-point indie kittens sitting side by side, one looking straight at you">
@@ -79,9 +69,7 @@
         <p>It's a network, not a shelter — a healthy stray in Pune has no government system waiting for it, only rescuers who refuse to look away. catadoption_pune lists and vets the cats they save — Baner, Kothrud, Viman Nagar, Kharadi, Pimple Saudagar and beyond — and matches each one with a genuinely good home.</p>
       </div>
     </div>
-    <!-- 12vh, not 32: the trailing runway is what decides how far the band climbs, and at 32
-         it finished ABOVE the kittens' eyes (measured: band top landed at y=191 on a 760px
-         desktop viewport). The eyes are the thing worth keeping visible. OD, 2026-09-15. -->
+    <!-- 12vh, not 32: at 32 the band finished above the kittens' eyes (measured on a 760px desktop viewport). Keep the eyes visible. -->
     <div class="runway" style="height:12vh"></div>
   </div>
 </section>
