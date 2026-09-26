@@ -14,6 +14,11 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   well-meaning edit. A page's history, the reasons behind it and the owner's own words are kept
   privately, outside this repo. Commit messages are public too: say what changed and why, without
   quoting her.
+- **The emergency page (`resources.html`) lists only numbers each NGO publishes itself,** checked against
+  their own websites, and no one's personal number, even when their own organisation publishes it: a personal
+  number on a public page gets swamped, and the cases that were screened stop getting through. Re-check a number
+  before adding or changing it. The line about a hurt cat says honestly that help is thin and many numbers may not
+  ring; keep it honest when editing, and don't turn it into a promise that someone will come.
 - **The settling timeline on `learn.html` disagrees with the internet on purpose.** The page says
   most indies settle in days rather than weeks, and names the **3-3-3 rule** (three days, three
   weeks, three months) as a foreign baseline that does not transfer. It does not transfer because
