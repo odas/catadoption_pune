@@ -52,6 +52,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   with the owner's originals, not in this repo. **On a phone the hero doesn't pin** and the band
   follows it rather than sliding over it (2026-09-26): the phone band is taller than the space
   above the kittens, so it always came to rest over their faces. Desktop keeps the slide.
+- **On the home page, every pinned scene fills the whole screen on a phone** (`.pin`, `100lvh`). At 72% the page's white showed
+  below the photo while the spacers scrolled past, which were the "white strips" several sessions chased. Scene 2's cat is a cut-out on
+  the flat yellow, like the hero. Scene 3's is a photo sitting on the sky field with its edges faded into it: a cut-out of a
+  cat seen from above reads as falling.
 - **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
   slides the periwinkle band up over it, so a hero photo has three jobs at once and one that does
   only the first looks shabby the moment the page moves: a subject high enough in the frame to
