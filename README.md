@@ -19,6 +19,13 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   number on a public page gets swamped, and the cases that were screened stop getting through. Re-check a number
   before adding or changing it. The line about a hurt cat says honestly that help is thin and many numbers may not
   ring; keep it honest when editing, and don't turn it into a promise that someone will come.
+- **Fonts come from this site, not from Google** (`assets/fonts/`, the `@font-face` block at the top of
+  `assets/style.css`, licence in `assets/fonts/OFL.txt`). Every page preloads Hind 400 and Martel 700. Don't
+  add a `fonts.googleapis.com` link back: it slowed every page and sent each visitor's address to Google.
+  A new weight means downloading its files the same way, not linking Google for it.
+- **Every photo carries its real `width` and `height`**, so the page keeps the space while the photo loads
+  and the text doesn't jump. A photo on the first phone screen loads straight away (no `loading="lazy"`);
+  photos further down wait for the scroll. The home page's kitten photo also carries `fetchpriority="high"`.
 - **The settling timeline on `learn.html` disagrees with the internet on purpose.** The page says
   most indies settle in days rather than weeks, and names the **3-3-3 rule** (three days, three
   weeks, three months) as a foreign baseline that does not transfer. It does not transfer because

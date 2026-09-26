@@ -14,9 +14,8 @@
 <meta property="og:image" content="https://catadoption.in/assets/medallion.jpg">
 <meta property="og:url" content="https://catadoption.in/">
 <meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Martel:wght@600;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/hind-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/martel-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
 {
@@ -39,7 +38,7 @@
 <body>
 
 <header class="nav nav--over">
-  <a class="brand" href="./"><img src="assets/medallion.jpg" alt="catadoption_pune medallion — two cuddling cats">catadoption_pune</a>
+  <a class="brand" href="./"><img src="assets/medallion.jpg" alt="catadoption_pune medallion — two cuddling cats" width="400" height="400">catadoption_pune</a>
   <nav>
     <a href="adopt.html">Adopt</a>
     <a href="adoptable.html">Meet the cats</a>
@@ -54,7 +53,7 @@
 <!-- SCENE 1 · hero: the photo is a transparent cutout on .pin--hero's own sage field, so the scroll zoom scales the kittens against flat colour and the copy needs no scrim. A rectangular photo here re-breaks all three; see README.md "The index.html hero is a scroll sequence". Runway spacers are the pacing knob: positive heights only, tune on real devices. -->
 <section class="scene">
   <div class="pin pin--hero">
-    <img src="assets/hero-kittens-cutout.webp" alt="Two cream-point indie kittens sitting side by side, one looking straight at you">
+    <img src="assets/hero-kittens-cutout.webp" alt="Two cream-point indie kittens sitting side by side, one looking straight at you" width="1400" height="1367" fetchpriority="high">
     <div class="hero-copy">
       <p class="eyebrow">catadoption_pune · Pune &amp; PCMC</p>
       <h1><span class="l">Born on the street.</span> <span class="l">One person away</span> <span class="l">from home.</span></h1>
@@ -77,7 +76,7 @@
 <!-- SCENE 2 · how it works, panel crossing the photo -->
 <section class="scene">
   <div class="pin pin--yellow">
-    <img src="assets/cat-lying-look.jpg" alt="A ginger-and-white indie cat lying stretched out on a tiled floor, looking off to one side">
+    <img src="assets/cat-lying-look.jpg" alt="A ginger-and-white indie cat lying stretched out on a tiled floor, looking off to one side" width="1526" height="1600">
   </div>
   <div class="over">
     <div class="runway" style="height:12vh"></div>
@@ -99,7 +98,7 @@
 <!-- SCENE 3 · CTA -->
 <section class="scene">
   <div class="pin pin--sky">
-    <img src="assets/home-cat-asleep.jpg" alt="A white-and-ginger indie cat asleep and sprawled on a bed, completely relaxed">
+    <img src="assets/home-cat-asleep.jpg" alt="A white-and-ginger indie cat asleep and sprawled on a bed, completely relaxed" width="1600" height="1472">
   </div>
   <div class="over">
     <div class="runway" style="height:12vh"></div>
