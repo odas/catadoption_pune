@@ -26,6 +26,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 - **Every photo carries its real `width` and `height`**, so the page keeps the space while the photo loads
   and the text doesn't jump. A photo on the first phone screen loads straight away (no `loading="lazy"`);
   photos further down wait for the scroll. The home page's kitten photo also carries `fetchpriority="high"`.
+- **No page promises how long an adoption takes.** It can be a week, a month, or no calls at all, so the pages say
+  there's no telling, and that kittens of 1½ to 3 months have the best chance. Don't add "about a month" back to be
+  helpful: a rescuer plans around a number. The warning stays: someone who needs the cat gone by a date is told this
+  is not the route. (`send-a-cat.html` panel 06 and its card, `resources.html`, the `learn.html` card; 2026-09-27.)
 - **The settling timeline on `learn.html` disagrees with the internet on purpose.** The page says
   most indies settle in days rather than weeks, and names the **3-3-3 rule** (three days, three
   weeks, three months) as a foreign baseline that does not transfer. It does not transfer because
