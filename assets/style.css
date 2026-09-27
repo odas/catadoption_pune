@@ -130,6 +130,12 @@ a{color:inherit;}
 @keyframes inkin{from{opacity:0}to{opacity:1}}
 
 /* white breathing strip */
+.doors{background:var(--white);display:flex;flex-wrap:wrap;justify-content:center;gap:0.8rem;padding:2.2rem 6vw;position:relative;z-index:2;}
+.doors a{display:inline-flex;align-items:center;min-height:48px;padding:0.7rem 1.5rem;border-radius:40px;background:var(--butter);color:var(--ink);font-family:var(--font-body);font-weight:600;font-size:1.05rem;text-decoration:none;}
+.doors a::after{content:"→";margin-left:0.55rem;}
+.doors a:hover{box-shadow:0 6px 18px rgba(20,17,24,0.16);}
+.doors a:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
+@media (max-width:560px){.doors{flex-direction:column;align-items:stretch;padding:1.6rem 16px;}.doors a{justify-content:space-between;}}
 .strip{background:var(--white);padding:clamp(4rem,12vh,7rem) 6vw;text-align:center;}
 .strip h2{font-size:clamp(1.6rem,3.6vw,3rem);max-width:22ch;margin:0 auto;}
 .strip h2 em{font-style:normal;color:var(--peri);}
