@@ -157,6 +157,8 @@ page (`/cats` to the board, the rest to an article) with the campaign tag attach
 Short's link is not tappable while the video plays, so it has to be *said* and typed. They are
 `noindex` and out of the sitemap. ⛔ **Do not delete one once it has been spoken in a video** —
 the video cannot be edited and the URL is burned into some of them.
+⛔ **The same goes for any page whose address a video shows**: `adoptable.html`, `learn.html`, and every article a
+Short's closing card names (`cat-hair-pune-flat.html` and the rest). Never rename or remove one.
 `found-kitten-pune.html` and `send-a-cat.html` were noindex drafts until 2026-09-13 and are now
 indexed like any other page.
 
