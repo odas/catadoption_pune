@@ -12,7 +12,10 @@
         the site loads no link-conversion script (decided 2026-09-08).
         Every affiliate link carries data-goatcounter-click="aff/<page>/<merchant-item>" so clicks are counted on our
         side too (GoatCounter events; the panel counts the same click on theirs). NO affiliate on care-education
-        (learn.html) or anything distress-adjacent. -->
+        (learn.html) or anything distress-adjacent.
+     4. make its share picture, assets/share/[FILENAME].jpg (1200x630; made by a script kept outside this repo)
+     5. [UPDATED] is the page's sitemap lastmod, the same date in the byline and the markup. Change all three
+        together, and only when the content changes. -->
 <meta name="robots" content="noindex">
 <title>[ARTICLE TITLE] — catadoption_pune</title>
 <meta name="description" content="[ONE-SENTENCE DESCRIPTION — answer the question in sentence one]">
@@ -20,12 +23,28 @@
 <link rel="icon" href="assets/medallion.jpg" type="image/jpeg">
 <meta property="og:title" content="[ARTICLE TITLE] — catadoption_pune">
 <meta property="og:description" content="[ONE-SENTENCE DESCRIPTION]">
-<meta property="og:image" content="https://catadoption.in/assets/medallion.jpg">
+<meta property="og:image" content="https://catadoption.in/assets/share/[FILENAME].jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://catadoption.in/[FILENAME].html">
 <meta property="og:type" content="article">
 <link rel="preload" href="assets/fonts/hind-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/martel-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "[ARTICLE TITLE]",
+  "image": ["https://catadoption.in/assets/share/[FILENAME].jpg"],
+  "dateModified": "[UPDATED, YYYY-MM-DD]",
+  "author": {"@type": "Organization", "name": "catadoption_pune", "url": "https://catadoption.in/about.html"},
+  "publisher": {"@type": "Organization", "name": "catadoption_pune",
+                "logo": {"@type": "ImageObject", "url": "https://catadoption.in/assets/medallion.jpg"}},
+  "mainEntityOfPage": "https://catadoption.in/[FILENAME].html"
+}
+</script>
 </head>
 <body>
 
@@ -49,7 +68,7 @@
 </section>
 
 <main class="prose">
-  <p class="art-meta">By catadoption_pune · [MONTH YEAR] · Pune &amp; PCMC</p>
+  <p class="art-meta">By catadoption_pune · Updated <time datetime="[UPDATED, YYYY-MM-DD]">[UPDATED, e.g. 26 September 2026]</time> · Pune &amp; PCMC</p>
 
   <p class="lead">[ANSWER-FIRST OPENING — give the core answer in the first two sentences. India-doesn't-read rule: summary first, visuals, short sections.]</p>
 

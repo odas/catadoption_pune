@@ -100,6 +100,13 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 
 - **New articles copy `article-template.html`**, follow the comments inside it, and get
   added to `sitemap.xml`.
+- **Each guide shares with its own picture**, `assets/share/<page>.jpg`: 1200×630, its top photo or drawn card, its
+  heading, and `catadoption.in` beside `@catadoption_pune`. A script kept outside this repo makes them, so a changed
+  heading means remaking the card. Keep each under 300 KB, because WhatsApp shows only a small thumbnail above that.
+  The medallion stays the picture for the other pages.
+- **A guide's "Updated" date is its `sitemap.xml` `lastmod`**, shown in the byline and repeated as `dateModified` in the
+  page's `Article` markup, because Google asks for the markup to match what the page shows. Move all three together, and
+  only when the content changes, never to make a page look fresh.
 - **The palette and fonts in `assets/style.css` are locked decisions**, not defaults.
   Change them only on purpose.
 - **`hero-cat.jpg` is the last Unsplash placeholder in `assets/`** — still live on a `learn.html`
