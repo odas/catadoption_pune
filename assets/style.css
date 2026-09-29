@@ -75,7 +75,7 @@ a{color:inherit;}
    photograph. White on --sage is ~2.6:1; ink is ~7:1. If a rectangular photo ever comes back
    behind this text, the white and the shadow have to come back with it. */
 .hero-copy h1{font-size:clamp(2.4rem,5.6vw,4.6rem);color:var(--ink);margin-bottom:1rem;}
-/* the headline's lines are units: sized to the copy column (cqw) so the longest, "Born on the street.", always fits on one
+/* the headline's lines are units: sized to the copy column (cqw) so the longest, "Pune's indie cats." (since 2026-09-29), always fits on one
    line; the vw clamp above is the fallback where container units are unsupported (2026-09-08, after the "odd cuts" complaint) */
 .hero-copy h1{font-size:clamp(2rem,10.2cqw,4.6rem);}
 .hero-copy h1 .l{display:block;white-space:nowrap;}
