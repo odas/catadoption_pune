@@ -60,9 +60,14 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   leaves, so a longer headline or sub-line can never run across their ears, and the scroll zoom grows from the
   photo's top edge for the same reason. Don't tie the photo's height back to the screen's.
 - **On the home page, every pinned scene fills the whole screen on a phone** (`.pin`, `100lvh`). At 72% the page's white showed
-  below the photo while the spacers scrolled past, which were the "white strips" several sessions chased. Scene 2's cat is a cut-out on
-  the flat yellow, like the hero. Scene 3's is a photo sitting on the sky field with its edges faded into it: a cut-out of a
-  cat seen from above reads as falling.
+  below the photo while the spacers scrolled past, which were the "white strips" several sessions chased.
+- **Below the hero the home page has one more scene, and it follows the template the site began from** (2026-10-02): one
+  whole cat on flat yellow, the only thing that moves, with a small panel crossing it. The cat is a cut-out made from
+  the full-size original, with its shadow in the file; its left end is where the photo cut the tail, so it runs off
+  the left edge. Two things were tried here and taken out, so don't bring them back: a cut-out blown up past its own
+  pixels with a straight cut where the photo ended, and a photograph faded into a colour field. A cat cut out from
+  above with nothing under it reads as falling. The closing section is colour and words, then three tiles: Instagram
+  and two videos, each a still kept on this site with a link out, never an embed.
 - **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
   slides the periwinkle band up over it, so a hero photo has three jobs at once and one that does
   only the first looks shabby the moment the page moves: a subject high enough in the frame to
@@ -99,8 +104,9 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   Browse · Connect · Adopt, those names, that count, on both pages. They said three and five of
   the same process until 2026-09-15. If the process changes, change both or neither — the home
   page is a preview of the adopt page, not a separate claim.
-  Since 2026-09-26 the home page draws them: two unnumbered rows first (no shelter, a rescuer's home),
-  then the three steps with those names. The unnumbered rows are context, not steps.
+  Since 2026-09-26 the home page draws them. Two drawings come first (no shelter, a rescuer's home): they are the
+  reason the steps exist, not steps, so since 2026-10-02 they sit apart with one sentence and carry no number and no
+  title. Then the three steps with those names.
 
 - **New articles copy `article-template.html`**, follow the comments inside it, and get
   added to `sitemap.xml`.

@@ -82,15 +82,10 @@ a{color:inherit;}
 .hero-copy p{color:var(--ink);font-size:clamp(1rem,1.4vw,1.15rem);max-width:34ch;}
 
 .pin--yellow{background:var(--yellow);}
-/* Scene 2: the lying cat is a cut-out on the flat yellow, sitting on the bottom edge, like the hero. The field IS the
-   background, so no photo edge or page white can show while the panels slide over it (2026-09-26). */
-.pin--yellow img{left:auto;right:0;width:62%;height:auto;top:auto;bottom:0;object-fit:contain;}
-.pin--sky{background:var(--sky);}
-/* Scene 3: the sleeping cat stays a photograph (a cut-out from above reads as falling); it sits on the bottom edge of
-   the sky field and its top edge, a pale blue wall, fades into the field. */
-.pin--sky img{width:62%;left:auto;right:0;height:auto;max-height:100%;top:auto;bottom:0;object-fit:contain;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%),linear-gradient(to right,transparent 0,#000 20%);
-  -webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0,#000 22%),linear-gradient(to right,transparent 0,#000 20%);mask-composite:intersect;}
+/* Scene 2: one whole cat on the flat yellow, and it is the only thing that moves (the scroll zoom). The cut-out's
+   left end is where the photo cut the tail, so it runs off the left edge. Its shadow is in the file, so nothing is
+   filtered while it scales. */
+.pin--item img{inset:auto;left:-1vw;right:auto;top:50%;bottom:auto;margin-top:-14vw;width:64vw;max-width:none;height:auto;object-fit:contain;transform-origin:30% 60%;}
 
 /* content that slides over the pinned photo */
 .over{position:relative;z-index:2;}
@@ -107,24 +102,33 @@ a{color:inherit;}
 /* translucent panel crossing the photo */
 .glass{background:var(--peri-glass);color:var(--ink);width:min(560px,88%);margin-left:6vw;padding:clamp(2rem,5vh,3.5rem);}
 .glass h2{font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:2rem;}
+.glass--say{width:min(400px,86%);margin-left:auto;margin-right:6vw;padding:clamp(1.8rem,4vh,2.8rem);}
+.glass--say h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:0.7rem;}
+.glass--say p{font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.6;}
 .step{padding:1.1rem 0;border-bottom:1px solid rgba(20,17,24,0.18);}
 .step:last-child{border-bottom:none;}
 .step h3{font-size:clamp(1.15rem,1.9vw,1.5rem);margin-bottom:0.2rem;}
 .step p{font-size:0.95rem;opacity:0.85;max-width:none;margin:0;}
 
-/* scene 2: the five drawn steps (the drawings are generated outside this repo). Each sits on its own paper card,
-   because the colour under the lines is multiplied and would go muddy on the purple. Finished by default: the draw-on
-   runs only once the panel's reveal fires, and never with reduced motion. */
-.dstep{display:grid;grid-template-columns:minmax(0,11rem) 1fr;gap:0 1.2rem;align-items:center;padding:0.9rem 0;border-bottom:1px solid rgba(20,17,24,0.18);}
-.dstep:last-child{border-bottom:none;}
-.dstep h3{font-family:'Kalam',var(--font-head);font-weight:700;font-size:clamp(1.3rem,2vw,1.6rem);line-height:1.05;margin-bottom:0.25rem;}
-.dstep p{font-size:0.95rem;max-width:none;margin:0;}
-.dcard{background:var(--white);border-radius:3px;padding:0.35rem 0.4rem;transform:rotate(-1.2deg);box-shadow:0 1px 0 rgba(20,17,24,0.12);}
-.dstep:nth-child(odd) .dcard{transform:rotate(1deg);}
+/* How it works: the drawn steps on a paper section of their own (the drawings are generated outside this repo).
+   Left, the two drawings that say why the steps exist, with one sentence and no numbers; right, the three numbered
+   steps. Each drawing sits on its own white card, because the colour under the lines is multiplied. Finished by
+   default: the draw-on runs only once the section's reveal fires, and never with reduced motion. */
+.how{background:#faf7f0;padding:clamp(3rem,8vh,5.5rem) 6vw;position:relative;z-index:2;}
+.how-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(1.6rem,4vw,4rem);align-items:start;}
+.how h2{grid-column:1/-1;font-size:clamp(1.6rem,2.8vw,2.3rem);margin-bottom:0.4rem;}
+.how-why-art{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-bottom:1rem;}
+.how-why p{font-size:clamp(1.02rem,1.25vw,1.15rem);line-height:1.6;max-width:34ch;}
+.how-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.8rem);border-left:1px solid rgba(20,17,24,0.16);padding-left:clamp(1.6rem,4vw,4rem);}
+.dstep h3{font-family:'Kalam',var(--font-head);font-weight:700;font-size:clamp(1.2rem,1.6vw,1.45rem);line-height:1.05;margin-bottom:0.3rem;}
+.dstep p{font-size:0.95rem;line-height:1.55;max-width:none;margin:0;}
+.dstep .dcard{margin-bottom:0.9rem;}
+.dcard{background:var(--white);border-radius:3px;padding:0.35rem 0.4rem;transform:rotate(-1.2deg);box-shadow:0 1px 0 rgba(20,17,24,0.12),0 6px 16px rgba(20,17,24,0.06);}
+.dstep:nth-child(even) .dcard,.how-why-art .dcard:nth-child(2){transform:rotate(1deg);}
 .drawn{display:block;width:100%;height:auto;overflow:visible;}
 @media(prefers-reduced-motion:no-preference){
-  .glass.in .drawn .art-line path,.glass.in .drawn .art-pass path{stroke-dasharray:1 1;animation:draw 0.4s ease-out both;animation-delay:calc(var(--d,0s) + 0.35s + var(--i)*0.06s);}
-  .glass.in .drawn .art-fill,.glass.in .drawn .art-dot,.glass.in .drawn .art-word{animation:inkin 0.5s ease-out both;animation-delay:calc(var(--d,0s) + 0.6s);}
+  .how-inner.in .drawn .art-line path,.how-inner.in .drawn .art-pass path{stroke-dasharray:1 1;animation:draw 0.4s ease-out both;animation-delay:calc(var(--d,0s) + 0.35s + var(--i)*0.06s);}
+  .how-inner.in .drawn .art-fill,.how-inner.in .drawn .art-dot,.how-inner.in .drawn .art-word{animation:inkin 0.5s ease-out both;animation-delay:calc(var(--d,0s) + 0.6s);}
 }
 @keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 @keyframes inkin{from{opacity:0}to{opacity:1}}
@@ -136,9 +140,6 @@ a{color:inherit;}
 .doors a:hover{box-shadow:0 6px 18px rgba(20,17,24,0.16);}
 .doors a:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
 @media (max-width:560px){.doors{flex-direction:column;align-items:stretch;padding:1.6rem 16px;}.doors a{justify-content:space-between;}}
-.strip{background:var(--white);padding:clamp(4rem,12vh,7rem) 6vw;text-align:center;}
-.strip h2{font-size:clamp(1.6rem,3.6vw,3rem);max-width:22ch;margin:0 auto;}
-.strip h2 em{font-style:normal;color:var(--peri);}
 
 /* CTA band */
 .cta{background:var(--peri);text-align:center;padding:clamp(4rem,12vh,7rem) 6vw;}
@@ -149,6 +150,19 @@ a{color:inherit;}
 .btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
 .cta .alt{display:block;margin-top:1.4rem;font-size:0.9rem;}
 .cta .alt a{color:var(--ink);}
+/* Under the closing ask: where to see more. Three tiles of one height; the pictures are stills kept on this site, the
+   links go out. */
+.seen{display:flex;justify-content:center;align-items:flex-start;gap:clamp(0.8rem,2vw,1.4rem);margin:clamp(2.4rem,6vh,3.6rem) auto 0;max-width:980px;text-align:left;}
+.seen-tile{display:block;color:var(--ink);text-decoration:none;flex:0 0 auto;}
+.seen-pic{display:block;height:clamp(200px,26vw,300px);border-radius:10px;overflow:hidden;background:#faf7f0;box-shadow:0 8px 22px rgba(20,17,24,0.18);}
+.seen-pic img{display:block;height:100%;width:auto;max-width:none;}
+.seen-tile--insta .seen-pic{aspect-ratio:9/16;display:grid;place-items:center;background:var(--butter);}
+.seen-tile--insta .seen-pic img{height:auto;width:56%;border-radius:50%;}
+.seen-cap{display:block;margin-top:0.6rem;font-size:0.9rem;line-height:1.4;font-weight:500;}
+.seen-tile--insta .seen-cap,.seen-tile--tall .seen-cap{max-width:calc(clamp(200px,26vw,300px)*9/16);}
+.seen-tile--wide .seen-cap{max-width:calc(clamp(200px,26vw,300px)*16/9);}
+.seen-tile:hover .seen-pic{box-shadow:0 12px 30px rgba(20,17,24,0.28);}
+.seen-tile:focus-visible{outline:3px solid var(--ink);outline-offset:4px;}
 
 /* ---------- interior pages ---------- */
 .page-hero{padding:clamp(2.6rem,7vh,4.5rem) 6vw;}
@@ -225,13 +239,27 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 @media(max-width:768px){
   /* Full height: at 72% the bottom of the screen showed the page's white while the spacers scrolled past (the "white strips"). */
   .pin{height:100vh;height:100lvh;}
-  .pin--yellow img{width:150%;left:-12%;right:auto;}
-  .pin--sky img{width:100%;left:0;right:auto;
-    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%);mask-image:linear-gradient(to bottom,transparent 0,#000 22%);}
+  .pin--item img{width:165vw;left:-62vw;top:34%;margin-top:0;}
   .hero-copy{width:100%;flex-basis:100%;padding:0 7vw;}
   .hero-copy h1{font-size:clamp(1.9rem,10.2cqw,3rem);}
   .glass{width:100%;margin:0;}
-  .dstep{grid-template-columns:38% 1fr;gap:0 0.9rem;}
+  .how{padding:2.6rem 7vw;}
+  .how-inner{display:block;}
+  .how h2{margin-bottom:1.3rem;}
+  .how-why{padding-bottom:1.4rem;margin-bottom:0.6rem;border-bottom:1px solid rgba(20,17,24,0.16);}
+  .how-steps{display:block;border-left:none;padding-left:0;}
+  .dstep{display:grid;grid-template-columns:38% 1fr;gap:0 0.9rem;align-items:center;padding:0.9rem 0;border-bottom:1px solid rgba(20,17,24,0.14);}
+  .dstep:last-child{border-bottom:none;}
+  .dstep .dcard{margin-bottom:0;}
+  .glass--say{margin-left:auto;margin-right:auto;}
+  .seen{flex-wrap:wrap;gap:1rem 0.8rem;}
+  .seen-pic{height:auto;}
+  .seen-tile--wide{flex:0 0 100%;order:-1;}
+  .seen-tile--wide .seen-pic img{width:100%;height:auto;}
+  .seen-tile--insta,.seen-tile--tall{flex:1 1 0;min-width:0;}
+  .seen-tile--tall .seen-pic img{width:100%;height:auto;}
+  .seen-tile--insta .seen-pic{aspect-ratio:9/16;}
+  .seen-cap{max-width:none!important;}
   /* The nav was three wrapped tiers — 155px of a 608px hero, with ink links sitting on
      whatever the photo happened to be. One row, scrollable, every link kept. */
   .nav{padding:0.7rem 5vw;}
