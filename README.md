@@ -129,6 +129,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   **kitten wet food** — and a forced fit is worse than a stock photo that is on-topic.
 - **`assets/day-one-checklist.mp4` is silent on purpose.** It is the day-one page's hero, cut from the
   channel's Short; the Short's music is licensed for YouTube only, so the site's copy carries none.
+  `assets/where-the-cats-are.mp4`, the map clip at the top of `about.html`, is silent for the same reason.
 - **The drawings are a system, not decoration.** `assets/style.css` § THE SKETCHBOOK LAYER holds
   the ladder, the card deck and the line-art rules (ink strokes, no fill, red used only for
   prohibition), added 2026-09-12 so a page can be understood before it is read. Colour carries
