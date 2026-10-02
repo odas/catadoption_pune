@@ -1,31 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="6 44 288 163" width="600" height="340" role="img" aria-label="A drawing of a mother cat lying down, washing a much smaller kitten tucked under her chin">
-<!-- Card thumbnail for found-kitten-pune.html. REPLACED 2026-09-13 at OD's word: "the learn.html
-     picture for this article is bad, needs to be changed."
-
-     WHAT WAS WRONG with the 2026-09-12 original, so it is not rebuilt that way again:
-       1. It was drawn in THE SKETCHBOOK LAYER - flat fill, geometric strokes, straight lines - while
-          the page it opens is THE SPREAD LAYER. The card promised one page and opened another.
-       2. Uniform strokes on a geometric grid is what brand-kit.md section 3 names as reading as AI
-          to OD, and what she flagged on the cat-hair Short's line diagrams.
-       3. Its two cats were THE SAME SIZE, so "mother" and "kitten" did not read - the one distinction
-          the page exists to make.
-       4. "WAIT." was set 86px in heavy Martel. START-HERE.md section 1: never shouting.
-
-     WHY THERE ARE NO WORDS ON IT NOW, which was the second attempt's mistake and is worth recording:
-     the replacement first kept "Wait. She is usually still nearby." in Kalam. Opened in a browser,
-     the lettering came out as a fallback SERIF - an SVG used as an <img> is an isolated document and
-     cannot reach the page's Google Fonts link, so the one thing the card existed to promise (the
-     hand) was the one thing it could not show. Embedding the woff2 as base64 would fix it and costs
-     tens of KB in a thumbnail. It is not needed: the card's own <h2> on learn.html already reads
-     "Found a kitten outside alone?" and carries a TL;DR under it, and every other card in that grid
-     is a wordless image. So the card is a picture, like its neighbours, and the words stay live text
-     in the HTML where they can be read, selected and translated.
-
-     The drawing is found-kitten-pune.html panel 02, copied unchanged. The viewBox is CROPPED to the
-     drawing's own bounds (6 44 288 163) rather than the source's full 300x170: at the full box the
-     cats sat in the bottom third with dead paper above them, which a card-sized thumbnail cannot
-     afford. It is the cold session's own work of 2026-09-12, and its mother is about four times the
-     kitten, which settles fault 3 by construction. -->
+<!-- Card thumbnail for found-kitten-pune.html: its panel 02, cropped to the drawing. No words on it on purpose:
+     an SVG shown as an image cannot load the site's fonts, and the card's heading on learn.html is live text. -->
   <defs>
     <filter id="cwob" x="-14%" y="-14%" width="128%" height="128%">
       <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="7" result="n"/>

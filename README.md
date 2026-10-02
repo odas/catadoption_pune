@@ -9,7 +9,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 
 ## Rules baked into this site — don't undo them by accident
 
-- **A comment in a page is public.** Anyone can read it in the page source or in this repo. Keep
+- **A comment is public, in a page, the stylesheet, the script or a drawing.** Anyone can read it in the page source or in this repo. Keep
   each one short and about the code beside it: a label on a drawing, or a line that stops a
   well-meaning edit. A page's history, the reasons behind it and the owner's own words are kept
   privately, outside this repo. Commit messages are public too: say what changed and why, without
@@ -35,7 +35,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   weeks, three months) as a foreign baseline that does not transfer. It does not transfer because
   the population is different: indies here are mostly placed as kittens, an adult indie that lets
   itself be caught is self-selected for tolerating people, and an abandoned cat was socialised
-  already — while 3-3-3 describes shelter cats abroad, mostly surrendered or trapped. OD's
+  already — while 3-3-3 describes shelter cats abroad, mostly surrendered or trapped. The owner's
   calibration, 2026-09-16. **A session that checks this against the literature will find the
   literature disagrees and will be wrong to "fix" it.** The day-one article carries the same range
   in her own voice — *"Some come out in an hour. Some take two days."* — and the two must keep
@@ -45,7 +45,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   cards. `blog.html` is a redirect to it, kept so old links work; a new article gets its card
   on `learn.html`, newest first.
 - **The hero photo is a transparent cutout on flat sage, and that is load-bearing.**
-  `assets/hero-kittens-tree.webp` (and `-800` for phones) is OD's own kittens cut out **with the
+  `assets/hero-kittens-tree.webp` (and `-800` for phones) is the owner's own kittens cut out **with the
   cat-tree bowl they sit in**, the bowl bleeding off the bottom edge. The 09-15 cut-out without the
   bowl made them float, so keep the bowl in any recut. The field
   behind them is `.pin--hero`'s own `--sage`. That is what makes the three jobs below succeed at
@@ -107,19 +107,19 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   The medallion stays the picture for the other pages.
 - **A guide's "Updated" date is its `sitemap.xml` `lastmod`**, shown in the byline and repeated as `dateModified` in the
   page's `Article` markup, because Google asks for the markup to match what the page shows. Move all three together, and
-  only when the content changes, never to make a page look fresh.
+  only when the content changes, never to make a page look fresh. The byline's name links to `about.html`.
 - **The palette and fonts in `assets/style.css` are locked decisions**, not defaults.
   Change them only on purpose.
 - **`hero-cat.jpg` is the last Unsplash placeholder in `assets/`** — still live on a `learn.html`
-  card, kept deliberately (OD, 2026-09-15: *"in case my kitten photo did not work out"*). Its two
+  card, kept deliberately as a fallback in case the kitten photo did not work out (the owner's call, 2026-09-15). Its two
   siblings are gone: `cat-yawn.jpg` (a Scottish Fold in novelty sunglasses under the closing CTA,
   on a site whose argument is that indies equal any expensive breed) and `cat-closeup.jpg`, both
-  retired to `P-website/superseded/` on 2026-09-15 and replaced by OD's own photos. The in-article
+  retired on 2026-09-15 and replaced by the owner's own photos. The in-article
   photos (cat hair, accidents, kitten wet food, litter box, feeding strays) are licensed Adobe
-  Stock, free-collection tier, each row logged in `video/adobe/api-log.md`.
+  Stock, free-collection tier, each one logged privately.
 - **Articles may carry a second photo now.** The 2026-09-10 rule was one image at the top, Medium's
-  convention, OD's ask — that is why `day-one-under-bed.jpg` was pulled out of the body. She widened
-  it on 2026-09-15: *"You can add them as additional images when the existing one too is good."* So
+  convention, the owner's ask — that is why `day-one-under-bed.jpg` was pulled out of the body. She widened
+  it on 2026-09-15: a second image may be added when the existing one is good too. So
   the top image still leads; a second one earns its place by carrying an argument the text is
   already making, and it should be one of her own. Four went in that day (monsoon, day-one,
   cat-hair, netting). Two articles still have no photo of hers that fits — **accidents** and
