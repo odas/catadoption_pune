@@ -55,7 +55,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   WebP for the alpha channel: 69 KB for phones, 127 KB for desktop. The source photo is kept privately
   with the owner's originals, not in this repo. **On a phone the hero doesn't pin** and the band
   follows it rather than sliding over it (2026-09-26): the phone band is taller than the space
-  above the kittens, so it always came to rest over their faces. Desktop keeps the slide.
+  above the kittens, so it always came to rest over their faces. Desktop keeps the slide. **On a phone the
+  hero is a column, the copy and then the kittens under it** (2026-10-02): the photo takes the height the copy
+  leaves, so a longer headline or sub-line can never run across their ears, and the scroll zoom grows from the
+  photo's top edge for the same reason. Don't tie the photo's height back to the screen's.
 - **On the home page, every pinned scene fills the whole screen on a phone** (`.pin`, `100lvh`). At 72% the page's white showed
   below the photo while the spacers scrolled past, which were the "white strips" several sessions chased. Scene 2's cat is a cut-out on
   the flat yellow, like the hero. Scene 3's is a photo sitting on the sky field with its edges faded into it: a cut-out of a
@@ -133,7 +136,9 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   the free version — so don't recolour a block for looks. Words inside a diagram stay live text,
   never drawn, so they can be selected, translated and found by search. `found-kitten-pune.html`
   is the first page built this way and `assets/found-kitten-card.svg` its drawn card image;
-  `send-a-cat.html` is the second, with `assets/send-a-cat-card.svg`. Six of its nine panel
+  `send-a-cat.html` is the second, with `assets/send-a-cat-card.svg`. A card file is an image, so the rule above doesn't reach it: an
+  SVG shown as an image cannot load the site's fonts, and the send-a-cat card's words are drawn shapes for that
+  reason. Don't turn them back into text. Six of its nine panel
   drawings are reused from the found-kitten set unchanged — the set is meant to be composed
   from, not redrawn per page.
   The home page's drawings come from the same library as the YouTube videos: what sits between an

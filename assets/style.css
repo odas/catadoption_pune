@@ -240,12 +240,14 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
   .nav nav::-webkit-scrollbar{display:none;}
   .nav nav a{flex:none;}
   .nav .pill{padding:0.3rem 0.85rem;min-height:30px;}
-  /* Hero: kittens along the bottom, bled a little past both edges so they read big;
-     copy above them on flat sage, in ink. */
-  .pin--hero{display:block;height:82vh;height:82svh;}
-  .pin--hero img{width:118%;left:-9%;right:auto;height:52%;top:auto;bottom:-5%;opacity:1;
-    object-fit:contain;object-position:center bottom;transform-origin:bottom center;}
-  .hero-copy{position:absolute;top:0;left:0;right:0;
+  /* Hero: copy on flat sage, in ink, and the kittens under it. The photo takes whatever height the copy
+     leaves, so the sub-line never sits on their ears; on a short phone the hero grows a little past 82%
+     of the screen rather than shrink them further. The scroll zoom grows from the photo's top edge, so it
+     pushes the bowl off the bottom and never the ears into the text. */
+  .pin--hero{display:flex;flex-direction:column;height:auto;min-height:82vh;min-height:82svh;}
+  .pin--hero img{position:relative;inset:auto;order:2;flex:1 1 0;min-height:66vw;height:0;width:118%;margin:0.5rem 0 -5% -9%;opacity:1;
+    object-fit:contain;object-position:center bottom;transform-origin:top center;}
+  .hero-copy{position:relative;order:1;flex:0 0 auto;
     padding-top:calc(102px + env(safe-area-inset-top,0px));}
   .hero-copy .eyebrow{color:var(--ink);opacity:0.85;}
   /* seven centred lines is not a paragraph on a 390px screen */
