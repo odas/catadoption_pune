@@ -20,7 +20,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   before adding or changing it. The line about a hurt cat says honestly that help is thin and many numbers may not
   ring; keep it honest when editing, and don't turn it into a promise that someone will come.
 - **Fonts come from this site, not from Google** (`assets/fonts/`, the `@font-face` block at the top of
-  `assets/style.css`, licence in `assets/fonts/OFL.txt`). Every page preloads Hind 400 and Martel 700. Don't
+  `assets/style.css`, licence in `assets/fonts/OFL.txt`). Every page preloads Hind 400, Martel 700 and Kalam 700
+  (every page heading is set in Kalam since 2026-10-05). Don't
   add a `fonts.googleapis.com` link back: it slowed every page and sent each visitor's address to Google.
   A new weight means downloading its files the same way, not linking Google for it.
 - **Every photo carries its real `width` and `height`**, so the page keeps the space while the photo loads
@@ -119,6 +120,28 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   only when the content changes, never to make a page look fresh. The byline's name links to `about.html`.
 - **The palette and fonts in `assets/style.css` are locked decisions**, not defaults.
   Change them only on purpose.
+- **How the palette and fonts are used is a rule too** (2026-10-05, the paper-and-ink system). The tokens at the top
+  of `assets/style.css` are the only values: type sizes `--s-2` to `--s5`, radii, the ink edge, the hard shadow
+  (`--lift`), the reading column (`--col`) and the wide grid (`--wide`). A new size, radius, colour or shadow goes
+  into the tokens first or not at all; that is how 50 font sizes and 14 radii happened before.
+  - **Ground and edges.** Every page sits on paper (`--paper`); cards are white with a 2px ink edge; things you can
+    press lift on a hard ink shadow. No soft blurred shadows.
+  - **Three faces, three jobs.** Kalam for page headings and anything in the hand (the highlighter phrase, panel
+    labels, captions); Martel for section headings; Hind for reading. Nothing is set in capitals except the small
+    labels (`.eyebrow`, the crumb).
+  - **The hero's colour says which part of the site you are in:** sage adopt (`adopt`, `adopter-form`, `visit`,
+    and the board once its generator says so), periwinkle care (`learn` and every guide), sky help now (`resources`,
+    `found-kitten-pune`), yellow the people (`about`, `send-a-cat`), butter money and fine print (`shop`,
+    `privacy`, `404`). Inside a drawing, colour keeps the sketchbook meanings below; that is a different scale.
+  - **The hero's text starts on the same line as the column under it**, so nothing jumps sideways below the
+    scalloped edge. A drawing in a hero sits on a white card (`.page-hero--art` gives it a column on a wide screen).
+    The `.hl` highlighter goes on the words that carry the answer. A guide's heading keeps its exact words
+    when it gets one, because its share picture carries the heading.
+  - **Real cats, in doses.** A hub page may tape one of the owner's own photos into its hero (`.snap`, a 560px
+    square crop in `assets/snap/`, made from the original): `adopt`, `about` and `visit` carry one. Never a stock
+    photo there; the snap is the page saying it is a real Pune page.
+  - **Icons are drawn, not emoji** (`assets/icons.svg`, used with `<use>`), in the same hand as the drawings.
+    Emoji look different on every phone.
 - **`hero-cat.jpg` is the last Unsplash placeholder in `assets/`** — still live on a `learn.html`
   card, kept deliberately as a fallback in case the kitten photo did not work out (the owner's call, 2026-09-15). Its two
   siblings are gone: `cat-yawn.jpg` (a Scottish Fold in novelty sunglasses under the closing CTA,
@@ -163,7 +186,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   never do. Same test for any future specimen — a review, a testimonial, a WhatsApp thread.
 
 - **`adoptable.html` is generated, never hand-written.** A script builds it from the
-  adoptable-cats sheet; edit it here and the next run overwrites you.
+  adoptable-cats sheet; edit it here and the next run overwrites you. Its own `<style>` block is the
+  generator's; `assets/style.css` § THE BOARD restyles the cards one class deeper so the board matches the rest of
+  the site. Until the generator changes, the board's hero stays periwinkle (it should say `page-hero--sage`) and it
+  does not preload Kalam 700.
 
 ## Layout
 
