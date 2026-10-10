@@ -129,7 +129,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   `send-a-cat`), periwinkle for care and the shop (`learn`, every guide, `shop`), sky for help now (`resources`,
   `found-kitten-pune`), butter for about and the fine print (`about`, `privacy`, `404`). No page top is yellow, because
   yellow means "act now" in the drawings. The shop is never butter, because butter is "the free version" on its cards.
-  A guide's share picture takes its page top's colour, so after a colour change rerun `share_cards.py` for that guide.
+  A guide's share picture takes its page top's colour, so a colour change means a new share picture too.
   The board (`adoptable.html`) is still periwinkle until its generator changes.
 - **No Unsplash photo is left on the site.** The last, `hero-cat.jpg`, had been kept on `learn.html`'s adopting card as a
   fallback in case the kitten photo did not work out (the owner's call, 2026-09-15). It did work out, and on 2026-10-10 the
