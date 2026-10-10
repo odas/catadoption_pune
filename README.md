@@ -119,6 +119,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   only when the content changes, never to make a page look fresh. The byline's name links to `about.html`.
 - **The palette and fonts in `assets/style.css` are locked decisions**, not defaults.
   Change them only on purpose.
+- **How they are used is set by the tokens at the top of `assets/style.css`**: type sizes `--s-2` to `--s5`, the radii,
+  the ink edge (`--edge`) and the hard shadow (`--lift`). A new size, radius or shadow goes into the tokens first or not
+  at all. Cards carry a 2px ink edge, things you can press lift on a hard ink shadow, and each page's coloured top ends
+  in a scalloped edge. Headings stay in Martel; Kalam belongs to the drawn pages and the drawings.
 - **`hero-cat.jpg` is the last Unsplash placeholder in `assets/`** — still live on a `learn.html`
   card, kept deliberately as a fallback in case the kitten photo did not work out (the owner's call, 2026-09-15). Its two
   siblings are gone: `cat-yawn.jpg` (a Scottish Fold in novelty sunglasses under the closing CTA,
