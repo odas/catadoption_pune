@@ -125,6 +125,12 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   in a scalloped edge. Headings stay in Martel; Kalam belongs to the drawn pages and the drawings. The `.hl` highlighter
   goes on the words in a page heading that carry the answer, and a guide's heading keeps its exact words when it gets
   one, because its share picture carries the heading.
+- **A page top's colour says which part of the site you are in:** sage for adopting (`adopt`, `adopter-form`, `visit`,
+  `send-a-cat`), periwinkle for care and the shop (`learn`, every guide, `shop`), sky for help now (`resources`,
+  `found-kitten-pune`), butter for about and the fine print (`about`, `privacy`, `404`). No page top is yellow, because
+  yellow means "act now" in the drawings. The shop is never butter, because butter is "the free version" on its cards.
+  A guide's share picture takes its page top's colour, so after a colour change rerun `share_cards.py` for that guide.
+  The board (`adoptable.html`) is still periwinkle until its generator changes.
 - **No Unsplash photo is left on the site.** The last, `hero-cat.jpg`, had been kept on `learn.html`'s adopting card as a
   fallback in case the kitten photo did not work out (the owner's call, 2026-09-15). It did work out, and on 2026-10-10 the
   card took her own kittens in the red bed, and the adopter-form card took her calico in place of the logo. Its two

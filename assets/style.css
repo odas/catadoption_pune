@@ -20,7 +20,8 @@
 /* catadoption_pune — shared stylesheet (v4: ink edges and hard shadows, 2026-10-10)
    Palette LOCKED July 4 (brunch-exact) · Martel headings + Hind body. Kalam only inside the drawn pages.
    Rules: colour blocks punctuate; text-dense content lives in quiet white zones. Cards have an ink edge;
-   things you can press lift on a hard ink shadow.
+   things you can press lift on a hard ink shadow. A page top's colour says which part of the site you are in:
+   sage adopt · peri care and the shop · sky help now · butter about and fine print. Yellow stays "act now".
    Use the tokens below; a new colour, size, radius or shadow goes here first or not at all. */
 
 :root{
@@ -209,7 +210,6 @@ a{color:inherit;}
 .page-hero--peri{--hero:var(--peri);}
 .page-hero--sage{--hero:var(--sage);}
 .page-hero--sky{--hero:var(--sky);}
-.page-hero--yellow{--hero:var(--yellow);--hl:var(--white);}
 .page-hero--butter{--hero:var(--butter);--hl:var(--sky);}
 .page-hero--wide,.page-hero--compact{--col:var(--wide);}
 .page-hero--tall{min-height:calc(100svh - 17rem);align-content:center;}
@@ -365,6 +365,7 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 .hub-head{width:min(var(--wide),100% - 2*var(--gut));margin:0 auto;padding:clamp(2.4rem,6vh,3.4rem) 0 0;}
 .hub-head h2{font-size:var(--s3);font-weight:800;margin-bottom:0.5rem;}
 .hub-h2{font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.75;margin:0 0 1rem;}
+.prose h2.hub-h2{font-size:var(--s2);font-weight:700;margin:0 0 1rem;} /* a label, not a section heading */
 .hub-head p{max-width:60ch;}
 .hub .res-grid{padding-top:1.6rem;}
 /* related strip at the foot of every article, so no page is a dead end */
