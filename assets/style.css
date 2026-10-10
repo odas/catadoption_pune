@@ -242,6 +242,17 @@ a{color:inherit;}
 @media(min-width:1100px){
   .page-hero .hero-art{grid-column:3;grid-row:1/span 6;align-self:center;justify-self:center;margin:0 var(--gut) 0 2rem;width:min(380px,100% - 2rem);}
 }
+/* a real cat taped into the hero: our own photos, a small square crop, only on the pages that can be a little informal */
+.snap{position:relative;margin:0;background:var(--white);padding:0.5rem 0.5rem 1.5rem;border:var(--edge);border-radius:4px;box-shadow:var(--lift-hi);transform:rotate(3deg);width:clamp(140px,17vw,250px);}
+.snap::before{content:"";position:absolute;top:-13px;left:50%;width:76px;height:24px;margin-left:-38px;background:rgba(248,248,168,0.88);border:1px solid rgba(20,17,24,0.18);transform:rotate(-5deg);}
+.snap img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border:1.5px solid var(--ink);}
+.snap--left{transform:rotate(-3deg);}
+@media(min-width:1100px){
+  .page-hero .snap{grid-column:3;grid-row:1/span 6;align-self:center;justify-self:center;margin:0 var(--gut) 0 2rem;}
+}
+@media(max-width:1099px){
+  .page-hero .snap{justify-self:end;margin:1.4rem 0.4rem -2.6rem 0;width:clamp(130px,34vw,200px);}
+}
 
 /* the reading column and the wide grid: the hero's text starts on the same line as these */
 .prose{width:min(var(--col),100% - 2*var(--gut));margin:0 auto;padding:clamp(2.6rem,6vh,4rem) 0 4.5rem;}
@@ -275,7 +286,7 @@ a{color:inherit;}
 .res-card--wide{grid-column:1/-1;}
 .res-card h2{font-size:var(--s1);margin-bottom:0.7rem;}
 .res-card ul{list-style:none;}
-.res-card li{padding:0.4rem 0;border-bottom:1px dashed var(--line);font-size:var(--s-1);}
+.res-card li{padding:0.4rem 0;border-bottom:1.5px dashed var(--dash);font-size:var(--s-1);}
 .res-card li:last-child{border-bottom:none;}
 .res-card p{font-size:var(--s-1);margin-bottom:0.6rem;}
 .res-card--sky h2,.res-card--act h2{font-size:1.45rem;font-weight:800;}
@@ -289,7 +300,7 @@ a{color:inherit;}
 
 /* article template */
 .art-meta{font-size:var(--s-1);color:rgba(20,17,24,0.75);margin-bottom:1.2rem;}
-.disclosure{background:var(--butter);border-radius:var(--r);padding:1rem 1.2rem;font-size:var(--s-1);margin:1.5rem 0;}
+.disclosure{background:var(--butter);border:1.5px dashed var(--ink);border-radius:var(--r);padding:1rem 1.2rem;font-size:var(--s-1);margin:1.5rem 0;}
 
 /* ---------- footer ---------- */
 footer{background:var(--ink);color:rgba(255,255,255,0.78);padding:2.8rem var(--gut) 2.4rem;text-align:center;font-size:var(--s-1);}
@@ -362,6 +373,7 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 }
 
 /* ---------- care hub (learn.html): article cards below the basics ---------- */
+.hub{border-top:1.5px dashed var(--dash);}
 .hub-head{width:min(var(--wide),100% - 2*var(--gut));margin:0 auto;padding:clamp(2.4rem,6vh,3.4rem) 0 0;}
 .hub-head h2{font-size:var(--s3);font-weight:800;margin-bottom:0.5rem;}
 .hub-h2{font-size:1.05rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.75;margin:0 0 1rem;}
@@ -371,7 +383,7 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 /* related strip at the foot of every article, so no page is a dead end */
 .related{margin:2.8rem 0 0;padding:1.3rem 1.4rem;border:var(--edge);border-radius:var(--r);background:var(--white);box-shadow:var(--lift);}
 .related h2{font-size:1rem;margin:0 0 0.5rem;}
-.related a{display:block;padding:0.4rem 0;font-weight:600;}
+.related a{display:block;padding:0.4rem 0;font-weight:600;border-bottom:1.5px dashed var(--dash);}
 
 /* Article photos: full column width, ink edge. */
 .prose figure{margin:1.6rem 0 1.8rem}
@@ -515,7 +527,7 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 .shop-intro{max-width:62ch;}
 .shop-intro .lead{font-size:var(--s1);margin-bottom:1rem;}
 /* Sticky, so on a phone any shelf is one tap away however far down the reader is (18 cards in one column). */
-.shelf-nav{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1.4rem 0 0.4rem;position:sticky;top:0;z-index:5;background:var(--white);padding:0.7rem 0;border-bottom:1px solid var(--line);}
+.shelf-nav{display:flex;flex-wrap:wrap;gap:0.5rem;margin:1.4rem 0 0.4rem;position:sticky;top:0;z-index:5;background:var(--white);padding:0.7rem 0;border-bottom:1.5px dashed var(--dash);}
 @media(max-width:620px){.shelf-nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:calc(-1*var(--gut));padding-inline:var(--gut);}.shelf-nav::-webkit-scrollbar{display:none;}.shelf-nav a{flex:none;}}
 .shelf-nav a{border:var(--edge);border-radius:var(--r-pill);background:var(--white);padding:0.35rem 0.95rem;font-weight:600;font-size:var(--s-1);text-decoration:none;min-height:40px;display:inline-flex;align-items:center;}
 .shelf-nav a:hover{background:var(--butter);}
@@ -534,7 +546,7 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 .item h3{font-size:var(--s1);}
 .item .ours{font-size:var(--s-1);font-weight:600;color:rgba(20,17,24,0.72);margin-top:-0.3rem;}
 .item .why{font-size:var(--s-1);line-height:1.5;}
-.item .free{background:var(--butter);border-radius:var(--r-sm);padding:0.65rem 0.8rem;font-size:var(--s-1);line-height:1.45;}
+.item .free{background:var(--butter);border:1.5px dashed var(--ink);border-radius:var(--r-sm);padding:0.65rem 0.8rem;font-size:var(--s-1);line-height:1.45;}
 .item .free b{display:block;margin-bottom:0.1rem;}
 .item .buy{margin-top:auto;display:flex;align-items:center;justify-content:center;min-height:48px;border:var(--edge);border-radius:var(--r-pill);background:var(--ink);color:var(--white);font-weight:600;text-decoration:none;box-shadow:3px 3px 0 var(--peri);transition:transform 0.2s var(--ease),box-shadow 0.2s var(--ease);}
 .item .buy:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--peri);}
@@ -543,14 +555,15 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 
 /* ============================================================
    THE BOARD — adoptable.html. The page is generated outside this repo and carries its own
-   <style> block; these rules sit one class deeper (.wrap) so they win over it, and keep working
-   if the generator one day drops that block and leaves the board to this file.
+   <style> block. It keeps the plain look: thin lines, no ink edges or hard shadows, and a flat
+   page top with no scalloped edge, because it is a long list people read to decide.
    ============================================================ */
-.wrap .cat{border:var(--edge);border-radius:var(--r);box-shadow:var(--lift);}
-.wrap .cat-pic{border-bottom:var(--edge);}
-.wrap .cat-thumbs{padding:6px 6px 0;gap:6px;}
-.wrap .cat-thumbs img{border:1.5px solid var(--ink);border-radius:var(--r-sm);}
-.wrap .cat-adopted{border:var(--edge);box-shadow:2px 2px 0 var(--ink);}
-.wrap .fmt-shot img{border:var(--edge);border-radius:var(--r);box-shadow:var(--lift-hi);}
-.wrap .ask{border:var(--edge);border-radius:var(--r);box-shadow:var(--lift-hi);}
+.page-hero--flat{margin-bottom:0;}
+.page-hero--flat::before,.page-hero--flat::after{display:none;}
+.page-hero--flat .badge{border:1px solid var(--line);}
 .page-hero--compact + .wrap > .grid-lead:first-child{margin-top:2.4rem;}
+
+/* drawn icons beside card titles (C3, 2026-10-11) */
+.ico{width:34px;height:34px;flex:none;display:inline-block;vertical-align:middle;}
+.res-card h2:has(> .ico){display:flex;align-items:center;gap:0.6rem;}
+.acc summary .ico{margin-right:-0.3rem;}

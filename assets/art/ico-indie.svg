@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="A speech bubble with a cat's face inside">
+<defs>
+<filter id="art-wob" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="art-wob-b" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="G" yChannelSelector="R"/></filter>
+</defs>
+<g class="art-fill" style="mix-blend-mode:multiply">
+<path d="M100 42c40-8 84-8 120 0c10 26 10 60-2 84c-36 6-80 6-116 0c-10-26-12-58-2-84z" fill="#f0c840" opacity="0.6" transform="rotate(3 150 85)"/>
+</g>
+<g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M92 30c38-8 82-8 118 0c12 26 12 62 0 86c-18 4-38 5-58 4l-28 26l4-28c-14 0-28-1-36-3c-10-26-10-60 0-85z" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) "><path d="M126 80a24 24 0 1 0 48 0a24 24 0 1 0 -48 0" stroke-width="3.21" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) "><path d="M132 65.6l-2.4000000000000004 -20.4l14.399999999999999 9.600000000000001" stroke-width="3.21" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) "><path d="M168 65.6l2.4000000000000004 -20.4l-14.399999999999999 9.600000000000001" stroke-width="3.21" pathLength="1"/></g>
+<g style="--i:4" transform="translate(1.1 0.8) "><path d="M141.6 77.6v4.800000000000001M158.4 77.6v4.800000000000001" stroke-width="2.65" pathLength="1"/></g>
+</g>
+<g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
+<g style="--i:0"><path d="M92 30c38-8 82-8 118 0c12 26 12 62 0 86c-18 4-38 5-58 4l-28 26l4-28c-14 0-28-1-36-3c-10-26-10-60 0-85z" stroke-width="9" pathLength="1"/></g>
+<g style="--i:1"><path d="M126 80a24 24 0 1 0 48 0a24 24 0 1 0 -48 0" stroke-width="7.14" pathLength="1"/></g>
+<g style="--i:2"><path d="M132 65.6l-2.4000000000000004 -20.4l14.399999999999999 9.600000000000001" stroke-width="7.14" pathLength="1"/></g>
+<g style="--i:3"><path d="M168 65.6l2.4000000000000004 -20.4l-14.399999999999999 9.600000000000001" stroke-width="7.14" pathLength="1"/></g>
+<g style="--i:4"><path d="M141.6 77.6v4.800000000000001M158.4 77.6v4.800000000000001" stroke-width="5.88" pathLength="1"/></g>
+</g></svg>

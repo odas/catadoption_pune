@@ -20,7 +20,7 @@
 <meta property="og:type" content="website">
 <link rel="preload" href="assets/fonts/hind-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/martel-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=71ec5351">
 <style>
   .topbar{background:var(--yellow);color:var(--ink);padding:15px 22px;text-align:center}
   .topbar-draft{font:500 15px/1.55 var(--font-body);margin:0 auto;max-width:64ch}
@@ -31,10 +31,8 @@
   .topbar-draft + .topbar-note{padding-top:8px;border-top:1px solid rgba(20,17,24,.16)}
   .topbar-note a{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:2px;opacity:1}
   .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-  /* OD, 2026-08-19: two big colour blocks back to back read as a clash and stopped
-     looking like the brand. Back to the house rule - boldness is RATIONED. The peri hero
-     and the peri closing block are the only colour; everything between them sits in white,
-     and the format is carried by a screenshot rather than by a coloured panel. */
+  /* Colour is rationed: the hero and the closing block are the only colour, everything
+     between them sits in white, and the format is shown by a screenshot, not a coloured panel. */
   .fmt-shot{margin:0}
   .fmt-shot img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px}
   .fmt-placeholder{margin:0;padding:52px 20px;border:2px dashed var(--line);border-radius:12px;
@@ -96,7 +94,7 @@
   .cat-contact .tel,
   .cat-contact .ig{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:2px}
   .cat-contact--none{background:#f4f2f7;font:400 14px/1.5 var(--font-body);opacity:.75}
-  .ask{background:var(--peri);color:var(--ink);border-radius:16px;padding:34px 28px;margin:44px 0 60px;text-align:center}
+  .ask{background:var(--sage);color:var(--ink);border-radius:16px;padding:34px 28px;margin:44px 0 60px;text-align:center}
   .ask h2{font:800 26px/1.25 var(--font-head);margin:0 0 10px}
   .ask p{font:400 16px/1.65 var(--font-body);margin:0 auto 18px;max-width:56ch}
   .ask .ask-adult{background:rgba(255,255,255,.5);border-radius:12px;padding:15px 18px;font-size:15.5px}
@@ -111,7 +109,7 @@
   <a class="brand" href="./"><img src="assets/medallion.jpg" alt="catadoption_pune medallion — two cuddling cats">catadoption_pune</a>
   <nav>
     <a href="adopt.html">Adopt</a>
-    <a href="adoptable.html">Meet the cats</a>
+    <a href="adoptable.html" aria-current="page">Meet the cats</a>
     <a href="learn.html">Cat care</a>
     <a href="about.html">About</a>
     <a href="resources.html">Emergency</a>
@@ -120,7 +118,7 @@
   </nav>
 </header>
 
-<section class="page-hero page-hero--peri page-hero--compact">
+<section class="page-hero page-hero--sage page-hero--compact page-hero--flat">
   <p class="crumb"><a href="./">Home</a> › <a href="adopt.html">Adopt</a> › Cats looking for homes</p>
   <h1>Cats looking for homes</h1>
   <p class="sub">Indies from rescuers across Pune and PCMC, looking for homes right now.</p>

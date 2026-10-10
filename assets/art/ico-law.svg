@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="A pair of weighing scales">
+<defs>
+<filter id="art-wob" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="art-wob-b" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="G" yChannelSelector="R"/></filter>
+</defs>
+<g class="art-fill" style="mix-blend-mode:multiply">
+<path d="M150 18c44 0 72 30 72 70s-30 66-72 66s-74-28-74-68s30-68 74-68z" fill="#f0c840" opacity="0.5" transform="rotate(-3 150 85)"/>
+</g>
+<g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M150 36c1 36-1 72 0 106" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) "><path d="M116 146c22-4 46-3 68 1" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) "><path d="M96 54c36-5 74-5 110 1" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) "><path d="M100 56l-16 44M100 56l16 44M202 57l-16 44M202 57l16 44" stroke-width="2.7" pathLength="1"/></g>
+<g style="--i:4" transform="translate(1.1 0.8) "><path d="M78 100h44c-2 14-12 20-22 20s-20-6-22-20z" stroke-width="3.6" pathLength="1"/></g>
+<g style="--i:5" transform="translate(1.1 0.8) "><path d="M180 101h44c-2 14-12 20-22 20s-20-6-22-20z" stroke-width="3.6" pathLength="1"/></g>
+</g>
+<g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
+<g style="--i:0"><path d="M150 36c1 36-1 72 0 106" stroke-width="9" pathLength="1"/></g>
+<g style="--i:1"><path d="M116 146c22-4 46-3 68 1" stroke-width="9" pathLength="1"/></g>
+<g style="--i:2"><path d="M96 54c36-5 74-5 110 1" stroke-width="9" pathLength="1"/></g>
+<g style="--i:3"><path d="M100 56l-16 44M100 56l16 44M202 57l-16 44M202 57l16 44" stroke-width="6" pathLength="1"/></g>
+<g style="--i:4"><path d="M78 100h44c-2 14-12 20-22 20s-20-6-22-20z" stroke-width="8" pathLength="1"/></g>
+<g style="--i:5"><path d="M180 101h44c-2 14-12 20-22 20s-20-6-22-20z" stroke-width="8" pathLength="1"/></g>
+<path class="art-dot" d="M143 31a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" fill="#141118" stroke="none"/>
+</g></svg>

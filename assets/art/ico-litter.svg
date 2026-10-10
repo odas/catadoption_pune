@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="An open litter tray with a scoop in it">
+<defs>
+<filter id="art-wob" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="art-wob-b" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="G" yChannelSelector="R"/></filter>
+</defs>
+<g class="art-fill" style="mix-blend-mode:multiply">
+<path d="M80 100c44-6 96-6 140 0c-2 20-8 40-14 50c-38 6-76 6-114 0c-6-12-10-30-12-50z" fill="#74ac84" opacity="0.65" transform="rotate(2 150 85)"/>
+</g>
+<g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M76 96c50-2 98-2 148 0" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) "><path d="M84 97l10 46c38 3 74 3 112 0l10-46" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) "><path d="M96 114c8-5 14 4 22 0s14-5 22 0s14 4 22 0s14-5 22 0s12 4 18 1" stroke-width="2.7" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) "><path d="M118 80l30-11l10 24l-30 11z" stroke-width="3.15" pathLength="1"/></g>
+<g style="--i:4" transform="translate(1.1 0.8) "><path d="M130 80l5 13M141 76l5 13" stroke-width="2.07" pathLength="1"/></g>
+<g style="--i:5" transform="translate(1.1 0.8) "><path d="M155 73l42-46" stroke-width="4.05" pathLength="1"/></g>
+</g>
+<g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
+<g style="--i:0"><path d="M76 96c50-2 98-2 148 0" stroke-width="9" pathLength="1"/></g>
+<g style="--i:1"><path d="M84 97l10 46c38 3 74 3 112 0l10-46" stroke-width="9" pathLength="1"/></g>
+<g style="--i:2"><path d="M96 114c8-5 14 4 22 0s14-5 22 0s14 4 22 0s14-5 22 0s12 4 18 1" stroke-width="6" pathLength="1"/></g>
+<g style="--i:3"><path d="M118 80l30-11l10 24l-30 11z" stroke-width="7" pathLength="1"/></g>
+<g style="--i:4"><path d="M130 80l5 13M141 76l5 13" stroke-width="4.6" pathLength="1"/></g>
+<g style="--i:5"><path d="M155 73l42-46" stroke-width="9" pathLength="1"/></g>
+</g></svg>

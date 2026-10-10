@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="A pair of scissors, open">
+<defs>
+<filter id="art-wob" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="art-wob-b" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="G" yChannelSelector="R"/></filter>
+</defs>
+<g class="art-fill" style="mix-blend-mode:multiply">
+<path d="M88 112c12-18 104-20 116 0c6 22-6 44-58 46c-50 0-64-26-58-46z" fill="#74ac84" opacity="0.7" transform="rotate(-2 150 85)"/>
+</g>
+<g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M96 132a18 18 0 1 0 36 0a18 18 0 1 0 -36 0" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) "><path d="M164 136a18 18 0 1 0 36 0a18 18 0 1 0 -36 0" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) "><path d="M127 118C140 103 160 68 188 26" stroke-width="4.5" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) "><path d="M170 122C158 104 137 68 110 30" stroke-width="4.5" pathLength="1"/></g>
+</g>
+<g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
+<g style="--i:0"><path d="M96 132a18 18 0 1 0 36 0a18 18 0 1 0 -36 0" stroke-width="9" pathLength="1"/></g>
+<g style="--i:1"><path d="M164 136a18 18 0 1 0 36 0a18 18 0 1 0 -36 0" stroke-width="9" pathLength="1"/></g>
+<g style="--i:2"><path d="M127 118C140 103 160 68 188 26" stroke-width="10" pathLength="1"/></g>
+<g style="--i:3"><path d="M170 122C158 104 137 68 110 30" stroke-width="10" pathLength="1"/></g>
+<path class="art-dot" d="M144 88a5 5 0 1 0 10 0a5 5 0 1 0 -10 0" fill="#141118" stroke="none"/>
+</g></svg>

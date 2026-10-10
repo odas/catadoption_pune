@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="A stethoscope">
+<defs>
+<filter id="art-wob" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="art-wob-b" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="G" yChannelSelector="R"/></filter>
+</defs>
+<g class="art-fill" style="mix-blend-mode:multiply">
+<path d="M150 20c42 0 70 28 70 66s-28 66-70 66s-70-26-70-64s28-68 70-68z" fill="#94d0e4" opacity="0.65" transform="rotate(3 150 85)"/>
+</g>
+<g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M114 28c-6 40 4 70 36 74c32-4 42-34 36-74" stroke-width="3.6" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) "><path d="M114 28l-9-5M186 28l9-5" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) "><path d="M150 102c0 28 4 48 22 48c14 0 22-9 22-22" stroke-width="3.6" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) "><path d="M178 112a16 16 0 1 0 32 0a16 16 0 1 0 -32 0" stroke-width="3.6" pathLength="1"/></g>
+</g>
+<g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
+<g style="--i:0"><path d="M114 28c-6 40 4 70 36 74c32-4 42-34 36-74" stroke-width="8" pathLength="1"/></g>
+<g style="--i:1"><path d="M114 28l-9-5M186 28l9-5" stroke-width="9" pathLength="1"/></g>
+<g style="--i:2"><path d="M150 102c0 28 4 48 22 48c14 0 22-9 22-22" stroke-width="8" pathLength="1"/></g>
+<g style="--i:3"><path d="M178 112a16 16 0 1 0 32 0a16 16 0 1 0 -32 0" stroke-width="8" pathLength="1"/></g>
+<path class="art-dot" d="M189 112a5 5 0 1 0 10 0a5 5 0 1 0 -10 0" fill="#141118" stroke="none"/>
+</g></svg>

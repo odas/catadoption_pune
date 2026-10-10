@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="A house with a cat's face in it">
+<defs>
+<filter id="art-wob" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="art-wob-b" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="G" yChannelSelector="R"/></filter>
+</defs>
+<g class="art-fill" style="mix-blend-mode:multiply">
+<path d="M74 76l70-54l70 52v70H80z" fill="#f0c840" opacity="0.75" transform="rotate(-3 150 85)"/>
+</g>
+<g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M76 84L150 26l76 60" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) "><path d="M94 72c1 26-1 52 0 77c38 1 74 1 112-1c1-26 0-50-1-76" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) "><path d="M128 114a22 22 0 1 0 44 0a22 22 0 1 0 -44 0" stroke-width="3.21" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) "><path d="M133.5 100.8l-2.2 -18.7l13.2 8.8" stroke-width="3.21" pathLength="1"/></g>
+<g style="--i:4" transform="translate(1.1 0.8) "><path d="M166.5 100.8l2.2 -18.7l-13.2 8.8" stroke-width="3.21" pathLength="1"/></g>
+<g style="--i:5" transform="translate(1.1 0.8) "><path d="M142.3 111.8v4.4M157.7 111.8v4.4" stroke-width="2.65" pathLength="1"/></g>
+</g>
+<g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
+<g style="--i:0"><path d="M76 84L150 26l76 60" stroke-width="9" pathLength="1"/></g>
+<g style="--i:1"><path d="M94 72c1 26-1 52 0 77c38 1 74 1 112-1c1-26 0-50-1-76" stroke-width="9" pathLength="1"/></g>
+<g style="--i:2"><path d="M128 114a22 22 0 1 0 44 0a22 22 0 1 0 -44 0" stroke-width="7.14" pathLength="1"/></g>
+<g style="--i:3"><path d="M133.5 100.8l-2.2 -18.7l13.2 8.8" stroke-width="7.14" pathLength="1"/></g>
+<g style="--i:4"><path d="M166.5 100.8l2.2 -18.7l-13.2 8.8" stroke-width="7.14" pathLength="1"/></g>
+<g style="--i:5"><path d="M142.3 111.8v4.4M157.7 111.8v4.4" stroke-width="5.88" pathLength="1"/></g>
+</g></svg>

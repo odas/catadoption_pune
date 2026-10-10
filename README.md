@@ -23,6 +23,11 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   `assets/style.css`, licence in `assets/fonts/OFL.txt`). Every page preloads Hind 400 and Martel 700. Don't
   add a `fonts.googleapis.com` link back: it slowed every page and sent each visitor's address to Google.
   A new weight means downloading its files the same way, not linking Google for it.
+- **The stylesheet link carries a version tag**, `assets/style.css?v=<first 8 of its sha256>`, so a returning visitor
+  gets a changed stylesheet instead of the cached one. Any change to `assets/style.css` means a new tag on every
+  page, the board included.
+- **A taped photo (`.snap`) sits only on pages that can be a little informal**: About and Visit. Our own cats,
+  indoors, a square crop. Not on Adopt, where people decide, and nothing that shows the view from a window.
 - **Every photo carries its real `width` and `height`**, so the page keeps the space while the photo loads
   and the text doesn't jump. A photo on the first phone screen loads straight away (no `loading="lazy"`);
   photos further down wait for the scroll. The home page's kitten photo also carries `fetchpriority="high"`.
@@ -122,7 +127,9 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 - **How they are used is set by the tokens at the top of `assets/style.css`**: type sizes `--s-2` to `--s5`, the radii,
   the ink edge (`--edge`) and the hard shadow (`--lift`). A new size, radius or shadow goes into the tokens first or not
   at all. Cards carry a 2px ink edge, things you can press lift on a hard ink shadow, and each page's coloured top ends
-  in a scalloped edge. Headings stay in Martel; Kalam belongs to the drawn pages and the drawings. The `.hl` highlighter
+  in a scalloped edge. Side notes (the shop's affiliate note, a card's free version) sit in a dashed ink box, and
+  dashed lines divide lists. The board is the exception: a long list people read to decide, so it keeps thin lines,
+  no shadows and a flat top (`.page-hero--flat`). Headings stay in Martel; Kalam belongs to the drawn pages and the drawings. The `.hl` highlighter
   goes on the words in a page heading that carry the answer, and a guide's heading keeps its exact words when it gets
   one, because its share picture carries the heading.
 - **A page top's colour says which part of the site you are in:** sage for adopting (`adopt`, `adopter-form`, `visit`,
@@ -130,7 +137,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   `found-kitten-pune`), butter for about and the fine print (`about`, `privacy`, `404`). No page top is yellow, because
   yellow means "act now" in the drawings. The shop is never butter, because butter is "the free version" on its cards.
   A guide's share picture takes its page top's colour, so a colour change means a new share picture too.
-  The board (`adoptable.html`) is still periwinkle until its generator changes.
+  The board (`adoptable.html`) is sage, with a sage closing block to match.
 - **No Unsplash photo is left on the site.** The last, `hero-cat.jpg`, had been kept on `learn.html`'s adopting card as a
   fallback in case the kitten photo did not work out (the owner's call, 2026-09-15). It did work out, and on 2026-10-10 the
   card took her own kittens in the red bed, and the adopter-form card took her calico in place of the logo. Its two

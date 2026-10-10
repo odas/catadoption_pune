@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="A mobile phone, ringing">
+<defs>
+<filter id="art-wob" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="art-wob-b" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="G" yChannelSelector="R"/></filter>
+</defs>
+<g class="art-fill" style="mix-blend-mode:multiply">
+<path d="M116 30c16-8 50-8 68-2c8 32 8 82 2 118c-22 8-54 6-72 0c-6-38-6-80 2-116z" fill="#94d0e4" opacity="0.75" transform="rotate(4 150 85)"/>
+</g>
+<g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
+<g style="--i:0" transform="translate(1.1 0.8) rotate(-8 150 85)"><path d="M133 23c11-1 22-1 33 0c7 0 12 5 12 12l1 101c0 7-5 12-12 12h-33c-7 0-12-5-12-12l-1-101c0-7 6-12 12-12z" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) rotate(-8 150 85)"><path d="M142 37h17" stroke-width="2.7" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) rotate(-8 150 85)"><path d="M144 133h11" stroke-width="2.7" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) "><path d="M104 64c-8 8-9 21-1 30M90 52c-14 14-14 38 1 52" stroke-width="3.15" pathLength="1"/></g>
+<g style="--i:4" transform="translate(1.1 0.8) "><path d="M198 60c8 9 8 22 0 31M212 48c14 14 14 38-1 53" stroke-width="3.15" pathLength="1"/></g>
+</g>
+<g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
+<g style="--i:0" transform="rotate(-8 150 85)"><path d="M133 23c11-1 22-1 33 0c7 0 12 5 12 12l1 101c0 7-5 12-12 12h-33c-7 0-12-5-12-12l-1-101c0-7 6-12 12-12z" stroke-width="9" pathLength="1"/></g>
+<g style="--i:1" transform="rotate(-8 150 85)"><path d="M142 37h17" stroke-width="6" pathLength="1"/></g>
+<g style="--i:2" transform="rotate(-8 150 85)"><path d="M144 133h11" stroke-width="6" pathLength="1"/></g>
+<g style="--i:3"><path d="M104 64c-8 8-9 21-1 30M90 52c-14 14-14 38 1 52" stroke-width="7" pathLength="1"/></g>
+<g style="--i:4"><path d="M198 60c8 9 8 22 0 31M212 48c14 14 14 38-1 53" stroke-width="7" pathLength="1"/></g>
+</g></svg>

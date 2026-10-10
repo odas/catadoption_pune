@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="A cat curled up asleep on a cushion">
+<defs>
+<filter id="art-wob" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="art-wob-b" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="G" yChannelSelector="R"/></filter>
+</defs>
+<g class="art-fill" style="mix-blend-mode:multiply">
+<path d="M80 136c30-8 110-8 140 0c4 14-6 22-70 22s-74-8-70-22z" fill="#74ac84" opacity="0.7" transform="rotate(-1 150 85)"/>
+<path d="M96 104c4-28 30-42 62-42c34 0 56 20 56 48c0 14-6 24-16 28H100c-6-10-6-22-4-34z" fill="#f0c840" opacity="0.6" transform="rotate(2 150 85)"/>
+</g>
+<g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M82 142c40-6 100-6 138 0c4 8 2 14-4 16c-40 4-90 4-130 0c-6-2-8-8-4-16z" stroke-width="3.6" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) "><path d="M132 84c20-16 56-18 74 0c16 16 16 40 4 54" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) "><path d="M210 138c-4 6-30 8-56 6" stroke-width="3.6" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) "><path d="M86 108a26 26 0 1 0 52 0a26 26 0 1 0 -52 0" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:4" transform="translate(1.1 0.8) "><path d="M92 92l-3-23l19 11M126 86l11-19l4 23" stroke-width="3.6" pathLength="1"/></g>
+<g style="--i:5" transform="translate(1.1 0.8) "><path d="M99 110c3 4 8 4 11 0M116 110c3 4 8 4 11 0" stroke-width="2.25" pathLength="1"/></g>
+</g>
+<g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
+<g style="--i:0"><path d="M82 142c40-6 100-6 138 0c4 8 2 14-4 16c-40 4-90 4-130 0c-6-2-8-8-4-16z" stroke-width="8" pathLength="1"/></g>
+<g style="--i:1"><path d="M132 84c20-16 56-18 74 0c16 16 16 40 4 54" stroke-width="9" pathLength="1"/></g>
+<g style="--i:2"><path d="M210 138c-4 6-30 8-56 6" stroke-width="8" pathLength="1"/></g>
+<g style="--i:3"><path d="M86 108a26 26 0 1 0 52 0a26 26 0 1 0 -52 0" stroke-width="9" pathLength="1"/></g>
+<g style="--i:4"><path d="M92 92l-3-23l19 11M126 86l11-19l4 23" stroke-width="8" pathLength="1"/></g>
+<g style="--i:5"><path d="M99 110c3 4 8 4 11 0M116 110c3 4 8 4 11 0" stroke-width="5" pathLength="1"/></g>
+</g></svg>
