@@ -122,10 +122,13 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 - **How they are used is set by the tokens at the top of `assets/style.css`**: type sizes `--s-2` to `--s5`, the radii,
   the ink edge (`--edge`) and the hard shadow (`--lift`). A new size, radius or shadow goes into the tokens first or not
   at all. Cards carry a 2px ink edge, things you can press lift on a hard ink shadow, and each page's coloured top ends
-  in a scalloped edge. Headings stay in Martel; Kalam belongs to the drawn pages and the drawings.
-- **`hero-cat.jpg` is the last Unsplash placeholder in `assets/`** — still live on a `learn.html`
-  card, kept deliberately as a fallback in case the kitten photo did not work out (the owner's call, 2026-09-15). Its two
-  siblings are gone: `cat-yawn.jpg` (a Scottish Fold in novelty sunglasses under the closing CTA,
+  in a scalloped edge. Headings stay in Martel; Kalam belongs to the drawn pages and the drawings. The `.hl` highlighter
+  goes on the words in a page heading that carry the answer, and a guide's heading keeps its exact words when it gets
+  one, because its share picture carries the heading.
+- **No Unsplash photo is left on the site.** The last, `hero-cat.jpg`, had been kept on `learn.html`'s adopting card as a
+  fallback in case the kitten photo did not work out (the owner's call, 2026-09-15). It did work out, and on 2026-10-10 the
+  card took her own kittens in the red bed, and the adopter-form card took her calico in place of the logo. Its two
+  siblings went earlier: `cat-yawn.jpg` (a Scottish Fold in novelty sunglasses under the closing CTA,
   on a site whose argument is that indies equal any expensive breed) and `cat-closeup.jpg`, both
   retired on 2026-09-15 and replaced by the owner's own photos. The in-article
   photos (cat hair, accidents, kitten wet food, litter box, feeding strays) are licensed Adobe
@@ -135,8 +138,9 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   it on 2026-09-15: a second image may be added when the existing one is good too. So
   the top image still leads; a second one earns its place by carrying an argument the text is
   already making, and it should be one of her own. Four went in that day (monsoon, day-one,
-  cat-hair, netting). Two articles still have no photo of hers that fits — **accidents** and
-  **kitten wet food** — and a forced fit is worse than a stock photo that is on-topic.
+  cat-hair, netting). **Accidents** still has no photo of hers that fits, and a forced fit is worse than a
+  stock photo that is on-topic. **Kitten wet food** got hers on 2026-10-10, her kittens at their bowls as the second
+  image. It is a frame from a video and too soft to lead, so the stock photo stays on top until she shoots a still.
 - **`assets/day-one-checklist.mp4` is silent on purpose.** It is the day-one page's hero, cut from the
   channel's Short; the Short's music is licensed for YouTube only, so the site's copy carries none.
   `assets/where-the-cats-are.mp4`, the map clip at the top of `about.html`, is silent for the same reason.
