@@ -8,14 +8,14 @@
 <path d="M160 84l40-40l18 16l-40 42z" fill="#f0c840" opacity="0.8" transform="rotate(2 150 85)"/>
 </g>
 <g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
-<g style="--i:0" transform="translate(1.1 0.8) "><path d="M97 26c24-2 48-3 71-3c1 40 2 82 1 122c-24 2-48 2-72 1c-1-40-1-80 0-120z" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M97 26c24-2 48-3 71-3c1 40 2 82 1 122c-24 2-48 2-72 1c-1-40-1-80 0-120z" stroke-width="3.78" pathLength="1"/></g>
 <g style="--i:1" transform="translate(1.1 0.8) "><path d="M110 52c14-2 30 2 44-1M110 76c14-2 28 2 40-1M110 100c10-2 18 1 24 0" stroke-width="2.7" pathLength="1"/></g>
-<g style="--i:2" transform="translate(1.1 0.8) translate(150 130) rotate(-50)"><path d="M20 -9L0 0L20 9h66v-18z" stroke-width="3.6" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) translate(150 130) rotate(-50)"><path d="M20 -9L0 0L20 9h66v-18z" stroke-width="3.42" pathLength="1"/></g>
 <g style="--i:3" transform="translate(1.1 0.8) translate(150 130) rotate(-50)"><path d="M20 -9v18M74 -9v18" stroke-width="2.25" pathLength="1"/></g>
 </g>
 <g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
-<g style="--i:0"><path d="M97 26c24-2 48-3 71-3c1 40 2 82 1 122c-24 2-48 2-72 1c-1-40-1-80 0-120z" stroke-width="9" pathLength="1"/></g>
+<g style="--i:0"><path d="M97 26c24-2 48-3 71-3c1 40 2 82 1 122c-24 2-48 2-72 1c-1-40-1-80 0-120z" stroke-width="8.4" pathLength="1"/></g>
 <g style="--i:1"><path d="M110 52c14-2 30 2 44-1M110 76c14-2 28 2 40-1M110 100c10-2 18 1 24 0" stroke-width="6" pathLength="1"/></g>
-<g style="--i:2" transform="translate(150 130) rotate(-50)"><path d="M20 -9L0 0L20 9h66v-18z" stroke-width="8" pathLength="1"/></g>
+<g style="--i:2" transform="translate(150 130) rotate(-50)"><path d="M20 -9L0 0L20 9h66v-18z" stroke-width="7.6" pathLength="1"/></g>
 <g style="--i:3" transform="translate(150 130) rotate(-50)"><path d="M20 -9v18M74 -9v18" stroke-width="5" pathLength="1"/></g>
 </g></svg>

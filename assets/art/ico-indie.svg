@@ -7,16 +7,22 @@
 <path d="M100 42c40-8 84-8 120 0c10 26 10 60-2 84c-36 6-80 6-116 0c-10-26-12-58-2-84z" fill="#f0c840" opacity="0.6" transform="rotate(3 150 85)"/>
 </g>
 <g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
-<g style="--i:0" transform="translate(1.1 0.8) "><path d="M92 30c38-8 82-8 118 0c12 26 12 62 0 86c-18 4-38 5-58 4l-28 26l4-28c-14 0-28-1-36-3c-10-26-10-60 0-85z" stroke-width="4.05" pathLength="1"/></g>
-<g style="--i:1" transform="translate(1.1 0.8) "><path d="M126 80a24 24 0 1 0 48 0a24 24 0 1 0 -48 0" stroke-width="3.21" pathLength="1"/></g>
-<g style="--i:2" transform="translate(1.1 0.8) "><path d="M132 65.6l-2.4000000000000004 -20.4l14.399999999999999 9.600000000000001" stroke-width="3.21" pathLength="1"/></g>
-<g style="--i:3" transform="translate(1.1 0.8) "><path d="M168 65.6l2.4000000000000004 -20.4l-14.399999999999999 9.600000000000001" stroke-width="3.21" pathLength="1"/></g>
-<g style="--i:4" transform="translate(1.1 0.8) "><path d="M141.6 77.6v4.800000000000001M158.4 77.6v4.800000000000001" stroke-width="2.65" pathLength="1"/></g>
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M92 30c38-8 82-8 118 0c12 26 12 62 0 86c-18 4-38 5-58 4l-28 26l4-28c-14 0-28-1-36-3c-10-26-10-60 0-85z" stroke-width="3.69" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) "><path d="M120 78c0-18 12.6-30 30-30s30 11.4 30 30c0 18.6-13.2 27.6-30 27.6s-30-9-30-27.6z" stroke-width="3.33" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) "><path d="M124.8 63L126 37.2L141 51" stroke-width="3.33" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) "><path d="M175.2 62.4L172.8 37.8L158.4 51" stroke-width="3.33" pathLength="1"/></g>
+<g style="--i:4" transform="translate(1.1 0.8) "><path d="M145.8 81.6h8.4l-4.2 4.8z" stroke-width="1.67" pathLength="1"/></g>
+<g style="--i:5" transform="translate(1.1 0.8) "><path d="M150 86.4c0 4.8-7.8 6-9.6 1.2M150 86.4c0 4.8 7.8 6 9.6 1.2" stroke-width="2.06" pathLength="1"/></g>
+<g style="--i:6" transform="translate(1.1 0.8) "><path d="M135 83.4L113.4 79.2M134.4 85.8L112.2 85.2M135 88.2L114 91.2M165 83.4L186.6 79.2M165.6 85.8L187.8 85.2M165 88.2L186 91.2" stroke-width="2.06" pathLength="1"/></g>
 </g>
 <g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
-<g style="--i:0"><path d="M92 30c38-8 82-8 118 0c12 26 12 62 0 86c-18 4-38 5-58 4l-28 26l4-28c-14 0-28-1-36-3c-10-26-10-60 0-85z" stroke-width="9" pathLength="1"/></g>
-<g style="--i:1"><path d="M126 80a24 24 0 1 0 48 0a24 24 0 1 0 -48 0" stroke-width="7.14" pathLength="1"/></g>
-<g style="--i:2"><path d="M132 65.6l-2.4000000000000004 -20.4l14.399999999999999 9.600000000000001" stroke-width="7.14" pathLength="1"/></g>
-<g style="--i:3"><path d="M168 65.6l2.4000000000000004 -20.4l-14.399999999999999 9.600000000000001" stroke-width="7.14" pathLength="1"/></g>
-<g style="--i:4"><path d="M141.6 77.6v4.800000000000001M158.4 77.6v4.800000000000001" stroke-width="5.88" pathLength="1"/></g>
+<g style="--i:0"><path d="M92 30c38-8 82-8 118 0c12 26 12 62 0 86c-18 4-38 5-58 4l-28 26l4-28c-14 0-28-1-36-3c-10-26-10-60 0-85z" stroke-width="8.2" pathLength="1"/></g>
+<g style="--i:1"><path d="M120 78c0-18 12.6-30 30-30s30 11.4 30 30c0 18.6-13.2 27.6-30 27.6s-30-9-30-27.6z" stroke-width="7.4" pathLength="1"/></g>
+<g style="--i:2"><path d="M124.8 63L126 37.2L141 51" stroke-width="7.4" pathLength="1"/></g>
+<g style="--i:3"><path d="M175.2 62.4L172.8 37.8L158.4 51" stroke-width="7.4" pathLength="1"/></g>
+<g style="--i:4"><path d="M145.8 81.6h8.4l-4.2 4.8z" stroke-width="3.7" pathLength="1" fill="#141118"/></g>
+<g style="--i:5"><path d="M150 86.4c0 4.8-7.8 6-9.6 1.2M150 86.4c0 4.8 7.8 6 9.6 1.2" stroke-width="4.588" pathLength="1"/></g>
+<g style="--i:6"><path d="M135 83.4L113.4 79.2M134.4 85.8L112.2 85.2M135 88.2L114 91.2M165 83.4L186.6 79.2M165.6 85.8L187.8 85.2M165 88.2L186 91.2" stroke-width="4.588" pathLength="1"/></g>
+<path class="art-dot" d="M134.1 73.8a3.9 3.9 0 1 0 7.8 0a3.9 3.9 0 1 0 -7.8 0" fill="#141118" stroke="none"/>
+<path class="art-dot" d="M158.1 73.8a3.9 3.9 0 1 0 7.8 0a3.9 3.9 0 1 0 -7.8 0" fill="#141118" stroke="none"/>
 </g></svg>

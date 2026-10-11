@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="A cat's head with the tip of one ear cut flat, as a sterilised street cat's is">
+<defs>
+<filter id="art-wob" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+<filter id="art-wob-b" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="G" yChannelSelector="R"/></filter>
+</defs>
+<g class="art-fill" style="mix-blend-mode:multiply">
+<path d="M96 70c8-30 40-40 66-36c30 4 54 26 52 60c-2 34-28 56-62 54c-34-2-62-24-58-58z" fill="#74ac84" opacity="0.65" transform="rotate(-4 150 85)"/>
+</g>
+<g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M102 96c0-27.6 19.3-46 46-46s46 17.5 46 46c0 28.5-20.2 42.3-46 42.3s-46-13.8-46-42.3z" stroke-width="4.32" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) "><path d="M109.4 73L110.7 46.3H125L134.2 54.6" stroke-width="4.32" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) "><path d="M186.6 72.1L183 34.4L160.9 54.6" stroke-width="4.32" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) "><path d="M141.6 101.5h12.9l-6.4 7.4z" stroke-width="2.16" pathLength="1"/></g>
+<g style="--i:4" transform="translate(1.1 0.8) "><path d="M148 108.9c0 7.4-12 9.2-14.7 1.8M148 108.9c0 7.4 12 9.2 14.7 1.8" stroke-width="2.68" pathLength="1"/></g>
+<g style="--i:5" transform="translate(1.1 0.8) "><path d="M125 104.3L81.8 97.8M125 111.6L82.7 116.2M171 104.3L214.2 97.8M171 111.6L213.3 116.2" stroke-width="2.68" pathLength="1"/></g>
+</g>
+<g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
+<g style="--i:0"><path d="M102 96c0-27.6 19.3-46 46-46s46 17.5 46 46c0 28.5-20.2 42.3-46 42.3s-46-13.8-46-42.3z" stroke-width="9.6" pathLength="1"/></g>
+<g style="--i:1"><path d="M109.4 73L110.7 46.3H125L134.2 54.6" stroke-width="9.6" pathLength="1"/></g>
+<g style="--i:2"><path d="M186.6 72.1L183 34.4L160.9 54.6" stroke-width="9.6" pathLength="1"/></g>
+<g style="--i:3"><path d="M141.6 101.5h12.9l-6.4 7.4z" stroke-width="4.8" pathLength="1" fill="#141118"/></g>
+<g style="--i:4"><path d="M148 108.9c0 7.4-12 9.2-14.7 1.8M148 108.9c0 7.4 12 9.2 14.7 1.8" stroke-width="5.952" pathLength="1"/></g>
+<g style="--i:5"><path d="M125 104.3L81.8 97.8M125 111.6L82.7 116.2M171 104.3L214.2 97.8M171 111.6L213.3 116.2" stroke-width="5.952" pathLength="1"/></g>
+<path class="art-dot" d="M123.6 89.6a6 6 0 1 0 12 0a6 6 0 1 0 -12 0" fill="#141118" stroke="none"/>
+<path class="art-dot" d="M160.4 89.6a6 6 0 1 0 12 0a6 6 0 1 0 -12 0" fill="#141118" stroke="none"/>
+</g></svg>

@@ -1,20 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="A window with netting stretched across it">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="A window with a cat sitting on the sill behind fine netting, a curtain tied back at one side">
 <defs>
 <filter id="art-wob" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.6" xChannelSelector="R" yChannelSelector="G"/></filter>
 <filter id="art-wob-b" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="G" yChannelSelector="R"/></filter>
 </defs>
 <g class="art-fill" style="mix-blend-mode:multiply">
-<path d="M100 34c40-6 84-6 122 0c4 40 4 80 0 116c-40 6-82 6-122 0c-4-36-4-76 0-116z" fill="#94d0e4" opacity="0.7" transform="rotate(-4 150 85)"/>
+<path d="M96 30c36-4 72-4 108 0c2 32 2 64 0 96c-36 2-72 2-108 0c-2-32-2-64 0-96z" fill="#94d0e4" opacity="0.75" transform="rotate(-2 150 85)"/>
+<path d="M92 26c12 0 26 0 36 2c-4 18-14 36-20 48s12 30 14 50c-6 2-10-2-14 2c-6-3-10 0-16-2c-2-34-2-66 0-98z" fill="#8c78f4" opacity="0.7" transform="rotate(1 150 85)"/>
+<path d="M84 127c44-2 88-2 132 0l-2 11c-42 2-86 2-128 0z" fill="#f0c840" opacity="0.7" transform="rotate(0 150 85)"/>
 </g>
 <g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
-<g style="--i:0" transform="translate(1.1 0.8) "><path d="M88 24c42-2 84-2 124 0c2 42 2 84 0 122c-40 2-82 2-124 0c-2-40-2-80 0-122z" stroke-width="4.05" pathLength="1"/></g>
-<g style="--i:1" transform="translate(1.1 0.8) "><path d="M88 104l80-80M88 146l122-122M128 146l84-84M170 146l42-42" stroke-width="2.07" pathLength="1"/></g>
-<g style="--i:2" transform="translate(1.1 0.8) "><path d="M130 24l82 82M88 24l122 122M172 24l40 40M88 66l80 80M88 108l38 38" stroke-width="2.07" pathLength="1"/></g>
-<g style="--i:3" transform="translate(1.1 0.8) "><path d="M78 156c48-3 96-3 144 0" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M92 24c38-2 78-2 116 0c2 36 2 70 0 104c-38 2-78 2-116 0c-2-34-2-70 0-104z" stroke-width="3.42" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) "><path d="M124 121.5L128.5 126M124 112.5L137.5 126M124 103.5L146.5 126M124 94.5L155.5 126M124 85.5L164.5 126M124 76.5L173.5 126M124 67.5L182.5 126M124 58.5L191.5 126M124 49.5L200.5 126M124 40.5L204 120.5M124 31.5L204 111.5M131.5 30L204 102.5M140.5 30L204 93.5M149.5 30L204 84.5M158.5 30L204 75.5M167.5 30L204 66.5M176.5 30L204 57.5M185.5 30L204 48.5M194.5 30L204 39.5M124 34.5L128.5 30M124 43.5L137.5 30M124 52.5L146.5 30M124 61.5L155.5 30M124 70.5L164.5 30M124 79.5L173.5 30M124 88.5L182.5 30M124 97.5L191.5 30M124 106.5L200.5 30M124 115.5L204 35.5M124 124.5L204 44.5M131.5 126L204 53.5M140.5 126L204 62.5M149.5 126L204 71.5M158.5 126L204 80.5M167.5 126L204 89.5M176.5 126L204 98.5M185.5 126L204 107.5M194.5 126L204 116.5" stroke-width="0.41" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) "><path d="M84 127c44-2 88-2 132 0l-2 11c-42 2-86 2-128 0z" stroke-width="3.15" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) translate(12 0)"><path d="M146 130c-6-14-4-28 6-34c-4-4-5-10-3-14l-1-9l6 5c2-1 5-1 7 0l6-5l-1 9c2 4 1 10-3 14c10 6 12 20 6 34z" stroke-width="1.08" pathLength="1"/></g>
+<g style="--i:4" transform="translate(1.1 0.8) translate(12 0)"><path d="M169 127c7 3 9 11 7 19c-1 5 0 9 3 11" stroke-width="2.25" pathLength="1"/></g>
+<g style="--i:5" transform="translate(1.1 0.8) "><path d="M94 28c10 0 22 0 32 2c-4 18-14 34-20 46s12 30 14 50c-5 2-9-1-13 2c-5-3-9 0-15-2" stroke-width="2.52" pathLength="1"/></g>
+<g style="--i:6" transform="translate(1.1 0.8) "><path d="M96 76c4 5 11 7 15 4" stroke-width="2.25" pathLength="1"/></g>
 </g>
 <g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
-<g style="--i:0"><path d="M88 24c42-2 84-2 124 0c2 42 2 84 0 122c-40 2-82 2-124 0c-2-40-2-80 0-122z" stroke-width="9" pathLength="1"/></g>
-<g style="--i:1"><path d="M88 104l80-80M88 146l122-122M128 146l84-84M170 146l42-42" stroke-width="4.6" pathLength="1"/></g>
-<g style="--i:2"><path d="M130 24l82 82M88 24l122 122M172 24l40 40M88 66l80 80M88 108l38 38" stroke-width="4.6" pathLength="1"/></g>
-<g style="--i:3"><path d="M78 156c48-3 96-3 144 0" stroke-width="9" pathLength="1"/></g>
+<g style="--i:0"><path d="M92 24c38-2 78-2 116 0c2 36 2 70 0 104c-38 2-78 2-116 0c-2-34-2-70 0-104z" stroke-width="7.6" pathLength="1"/></g>
+<g style="--i:1"><path d="M124 121.5L128.5 126M124 112.5L137.5 126M124 103.5L146.5 126M124 94.5L155.5 126M124 85.5L164.5 126M124 76.5L173.5 126M124 67.5L182.5 126M124 58.5L191.5 126M124 49.5L200.5 126M124 40.5L204 120.5M124 31.5L204 111.5M131.5 30L204 102.5M140.5 30L204 93.5M149.5 30L204 84.5M158.5 30L204 75.5M167.5 30L204 66.5M176.5 30L204 57.5M185.5 30L204 48.5M194.5 30L204 39.5M124 34.5L128.5 30M124 43.5L137.5 30M124 52.5L146.5 30M124 61.5L155.5 30M124 70.5L164.5 30M124 79.5L173.5 30M124 88.5L182.5 30M124 97.5L191.5 30M124 106.5L200.5 30M124 115.5L204 35.5M124 124.5L204 44.5M131.5 126L204 53.5M140.5 126L204 62.5M149.5 126L204 71.5M158.5 126L204 80.5M167.5 126L204 89.5M176.5 126L204 98.5M185.5 126L204 107.5M194.5 126L204 116.5" stroke-width="0.9" pathLength="1"/></g>
+<g style="--i:2"><path d="M84 127c44-2 88-2 132 0l-2 11c-42 2-86 2-128 0z" stroke-width="7" pathLength="1"/></g>
+<g style="--i:3" transform="translate(12 0)"><path d="M146 130c-6-14-4-28 6-34c-4-4-5-10-3-14l-1-9l6 5c2-1 5-1 7 0l6-5l-1 9c2 4 1 10-3 14c10 6 12 20 6 34z" stroke-width="2.4" pathLength="1" fill="#141118"/></g>
+<g style="--i:4" transform="translate(12 0)"><path d="M169 127c7 3 9 11 7 19c-1 5 0 9 3 11" stroke-width="5" pathLength="1"/></g>
+<g style="--i:5"><path d="M94 28c10 0 22 0 32 2c-4 18-14 34-20 46s12 30 14 50c-5 2-9-1-13 2c-5-3-9 0-15-2" stroke-width="5.6" pathLength="1"/></g>
+<g style="--i:6"><path d="M96 76c4 5 11 7 15 4" stroke-width="5" pathLength="1"/></g>
 </g></svg>

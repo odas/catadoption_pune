@@ -1,18 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="A drop of blood with a plus sign beside it">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="65 0 170 170" role="img" aria-label="An open hand, palm up, holding a heart">
 <defs>
 <filter id="art-wob" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="23" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.6" xChannelSelector="R" yChannelSelector="G"/></filter>
 <filter id="art-wob-b" x="-14%" y="-14%" width="128%" height="128%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="71" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6.5" xChannelSelector="G" yChannelSelector="R"/></filter>
 </defs>
 <g class="art-fill" style="mix-blend-mode:multiply">
-<path d="M142 30c-12 26-46 52-46 80c0 26 20 42 46 42s44-18 44-42c0-30-30-54-44-80z" fill="#8c78f4" opacity="0.7" transform="rotate(4 150 85)"/>
+<path d="M150 98c-20-12-40-26-40-46c0-14 10-24 22-24c8 0 14 5 18 12c4-7 11-12 19-12c12 0 21 10 21 24c0 20-20 34-40 46z" fill="#f0c840" opacity="0.9" transform="rotate(4 150 85)"/>
+<path d="M84 88c40 2 84 12 134 4c8 4 8 16-4 20c-40 12-80 20-132 18c-6-12-6-28 2-42z" fill="#f8f8a8" opacity="1" transform="rotate(-2 150 85)"/>
+<path d="M62 90l18 1c3 12 3 26 0 38l-18 2c3-14 3-28 0-41z" fill="#8c78f4" opacity="0.7" transform="rotate(0 150 85)"/>
 </g>
 <g class="art-pass" filter="url(#art-wob-b)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round" opacity="0.42">
-<g style="--i:0" transform="translate(1.1 0.8) "><path d="M138 22c-10 28-40 54-40 84c0 25 18 42 40 42s40-17 40-42c0-30-30-56-40-84z" stroke-width="4.05" pathLength="1"/></g>
-<g style="--i:1" transform="translate(1.1 0.8) "><path d="M116 110c0 11 6 19 15 21" stroke-width="2.7" pathLength="1"/></g>
-<g style="--i:2" transform="translate(1.1 0.8) "><path d="M198 34v36M180 53h36" stroke-width="4.05" pathLength="1"/></g>
+<g style="--i:0" transform="translate(1.1 0.8) "><path d="M150 94c-18-11-36-23-36-41c0-12 8-21 19-21c8 0 13 5 17 12c4-7 10-12 18-12c11 0 19 9 19 21c0 18-19 30-37 41z" stroke-width="3.87" pathLength="1"/></g>
+<g style="--i:1" transform="translate(1.1 0.8) "><path d="M80 94c14 0 26 2 36 4c2-8 4-16 10-20c5-3 9 1 8 6c-1 6-2 10-2 16c14 2 30 2 44 0c14-2 28-4 40-4c6 0 8 8 2 11c-12 4-28 8-42 10c-20 4-40 10-60 12c-12 1-24-2-36-4" stroke-width="3.87" pathLength="1"/></g>
+<g style="--i:2" transform="translate(1.1 0.8) "><path d="M66 92l14 1c2 11 2 22 0 33l-14 2c2-12 2-24 0-36z" stroke-width="3.15" pathLength="1"/></g>
+<g style="--i:3" transform="translate(1.1 0.8) "><path d="M184 101c4 4 6 9 5 14M199 99c4 3 6 7 5 11" stroke-width="2.07" pathLength="1"/></g>
 </g>
 <g class="art-line" filter="url(#art-wob)" fill="none" stroke="#141118" stroke-linecap="round" stroke-linejoin="round">
-<g style="--i:0"><path d="M138 22c-10 28-40 54-40 84c0 25 18 42 40 42s40-17 40-42c0-30-30-56-40-84z" stroke-width="9" pathLength="1"/></g>
-<g style="--i:1"><path d="M116 110c0 11 6 19 15 21" stroke-width="6" pathLength="1"/></g>
-<g style="--i:2"><path d="M198 34v36M180 53h36" stroke-width="9" pathLength="1"/></g>
+<g style="--i:0"><path d="M150 94c-18-11-36-23-36-41c0-12 8-21 19-21c8 0 13 5 17 12c4-7 10-12 18-12c11 0 19 9 19 21c0 18-19 30-37 41z" stroke-width="8.6" pathLength="1"/></g>
+<g style="--i:1"><path d="M80 94c14 0 26 2 36 4c2-8 4-16 10-20c5-3 9 1 8 6c-1 6-2 10-2 16c14 2 30 2 44 0c14-2 28-4 40-4c6 0 8 8 2 11c-12 4-28 8-42 10c-20 4-40 10-60 12c-12 1-24-2-36-4" stroke-width="8.6" pathLength="1"/></g>
+<g style="--i:2"><path d="M66 92l14 1c2 11 2 22 0 33l-14 2c2-12 2-24 0-36z" stroke-width="7" pathLength="1"/></g>
+<g style="--i:3"><path d="M184 101c4 4 6 9 5 14M199 99c4 3 6 7 5 11" stroke-width="4.6" pathLength="1"/></g>
 </g></svg>
