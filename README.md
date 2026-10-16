@@ -26,7 +26,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 - **The stylesheet link carries a version tag**, `assets/style.css?v=<first 8 of its sha256>`, so a returning visitor
   gets a changed stylesheet instead of the cached one. Any change to `assets/style.css` means a new tag on every
   page, the board included.
-- **A taped photo (`.snap`) sits only on pages that can be a little informal**: About and Visit. Our own cats,
+- **A taped photo (`.snap`) sits only on pages that can be a little informal**: About. Our own cats,
   indoors, a square crop. Not on Adopt, where people decide, and nothing that shows the view from a window.
 - **Every photo carries its real `width` and `height`**, so the page keeps the space while the photo loads
   and the text doesn't jump. A photo on the first phone screen loads straight away (no `loading="lazy"`);
