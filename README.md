@@ -73,6 +73,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   pixels with a straight cut where the photo ended, and a photograph faded into a colour field. A cat cut out from
   above with nothing under it reads as falling. The closing section is colour and words, then three tiles: Instagram
   and two videos, each a still kept on this site with a link out, never an embed.
+- **Under the closing section, `.living` is the guides-and-videos half of the work** (2026-10-23): two still tiles
+  (a full video, a guide or full video), links to the care hub and the shop, and one plain line on how the site is paid
+  for. It sits below the adoption ask on purpose, so a purchase never reads as part of getting a cat. Its tiles carry no
+  affiliate link and no disclosure; the ask to buy stays on the pages that carry the links.
 - **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
   slides the periwinkle band up over it, so a hero photo has three jobs at once and one that does
   only the first looks shabby the moment the page moves: a subject high enough in the frame to
