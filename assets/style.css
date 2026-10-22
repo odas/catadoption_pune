@@ -544,6 +544,7 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 @media(min-width:980px){.items{grid-template-columns:repeat(3,1fr);}}
 .item{border:var(--edge);border-radius:var(--r);padding:1.2rem 1.2rem 1.1rem;display:flex;flex-direction:column;gap:0.55rem;background:var(--white);}
 .item h3{font-size:var(--s1);}
+.item .pic{display:block;width:100%;max-width:220px;height:auto;aspect-ratio:1;object-fit:cover;border:var(--edge);border-radius:var(--r-sm);margin:0 auto 0.3rem;}
 .item .ours{font-size:var(--s-1);font-weight:600;color:rgba(20,17,24,0.72);margin-top:-0.3rem;}
 .item .why{font-size:var(--s-1);line-height:1.5;}
 .item .free{background:var(--butter);border:1.5px dashed var(--ink);border-radius:var(--r-sm);padding:0.65rem 0.8rem;font-size:var(--s-1);line-height:1.45;}
