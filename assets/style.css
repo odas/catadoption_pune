@@ -565,6 +565,32 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 .item .buy:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--peri);}
 .item .buy:focus-visible{outline:3px solid var(--peri);outline-offset:3px;}
 .item .from{font-size:var(--s-1);text-align:center;}
+/* shop, 2026-10-23: the goods on the first screen; the disclosure one small line, the reasons folded */
+.page-hero .disc-line{font-size:var(--s-2);line-height:1.5;max-width:72ch;margin-top:0.7rem;}
+.page-hero .disc-line a{color:var(--ink);}
+.shop-wrap .shelf-head{display:flex;align-items:center;gap:0.9rem;margin-bottom:0.9rem;}
+.shelf-head img.thumb{width:64px;height:64px;flex:none;border-radius:50%;box-shadow:none;}
+.shelf-head p{font-size:var(--s-1);margin-top:0.15rem;}
+.shop-wrap .shelf{padding-top:1.8rem;}
+.shop-wrap .shelf:first-of-type{padding-top:0.6rem;}
+.shop-wrap .items{grid-template-columns:repeat(2,minmax(0,1fr));gap:0.7rem;}
+@media(min-width:720px){.shop-wrap .items{grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;}}
+@media(min-width:1000px){.shop-wrap .items{grid-template-columns:repeat(4,minmax(0,1fr));}}
+.shop-wrap .item{padding:0.8rem;gap:0.4rem;}
+.shop-wrap .item h3{font-size:var(--s0);line-height:1.3;}
+.shop-wrap .item .pic{max-width:none;margin:0 0 0.2rem;}
+.shop-wrap .item .ours{margin-top:0;font-size:var(--s-2);}
+.shop-wrap .item .free{background:none;border:0;padding:0;font-size:var(--s-2);line-height:1.45;}
+.shop-wrap .item .free b{display:inline;margin:0 0.3rem 0 0;padding:0 0.25rem;background:var(--butter);}
+.item details.why{font-size:var(--s-2);line-height:1.5;}
+.item details.why summary{cursor:pointer;font-weight:600;color:rgba(20,17,24,0.72);}
+.item details.why p{margin-top:0.3rem;}
+.shop-wrap .item .buy{min-height:44px;font-size:var(--s-1);margin-top:auto;}
+.shop-wrap .item .from{font-size:var(--s-2);}
+.shop-wrap{padding-top:0.4rem;}
+.shop-wrap .shelf-nav{margin-top:0.4rem;}
+.shop-wrap .item .free b{text-transform:none;letter-spacing:0;font-size:var(--s-2);}
+.shelf-head p a{white-space:nowrap;}
 
 /* ============================================================
    THE BOARD — adoptable.html. The page is generated outside this repo and carries its own

@@ -100,7 +100,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   links. Neither goes on the board or the emergency page: next to a cat, it could read as paying
   for the cat, and adoption here is free.
 - **`shop.html` is Amazon only, and every card carries the free or cheaper version.** One card per product the
-  guides already link, in her words from that guide, with the free version on butter (the sketchbook layer's
+  guides already link, in the owner's words from that guide, with the free version's label on butter (the sketchbook layer's
   colour for it), one tagged Amazon link (`aff/shop/<merchant-item>`), and a link back to the guide; each guide's
   "Also on this site" box links to the shop. The Cuelinks links stay on their articles. A card with no guide yet
   is allowed for the bigger buys, until their guide exists; the scratcher pack's card links to the day-one guide,
@@ -108,7 +108,11 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   except `resources.html` (owner's call, 2026-09-26; the emergency page keeps nothing about money, as with
   the footer's paid-for link), placed after Emergency so the phone's one-row menu still shows Emergency
   without a swipe. A video's end card will say `catadoption.in/shop`,
-  so the path stays once that video is up.
+  so the path stays once that video is up. **The goods come first on the screen** (owner, 2026-10-23: *"Too much
+  text. Rarely see it like this on any website"*): the disclosure is one small line in the banner, still above the
+  first link; each shelf opens with a round photo, one sentence and its guide link; a card's reason folds under "Why
+  this one" while its free or cheaper version stays visible; two cards a row on a phone. Don't bring back the boxed
+  disclosure or a long shelf intro.
 - **`index.html` and `adopt.html` describe the same three steps and must keep agreeing.**
   Browse · Connect · Adopt, those names, that count, on both pages. They said three and five of
   the same process until 2026-09-15. If the process changes, change both or neither — the home
@@ -131,7 +135,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 - **How they are used is set by the tokens at the top of `assets/style.css`**: type sizes `--s-2` to `--s5`, the radii,
   the ink edge (`--edge`) and the hard shadow (`--lift`). A new size, radius or shadow goes into the tokens first or not
   at all. Cards carry a 2px ink edge, things you can press lift on a hard ink shadow, and each page's coloured top ends
-  in a scalloped edge. Side notes (the shop's affiliate note, a card's free version) sit in a dashed ink box, and
+  in a scalloped edge. Side notes sit in a dashed ink box (the shop's affiliate note and its cards' free versions left it on 2026-10-23), and
   dashed lines divide lists. The board is the exception: a long list people read to decide, so it keeps thin lines,
   no shadows and a flat top (`.page-hero--flat`). Headings stay in Martel; Kalam belongs to the drawn pages and the drawings. The `.hl` highlighter
   goes on the words in a page heading that carry the answer, and a guide's heading keeps its exact words when it gets
