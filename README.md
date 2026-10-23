@@ -112,8 +112,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   text. Rarely see it like this on any website"*): the disclosure is one small line in the banner, still above the
   first link; each shelf opens with a round photo, one sentence and its guide link; a card's reason folds under "Why
   this one" while its free or cheaper version stays visible; two cards a row on a phone. Don't bring back the boxed
-  disclosure or a long shelf intro. **A card's photo and every shelf's round photo are the owner's own**, never the
-  merchant's and never stock: a card with none of hers has no photo. Where hers is no longer sold, the card says the link
+  disclosure or a long shelf intro. **A card's photo is the owner's own**, never the merchant's: a card with none
+  of hers has no photo. A shelf's round photo is hers too, except where a licensed photo shows the thing better: kitten
+  food, and Safety's knotted net (owner, 2026-10-23: her own balcony is closed in with windows and mosquito screens, which
+  would confuse). Its alt text says what it shows. Where hers is no longer sold, the card says the link
   is a similar one.
 - **A guide can open with its own Short as a silent clip** (2026-10-23; the day-one guide first, 2026-09-11):
   `figure.clip` under the byline, `<video data-clip … muted loop playsinline preload="none" controls>`, with
