@@ -38,9 +38,14 @@
   .fmt-placeholder{margin:0;padding:52px 20px;border:2px dashed var(--line);border-radius:12px;
     text-align:center;font:400 13.5px/1.6 var(--font-body);opacity:.6;color:var(--ink)}
   .fmt-placeholder code{font-size:12.5px;background:var(--butter);padding:1px 6px;border-radius:4px}
-  .grid-lead{max-width:860px;margin:16px auto 0;padding:0 20px;
-    font:400 16px/1.55 var(--font-body);color:var(--ink)}
+  .grid-lead{display:grid;grid-template-columns:3fr 2fr;gap:10px 30px;
+    max-width:860px;margin:16px auto 0;padding:0 20px;
+    font:400 16px/1.5 var(--font-body);color:var(--ink)}
+  .grid-lead p{margin:0}
   .grid-lead strong{font-weight:600}
+  .grid-lead a{color:var(--ink)}
+  .grid-lead-resc{padding-left:18px;border-left:3px solid var(--sage)}
+  @media (max-width:600px){.grid-lead{grid-template-columns:1fr}.grid-lead-resc{padding-left:14px}}
   .grid-stamp{max-width:860px;margin:10px auto 0;padding:0 20px;
     font:500 13.5px/1.5 var(--font-body);color:var(--ink);opacity:.62}
   .grid-stamp b{font-weight:600}
@@ -119,16 +124,20 @@
   <p class="crumb"><a href="./">Home</a> › <a href="adopt.html">Adopt</a> › Cats looking for homes</p>
   <h1>Cats looking for homes</h1>
   <p class="sub">Indies from rescuers across Pune and PCMC, looking for homes right now.</p>
+  <span class="badge">Free, always · Pune &amp; PCMC · Indies only</span>
 </section>
 
 <div class="wrap">
-  <!-- The top stays light so the first cat shows on a phone's first screen (site README, "A page's top stays light"). -->
-  <p class="grid-lead"><strong>Free, always.</strong> Each cat lives with the person who rescued it: call them on the
-  number under its photo.</p>
+  <!-- Kept short so the first cat still shows on a phone's first screen (site README, "A page's top stays light"). -->
+  <div class="grid-lead">
+    <p><strong>Adopters</strong> &mdash; Each cat lives with the person who rescued it. Call them on the
+    number by its photo.</p>
+    <p class="grid-lead-resc"><strong>Rescuers</strong> &mdash; <a href="#rescuers">how to send us a cat</a></p>
+  </div>
 
   <p class="grid-stamp"><span class="dot"></span><b>41 cats looking for a home</b>
   &middot; updated <time datetime="2026-10-27">27 October 2026</time>
-  &middot; <a href="#rescuers">Rescuer? How to send a cat</a></p>
+  &middot; built with AI by <a href="https://odas.github.io?utm_source=catadoption&amp;utm_medium=board-top&amp;utm_campaign=services">Orpita Das</a></p>
 
   <div class="cat-grid">
     <article class="cat">
