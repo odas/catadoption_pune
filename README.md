@@ -52,8 +52,11 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 - **A page's top stays light, so its first screen shows what the page is for** (2026-10-27): the cats on the board,
   the items on the shop, the answer on a guide. Readers scroll happily once they can see they are in the right place;
   what loses them is a top that delays the proof. So what sits above the first card, item or paragraph is what a
-  reader needs before it (a heading, a short line, a disclosure the page must carry), and anything else (a lead
-  paragraph, badges, a big picture, a row of filters) goes below the first items or shrinks to a line. The check: on a
+  reader needs before it (a heading, a short line, a disclosure the page must carry), and anything else (a long
+  lead paragraph, a big picture, a row of filters) goes below the first items or shrinks to a line. Light means fewer
+  words, not fewer design elements: the pieces that make a top look finished and easy to skim, such as the board's
+  white pill, its bold labels and the green bar, stay, with their text cut (2026-10-27, the board's first trim took them
+  out and the page lost its look). The check: on a
   phone, most visitors, the first screen is about 390 × 660 px once the browser's bars are counted, and the top of the
   first card, item or paragraph should be on it; measure it in headless Chrome with `getBoundingClientRect().top`
   rather than by eye. The home page is the one exception, because its hero is the story the page tells.
