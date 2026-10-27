@@ -49,6 +49,14 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   it stays clean. Since 2026-09-08 it is also the one care hub: the basics, then the article
   cards. `blog.html` is a redirect to it, kept so old links work; a new article gets its card
   on `learn.html`, newest first.
+- **A page's top stays light, so its first screen shows what the page is for** (2026-10-27): the cats on the board,
+  the items on the shop, the answer on a guide. Readers scroll happily once they can see they are in the right place;
+  what loses them is a top that delays the proof. So what sits above the first card, item or paragraph is what a
+  reader needs before it (a heading, a short line, a disclosure the page must carry), and anything else (a lead
+  paragraph, badges, a big picture, a row of filters) goes below the first items or shrinks to a line. The check: on a
+  phone, most visitors, the first screen is about 390 × 660 px once the browser's bars are counted, and the top of the
+  first card, item or paragraph should be on it; measure it in headless Chrome with `getBoundingClientRect().top`
+  rather than by eye. The home page is the one exception, because its hero is the story the page tells.
 - **The hero photo is a transparent cutout on flat sage, and that is load-bearing.**
   `assets/hero-kittens-tree.webp` (and `-800` for phones) is the owner's own kittens cut out **with the
   cat-tree bowl they sit in**, the bowl bleeding off the bottom edge. The 09-15 cut-out without the
@@ -73,8 +81,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   where the photo ended, and a photograph faded into a colour field. A cat cut out from above with nothing under it
   reads as falling. The closing section is colour and words, then three tiles: Instagram and two videos, each a still
   kept on this site with a link out, never an embed.
-- **`.living` is the guides-and-videos half of the work** (2026-10-23; moved above the closing ask 2026-10-27): two
-  still tiles (a full video, a guide or full video) and links to the care hub and the shop. Its tiles carry no
+- **`.living` is the guides-and-videos half of the work** (2026-10-23; moved above the closing ask 2026-10-27): still
+  tiles (full videos, or a guide until its full video is up) and links to the care hub and the shop. Its tiles carry no
   affiliate link and no disclosure; the ask to buy stays on the pages that carry the links. **The one line on how the
   site is paid for (`.paid`) sits below the closing ask**, so a purchase never reads as part of getting a cat.
 - **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
