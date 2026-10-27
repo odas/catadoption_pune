@@ -117,12 +117,6 @@ a{color:inherit;}
 .hero-copy h1 .l{display:block;white-space:nowrap;}
 .hero-copy p{color:var(--ink);font-size:clamp(1rem,1.4vw,1.15rem);max-width:34ch;}
 
-.pin--yellow{background:var(--yellow);}
-/* Scene 2: one whole cat on the flat yellow, and it is the only thing that moves (the scroll zoom). The cut-out's
-   left end is where the photo cut the tail, so it runs off the left edge. Its shadow is in the file, so nothing is
-   filtered while it scales. */
-.pin--item img{inset:auto;left:-1vw;right:auto;top:50%;bottom:auto;margin-top:-14vw;width:64vw;max-width:none;height:auto;object-fit:contain;transform-origin:30% 60%;}
-
 /* content that slides over the pinned photo */
 .over{position:relative;z-index:2;}
 /* runway spacers: positive-only scroll pacing (the pinned photo shows through).
@@ -138,9 +132,6 @@ a{color:inherit;}
 /* translucent panel crossing the photo */
 .glass{background:var(--peri-glass);color:var(--ink);border:var(--edge);border-radius:var(--r);box-shadow:var(--lift-hi);width:min(560px,88%);margin-left:var(--gut);padding:clamp(2rem,5vh,3.5rem);}
 .glass h2{font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:2rem;}
-.glass--say{width:min(400px,86%);margin-left:auto;margin-right:var(--gut);padding:clamp(1.8rem,4vh,2.8rem);}
-.glass--say h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:0.7rem;}
-.glass--say p{font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.6;}
 .step{padding:1.1rem 0;border-bottom:1px solid rgba(20,17,24,0.18);}
 .step:last-child{border-bottom:none;}
 .step h3{font-size:clamp(1.15rem,1.9vw,1.5rem);margin-bottom:0.2rem;}
@@ -194,8 +185,8 @@ a{color:inherit;}
 .seen-tile--wide .seen-cap{max-width:calc(clamp(200px,26vw,300px)*16/9);}
 .seen-tile:hover .seen-pic{transform:translate(-2px,-2px);box-shadow:var(--lift-hi);}
 .seen-tile:focus-visible{outline:3px solid var(--ink);outline-offset:4px;}
-/* home page: guides and videos, below the adoption ask */
-.living{background:var(--paper);text-align:center;padding:clamp(3.5rem,10vh,6rem) var(--gut);}
+/* home page: guides and videos, on the flat yellow between the steps and the adoption ask (2026-10-27) */
+.living{background:var(--yellow);text-align:center;padding:clamp(3.5rem,10vh,6rem) var(--gut);}
 .living h2{font-size:clamp(1.6rem,2.8vw,2.3rem);max-width:24ch;margin:0 auto 1rem;}
 .living .lede{max-width:46ch;margin:0 auto;font-size:var(--s1);}
 .living .seen{margin-top:clamp(1.8rem,5vh,2.8rem);}
@@ -203,8 +194,9 @@ a{color:inherit;}
 .living .seen-pic img{width:100%;height:100%;object-fit:cover;}
 .living .seen-tile--wide .seen-cap{max-width:calc(clamp(170px,20vw,230px)*16/9);}
 .living-go{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:clamp(2rem,5vh,2.8rem);}
-.living .paid{max-width:52ch;margin:1.8rem auto 0;font-size:var(--s-1);line-height:1.5;}
-.living .paid a{color:var(--ink);}
+/* home page: how the site is paid for, one line below the adoption ask */
+.paid{background:var(--paper);text-align:center;margin:0;padding:1.8rem max(var(--gut),calc((100% - 52ch)/2));font-size:var(--s-1);line-height:1.5;}
+.paid a{color:var(--ink);}
 
 /* ---------- interior pages ---------- */
 /* The page hero: a coloured awning. Its scalloped edge hangs over the page, and its text starts on the
@@ -329,7 +321,6 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 @media(max-width:768px){
   /* Full height: at 72% the bottom of the screen showed the page's white while the spacers scrolled past (the "white strips"). */
   .pin{height:100vh;height:100lvh;}
-  .pin--item img{width:165vw;left:-62vw;top:34%;margin-top:0;}
   .hero-copy{width:100%;flex-basis:100%;padding:0 7vw;}
   .hero-copy h1{font-size:clamp(1.9rem,10.2cqw,3rem);}
   .glass{width:100%;margin:0;}
@@ -341,7 +332,6 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
   .dstep{display:grid;grid-template-columns:38% 1fr;gap:0 0.9rem;align-items:center;padding:0.9rem 0;border-bottom:1px solid rgba(20,17,24,0.14);}
   .dstep:last-child{border-bottom:none;}
   .dstep .dcard{margin-bottom:0;}
-  .glass--say{margin-left:auto;margin-right:auto;}
   .seen{flex-wrap:wrap;gap:1rem 0.8rem;}
   .seen-pic{height:auto;}
   .seen-tile--wide{flex:0 0 100%;order:-1;}

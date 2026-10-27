@@ -66,17 +66,17 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   photo's top edge for the same reason. Don't tie the photo's height back to the screen's.
 - **On the home page, every pinned scene fills the whole screen on a phone** (`.pin`, `100lvh`). At 72% the page's white showed
   below the photo while the spacers scrolled past, which were the "white strips" several sessions chased.
-- **Below the hero the home page has one more scene, and it follows the template the site began from** (2026-10-02): one
-  whole cat on flat yellow, the only thing that moves, with a small panel crossing it. The cat is a cut-out made from
-  the full-size original, with its shadow in the file; its left end is where the photo cut the tail, so it runs off
-  the left edge. Two things were tried here and taken out, so don't bring them back: a cut-out blown up past its own
-  pixels with a straight cut where the photo ended, and a photograph faded into a colour field. A cat cut out from
-  above with nothing under it reads as falling. The closing section is colour and words, then three tiles: Instagram
-  and two videos, each a still kept on this site with a link out, never an embed.
-- **Under the closing section, `.living` is the guides-and-videos half of the work** (2026-10-23): two still tiles
-  (a full video, a guide or full video), links to the care hub and the shop, and one plain line on how the site is paid
-  for. It sits below the adoption ask on purpose, so a purchase never reads as part of getting a cat. Its tiles carry no
-  affiliate link and no disclosure; the ask to buy stays on the pages that carry the links.
+- **Below the hero the home page has no pinned scene since 2026-10-27**: the drawn steps on paper, then `.living` on the
+  flat yellow, then the closing ask on purple. The yellow scene that sat here (one whole cat on flat yellow, a panel
+  crossing it) came out because the long scroll to it delayed every reader on the way down. If a scene comes back, two
+  things were tried and taken out, so don't bring them back: a cut-out blown up past its own pixels with a straight cut
+  where the photo ended, and a photograph faded into a colour field. A cat cut out from above with nothing under it
+  reads as falling. The closing section is colour and words, then three tiles: Instagram and two videos, each a still
+  kept on this site with a link out, never an embed.
+- **`.living` is the guides-and-videos half of the work** (2026-10-23; moved above the closing ask 2026-10-27): two
+  still tiles (a full video, a guide or full video) and links to the care hub and the shop. Its tiles carry no
+  affiliate link and no disclosure; the ask to buy stays on the pages that carry the links. **The one line on how the
+  site is paid for (`.paid`) sits below the closing ask**, so a purchase never reads as part of getting a cat.
 - **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
   slides the periwinkle band up over it, so a hero photo has three jobs at once and one that does
   only the first looks shabby the moment the page moves: a subject high enough in the frame to
