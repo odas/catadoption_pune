@@ -214,6 +214,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 
 - **`adoptable.html` is generated, never hand-written.** A script builds it from the
   adoptable-cats sheet; edit it here and the next run overwrites you.
+- **`cat-scratching-pune-flat.html` is generated too**, the article and its clickable scratcher scene
+  (`<section id="cats-scratcher-house">`) from the private working copy. Its scene images in `assets/scratching/` are
+  compressed copies of drawings kept outside this repo. The cats and scratchers share one scale, so a hand edit that
+  resizes one of them breaks the size comparison the page exists for.
 
 ## Layout
 
