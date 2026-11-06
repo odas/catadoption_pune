@@ -90,8 +90,9 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   site is paid for (`.paid`) sits below the closing ask**, so a purchase never reads as part of getting a cat. Under the
   tiles, the cats' house doorway (`.house-door`, 2026-11-07) links to `cats-house.html`, never to Amazon, and its words
   say nothing about buying, for the same reason. **One picture leads each section** (owner's yes, 2026-11-07): the house
-  doorway leads `.living`, and the guide and video tiles under it and under the closing ask are a quiet list
-  (`.seen--list`, a small thumbnail beside its caption), so seven loud tiles no longer compete.
+  doorway leads `.living`, and the guide and video tiles under it are a quiet list (`.seen--list`, a small thumbnail
+  beside its caption). The closing ask keeps its three full-size tiles: as a list its videos read too small on a laptop
+  (owner, 2026-11-07).
 - **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
   slides the periwinkle band up over it, so a hero photo has three jobs at once and one that does
   only the first looks shabby the moment the page moves: a subject high enough in the frame to
