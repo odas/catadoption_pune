@@ -142,16 +142,15 @@ a{color:inherit;}
    steps. Each drawing sits on its own white card, because the colour under the lines is multiplied. Finished by
    default: the draw-on runs only once the section's reveal fires, and never with reduced motion. */
 .how{background:var(--paper);padding:clamp(3rem,8vh,5.5rem) var(--gut);position:relative;z-index:2;}
-.how-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(1.6rem,4vw,4rem);align-items:start;}
+.how-inner{max-width:1100px;margin:0 auto;}
+.how-inner>h2{text-align:center;margin-bottom:2rem;}
 .how h2{grid-column:1/-1;font-size:clamp(1.6rem,2.8vw,2.3rem);margin-bottom:0.4rem;}
-.how-why-art{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-bottom:1rem;}
-.how-why p{font-size:clamp(1.02rem,1.25vw,1.15rem);line-height:1.6;max-width:34ch;}
-.how-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.8rem);border-left:1px solid rgba(20,17,24,0.16);padding-left:clamp(1.6rem,4vw,4rem);}
+.how-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.8rem);}
 .dstep h3{font-family:var(--font-hand);font-weight:700;font-size:var(--s2);line-height:1.05;margin-bottom:0.3rem;}
 .dstep p{font-size:0.95rem;line-height:1.55;max-width:none;margin:0;}
 .dstep .dcard{margin-bottom:0.9rem;}
 .dcard{background:var(--white);border:var(--edge);border-radius:var(--r-sm);padding:0.35rem 0.4rem;transform:rotate(-1.2deg);box-shadow:var(--lift);}
-.dstep:nth-child(even) .dcard,.how-why-art .dcard:nth-child(2){transform:rotate(1deg);}
+.dstep:nth-child(even) .dcard{transform:rotate(1deg);}
 .drawn{display:block;width:100%;height:auto;overflow:visible;}
 @media(prefers-reduced-motion:no-preference){
   .how-inner.in .drawn .art-line path,.how-inner.in .drawn .art-pass path{stroke-dasharray:1 1;animation:draw 0.4s ease-out both;animation-delay:calc(var(--d,0s) + 0.35s + var(--i)*0.06s);}
@@ -218,6 +217,19 @@ a{color:inherit;}
 .house-door--shelf .btn{background:var(--white);} /* the shop is never butter: butter is its cards' free version */
 .page-hero .hero-door{margin:0.45rem 0 0.1rem;font-weight:600;font-size:var(--s0);}
 .page-hero .hero-door a{text-decoration-thickness:2px;text-underline-offset:3px;}
+/* one picture leads each home section; the tiles under it are a quiet list, a small thumbnail beside its caption (2026-11-07) */
+.seen--list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem 1.4rem;max-width:1000px;margin-top:1.8rem;}
+.seen--list .seen-tile{display:grid;grid-template-columns:120px 1fr;gap:0.8rem;align-items:center;}
+.seen--list .seen-pic{height:auto;aspect-ratio:16/9;border-radius:10px;box-shadow:3px 3px 0 var(--ink);}
+.seen--list .seen-pic img{width:100%;height:100%;object-fit:cover;}
+.seen--list .seen-cap,.seen--list .seen-tile--wide .seen-cap,.seen--list .seen-tile--insta .seen-cap,.seen--list .seen-tile--tall .seen-cap{margin:0;max-width:none;font-size:0.92rem;line-height:1.35;}
+.living .seen--list{margin-top:1.8rem;}
+.living .seen--list .seen-pic{height:auto;}
+.seen--list .seen-tile--insta .seen-pic{aspect-ratio:16/9;display:grid;place-items:center;}
+.seen--list .seen-tile--insta .seen-pic img{width:54px;height:54px;border-radius:50%;}
+.seen--list .seen-tile--tall .seen-pic img{object-position:center 30%;}
+@media(max-width:760px){.seen--list{grid-template-columns:1fr;gap:0.8rem;}.seen--list .seen-tile{grid-template-columns:104px 1fr;}}
+
 .living-go{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:clamp(2rem,5vh,2.8rem);}
 /* home page: how the site is paid for, one line below the adoption ask */
 .paid{background:var(--paper);text-align:center;margin:0;padding:1.8rem max(var(--gut),calc((100% - 52ch)/2));font-size:var(--s-1);line-height:1.5;}
@@ -352,7 +364,6 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
   .how{padding:2.8rem 7vw;}
   .how-inner{display:block;}
   .how h2{margin-bottom:1.3rem;}
-  .how-why{padding-bottom:1.4rem;margin-bottom:0.6rem;border-bottom:1px solid rgba(20,17,24,0.16);}
   .how-steps{display:block;border-left:none;padding-left:0;}
   .dstep{display:grid;grid-template-columns:38% 1fr;gap:0 0.9rem;align-items:center;padding:0.9rem 0;border-bottom:1px solid rgba(20,17,24,0.14);}
   .dstep:last-child{border-bottom:none;}

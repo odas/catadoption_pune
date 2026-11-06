@@ -89,7 +89,9 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   affiliate link and no disclosure; the ask to buy stays on the pages that carry the links. **The one line on how the
   site is paid for (`.paid`) sits below the closing ask**, so a purchase never reads as part of getting a cat. Under the
   tiles, the cats' house doorway (`.house-door`, 2026-11-07) links to `cats-house.html`, never to Amazon, and its words
-  say nothing about buying, for the same reason.
+  say nothing about buying, for the same reason. **One picture leads each section** (owner's yes, 2026-11-07): the house
+  doorway leads `.living`, and the guide and video tiles under it and under the closing ask are a quiet list
+  (`.seen--list`, a small thumbnail beside its caption), so seven loud tiles no longer compete.
 - **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
   slides the periwinkle band up over it, so a hero photo has three jobs at once and one that does
   only the first looks shabby the moment the page moves: a subject high enough in the frame to
@@ -140,9 +142,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   Browse · Connect · Adopt, those names, that count, on both pages. They said three and five of
   the same process until 2026-09-15. If the process changes, change both or neither — the home
   page is a preview of the adopt page, not a separate claim.
-  Since 2026-09-26 the home page draws them. Two drawings come first (no shelter, a rescuer's home): they are the
-  reason the steps exist, not steps, so since 2026-10-02 they sit apart with one sentence and carry no number and no
-  title. Then the three steps with those names.
+  Since 2026-09-26 the home page draws them. Since 2026-11-07 it shows only the three steps, as the cat card's back
+  does: the two "why" drawings and their sentence repeated the band's paragraph, so they came out (owner's yes).
 
 - **New articles copy `article-template.html`**, follow the comments inside it, and get
   added to `sitemap.xml`.
