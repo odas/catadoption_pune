@@ -218,6 +218,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   (`<section id="cats-scratcher-house">`) from the private working copy. Its scene images in `assets/scratching/` are
   compressed copies of drawings kept outside this repo. The cats and scratchers share one scale, so a hand edit that
   resizes one of them breaks the size comparison the page exists for.
+- **`cats-house.html` is the same scene as its own shop page** (`assets/house*.js`, `house.css`), reusing the
+  `assets/scratching/` images and the same scale, set once in `assets/house-catalog.js` (cats at 32 px/cm). It is
+  hand-maintained, not generated. The scratching article links to it with a picture doorway, which comes from the
+  article's generator, so add or change that doorway there, not in the article's HTML.
 
 ## Layout
 
