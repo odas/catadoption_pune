@@ -87,7 +87,9 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 - **`.living` is the guides-and-videos half of the work** (2026-10-23; moved above the closing ask 2026-10-27): still
   tiles (full videos, or a guide until its full video is up) and links to the care hub and the shop. Its tiles carry no
   affiliate link and no disclosure; the ask to buy stays on the pages that carry the links. **The one line on how the
-  site is paid for (`.paid`) sits below the closing ask**, so a purchase never reads as part of getting a cat.
+  site is paid for (`.paid`) sits below the closing ask**, so a purchase never reads as part of getting a cat. Under the
+  tiles, the cats' house doorway (`.house-door`, 2026-11-07) links to `cats-house.html`, never to Amazon, and its words
+  say nothing about buying, for the same reason.
 - **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
   slides the periwinkle band up over it, so a hero photo has three jobs at once and one that does
   only the first looks shabby the moment the page moves: a subject high enough in the frame to
@@ -222,6 +224,11 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   `assets/scratching/` images and the same scale, set once in `assets/house-catalog.js` (cats at 32 px/cm). It is
   hand-maintained, not generated. The scratching article links to it with a picture doorway, which comes from the
   article's generator, so add or change that doorway there, not in the article's HTML.
+  **Its doorways** on the home page's `.living` and the shop's Scratchers shelf (`.house-door`, 2026-11-07) are four stills
+  (`assets/house-door/`) screenshotted from this page's own closer-look view, so they keep its scale; a change to the
+  scene or catalogue means recutting them, never redrawing. They crossfade by CSS alone and hold the first still on
+  reduced motion. On the shop the doorway is the Scratchers shelf, below Day one, with one text line to it in the banner,
+  so the first screen still shows the first litter card. Its button is white there: the shop is never butter.
 
 ## Layout
 

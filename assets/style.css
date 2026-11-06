@@ -194,6 +194,30 @@ a{color:inherit;}
 .living .seen-pic{height:clamp(150px,15vw,190px);aspect-ratio:16/9;}
 .living .seen-pic img{width:100%;height:100%;object-fit:cover;}
 .living .seen-tile--wide .seen-cap{max-width:calc(clamp(150px,15vw,190px)*16/9);}
+/* the cats' house doorway (home .living and the shop's scratchers shelf, 2026-11-07): four to-scale stills cut from the
+   house page itself, crossfading, each with its name and width on an ink bar; the first still alone on reduced motion */
+.house-door{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:clamp(1rem,3vw,2rem);max-width:980px;margin:clamp(2rem,5vh,3rem) auto 0;padding:clamp(0.7rem,1.6vw,1rem);background:var(--paper);border:var(--edge);border-radius:var(--r);box-shadow:var(--lift);color:var(--ink);text-decoration:none;text-align:left;transition:transform 0.2s var(--ease),box-shadow 0.2s var(--ease);}
+.house-door:hover{transform:translate(-2px,-2px);box-shadow:var(--lift-hi);}
+.house-door:focus-visible{outline:3px solid var(--ink);outline-offset:4px;}
+.house-door-pics{position:relative;display:block;aspect-ratio:800/529;border:var(--edge);border-radius:calc(var(--r) - 4px);overflow:hidden;background:var(--peri);}
+.house-door-pics img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.house-door-tag{position:absolute;left:0;right:0;bottom:0;padding:0.4rem 0.8rem;background:var(--ink);color:var(--white);font-size:var(--s-1);font-weight:600;line-height:1.35;}
+.house-door-pics img+img,.house-door-tag+.house-door-tag{opacity:0;animation:house-door 12s infinite both;}
+.house-door-pics img:nth-of-type(2),.house-door-tag:nth-of-type(2){animation-delay:3s;}
+.house-door-pics img:nth-of-type(3),.house-door-tag:nth-of-type(3){animation-delay:6s;}
+.house-door-pics img:nth-of-type(4),.house-door-tag:nth-of-type(4){animation-delay:9s;}
+@keyframes house-door{0%{opacity:0}5%{opacity:1}25%{opacity:1}30%{opacity:0}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.house-door-pics img+img,.house-door-tag+.house-door-tag{animation:none;opacity:0;}}
+.house-door-text{display:grid;gap:0.55rem;justify-items:start;padding-right:clamp(0rem,1.5vw,1rem);}
+.house-door-eyebrow{font-size:var(--s-1);font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:#4d3a81;}
+.house-door-title{font-family:var(--font-head);font-weight:700;font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.22;letter-spacing:var(--head-track);}
+.house-door-line{font-size:var(--s0);line-height:1.5;}
+.house-door .btn{margin-top:0.3rem;min-height:46px;padding:0.55rem 1.3rem;}
+@media(max-width:700px){.house-door{grid-template-columns:1fr;gap:0.9rem;}.house-door-text{padding:0 0.3rem 0.4rem;}}
+.house-door--shelf{margin:0;max-width:none;}
+.house-door--shelf .btn{background:var(--white);} /* the shop is never butter: butter is its cards' free version */
+.page-hero .hero-door{margin:0.45rem 0 0.1rem;font-weight:600;font-size:var(--s0);}
+.page-hero .hero-door a{text-decoration-thickness:2px;text-underline-offset:3px;}
 .living-go{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:clamp(2rem,5vh,2.8rem);}
 /* home page: how the site is paid for, one line below the adoption ask */
 .paid{background:var(--paper);text-align:center;margin:0;padding:1.8rem max(var(--gut),calc((100% - 52ch)/2));font-size:var(--s-1);line-height:1.5;}
