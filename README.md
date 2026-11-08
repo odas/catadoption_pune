@@ -237,7 +237,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 `index` · `about` · `adopt` · `adopter-form` · `learn` (the care hub) · `shop` · `resources` (Emergency &
 NGOs) · `send-a-cat` (the rescuer's door) · `privacy` and the articles ·
 `adoptable.html` (the board) · `blog.html` and `visit.html` (redirects; the Maps page merged into About on 2026-10-16) · `article-template.html` · `404.html`.
-Nineteen pages are in the sitemap (the shop since 2026-09-26; `visit` left it 2026-10-16); the template, the redirects and 404 deliberately are not.
+Twenty-one pages are in the sitemap (the shop since 2026-09-26; `visit` left it 2026-10-16; the scratching guide since 2026-11-03, the cats' house since 2026-11-06); the template, the redirects and 404 deliberately are not.
 **Short URLs** (2026-09-23): eleven one-line doorways — `/hair` `/clean` `/day-one` `/net`
 `/kitten-food` `/litter` `/feeding` `/found` `/send` `/roti` `/cats` — each redirecting to its
 page (`/cats` to the board, the rest to an article) with the campaign tag attached. They exist because a tagged URL is ~95 characters and a
