@@ -48,7 +48,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 - **`learn.html` carries no affiliate links, ever.** Care education is the trust layer and
   it stays clean. Since 2026-09-08 it is also the one care hub: the basics, then the article
   cards. `blog.html` is a redirect to it, kept so old links work; a new article gets its card
-  on `learn.html`, newest first.
+  on `learn.html`, newest first within its topic group (the groups stay, the owner's 2026-09-28 ruling).
 - **A page's top stays light, so its first screen shows what the page is for** (2026-10-27): the cats on the board,
   the items on the shop, the answer on a guide. Readers scroll happily once they can see they are in the right place;
   what loses them is a top that delays the proof. So what sits above the first card, item or paragraph is what a
@@ -93,7 +93,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   doorway leads `.living`, and the guide and video tiles under it are a quiet list (`.seen--list`, a small thumbnail
   beside its caption). The closing ask keeps its three full-size tiles: as a list its videos read too small on a laptop
   (owner, 2026-11-07).
-- **The `index.html` hero is a scroll sequence, not a picture.** Scene 1 pins the photo and
+- **The `index.html` hero is a scroll sequence, not a picture** (this bullet is the desktop and its history; on a phone
+  the hero neither pins nor puts the copy over the photo since 2026-09-26 and 10-02, the hero-photo bullet above). Scene 1 pins the photo and
   slides the periwinkle band up over it, so a hero photo has three jobs at once and one that does
   only the first looks shabby the moment the page moves: a subject high enough in the frame to
   survive the 16% scroll zoom; a **calm, low-detail field for the headline to sit on** — on phone
