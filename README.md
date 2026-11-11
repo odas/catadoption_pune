@@ -219,6 +219,12 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 
 - **`adoptable.html` is generated, never hand-written.** A script builds it from the
   adoptable-cats sheet; edit it here and the next run overwrites you.
+  The page carries its own styles and a small script: today's age on a card, a photo opened whole, Share,
+  and a folded box that opens when a link points into it. With no script every link still works, and a photo
+  opens as a plain file. A cat that has found a home stays on the page as a small tile, with none of its
+  rescuer's details anywhere in the source. `assets/cats/thumbs/` holds the tiles' square copies, written by
+  the same build; a closed cat keeps one photo. Taps on Call, WhatsApp, Instagram and Share are counted by
+  name only, never with a person or a number.
 - **`cat-scratching-pune-flat.html` is generated too**, the article and its clickable scratcher scene
   (`<section id="cats-scratcher-house">`) from the private working copy. Its scene images in `assets/scratching/` are
   compressed copies of drawings kept outside this repo. The cats and scratchers share one scale, so a hand edit that

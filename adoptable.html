@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- 67 listings, generated 2026-11-07 from the adoptable-cats sheet.
+<!-- 67 listings, generated 2026-11-11 from the adoptable-cats sheet.
      THIS PAGE IS GENERATED. Hand edits are overwritten on the next run.
 
      ON the page, deliberately: rescuer name, phone number and Instagram handle. A rescuer
@@ -22,17 +22,18 @@
 <link rel="preload" href="assets/fonts/martel-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/style.css?v=bd05cee2">
 <style>
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   .topbar{background:var(--yellow);color:var(--ink);padding:15px 22px;text-align:center}
   .topbar-draft{font:500 15px/1.55 var(--font-body);margin:0 auto;max-width:64ch}
   .topbar-draft strong{font-weight:600}
+  .topbar-draft + .topbar-note{padding-top:8px;border-top:1px solid rgba(20,17,24,.16)}
   .topbar-lead{font:700 clamp(18px,2.6vw,23px)/1.4 var(--font-head);letter-spacing:var(--head-track);margin:0 auto;text-wrap:balance}
   .topbar-note{font:400 14.5px/1.55 var(--font-body);margin:7px auto 0;max-width:66ch;opacity:.82}
   .topbar-note strong{font-weight:700;color:#4a2fd0}
-  .topbar-draft + .topbar-note{padding-top:8px;border-top:1px solid rgba(20,17,24,.16)}
   .topbar-note a{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:2px;opacity:1}
   .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-  /* Colour is rationed: the hero and the closing block are the only colour, everything
-     between them sits in white, and the format is shown by a screenshot, not a coloured panel. */
+  /* Colour blocks: the hero and the closing block. Butter marks each card's call. */
   .fmt-shot{margin:0}
   .fmt-shot img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:12px}
   .fmt-placeholder{margin:0;padding:52px 20px;border:2px dashed var(--line);border-radius:12px;
@@ -45,13 +46,146 @@
   .grid-lead strong{font-weight:600}
   .grid-lead a{color:var(--ink)}
   .grid-lead-resc{padding-left:18px;border-left:3px solid var(--sage)}
-  @media (max-width:600px){.grid-lead{grid-template-columns:1fr}.grid-lead-resc{padding-left:14px}}
+  @media (max-width:600px){.grid-lead{grid-template-columns:1fr;padding:0 4px}.grid-lead-resc{padding-left:14px}}
   .grid-stamp{max-width:860px;margin:10px auto 0;padding:0 20px;
     font:500 13.5px/1.5 var(--font-body);color:var(--ink);opacity:.62}
   .grid-stamp b{font-weight:600}
   .grid-stamp .dot{display:inline-block;width:7px;height:7px;border-radius:50%;
     background:var(--sage);margin-right:8px;vertical-align:1px}
   .grid-stamp a{color:var(--ink)}
+  .grid-stamp-2::before{content:"\00b7\00a0"}
+  /* On a phone: the counts on one line, the rest on the next. */
+  @media (max-width:600px){.grid-stamp{padding:0 4px}
+    .grid-stamp-2{display:block;padding-left:15px}.grid-stamp-2::before{content:none}}
+
+  /* dense: a full-width strip leaves no hole in the row above it. */
+  .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px;margin:22px 0 10px;grid-auto-flow:row dense}
+  .cat{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--white);display:flex;flex-direction:column;scroll-margin-top:12px}
+  .cat:target{border-color:var(--ink)}
+  .cat-pic{position:relative;background:var(--white)}
+  /* Photos swipe sideways on a phone, the next one peeking in; each is cut to 4:5. */
+  .cat-gal{display:flex;gap:4px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+  .cat-gal::-webkit-scrollbar{display:none}
+  .cat-ph{flex:none;min-width:0;width:100%;display:block;scroll-snap-align:start;cursor:zoom-in}
+  .cat-ph img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 45%;display:block}
+  .cat-gal--2 .cat-ph,.cat-gal--3 .cat-ph{width:88%}
+  .cat-gal--2 .cat-ph:last-child,.cat-gal--3 .cat-ph:last-child{scroll-snap-align:end}
+  .cat-ph:focus-visible{outline:3px solid var(--peri);outline-offset:-3px}
+  .cat-nopic{aspect-ratio:4/5;display:grid;place-items:center;background:var(--sky)}
+  .cat-nopic span{font:500 14px var(--font-body);color:var(--ink);opacity:.65}
+  .cat-more{position:absolute;left:10px;bottom:10px;background:rgba(20,17,24,.72);color:#fff;border-radius:999px;
+    padding:3px 9px;font:600 12px/1.3 var(--font-body);letter-spacing:.02em;pointer-events:none}
+  .cat-body{padding:16px 18px 16px;display:flex;flex-direction:column;flex:1}
+  .cat-body .cat-title{font:700 20px/1.3 var(--font-head);letter-spacing:var(--head-track);margin:0 0 10px;color:var(--ink)}
+  .cat-count{display:inline-block;margin-left:8px;background:var(--sage);color:var(--ink);border-radius:999px;padding:2px 9px;font:600 12px var(--font-body);vertical-align:middle}
+  .cat-flag{background:var(--sky);color:var(--ink);border-radius:8px;padding:10px 12px;margin:0 0 12px;font:500 13.5px/1.5 var(--font-body)}
+  .cat-facts{margin:0 0 12px;display:grid;gap:4px}
+  .cat-facts .f{display:grid;grid-template-columns:3.9rem 1fr;gap:8px;align-items:baseline;min-width:0}
+  .cat-facts dt{margin:0;font:600 11px/1.4 var(--font-body);text-transform:uppercase;letter-spacing:.07em;opacity:.62}
+  .cat-facts dd{margin:0;font:400 15.5px/1.45 var(--font-body);color:var(--ink);min-width:0}
+  .cat-facts .f--area dd{font-weight:600}
+  /* Once the script fills today's age, the given age sits under it, smaller. */
+  .age-now:not(:empty){display:block}
+  .age-now:not(:empty) + .age-said{display:block;font-size:13px;opacity:.62}
+  .cat-note{font:400 15px/1.6 var(--font-body);margin:0 0 14px;color:var(--ink);opacity:.88}
+  /* The call: the whole panel is one tap, the number its largest line. */
+  .cat-contact{margin:auto 0 0}
+  .cat-call{display:block;background:var(--butter);border-radius:10px;padding:11px 14px 12px;color:var(--ink);text-decoration:none}
+  .cat-who{display:block;font:400 13.5px/1.4 var(--font-body);opacity:.82}
+  .cat-who b{font-weight:600}
+  .cat-num{display:flex;align-items:center;gap:9px;margin-top:2px;padding-bottom:3px;font:700 21px/1.3 var(--font-body);letter-spacing:.04em}
+  .cat-num .ico{width:19px;height:19px;stroke-width:2}
+  /* Underlined so it reads as a link. */
+  .cat-num b{font-weight:700;text-decoration:underline;text-decoration-thickness:1.5px;text-decoration-color:rgba(20,17,24,.45);text-underline-offset:5px}
+  .cat-num--ig{font-size:18px;letter-spacing:0}
+  .cat-nophone{display:block;font:400 13px/1.4 var(--font-body);margin-top:2px;opacity:.75}
+  .cat-call--none{margin:0;background:#f4f2f7;font:400 14px/1.5 var(--font-body)}
+  a.cat-call:hover .cat-num b{text-decoration-color:var(--ink)}
+  /* WhatsApp, Instagram, Share: text weight, 44 px tall. */
+  .cat-quiet{display:flex;gap:26px;margin-top:3px;padding:0 14px}
+  .q{display:flex;align-items:center;gap:6px;min-height:44px;min-width:0;padding:0;
+    background:none;border:0;border-radius:6px;color:var(--ink);font:500 14px/1.2 var(--font-body);text-decoration:none;cursor:pointer}
+  .q .ico{width:17px;height:17px;opacity:.8}
+  /* a thin underline */
+  .q span{text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(20,17,24,.32);text-underline-offset:4px}
+  .q:hover span{text-decoration-color:var(--ink)}
+  .q:focus-visible,.cat-call:focus-visible{outline:3px solid var(--peri);outline-offset:2px}
+  .cat-added{font:400 12.5px/1.4 var(--font-body);margin:11px 0 0;color:var(--ink);opacity:.6}
+
+  /* Before you call: a full-width strip in the grid. */
+  .before{grid-column:1/-1;border-left:3px solid var(--sage);padding:4px 0 4px 18px;margin:2px 0}
+  .before h2{font:700 18px/1.3 var(--font-head);letter-spacing:var(--head-track);margin:0 0 8px}
+  .before ul{margin:0;padding:0;list-style:none;display:grid;gap:6px 30px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .before li{font:400 15px/1.5 var(--font-body)}
+  .before b{font-weight:600}
+  .before a{color:var(--ink)}
+
+  /* Gone home lately: one sideways row of small tiles. */
+  .gone{grid-column:1/-1;min-width:0;margin:2px 0}
+  .gone h2{font:700 18px/1.3 var(--font-head);letter-spacing:var(--head-track);margin:0 0 10px}
+  .gone-row{list-style:none;margin:0;padding:0;display:flex;gap:10px;overflow-x:auto;scrollbar-width:none}
+  .gone-row::-webkit-scrollbar{display:none}
+  .gone-tile{flex:none;width:clamp(104px,11.5vw,132px)}
+  .gone-pic{position:relative;display:block;border-radius:10px;overflow:hidden;background:var(--sky)}
+  .gone-pic img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;filter:saturate(.6)}
+  .gone-band{position:absolute;left:0;right:0;bottom:0;background:var(--sage);color:var(--ink);text-align:center;
+    padding:4px 2px;font:700 10.5px/1.2 var(--font-body);letter-spacing:.07em;text-transform:uppercase}
+  .gone-name{display:block;font:500 13px/1.3 var(--font-body);margin:5px 0 0;overflow-wrap:anywhere}
+  .gone-tile--all a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;aspect-ratio:1;box-sizing:border-box;
+    border:1px solid var(--line);border-radius:10px;padding:8px;font:500 13px/1.4 var(--font-body);color:var(--ink);text-underline-offset:2px}
+  .gone-tile--all b{display:block;font:700 22px/1.2 var(--font-head);text-decoration:none}
+
+  /* Closed cards: small square tiles. */
+  .homes{margin:46px 0 0;padding-top:30px;border-top:1px solid var(--line)}
+  .homes h2{font:700 22px/1.3 var(--font-head);letter-spacing:var(--head-track);margin:0 0 6px}
+  .homes p{font:400 15px/1.55 var(--font-body);margin:0 0 16px;max-width:60ch;opacity:.88}
+  .homes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:14px 10px}
+  .homes .cat{border:0;border-radius:0;overflow:visible}
+  .home-pic{position:relative;border-radius:10px;overflow:hidden;background:var(--sky);aspect-ratio:1}
+  .home-pic img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+  .cat-adopted{position:absolute;left:0;right:0;bottom:0;background:var(--sage);color:var(--ink);text-align:center;
+    padding:4px 2px;font:700 10.5px/1.2 var(--font-body);letter-spacing:.07em;text-transform:uppercase}
+  .cat--maybe .cat-adopted{background:var(--butter)}
+  .homes-more{margin-top:14px}
+  .homes-more summary{cursor:pointer;font:600 15px/1.4 var(--font-body);padding:10px 0;text-decoration:underline;text-underline-offset:3px}
+  .homes-more[open] summary{display:none}
+  .home-title{font:500 13px/1.3 var(--font-body);margin:5px 0 0;color:var(--ink);overflow-wrap:anywhere}
+  /* A link to a closed card lands on its tile. */
+  .homes .cat{scroll-margin-top:90px}
+  .homes .cat:target .home-pic{outline:3px solid var(--ink);outline-offset:2px}
+
+  /* The photo dialog: uncropped, on a dark ground, the card's other photos a swipe away. */
+  .lb{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;
+    background:#141118;color:#fff;overflow:hidden}
+  .lb::backdrop{background:#141118}
+  html:has(.lb[open]){overflow:hidden}
+  .lb-strip{display:flex;width:100%;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;
+    scrollbar-width:none;overscroll-behavior:contain}
+  .lb-strip::-webkit-scrollbar{display:none}
+  .lb-strip:focus{outline:0}
+  .lb-strip img{flex:0 0 100%;min-width:0;width:100%;height:100%;object-fit:contain;scroll-snap-align:center;scroll-snap-stop:always}
+  .lb-count{position:absolute;left:16px;top:calc(22px + env(safe-area-inset-top,0px));margin:0;
+    font:600 14px/1.3 var(--font-body);letter-spacing:.03em;opacity:.9;pointer-events:none}
+  /* Under the photo: the card's title and its number. */
+  .lb-foot{position:absolute;left:0;right:0;bottom:0;margin:0;padding:12px 16px calc(14px + env(safe-area-inset-bottom,0px));
+    display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(20,17,24,.78);
+    font:500 14.5px/1.35 var(--font-body)}
+  .lb-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;opacity:.9}
+  .lb-call{flex:none;display:flex;align-items:center;gap:7px;min-height:44px;color:#fff;font-weight:700;font-size:17px;
+    letter-spacing:.02em;text-decoration:none}
+  .lb-call:empty{display:none}
+  .lb-call .ico{width:17px;height:17px;stroke-width:2}
+  .lb-call b{text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(255,255,255,.6);text-underline-offset:4px}
+  .lb-btn{position:absolute;width:44px;height:44px;border:0;border-radius:50%;padding:0;background:rgba(20,17,24,.6);color:#fff;
+    display:grid;place-items:center;cursor:pointer}
+  .lb-btn .ico{width:22px;height:22px;stroke-width:2}
+  .lb-btn[hidden]{display:none}
+  .lb-btn:focus-visible{outline:3px solid #fff;outline-offset:2px}
+  .lb-close{top:calc(10px + env(safe-area-inset-top,0px));right:10px}
+  .lb-prev,.lb-next{top:50%;margin-top:-22px}
+  .lb-prev{left:12px}.lb-next{right:12px}
+  @media (hover:none){.lb-prev,.lb-next{display:none}}
+
   .why{margin:40px 0 0}
   .why-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px;align-items:start}
   .why-text{min-width:0}
@@ -63,50 +197,44 @@
   .why-list{margin:0 0 14px;padding-left:20px}
   .why-list li{margin:0 0 8px;line-height:1.6}
   .why em{font-style:normal;font-weight:600;background:var(--butter);padding:1px 6px;border-radius:4px}
-  .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;margin:22px 0 10px}
-  .cat{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--white);display:flex;flex-direction:column}
-  .cat-pic{aspect-ratio:4/3;background:var(--sky);position:relative}
-  /* Adopted: still on the page, unmistakably closed. The word does the work — the card is
-     dimmed a little, never so much that it reads as broken or unreadable. */
-  .cat-adopted{position:absolute;left:12px;top:12px;background:var(--sage);color:var(--ink);
-    border-radius:999px;padding:5px 13px;font:700 12.5px/1 var(--font-body);
-    letter-spacing:.09em;text-transform:uppercase;box-shadow:0 1px 5px rgba(20,17,24,.22)}
-  .cat--adopted{opacity:.86}
-  .cat--adopted .cat-pic img{filter:saturate(.55)}
-  .cat--adopted .cat-title{text-decoration:line-through;text-decoration-thickness:2px;
-    text-decoration-color:var(--sage)}
-  .cat-pic img{width:100%;height:100%;object-fit:cover;display:block}
-  .cat-nopic{width:100%;height:100%;display:grid;place-items:center;background:var(--sky)}
-  .cat-nopic span{font:500 14px var(--font-body);color:var(--ink);opacity:.65}
-  .cat-thumbs{display:flex;gap:4px;padding:4px 4px 0}
-  .cat-thumbs img{flex:1;min-width:0;aspect-ratio:1;object-fit:cover;border-radius:6px;display:block}
-  .cat-body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
-  .cat-body .cat-title{font:700 20px/1.3 var(--font-head);letter-spacing:var(--head-track);margin:0 0 10px;color:var(--ink)}
-  .cat-count{display:inline-block;margin-left:8px;background:var(--sage);color:var(--ink);border-radius:999px;padding:2px 9px;font:600 12px var(--font-body);vertical-align:middle}
-  .cat-flag{background:var(--sky);color:var(--ink);border-radius:8px;padding:10px 12px;margin:0 0 12px;font:500 13.5px/1.5 var(--font-body)}
-  .cat-meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 12px}
-  .cat-meta .m{min-width:0}
-  .cat-meta dt{font:600 11px/1.4 var(--font-body);text-transform:uppercase;letter-spacing:.07em;opacity:.7;margin:0}
-  .cat-meta dd{font:400 15px/1.45 var(--font-body);margin:1px 0 0;color:var(--ink)}
-  .cat-note{font:400 15px/1.6 var(--font-body);margin:0 0 14px;color:var(--ink);opacity:.88}
-  .cat-contact{margin:auto 0 0;padding:11px 12px;background:var(--butter);border-radius:9px}
-  .cat-contact dt{font:600 11px/1.4 var(--font-body);text-transform:uppercase;letter-spacing:.07em;opacity:.7;margin:0}
-  .cat-contact dd{font:500 15px/1.5 var(--font-body);margin:2px 0 0;color:var(--ink);word-break:break-word}
-  .cat-contact .who{font-weight:600}
-  .cat-contact .tel,
-  .cat-contact .ig{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:2px}
-  .cat-contact--none{background:#f4f2f7;font:400 14px/1.5 var(--font-body);opacity:.75}
   .ask{background:var(--sage);color:var(--ink);border-radius:16px;padding:34px 28px;margin:44px 0 60px;text-align:center}
   .ask h2{font:800 26px/1.25 var(--font-head);margin:0 0 10px}
   .ask p{font:400 16px/1.65 var(--font-body);margin:0 auto 18px;max-width:56ch}
   .ask .ask-adult{background:rgba(255,255,255,.5);border-radius:12px;padding:15px 18px;font-size:15.5px}
   .ask .ask-adult strong{font-weight:600}
   .ask a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
-  @media (max-width:560px){.cat-grid{grid-template-columns:1fr}}
+  .ask .btn{text-decoration:none}
+
+  @media (max-width:560px){
+    .cat-grid{grid-template-columns:1fr;gap:32px}
+    .wrap{padding:0 16px}
+    /* the row runs to the screen's edge */
+    .gone-row{margin:0 -16px;padding:0 16px}
+  }
+  /* Wide screens: the first photo leads, the others sit under it. */
+  @media (min-width:700px){
+    .cat-gal{display:grid;grid-template-columns:1fr 1fr;gap:3px;overflow:visible}
+    .cat-gal .cat-ph{width:100%}
+    .cat-ph img{aspect-ratio:1}
+    .cat-ph:first-child{grid-column:1/-1}
+    .cat-ph:first-child img{aspect-ratio:4/3}
+    .cat-gal--1 .cat-ph:first-child img{aspect-ratio:4/5}
+    .cat-gal--2 .cat-ph:last-child{grid-column:1/-1}
+    .cat-gal--2 .cat-ph:last-child img{aspect-ratio:2/1}
+    .cat-more{display:none}
+  }
 </style>
 </head>
 <body>
-
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="i-call" viewBox="0 0 24 24"><path d="M6.600 3.500h2.900l1.500 4-2 1.600a12 12 0 0 0 5.900 5.900l1.600-2 4 1.500v2.900a2 2 0 0 1-2 2A15.900 15.900 0 0 1 4.600 5.500a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 3.200a8.800 8.800 0 0 0-7.600 13.300L3.200 20.800l4.500-1.200A8.800 8.800 0 1 0 12 3.200z"/><path d="M9.300 8.300c-.2 3.200 2.900 6.300 6.300 6.400l.9-1.500-1.900-1-.9.800c-.9-.4-1.600-1.100-2-2l.8-.9-1-1.900z"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.800" y="3.800" width="16.400" height="16.400" rx="4.600"/><circle cx="12" cy="12" r="3.800"/><circle cx="16.900" cy="7.100" r=".6"/></symbol>
+<symbol id="i-share" viewBox="0 0 24 24"><path d="M12 14.500V3.800"/><path d="M8.200 7.400 12 3.600l3.800 3.800"/><path d="M6.500 11.200H5.300v8.900h13.400v-8.900h-1.200"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+<symbol id="i-prev" viewBox="0 0 24 24"><path d="M14.500 5.500 8 12l6.500 6.500"/></symbol>
+<symbol id="i-next" viewBox="0 0 24 24"><path d="M9.500 5.500 16 12l-6.500 6.500"/></symbol>
+</svg>
 <header class="nav nav--solid">
   <a class="brand" href="./"><img src="assets/medallion.jpg" alt="catadoption_pune medallion — two cuddling cats" width="400" height="400">catadoption_pune</a>
   <nav>
@@ -128,691 +256,410 @@
 </section>
 
 <div class="wrap">
-  <!-- Kept short so the first cat still shows on a phone's first screen (site README, "A page's top stays light"). -->
   <div class="grid-lead">
     <p><strong>Adopters</strong> &mdash; Each cat lives with the person who rescued it. Call them on the
-    number by its photo.</p>
+    number under its photos.</p>
     <p class="grid-lead-resc"><strong>Rescuers</strong> &mdash; <a href="#rescuers">how to send us a cat</a></p>
   </div>
 
-  <p class="grid-stamp"><span class="dot"></span><b>33 cats looking for a home</b>
-  &middot; updated <time datetime="2026-11-07">7 November 2026</time>
-  &middot; built with AI by <a href="https://odas.github.io?utm_source=catadoption&amp;utm_medium=board-top&amp;utm_campaign=services">Orpita Das</a></p>
+  <p class="grid-stamp"><span class="dot"></span><b>33 looking for a home</b>
+  &middot; <a href="#adopted">33 gone home from this board</a>
+  <span class="grid-stamp-2">updated <time datetime="2026-11-11">11 November 2026</time>
+  &middot; built with AI by <a href="https://odas.github.io?utm_source=catadoption&amp;utm_medium=board-top&amp;utm_campaign=services">Orpita Das</a></span></p>
 
   <div class="cat-grid">
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-075A-1.jpg" alt="3 kittens (&quot;Panda&quot;, &quot;Biscuit&quot; and &quot;Rocky&quot;), looking for a home in Pune" width="1080" height="2383" fetchpriority="high"></div><div class="cat-thumbs"><img src="assets/cats/CP-075A-2.jpg" alt="" width="1080" height="2383" loading="lazy"><img src="assets/cats/CP-075A-3.jpg" alt="" width="1080" height="2383" loading="lazy"></div>
+    <article class="cat" id="CP-075A">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-075A-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-075A-1.jpg" alt="3 kittens (&quot;Panda&quot;, &quot;Biscuit&quot; and &quot;Rocky&quot;), looking for a home in Pune" width="1080" height="2383" fetchpriority="high"></a><a class="cat-ph" href="assets/cats/CP-075A-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-075A-2.jpg" alt="" width="1080" height="2383" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-075A-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-075A-3.jpg" alt="" width="1080" height="2383" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">3 kittens (&quot;Panda&quot;, &quot;Biscuit&quot; and &quot;Rocky&quot;)<span class="cat-count">3</span></h2>
+        <h2 class="cat-title">3 kittens (&quot;Panda&quot;, &quot;Biscuit&quot; and &quot;Rocky&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2.5 months (as of 12 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>2 female, 1 male</dd></div><div class="m"><dt>Area</dt><dd>Rahatani, Pimpri-Chinchwad</dd></div><div class="m"><dt>Added</dt><dd>17 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Rahatani, Pimpri-Chinchwad</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="76" data-on="2026-10-12"></span><span class="age-said">2.5 months (as of 12 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>2 female, 1 male</dd></div></dl>
         <p class="cat-note">Panda and Biscuit are girls and Rocky is a boy, born at the end of July to a stray cat the family fed. All three are dewormed and litter-trained, not yet vaccinated.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Aadesh</span> &middot; <a class="tel" href="tel:+919766714407">9766714407</a> &middot; <a class="ig" href="https://www.instagram.com/aadesh.s.shirsat/">@aadesh.s.shirsat</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919766714407" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Aadesh</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9766714407</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/919766714407?text=Hello%21%20I%20saw%203%20kittens%20%28%22Panda%22%2C%20%22Biscuit%22%20and%20%22Rocky%22%29%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/aadesh.s.shirsat/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-075A" data-share-text="3 kittens (&quot;Panda&quot;, &quot;Biscuit&quot; and &quot;Rocky&quot;) are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 17 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-582B-1.jpg" alt="1 cat (&quot;Meeku&quot;), looking for a home in Pune" width="1080" height="810" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-582B-2.jpg" alt="" width="1080" height="810" loading="lazy"><img src="assets/cats/CP-582B-3.jpg" alt="" width="1080" height="810" loading="lazy"></div>
+    <article class="cat" id="CP-582B">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-582B-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-582B-1.jpg" alt="1 cat (&quot;Meeku&quot;), looking for a home in Pune" width="1080" height="810" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-582B-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-582B-2.jpg" alt="" width="1080" height="810" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-582B-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-582B-3.jpg" alt="" width="1080" height="810" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 cat (&quot;Meeku&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>8 months (as of 6 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Hadapsar</dd></div><div class="m"><dt>Added</dt><dd>12 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Hadapsar</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="243" data-on="2026-10-06"></span><span class="age-said">8 months (as of 6 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>Male</dd></div></dl>
         <p class="cat-note">Neutered, vaccinated and litter-trained.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Darshana Badade</span> &middot; <a class="tel" href="tel:+919322343978">9322343978</a> &middot; <a class="ig" href="https://www.instagram.com/darshu_badade/">@darshu_badade</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919322343978" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Darshana Badade</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9322343978</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/919322343978?text=Hello%21%20I%20saw%201%20cat%20%28%22Meeku%22%29%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/darshu_badade/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-582B" data-share-text="1 cat (&quot;Meeku&quot;) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 12 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-86AE-1.jpg" alt="2 kittens (&quot;Simba&quot; and &quot;Mimi&quot;), looking for a home in Pune" width="915" height="1220" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-86AE-2.jpg" alt="" width="1220" height="915" loading="lazy"></div>
+    <article class="cat" id="CP-86AE">
+      <div class="cat-pic"><div class="cat-gal cat-gal--2"><a class="cat-ph" href="assets/cats/CP-86AE-1.jpg" aria-label="Photo 1 of 2, open it larger"><img src="assets/cats/CP-86AE-1.jpg" alt="2 kittens (&quot;Simba&quot; and &quot;Mimi&quot;), looking for a home in Pune" width="915" height="1220" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-86AE-2.jpg" aria-label="Photo 2 of 2, open it larger"><img src="assets/cats/CP-86AE-2.jpg" alt="" width="1220" height="915" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 2</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">2 kittens (&quot;Simba&quot; and &quot;Mimi&quot;)<span class="cat-count">2</span></h2>
+        <h2 class="cat-title">2 kittens (&quot;Simba&quot; and &quot;Mimi&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>3.6 months (as of 4 Nov)</dd></div><div class="m"><dt>Sex</dt><dd>1 male, 1 female</dd></div><div class="m"><dt>Area</dt><dd>Gokhale Nagar, Shivaji Nagar</dd></div><div class="m"><dt>Added</dt><dd>7 Nov</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Gokhale Nagar, Shivaji Nagar</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="109" data-on="2026-11-04"></span><span class="age-said">3.6 months (as of 4 Nov)</span></dd></div><div class="f"><dt>Gender</dt><dd>1 male, 1 female</dd></div></dl>
         <p class="cat-note">Very playful, friendly and active, and they can be adopted together. Dewormed, vaccinated and litter-trained.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">khan</span> &middot; <a class="tel" href="tel:+917830367797">7830367797</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+917830367797" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>khan</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>7830367797</b></span></a><div class="cat-quiet cat-quiet--2"><a class="q" href="https://wa.me/917830367797?text=Hello%21%20I%20saw%202%20kittens%20%28%22Simba%22%20and%20%22Mimi%22%29%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><button class="q" type="button" data-share="CP-86AE" data-share-text="2 kittens (&quot;Simba&quot; and &quot;Mimi&quot;) are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 7 Nov</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-5118-1.jpg" alt="Kittens (an orange boy and his sisters), looking for a home in Pune" width="1080" height="1435" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-5118-2.jpg" alt="" width="1080" height="1435" loading="lazy"><img src="assets/cats/CP-5118-3.jpg" alt="" width="1080" height="1435" loading="lazy"></div>
+    <aside class="before" aria-label="Before you call">
+      <h2>Before you call</h2>
+      <ul>
+        <li><b>Adoption is free.</b> If anyone asks you to pay for a cat, <a href="https://www.instagram.com/catadoption_pune/">tell us</a>.</li>
+        <li><b>The rescuer will ask about your home and family.</b> That is how they find the right match.</li>
+        <li><b>Windows and balcony need nets.</b> A grill is not a net. <a href="adopt.html">Read the steps</a>.</li>
+      </ul>
+    </aside>
+    <article class="cat" id="CP-5118">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-5118-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-5118-1.jpg" alt="Kittens (an orange boy and his sisters), looking for a home in Pune" width="1080" height="1435" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-5118-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-5118-2.jpg" alt="" width="1080" height="1435" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-5118-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-5118-3.jpg" alt="" width="1080" height="1435" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">Kittens (an orange boy and his sisters)<span class="cat-count">3</span></h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2 months (as of 1 Nov)</dd></div><div class="m"><dt>Sex</dt><dd>1 male, the rest female</dd></div><div class="m"><dt>Area</dt><dd>Kondhwa</dd></div><div class="m"><dt>Added</dt><dd>7 Nov</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Kondhwa</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="61" data-on="2026-11-01"></span><span class="age-said">2 months (as of 1 Nov)</span></dd></div><div class="f"><dt>Gender</dt><dd>1 male, the rest female</dd></div></dl>
         <p class="cat-note">Taken in after their mother died in an accident. An orange boy and his sisters, all Indie. Not yet vaccinated or sterilised.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Ruksar.</span> &middot; <a class="tel" href="tel:+918793298103">8793298103</a> &middot; <a class="ig" href="https://www.instagram.com/kitten_paw_4/">@kitten_paw_4</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+918793298103" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Ruksar.</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>8793298103</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/918793298103?text=Hello%21%20I%20saw%20Kittens%20%28an%20orange%20boy%20and%20his%20sisters%29%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/kitten_paw_4/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-5118" data-share-text="Kittens (an orange boy and his sisters) are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 7 Nov</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-110B-1.jpg" alt="1 kitten, looking for a home in Pune" width="865" height="658" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-110B-2.jpg" alt="" width="1536" height="2048" loading="lazy"><img src="assets/cats/CP-110B-3.jpg" alt="" width="1152" height="2048" loading="lazy"></div>
+    <article class="cat" id="CP-110B">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-110B-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-110B-1.jpg" alt="1 kitten, looking for a home in Pune" width="865" height="658" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-110B-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-110B-2.jpg" alt="" width="1536" height="2048" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-110B-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-110B-3.jpg" alt="" width="1152" height="2048" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2 months (as of 31 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Kothrud</dd></div><div class="m"><dt>Added</dt><dd>7 Nov</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Kothrud</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="61" data-on="2026-10-31"></span><span class="age-said">2 months (as of 31 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>Male</dd></div></dl>
         <p class="cat-note">Vaccination and deworming under way.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Ashwa☸</span> &middot; <a class="ig" href="https://www.instagram.com/ashwa0408/">@ashwa0408</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="https://www.instagram.com/ashwa0408/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><span class="cat-who">Talk to the rescuer, <b>Ashwa☸</b></span><span class="cat-num cat-num--ig"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span class="vh">Message </span><b>@ashwa0408</b></span><span class="cat-nophone">on Instagram. No phone number given for this one.</span></a><div class="cat-quiet cat-quiet--1"><button class="q" type="button" data-share="CP-110B" data-share-text="1 kitten is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 7 Nov</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-839C-1.jpg" alt="1 kitten (&quot;Snowy&quot;), looking for a home in Pune" width="776" height="951" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-839C-2.jpg" alt="" width="810" height="1080" loading="lazy"><img src="assets/cats/CP-839C-3.jpg" alt="" width="810" height="1080" loading="lazy"></div>
+    <article class="cat" id="CP-839C">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-839C-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-839C-1.jpg" alt="1 kitten (&quot;Snowy&quot;), looking for a home in Pune" width="776" height="951" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-839C-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-839C-2.jpg" alt="" width="810" height="1080" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-839C-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-839C-3.jpg" alt="" width="810" height="1080" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten (&quot;Snowy&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>6 months (as of 30 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Kondhwa</dd></div><div class="m"><dt>Added</dt><dd>31 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Kondhwa</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="182" data-on="2026-10-30"></span><span class="age-said">6 months (as of 30 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>Female</dd></div></dl>
         <p class="cat-note">Found left behind in a building parking lot. Gentle, affectionate and cuddly. Litter-trained, dewormed, vaccinated and spayed.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Natasha</span> &middot; <a class="tel" href="tel:+919657945185">9657945185</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919657945185" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Natasha</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9657945185</b></span></a><div class="cat-quiet cat-quiet--2"><a class="q" href="https://wa.me/919657945185?text=Hello%21%20I%20saw%201%20kitten%20%28%22Snowy%22%29%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><button class="q" type="button" data-share="CP-839C" data-share-text="1 kitten (&quot;Snowy&quot;) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 31 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-AA02-1.jpg" alt="1 kitten (&quot;Kookie&quot;), looking for a home in Pune" width="1272" height="1696" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-AA02-2.jpg" alt="" width="716" height="1272" loading="lazy"><img src="assets/cats/CP-AA02-3.jpg" alt="" width="716" height="1272" loading="lazy"></div>
+    <article class="cat" id="CP-AA02">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-AA02-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-AA02-1.jpg" alt="1 kitten (&quot;Kookie&quot;), looking for a home in Pune" width="1272" height="1696" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-AA02-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-AA02-2.jpg" alt="" width="716" height="1272" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-AA02-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-AA02-3.jpg" alt="" width="716" height="1272" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten (&quot;Kookie&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>Approximately 2 months (as of 30 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Pashan</dd></div><div class="m"><dt>Added</dt><dd>31 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Pashan</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="61" data-on="2026-10-30"></span><span class="age-said">Approximately 2 months (as of 30 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>Female</dd></div></dl>
         <p class="cat-note">A stray kitten found on the road and taken in. Dewormed and vaccinated.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Akanksha Sabharwal Shekatkar</span> &middot; <a class="tel" href="tel:+918007774248">8007774248</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+918007774248" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Akanksha Sabharwal Shekatkar</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>8007774248</b></span></a><div class="cat-quiet cat-quiet--2"><a class="q" href="https://wa.me/918007774248?text=Hello%21%20I%20saw%201%20kitten%20%28%22Kookie%22%29%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><button class="q" type="button" data-share="CP-AA02" data-share-text="1 kitten (&quot;Kookie&quot;) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 31 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-BED1-1.jpg" alt="1 kitten (calico girl), looking for a home in Pune" width="1180" height="2096" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-BED1-2.jpg" alt="" width="1180" height="2096" loading="lazy"><img src="assets/cats/CP-BED1-3.jpg" alt="" width="1180" height="2096" loading="lazy"></div>
+    <article class="cat" id="CP-BED1">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-BED1-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-BED1-1.jpg" alt="1 kitten (calico girl), looking for a home in Pune" width="1180" height="2096" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-BED1-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-BED1-2.jpg" alt="" width="1180" height="2096" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-BED1-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-BED1-3.jpg" alt="" width="1180" height="2096" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten (calico girl)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>1–1.5 months (as of 21 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Pune</dd></div><div class="m"><dt>Added</dt><dd>25 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Pune</dd></div><div class="f"><dt>Age</dt><dd><span class="age-said">1–1.5 months (as of 21 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>Female</dd></div></dl>
         <p class="cat-note">She&#x27;s very friendly, calm, and already uses a litter tray. Found on the street; her rescuers already have a cat, so they can&#x27;t keep her.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">vrushali Kane</span> &middot; <a class="tel" href="tel:+919175112021">9175112021</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919175112021" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>vrushali Kane</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9175112021</b></span></a><div class="cat-quiet cat-quiet--2"><a class="q" href="https://wa.me/919175112021?text=Hello%21%20I%20saw%201%20kitten%20%28calico%20girl%29%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><button class="q" type="button" data-share="CP-BED1" data-share-text="1 kitten (calico girl) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 25 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-BB91-1.jpg" alt="5 kittens, looking for a home in Pune" width="1281" height="960" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-BB91-2.jpg" alt="" width="1536" height="2048" loading="lazy"><img src="assets/cats/CP-BB91-3.jpg" alt="" width="1536" height="2048" loading="lazy"></div>
+    <aside class="gone" aria-label="Gone home lately">
+      <h2>Gone home lately</h2>
+      <ul class="gone-row"><li class="gone-tile"><span class="gone-pic"><img src="assets/cats/CP-3D7B-1.jpg" srcset="assets/cats/thumbs/CP-3D7B-1.webp 260w" sizes="132px" alt="" width="260" height="260" loading="lazy"><span class="gone-band">Adopted</span></span><span class="gone-name">1 kitten</span></li><li class="gone-tile"><span class="gone-pic"><img src="assets/cats/CP-0890-1.jpg" srcset="assets/cats/thumbs/CP-0890-1.webp 260w" sizes="132px" alt="" width="260" height="260" loading="lazy"><span class="gone-band">Adopted</span></span><span class="gone-name">Broski</span></li><li class="gone-tile"><span class="gone-pic"><img src="assets/cats/CP-70E5-1.jpg" srcset="assets/cats/thumbs/CP-70E5-1.webp 260w" sizes="132px" alt="" width="260" height="260" loading="lazy"><span class="gone-band">Adopted</span></span><span class="gone-name">1 kitten</span></li><li class="gone-tile"><span class="gone-pic"><img src="assets/cats/CP-EE76-1.jpg" srcset="assets/cats/thumbs/CP-EE76-1.webp 260w" sizes="132px" alt="" width="260" height="260" loading="lazy"><span class="gone-band">Adopted</span></span><span class="gone-name">Ginger</span></li><li class="gone-tile"><span class="gone-pic"><img src="assets/cats/CP-829D-1.jpg" srcset="assets/cats/thumbs/CP-829D-1.webp 260w" sizes="132px" alt="" width="260" height="260" loading="lazy"><span class="gone-band">Adopted</span></span><span class="gone-name">Smoky</span></li><li class="gone-tile"><span class="gone-pic"><img src="assets/cats/CP-E02F-1.jpg" srcset="assets/cats/thumbs/CP-E02F-1.webp 260w" sizes="132px" alt="" width="260" height="260" loading="lazy"><span class="gone-band">Adopted</span></span><span class="gone-name">1 kitten</span></li><li class="gone-tile gone-tile--all"><a href="#adopted"><b>33</b> have gone home. See them all</a></li></ul>
+    </aside>
+    <article class="cat" id="CP-BB91">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-BB91-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-BB91-1.jpg" alt="5 kittens, looking for a home in Pune" width="1281" height="960" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-BB91-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-BB91-2.jpg" alt="" width="1536" height="2048" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-BB91-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-BB91-3.jpg" alt="" width="1536" height="2048" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">5 kittens<span class="cat-count">5</span></h2>
+        <h2 class="cat-title">5 kittens</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>1.5 months (as of 20 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Not given yet</dd></div><div class="m"><dt>Area</dt><dd>Satavwadi, Hadapsar</dd></div><div class="m"><dt>Added</dt><dd>25 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Satavwadi, Hadapsar</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="46" data-on="2026-10-20"></span><span class="age-said">1.5 months (as of 20 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>Not given yet</dd></div></dl>
         <p class="cat-note">A litter of five Indie kittens.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Mangesh Shelke</span> &middot; <a class="tel" href="tel:+919689604625">9689604625</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919689604625" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Mangesh Shelke</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9689604625</b></span></a><div class="cat-quiet cat-quiet--2"><a class="q" href="https://wa.me/919689604625?text=Hello%21%20I%20saw%205%20kittens%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><button class="q" type="button" data-share="CP-BB91" data-share-text="5 kittens are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 25 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-5E21-1.jpg" alt="5 kittens (&quot;Sree&quot;, &quot;Harshu&quot;, &quot;Takili&quot;, &quot;Shanu&quot; and &quot;Jacky&quot;), looking for a home in Pune" width="1080" height="486" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-5E21-2.jpg" alt="" width="1080" height="486" loading="lazy"><img src="assets/cats/CP-5E21-3.jpg" alt="" width="1080" height="486" loading="lazy"></div>
+    <article class="cat" id="CP-5E21">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-5E21-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-5E21-1.jpg" alt="5 kittens (&quot;Sree&quot;, &quot;Harshu&quot;, &quot;Takili&quot;, &quot;Shanu&quot; and &quot;Jacky&quot;), looking for a home in Pune" width="1080" height="486" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-5E21-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-5E21-2.jpg" alt="" width="1080" height="486" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-5E21-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-5E21-3.jpg" alt="" width="1080" height="486" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">5 kittens (&quot;Sree&quot;, &quot;Harshu&quot;, &quot;Takili&quot;, &quot;Shanu&quot; and &quot;Jacky&quot;)<span class="cat-count">5</span></h2>
+        <h2 class="cat-title">5 kittens (&quot;Sree&quot;, &quot;Harshu&quot;, &quot;Takili&quot;, &quot;Shanu&quot; and &quot;Jacky&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>46 days (as of 17 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>male and female (not said which)</dd></div><div class="m"><dt>Area</dt><dd>Bhosari</dd></div><div class="m"><dt>Added</dt><dd>25 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Bhosari</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="46" data-on="2026-10-17"></span><span class="age-said">46 days (as of 17 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>male and female (not said which)</dd></div></dl>
         
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Vishnupriya Shaji</span> &middot; <a class="tel" href="tel:+917385775845">7385775845</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+917385775845" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Vishnupriya Shaji</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>7385775845</b></span></a><div class="cat-quiet cat-quiet--2"><a class="q" href="https://wa.me/917385775845?text=Hello%21%20I%20saw%205%20kittens%20%28%22Sree%22%2C%20%22Harshu%22%2C%20%22Takili%22%2C%20%22Shanu%22%20and%20%22Jacky%22%29%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><button class="q" type="button" data-share="CP-5E21" data-share-text="5 kittens (&quot;Sree&quot;, &quot;Harshu&quot;, &quot;Takili&quot;, &quot;Shanu&quot; and &quot;Jacky&quot;) are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 25 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-8AA8-1.jpg" alt="3 kittens, looking for a home in Pune" width="2048" height="1699" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-8AA8-2.jpg" alt="" width="1152" height="864" loading="lazy"><img src="assets/cats/CP-8AA8-3.jpg" alt="" width="1281" height="960" loading="lazy"></div>
+    <article class="cat" id="CP-8AA8">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-8AA8-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-8AA8-1.jpg" alt="3 kittens, looking for a home in Pune" width="2048" height="1699" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-8AA8-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-8AA8-2.jpg" alt="" width="1152" height="864" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-8AA8-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-8AA8-3.jpg" alt="" width="1281" height="960" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">3 kittens<span class="cat-count">3</span></h2>
+        <h2 class="cat-title">3 kittens</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>1 month (as of 13 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>3 male (as the rescuer gave it)</dd></div><div class="m"><dt>Area</dt><dd>Dhayari</dd></div><div class="m"><dt>Added</dt><dd>17 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Dhayari</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="30" data-on="2026-10-13"></span><span class="age-said">1 month (as of 13 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>3 male (as the rescuer gave it)</dd></div></dl>
         <p class="cat-note">Three kittens, born mid-September. They can go home once they are old enough to leave their mother; the rescuer wants a headstart on finding adopters.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Srushti Sarode</span> &middot; <a class="tel" href="tel:+919284052055">9284052055</a> &middot; <a class="ig" href="https://www.instagram.com/__srushhh___/">@__srushhh___</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919284052055" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Srushti Sarode</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9284052055</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/919284052055?text=Hello%21%20I%20saw%203%20kittens%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/__srushhh___/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-8AA8" data-share-text="3 kittens are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 17 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-FD89-1.jpg" alt="1 kitten (orange boy), looking for a home in Pune" width="800" height="600" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-FD89-2.jpg" alt="" width="1180" height="1572" loading="lazy"><img src="assets/cats/CP-FD89-3.jpg" alt="" width="1179" height="884" loading="lazy"></div>
+    <article class="cat" id="CP-FD89">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-FD89-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-FD89-1.jpg" alt="1 kitten (orange boy), looking for a home in Pune" width="800" height="600" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-FD89-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-FD89-2.jpg" alt="" width="1180" height="1572" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-FD89-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-FD89-3.jpg" alt="" width="1179" height="884" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten (orange boy)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>About 4–5 months (as of 10 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Kharadi</dd></div><div class="m"><dt>Added</dt><dd>12 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Kharadi</dd></div><div class="f"><dt>Age</dt><dd><span class="age-said">About 4–5 months (as of 10 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>Male</dd></div></dl>
         <p class="cat-note">A cuddly boy his feeder has looked after for three months. He loves people, comes running when she calls and falls asleep on a lap. He already uses sand.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Aarzoo</span> &middot; <a class="ig" href="https://www.instagram.com/_.pawlyn._/">@_.pawlyn._</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="https://www.instagram.com/_.pawlyn._/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><span class="cat-who">Talk to the rescuer, <b>Aarzoo</b></span><span class="cat-num cat-num--ig"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span class="vh">Message </span><b>@_.pawlyn._</b></span><span class="cat-nophone">on Instagram. No phone number given for this one.</span></a><div class="cat-quiet cat-quiet--1"><button class="q" type="button" data-share="CP-FD89" data-share-text="1 kitten (orange boy) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 12 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-3381-1.jpg" alt="1 kitten (grey), looking for a home in Pune" width="356" height="634" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-3381-2.jpg" alt="" width="1170" height="1560" loading="lazy"><img src="assets/cats/CP-3381-3.jpg" alt="" width="1170" height="1560" loading="lazy"></div>
+    <article class="cat" id="CP-3381">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-3381-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-3381-1.jpg" alt="1 kitten (grey), looking for a home in Pune" width="356" height="634" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-3381-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-3381-2.jpg" alt="" width="1170" height="1560" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-3381-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-3381-3.jpg" alt="" width="1170" height="1560" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten (grey)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2.5 months (as of 9 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Not given yet</dd></div><div class="m"><dt>Area</dt><dd>Warje</dd></div><div class="m"><dt>Added</dt><dd>12 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Warje</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="76" data-on="2026-10-09"></span><span class="age-said">2.5 months (as of 9 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>Not given yet</dd></div></dl>
         
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Shikha🌼</span> &middot; <a class="ig" href="https://www.instagram.com/_shikhanagle_/">@_shikhanagle_</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="https://www.instagram.com/_shikhanagle_/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><span class="cat-who">Talk to the rescuer, <b>Shikha🌼</b></span><span class="cat-num cat-num--ig"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span class="vh">Message </span><b>@_shikhanagle_</b></span><span class="cat-nophone">on Instagram. No phone number given for this one.</span></a><div class="cat-quiet cat-quiet--1"><button class="q" type="button" data-share="CP-3381" data-share-text="1 kitten (grey) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 12 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-51A2-1.jpg" alt="1 cat (white with black patches), Sushmita&#x27;s, looking for a home in Pune" width="960" height="1280" loading="lazy"></div>
+    <article class="cat" id="CP-51A2">
+      <div class="cat-pic"><div class="cat-gal cat-gal--1"><a class="cat-ph" href="assets/cats/CP-51A2-1.jpg" aria-label="Photo 1 of 1, open it larger"><img src="assets/cats/CP-51A2-1.jpg" alt="1 cat (white with black patches), Sushmita&#x27;s, looking for a home in Pune" width="960" height="1280" loading="lazy"></a></div></div>
       <div class="cat-body">
         <h2 class="cat-title">1 cat (white with black patches), Sushmita&#x27;s</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>6 months (as of 5 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>NIBM</dd></div><div class="m"><dt>Added</dt><dd>12 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>NIBM</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="182" data-on="2026-10-05"></span><span class="age-said">6 months (as of 5 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>Female</dd></div></dl>
         <p class="cat-note">Her family is moving to London. Sterilised, vaccinated, dewormed and litter-trained.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Sushmita Manglik</span> &middot; <a class="tel" href="tel:+919860465190">9860465190</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919860465190" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Sushmita Manglik</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9860465190</b></span></a><div class="cat-quiet cat-quiet--2"><a class="q" href="https://wa.me/919860465190?text=Hello%21%20I%20saw%201%20cat%20%28white%20with%20black%20patches%29%2C%20Sushmita%27s%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><button class="q" type="button" data-share="CP-51A2" data-share-text="1 cat (white with black patches), Sushmita&#x27;s is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 12 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-19EE-1.jpg" alt="1 kitten (&#x27;Mimi&#x27;, calico), looking for a home in Pune" width="1280" height="960" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-19EE-2.jpg" alt="" width="1707" height="960" loading="lazy"><img src="assets/cats/CP-19EE-3.jpg" alt="" width="1536" height="2048" loading="lazy"></div>
+    <article class="cat" id="CP-19EE">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-19EE-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-19EE-1.jpg" alt="1 kitten (&#x27;Mimi&#x27;, calico), looking for a home in Pune" width="1280" height="960" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-19EE-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-19EE-2.jpg" alt="" width="1707" height="960" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-19EE-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-19EE-3.jpg" alt="" width="1536" height="2048" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten (&#x27;Mimi&#x27;, calico)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>6 months (as of 30 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Kharadi</dd></div><div class="m"><dt>Added</dt><dd>12 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Kharadi</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="182" data-on="2026-09-30"></span><span class="age-said">6 months (as of 30 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>Female</dd></div></dl>
         <p class="cat-note">A playful, friendly girl who loves company and cuddles. Fully vaccinated and dewormed.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">अनुभव सिंह⚡</span> &middot; <a class="tel" href="tel:+918882651063">8882651063</a> &middot; <a class="ig" href="https://www.instagram.com/anubhavv_16/">@anubhavv_16</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+918882651063" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>अनुभव सिंह⚡</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>8882651063</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/918882651063?text=Hello%21%20I%20saw%201%20kitten%20%28%27Mimi%27%2C%20calico%29%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/anubhavv_16/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-19EE" data-share-text="1 kitten (&#x27;Mimi&#x27;, calico) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 12 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-268A-1.jpg" alt="1 kitten (&quot;Chintu&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-268A-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-268A-3.jpg" alt="" width="800" height="600" loading="lazy"></div>
+    <article class="cat" id="CP-268A">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-268A-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-268A-1.jpg" alt="1 kitten (&quot;Chintu&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-268A-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-268A-2.jpg" alt="" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-268A-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-268A-3.jpg" alt="" width="800" height="600" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten (&quot;Chintu&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>3 months (as of 29 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Balewadi</dd></div><div class="m"><dt>Added</dt><dd>5 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Balewadi</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="91" data-on="2026-09-29"></span><span class="age-said">3 months (as of 29 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>Female</dd></div></dl>
         <p class="cat-note">Rescued two months ago and with them since. Very playful and active, litter-trained, dewormed and healthy.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Manasa K. Patil</span> &middot; <a class="tel" href="tel:+918378873770">8378873770</a> &middot; <a class="ig" href="https://www.instagram.com/manasak992/">@manasak992</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+918378873770" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Manasa K. Patil</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>8378873770</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/918378873770?text=Hello%21%20I%20saw%201%20kitten%20%28%22Chintu%22%29%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/manasak992/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-268A" data-share-text="1 kitten (&quot;Chintu&quot;) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 5 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-4658-1.jpg" alt="2 cats (&quot;Chubby&quot; &amp; &quot;Milo&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-4658-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-4658-3.jpg" alt="" width="843" height="1124" loading="lazy"></div>
+    <article class="cat" id="CP-4658">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-4658-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-4658-1.jpg" alt="2 cats (&quot;Chubby&quot; &amp; &quot;Milo&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-4658-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-4658-2.jpg" alt="" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-4658-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-4658-3.jpg" alt="" width="843" height="1124" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">2 cats (&quot;Chubby&quot; &amp; &quot;Milo&quot;)<span class="cat-count">2</span></h2>
+        <h2 class="cat-title">2 cats (&quot;Chubby&quot; &amp; &quot;Milo&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>Chubby 7 months, Milo 3 months (as of 1 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Chubby male, Milo female</dd></div><div class="m"><dt>Area</dt><dd>Not given yet</dd></div><div class="m"><dt>Added</dt><dd>5 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Not given yet</dd></div><div class="f"><dt>Age</dt><dd><span class="age-said">Chubby 7 months, Milo 3 months (as of 1 Oct)</span></dd></div><div class="f"><dt>Gender</dt><dd>Chubby male, Milo female</dd></div></dl>
         <p class="cat-note">A brother and sister, looking for a home together.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Shafa Rana Khan</span> &middot; <a class="tel" href="tel:+917600553541">7600553541</a> &middot; <a class="ig" href="https://www.instagram.com/shafa_rana/">@shafa_rana</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+917600553541" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Shafa Rana Khan</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>7600553541</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/917600553541?text=Hello%21%20I%20saw%202%20cats%20%28%22Chubby%22%20%26%20%22Milo%22%29%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/shafa_rana/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-4658" data-share-text="2 cats (&quot;Chubby&quot; &amp; &quot;Milo&quot;) are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 5 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-0151-1.jpg" alt="Kittens, looking for a home in Pune" width="843" height="1062" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-0151-2.jpg" alt="" width="818" height="720" loading="lazy"><img src="assets/cats/CP-0151-3.jpg" alt="" width="830" height="720" loading="lazy"></div>
+    <article class="cat" id="CP-0151">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-0151-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-0151-1.jpg" alt="Kittens, looking for a home in Pune" width="843" height="1062" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-0151-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-0151-2.jpg" alt="" width="818" height="720" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-0151-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-0151-3.jpg" alt="" width="830" height="720" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">Kittens</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2 months (as of 27 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Not given yet</dd></div><div class="m"><dt>Area</dt><dd>Kharadikar Park, Kharadi</dd></div><div class="m"><dt>Added</dt><dd>5 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Kharadikar Park, Kharadi</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="61" data-on="2026-09-27"></span><span class="age-said">2 months (as of 27 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>Not given yet</dd></div></dl>
         <p class="cat-note">Born to a cat in her building; she is finding them homes.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">sonam band</span> &middot; <a class="tel" href="tel:+917666767151">7666767151</a> &middot; <a class="ig" href="https://www.instagram.com/sonamba6/">@sonamba6</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+917666767151" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>sonam band</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>7666767151</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/917666767151?text=Hello%21%20I%20saw%20Kittens%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/sonamba6/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-0151" data-share-text="Kittens is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 5 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-1C12-1.jpg" alt="2 kittens (brothers), looking for a home in Pune" width="1066" height="600" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-1C12-2.jpg" alt="" width="843" height="1500" loading="lazy"><img src="assets/cats/CP-1C12-3.jpg" alt="" width="843" height="1500" loading="lazy"></div>
+    <article class="cat" id="CP-1C12">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-1C12-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-1C12-1.jpg" alt="2 kittens (brothers), looking for a home in Pune" width="1066" height="600" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-1C12-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-1C12-2.jpg" alt="" width="843" height="1500" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-1C12-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-1C12-3.jpg" alt="" width="843" height="1500" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">2 kittens (brothers)<span class="cat-count">2</span></h2>
+        <h2 class="cat-title">2 kittens (brothers)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>5-6 months (as of 30 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Male (both)</dd></div><div class="m"><dt>Area</dt><dd>Kothrud</dd></div><div class="m"><dt>Added</dt><dd>5 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Kothrud</dd></div><div class="f"><dt>Age</dt><dd><span class="age-said">5-6 months (as of 30 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>Male (both)</dd></div></dl>
         <p class="cat-note">Brothers, both tabbies.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Ajinkya Acharya</span> &middot; <a class="tel" href="tel:+919049195783">9049195783</a> &middot; <a class="ig" href="https://www.instagram.com/ace.jack_93/">@ace.jack_93</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919049195783" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Ajinkya Acharya</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9049195783</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/919049195783?text=Hello%21%20I%20saw%202%20kittens%20%28brothers%29%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/ace.jack_93/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-1C12" data-share-text="2 kittens (brothers) are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 5 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-9BBA-1.jpg" alt="1 kitten (&quot;Mochi&quot;), looking for a home in Pune" width="720" height="956" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-9BBA-2.jpg" alt="" width="720" height="956" loading="lazy"></div>
+    <article class="cat" id="CP-9BBA">
+      <div class="cat-pic"><div class="cat-gal cat-gal--2"><a class="cat-ph" href="assets/cats/CP-9BBA-1.jpg" aria-label="Photo 1 of 2, open it larger"><img src="assets/cats/CP-9BBA-1.jpg" alt="1 kitten (&quot;Mochi&quot;), looking for a home in Pune" width="720" height="956" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-9BBA-2.jpg" aria-label="Photo 2 of 2, open it larger"><img src="assets/cats/CP-9BBA-2.jpg" alt="" width="720" height="956" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 2</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten (&quot;Mochi&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>5 months (as of 12 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Hadapsar</dd></div><div class="m"><dt>Added</dt><dd>5 Oct</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Hadapsar</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="152" data-on="2026-09-12"></span><span class="age-said">5 months (as of 12 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>Male</dd></div></dl>
         <p class="cat-note">Dewormed and litter-trained.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Charushila Kote</span> &middot; <a class="tel" href="tel:+919689712676">9689712676</a> &middot; <a class="ig" href="https://www.instagram.com/charushilakote/">@charushilakote</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919689712676" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Charushila Kote</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9689712676</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/919689712676?text=Hello%21%20I%20saw%201%20kitten%20%28%22Mochi%22%29%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/charushilakote/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-9BBA" data-share-text="1 kitten (&quot;Mochi&quot;) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 5 Oct</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-8A34-1.jpg" alt="1 kitten, looking for a home in Pune" width="1066" height="600" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-8A34-2.jpg" alt="" width="1066" height="600" loading="lazy"><img src="assets/cats/CP-8A34-3.jpg" alt="" width="1066" height="600" loading="lazy"></div>
+    <article class="cat" id="CP-8A34">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-8A34-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-8A34-1.jpg" alt="1 kitten, looking for a home in Pune" width="1066" height="600" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-8A34-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-8A34-2.jpg" alt="" width="1066" height="600" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-8A34-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-8A34-3.jpg" alt="" width="1066" height="600" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2 months (as of 24 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Nehru Nagar, Pimpri</dd></div><div class="m"><dt>Added</dt><dd>28 Sep</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Nehru Nagar, Pimpri</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="61" data-on="2026-09-24"></span><span class="age-said">2 months (as of 24 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>Female</dd></div></dl>
         <p class="cat-note">Found near the rescuer&#x27;s house, running from dogs. Playful, and quiet at times. First vaccination done and dewormed; not litter-trained yet.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Arunava Sen Gupta</span> &middot; <a class="tel" href="tel:+917709094276">7709094276</a> &middot; <a class="ig" href="https://www.instagram.com/arunavasengupta/">@arunavasengupta</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+917709094276" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Arunava Sen Gupta</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>7709094276</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/917709094276?text=Hello%21%20I%20saw%201%20kitten%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/arunavasengupta/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-8A34" data-share-text="1 kitten is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 28 Sep</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-1F90-1.jpg" alt="2 kittens, looking for a home in Pune" width="843" height="1124" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-1F90-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-1F90-3.jpg" alt="" width="843" height="1124" loading="lazy"></div>
+    <article class="cat" id="CP-1F90">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-1F90-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-1F90-1.jpg" alt="2 kittens, looking for a home in Pune" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-1F90-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-1F90-2.jpg" alt="" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-1F90-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-1F90-3.jpg" alt="" width="843" height="1124" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">2 kittens<span class="cat-count">2</span></h2>
+        <h2 class="cat-title">2 kittens</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2.5 months (as of 17 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Not given yet</dd></div><div class="m"><dt>Area</dt><dd>Katraj</dd></div><div class="m"><dt>Added</dt><dd>28 Sep</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Katraj</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="76" data-on="2026-09-17"></span><span class="age-said">2.5 months (as of 17 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>Not given yet</dd></div></dl>
         <p class="cat-note">Two Indie kittens, healthy, playful and litter-trained. Dewormed; not vaccinated yet. Update, 5 Oct: one is adopted now; one is still looking.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Rajwardhan Pawar</span> &middot; <a class="ig" href="https://www.instagram.com/rajonride_0137/">@rajonride_0137</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="https://www.instagram.com/rajonride_0137/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><span class="cat-who">Talk to the rescuer, <b>Rajwardhan Pawar</b></span><span class="cat-num cat-num--ig"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span class="vh">Message </span><b>@rajonride_0137</b></span><span class="cat-nophone">on Instagram. No phone number given for this one.</span></a><div class="cat-quiet cat-quiet--1"><button class="q" type="button" data-share="CP-1F90" data-share-text="2 kittens are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 28 Sep</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-4698-1.jpg" alt="1 kitten (&quot;Litchi&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></div>
+    <article class="cat" id="CP-4698">
+      <div class="cat-pic"><div class="cat-gal cat-gal--1"><a class="cat-ph" href="assets/cats/CP-4698-1.jpg" aria-label="Photo 1 of 1, open it larger"><img src="assets/cats/CP-4698-1.jpg" alt="1 kitten (&quot;Litchi&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></a></div></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten (&quot;Litchi&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2.5 months (as of 19 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Mahalunge</dd></div><div class="m"><dt>Added</dt><dd>28 Sep</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Mahalunge</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="76" data-on="2026-09-19"></span><span class="age-said">2.5 months (as of 19 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>Female</dd></div></dl>
         <p class="cat-note">A playful, affectionate little girl. Vaccinated (tricat), dewormed, spot-on done, and litter-trained.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Monali Dhage</span> &middot; <a class="tel" href="tel:+917040001994">7040001994</a> &middot; <a class="ig" href="https://www.instagram.com/monali_dhage/">@monali_dhage</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+917040001994" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Monali Dhage</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>7040001994</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/917040001994?text=Hello%21%20I%20saw%201%20kitten%20%28%22Litchi%22%29%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/monali_dhage/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-4698" data-share-text="1 kitten (&quot;Litchi&quot;) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 28 Sep</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-8C4F-1.jpg" alt="1 kitten (&quot;Cheetos&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-8C4F-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-8C4F-3.jpg" alt="" width="843" height="1124" loading="lazy"></div>
+    <article class="cat" id="CP-8C4F">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-8C4F-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-8C4F-1.jpg" alt="1 kitten (&quot;Cheetos&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-8C4F-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-8C4F-2.jpg" alt="" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-8C4F-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-8C4F-3.jpg" alt="" width="843" height="1124" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten (&quot;Cheetos&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>3 months (as of 16 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Wagholi</dd></div><div class="m"><dt>Added</dt><dd>28 Sep</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Wagholi</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="91" data-on="2026-09-16"></span><span class="age-said">3 months (as of 16 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>Female</dd></div></dl>
         <p class="cat-note">Friendly, playful and affectionate. Litter-trained and dewormed.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Palash Jain</span> &middot; <a class="tel" href="tel:+918770752458">8770752458</a> &middot; <a class="ig" href="https://www.instagram.com/palash__jain6516/">@palash__jain6516</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+918770752458" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Palash Jain</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>8770752458</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/918770752458?text=Hello%21%20I%20saw%201%20kitten%20%28%22Cheetos%22%29%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/palash__jain6516/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-8C4F" data-share-text="1 kitten (&quot;Cheetos&quot;) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 28 Sep</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-A409-1.jpg" alt="1 kitten, looking for a home in Pune" width="843" height="1124" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-A409-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-A409-3.jpg" alt="" width="1066" height="600" loading="lazy"></div>
+    <article class="cat" id="CP-A409">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-A409-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-A409-1.jpg" alt="1 kitten, looking for a home in Pune" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-A409-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-A409-2.jpg" alt="" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-A409-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-A409-3.jpg" alt="" width="1066" height="600" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>5 weeks (as of 20 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Hillshire Society, Wagholi</dd></div><div class="m"><dt>Added</dt><dd>28 Sep</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Hillshire Society, Wagholi</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="35" data-on="2026-09-20"></span><span class="age-said">5 weeks (as of 20 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>Male</dd></div></dl>
         <p class="cat-note">An orange boy, dewormed and litter-trained.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Keyur Mahajan</span> &middot; <a class="tel" href="tel:+918275736518">8275736518</a> &middot; <a class="ig" href="https://www.instagram.com/mekeyurmahajan/">@mekeyurmahajan</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+918275736518" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Keyur Mahajan</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>8275736518</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/918275736518?text=Hello%21%20I%20saw%201%20kitten%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/mekeyurmahajan/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-A409" data-share-text="1 kitten is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 28 Sep</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-884E-1.jpg" alt="2 kittens (brother and sister), looking for a home in Pune" width="843" height="1124" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-884E-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-884E-3.jpg" alt="" width="843" height="1143" loading="lazy"><img src="assets/cats/CP-884E-4.jpg" alt="" width="843" height="1284" loading="lazy"></div>
+    <article class="cat" id="CP-884E">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-884E-1.jpg" aria-label="Photo 1 of 4, open it larger"><img src="assets/cats/CP-884E-1.jpg" alt="2 kittens (brother and sister), looking for a home in Pune" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-884E-2.jpg" aria-label="Photo 2 of 4, open it larger"><img src="assets/cats/CP-884E-2.jpg" alt="" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-884E-3.jpg" aria-label="Photo 3 of 4, open it larger"><img src="assets/cats/CP-884E-3.jpg" alt="" width="843" height="1143" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-884E-4.jpg" aria-label="Photo 4 of 4, open it larger"><img src="assets/cats/CP-884E-4.jpg" alt="" width="843" height="1284" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 4</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">2 kittens (brother and sister)<span class="cat-count">2</span></h2>
+        <h2 class="cat-title">2 kittens (brother and sister)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>1.5 months (as of 29 Aug)</dd></div><div class="m"><dt>Sex</dt><dd>1 male (ginger and white), 1 female (calico)</dd></div><div class="m"><dt>Area</dt><dd>Sinhgad Road, Pune</dd></div><div class="m"><dt>Added</dt><dd>17 Sep</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Sinhgad Road, Pune</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="46" data-on="2026-08-29"></span><span class="age-said">1.5 months (as of 29 Aug)</span></dd></div><div class="f"><dt>Gender</dt><dd>1 male (ginger and white), 1 female (calico)</dd></div></dl>
         <p class="cat-note">Two kittens, found dumped on a busy street in the rescuer&#x27;s society with dogs around, and taken in the same day. The boy has been vet-checked and declared healthy, is litter-trained and dewormed, and is extremely affectionate. Their rescuer follows an adoption process and requires netted windows and balconies. She is fostering more kittens too, so ask her about them.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Madhumati Ramesh</span> &middot; <a class="tel" href="tel:+919175021971">9175021971</a> &middot; <a class="ig" href="https://www.instagram.com/madhumati.ramesh/">@madhumati.ramesh</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919175021971" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Madhumati Ramesh</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9175021971</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/919175021971?text=Hello%21%20I%20saw%202%20kittens%20%28brother%20and%20sister%29%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/madhumati.ramesh/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-884E" data-share-text="2 kittens (brother and sister) are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 17 Sep</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-F7FD-1.jpg" alt="2 kittens (&quot;Roshni&quot; &amp; &quot;Pearl&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-F7FD-2.jpg" alt="" width="843" height="1230" loading="lazy"></div>
+    <article class="cat" id="CP-F7FD">
+      <div class="cat-pic"><div class="cat-gal cat-gal--2"><a class="cat-ph" href="assets/cats/CP-F7FD-1.jpg" aria-label="Photo 1 of 2, open it larger"><img src="assets/cats/CP-F7FD-1.jpg" alt="2 kittens (&quot;Roshni&quot; &amp; &quot;Pearl&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-F7FD-2.jpg" aria-label="Photo 2 of 2, open it larger"><img src="assets/cats/CP-F7FD-2.jpg" alt="" width="843" height="1230" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 2</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">2 kittens (&quot;Roshni&quot; &amp; &quot;Pearl&quot;)<span class="cat-count">2</span></h2>
+        <h2 class="cat-title">2 kittens (&quot;Roshni&quot; &amp; &quot;Pearl&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>5 months (as of 13 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Both female</dd></div><div class="m"><dt>Area</dt><dd>Fursungi</dd></div><div class="m"><dt>Added</dt><dd>17 Sep</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Fursungi</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="152" data-on="2026-09-13"></span><span class="age-said">5 months (as of 13 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>Both female</dd></div></dl>
         <p class="cat-note">Two sisters, left at the door of a friend who feeds street dogs. Dewormed and vaccinated, beautiful and playful. Their rescuer would love them to find a home together.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Bharti Bhandari</span> &middot; <a class="tel" href="tel:+917028116820">7028116820</a> &middot; <a class="ig" href="https://www.instagram.com/urvsona/">@urvsona</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+917028116820" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Bharti Bhandari</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>7028116820</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/917028116820?text=Hello%21%20I%20saw%202%20kittens%20%28%22Roshni%22%20%26%20%22Pearl%22%29%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/urvsona/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-F7FD" data-share-text="2 kittens (&quot;Roshni&quot; &amp; &quot;Pearl&quot;) are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 17 Sep</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-1676-1.jpg" alt="4 kittens, looking for a home in Pune" width="843" height="1124" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-1676-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-1676-3.jpg" alt="" width="843" height="1124" loading="lazy"></div>
+    <article class="cat" id="CP-1676">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-1676-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-1676-1.jpg" alt="4 kittens, looking for a home in Pune" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-1676-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-1676-2.jpg" alt="" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-1676-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-1676-3.jpg" alt="" width="843" height="1124" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">4 kittens<span class="cat-count">4</span></h2>
+        <h2 class="cat-title">4 kittens</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>3 months (as of 12 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>2 male, 2 female</dd></div><div class="m"><dt>Area</dt><dd>Bavdhan</dd></div><div class="m"><dt>Added</dt><dd>17 Sep</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Bavdhan</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="91" data-on="2026-09-12"></span><span class="age-said">3 months (as of 12 Sep)</span></dd></div><div class="f"><dt>Gender</dt><dd>2 male, 2 female</dd></div></dl>
         <p class="cat-note">Four playful, affectionate siblings. Dewormed, deflead, vaccinated and litter-trained.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Siddharth</span> &middot; <a class="tel" href="tel:+917776836820">7776836820</a> &middot; <a class="ig" href="https://www.instagram.com/s1dhark/">@s1dhark</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+917776836820" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Siddharth</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>7776836820</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/917776836820?text=Hello%21%20I%20saw%204%20kittens%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/s1dhark/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-1676" data-share-text="4 kittens are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 17 Sep</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-6FA4-1.jpg" alt="1 cat (male, grey tabby with a white chest), looking for a home in Pune" width="499" height="1080" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-6FA4-2.jpg" alt="" width="499" height="1080" loading="lazy"><img src="assets/cats/CP-6FA4-3.jpg" alt="" width="499" height="1080" loading="lazy"></div>
+    <article class="cat" id="CP-6FA4">
+      <div class="cat-pic"><div class="cat-gal cat-gal--3"><a class="cat-ph" href="assets/cats/CP-6FA4-1.jpg" aria-label="Photo 1 of 3, open it larger"><img src="assets/cats/CP-6FA4-1.jpg" alt="1 cat (male, grey tabby with a white chest), looking for a home in Pune" width="499" height="1080" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-6FA4-2.jpg" aria-label="Photo 2 of 3, open it larger"><img src="assets/cats/CP-6FA4-2.jpg" alt="" width="499" height="1080" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-6FA4-3.jpg" aria-label="Photo 3 of 3, open it larger"><img src="assets/cats/CP-6FA4-3.jpg" alt="" width="499" height="1080" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 3</span></div>
       <div class="cat-body">
         <h2 class="cat-title">1 cat (male, grey tabby with a white chest)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>grown from a kitten; not stated</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Not given yet</dd></div><div class="m"><dt>Added</dt><dd>9 Sep</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Not given yet</dd></div><div class="f"><dt>Age</dt><dd><span class="age-said">grown from a kitten; not stated</span></dd></div><div class="f"><dt>Gender</dt><dd>Male</dd></div></dl>
         <p class="cat-note">Found in the society as a kitten; one round of vaccination and deworming done.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Rivana</span> &middot; <a class="ig" href="https://www.instagram.com/rivanayog/">@rivanayog</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="https://www.instagram.com/rivanayog/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><span class="cat-who">Talk to the rescuer, <b>Rivana</b></span><span class="cat-num cat-num--ig"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span class="vh">Message </span><b>@rivanayog</b></span><span class="cat-nophone">on Instagram. No phone number given for this one.</span></a><div class="cat-quiet cat-quiet--1"><button class="q" type="button" data-share="CP-6FA4" data-share-text="1 cat (male, grey tabby with a white chest) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 9 Sep</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-9B94-1.jpg" alt="2 cats (&quot;Butter cup&quot;, &quot;Speed&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></div>
+    <article class="cat" id="CP-9B94">
+      <div class="cat-pic"><div class="cat-gal cat-gal--1"><a class="cat-ph" href="assets/cats/CP-9B94-1.jpg" aria-label="Photo 1 of 1, open it larger"><img src="assets/cats/CP-9B94-1.jpg" alt="2 cats (&quot;Butter cup&quot;, &quot;Speed&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></a></div></div>
       <div class="cat-body">
-        <h2 class="cat-title">2 cats (&quot;Butter cup&quot;, &quot;Speed&quot;)<span class="cat-count">2</span></h2>
+        <h2 class="cat-title">2 cats (&quot;Butter cup&quot;, &quot;Speed&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>7 months (born 6 Jan 2026)</dd></div><div class="m"><dt>Sex</dt><dd>Both female</dd></div><div class="m"><dt>Area</dt><dd>Sus - pashan</dd></div><div class="m"><dt>Added</dt><dd>9 Sep</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Sus - pashan</dd></div><div class="f"><dt>Age</dt><dd><span class="age-said">7 months (born 6 Jan 2026)</span></dd></div><div class="f"><dt>Gender</dt><dd>Both female</dd></div></dl>
         <p class="cat-note">Butter cup is white and ginger, Speed is black and ginger. Litter trained and vaccinated. Playful, affectionate, cuddly.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Shubham</span> &middot; <a class="tel" href="tel:+917506848470">7506848470</a> &middot; <a class="ig" href="https://www.instagram.com/shubham1611_/">@shubham1611_</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+917506848470" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Shubham</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>7506848470</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/917506848470?text=Hello%21%20I%20saw%202%20cats%20%28%22Butter%20cup%22%2C%20%22Speed%22%29%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/shubham1611_/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-9B94" data-share-text="2 cats (&quot;Butter cup&quot;, &quot;Speed&quot;) are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 9 Sep</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-F4C1-1.jpg" alt="2 kittens (&quot;Oreo&quot; &amp; &quot;Cookie&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-F4C1-2.jpg" alt="" width="843" height="1124" loading="lazy"></div>
+    <article class="cat" id="CP-F4C1">
+      <div class="cat-pic"><div class="cat-gal cat-gal--2"><a class="cat-ph" href="assets/cats/CP-F4C1-1.jpg" aria-label="Photo 1 of 2, open it larger"><img src="assets/cats/CP-F4C1-1.jpg" alt="2 kittens (&quot;Oreo&quot; &amp; &quot;Cookie&quot;), looking for a home in Pune" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-F4C1-2.jpg" aria-label="Photo 2 of 2, open it larger"><img src="assets/cats/CP-F4C1-2.jpg" alt="" width="843" height="1124" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 2</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">2 kittens (&quot;Oreo&quot; &amp; &quot;Cookie&quot;)<span class="cat-count">2</span></h2>
+        <h2 class="cat-title">2 kittens (&quot;Oreo&quot; &amp; &quot;Cookie&quot;)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~2 months (as of 25 Aug)</dd></div><div class="m"><dt>Sex</dt><dd>Oreo male, Cookie female</dd></div><div class="m"><dt>Area</dt><dd>Kalyani Nagar, Pune</dd></div><div class="m"><dt>Added</dt><dd>31 Aug</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Kalyani Nagar, Pune</dd></div><div class="f"><dt>Age</dt><dd><span class="age-now" data-days="61" data-on="2026-08-25"></span><span class="age-said">~2 months (as of 25 Aug)</span></dd></div><div class="f"><dt>Gender</dt><dd>Oreo male, Cookie female</dd></div></dl>
         <p class="cat-note">Playful, lively siblings who have always been together, so their rescuer would prefer they go to one home. Oreo is black and white, Cookie is a calico. Both are dewormed, vaccinated and litter trained, and both are easy around other cats and dogs after being fostered in a house with several animals.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">ANKITAA ARORA</span> &middot; <a class="tel" href="tel:+919373983724">9373983724</a> &middot; <a class="ig" href="https://www.instagram.com/ankitaa.arora13/">@ankitaa.arora13</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919373983724" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>ANKITAA ARORA</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9373983724</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/919373983724?text=Hello%21%20I%20saw%202%20kittens%20%28%22Oreo%22%20%26%20%22Cookie%22%29%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/ankitaa.arora13/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-F4C1" data-share-text="2 kittens (&quot;Oreo&quot; &amp; &quot;Cookie&quot;) are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 31 Aug</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-766F-1.jpg" alt="1 kitten (calico girl), looking for a home in Pune" width="843" height="843" loading="lazy"></div>
+    <article class="cat" id="CP-766F">
+      <div class="cat-pic"><div class="cat-gal cat-gal--1"><a class="cat-ph" href="assets/cats/CP-766F-1.jpg" aria-label="Photo 1 of 1, open it larger"><img src="assets/cats/CP-766F-1.jpg" alt="1 kitten (calico girl), looking for a home in Pune" width="843" height="843" loading="lazy"></a></div></div>
       <div class="cat-body">
         <h2 class="cat-title">1 kitten (calico girl)</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~3 months (rescuer&#x27;s estimate, 20 Aug; may be older)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Kalyani Nagar, Pune</dd></div><div class="m"><dt>Added</dt><dd>31 Aug</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Kalyani Nagar, Pune</dd></div><div class="f"><dt>Age</dt><dd><span class="age-said">~3 months (rescuer&#x27;s estimate, 20 Aug; may be older)</span></dd></div><div class="f"><dt>Gender</dt><dd>Female</dd></div></dl>
         <p class="cat-note">A calico girl living on the rescuer&#x27;s terrace, now looking for a safe indoor home. Litter trained, playful and affectionate. Her rescuer is moving and is anxious to see her settled first.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Nikita Gohil</span> &middot; <a class="tel" href="tel:+919689988744">9689988744</a> &middot; <a class="ig" href="https://www.instagram.com/nikitagohil19/">@nikitagohil19</a></dd></dl>
+        <div class="cat-contact"><a class="cat-call" href="tel:+919689988744" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Nikita Gohil</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9689988744</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/919689988744?text=Hello%21%20I%20saw%201%20kitten%20%28calico%20girl%29%20on%20catadoption.in.%20Is%20this%20cat%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/nikitagohil19/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-766F" data-share-text="1 kitten (calico girl) is looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 31 Aug</p>
       </div>
     </article>
-    <article class="cat">
-      <div class="cat-pic"><img src="assets/cats/CP-2E73-1.jpg" alt="Two kittens, looking for a home in Pune" width="843" height="1124" loading="lazy"></div><div class="cat-thumbs"><img src="assets/cats/CP-2E73-2.jpg" alt="" width="843" height="1124" loading="lazy"></div>
+    <article class="cat" id="CP-2E73">
+      <div class="cat-pic"><div class="cat-gal cat-gal--2"><a class="cat-ph" href="assets/cats/CP-2E73-1.jpg" aria-label="Photo 1 of 2, open it larger"><img src="assets/cats/CP-2E73-1.jpg" alt="Two kittens, looking for a home in Pune" width="843" height="1124" loading="lazy"></a><a class="cat-ph" href="assets/cats/CP-2E73-2.jpg" aria-label="Photo 2 of 2, open it larger"><img src="assets/cats/CP-2E73-2.jpg" alt="" width="843" height="1124" loading="lazy"></a></div><span class="cat-more" aria-hidden="true">1 / 2</span></div>
       <div class="cat-body">
-        <h2 class="cat-title">Two kittens<span class="cat-count">2</span></h2>
+        <h2 class="cat-title">Two kittens</h2>
         
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>3–4 months</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Dhayri, Sinhgad Road</dd></div><div class="m"><dt>Added</dt><dd>20 Aug</dd></div></dl>
+        <dl class="cat-facts"><div class="f f--area"><dt>Area</dt><dd>Dhayri, Sinhgad Road</dd></div><div class="f"><dt>Age</dt><dd><span class="age-said">3–4 months</span></dd></div><div class="f"><dt>Gender</dt><dd>Female</dd></div></dl>
         <p class="cat-note">Playful and curious. The rescuer has been looking for a home for a month.</p>
-        <dl class="cat-contact"><dt>Talk to the rescuer</dt><dd><span class="who">Sahil Sarode</span> &middot; <a class="tel" href="tel:+919405935031">9405935031</a> &middot; <a class="ig" href="https://www.instagram.com/sahil__183/">@sahil__183</a></dd></dl>
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-3D7B-1.jpg" alt="1 kitten, has been adopted" width="1281" height="960" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-3D7B-2.jpg" alt="" width="1288" height="1716" loading="lazy"><img src="assets/cats/CP-3D7B-3.jpg" alt="" width="1288" height="1716" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>About a month (as of 28 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Mohammedwadi</dd></div><div class="m"><dt>Added</dt><dd>31 Oct</dd></div></dl>
-        <p class="cat-note">Rescued from a society parking lot. His rescuers already care for a cat and a kitten, so they can&#x27;t keep him.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-0890-1.jpg" alt="1 kitten (&quot;Broski&quot;), has been adopted" width="1206" height="1608" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-0890-2.jpg" alt="" width="1206" height="1608" loading="lazy"><img src="assets/cats/CP-0890-3.jpg" alt="" width="800" height="600" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten (&quot;Broski&quot;)</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2 months (as of 16 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Wakad</dd></div><div class="m"><dt>Added</dt><dd>25 Oct</dd></div></dl>
-        <p class="cat-note">Rescued from a parking lot. He is litter-trained.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-20F9-1.jpg" alt="4 kittens, has been adopted" width="1220" height="1724" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-20F9-2.jpg" alt="" width="1035" height="2712" loading="lazy"><img src="assets/cats/CP-20F9-3.jpg" alt="" width="1220" height="2577" loading="lazy"><img src="assets/cats/CP-20F9-4.jpg" alt="" width="1220" height="2666" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">4 kittens<span class="cat-count">4</span></h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>7 weeks (as of 4 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>2 male, 2 female</dd></div><div class="m"><dt>Area</dt><dd>Kothrud</dd></div><div class="m"><dt>Added</dt><dd>12 Oct</dd></div></dl>
-        <p class="cat-note">Four kittens, very energetic. Dewormed and litter-trained; not vaccinated yet.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-70E5-1.jpg" alt="1 kitten, has been adopted" width="1240" height="1653" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-70E5-2.jpg" alt="" width="1240" height="930" loading="lazy"><img src="assets/cats/CP-70E5-3.jpg" alt="" width="1240" height="930" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>around 3 months (as of 8 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Akurdi</dd></div><div class="m"><dt>Added</dt><dd>12 Oct</dd></div></dl>
-        <p class="cat-note">Very playful and active. Dewormed and uses the litter box. He was rescued near Akurdi railway station, fighting off a pack of dogs.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-EE76-1.jpg" alt="1 cat (&quot;Ginger&quot;), has been adopted" width="843" height="1124" loading="lazy"><span class="cat-adopted">Adopted</span></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 cat (&quot;Ginger&quot;)</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>1 year (as of 2 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Chandan Nagar</dd></div><div class="m"><dt>Added</dt><dd>12 Oct</dd></div></dl>
-        <p class="cat-note">His owner had to leave for work and couldn&#x27;t keep him. He is active, playful, friendly and litter-trained.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-C562-1.jpg" alt="1 kitten, has been adopted" width="927" height="600" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-C562-2.jpg" alt="" width="899" height="600" loading="lazy"><img src="assets/cats/CP-C562-3.jpg" alt="" width="843" height="1055" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>About 3–4 months (as of 24 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Male (most likely)</dd></div><div class="m"><dt>Area</dt><dd>Karvenagar</dd></div><div class="m"><dt>Added</dt><dd>5 Oct</dd></div></dl>
-        <p class="cat-note">Very chirpy, and litter-trained. He turned up in her society, and she took him in.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-72A3-1.jpg" alt="1 kitten (&quot;Lucifer&quot;), has been adopted" width="1067" height="600" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-72A3-2.jpg" alt="" width="686" height="1220" loading="lazy"><img src="assets/cats/CP-72A3-3.jpg" alt="" width="1067" height="600" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten (&quot;Lucifer&quot;)</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>4 months (as of 1 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Shivajinagar</dd></div><div class="m"><dt>Added</dt><dd>5 Oct</dd></div></dl>
-        <p class="cat-note">His mother is half Scottish; three generations on, he has kept mostly the fur. Dewormed, vaccinated against rabies and treated for fleas. His collar, litter box and food go with him.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-829D-1.jpg" alt="1 kitten (&quot;Smoky&quot;), has been adopted" width="843" height="1124" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-829D-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-829D-3.jpg" alt="" width="800" height="600" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten (&quot;Smoky&quot;)</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>4 months (as of 1 Oct)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Baner/Balewadi</dd></div><div class="m"><dt>Added</dt><dd>5 Oct</dd></div></dl>
-        <p class="cat-note">Rescued from the road three months ago and with the family since. Fully vaccinated, litter-trained, very playful and energetic.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-E02F-1.jpg" alt="1 kitten, has been adopted" width="843" height="1860" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-E02F-2.jpg" alt="" width="1220" height="553" loading="lazy"><img src="assets/cats/CP-E02F-3.jpg" alt="" width="843" height="1860" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>1–2 months (as of 21 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Manjri, Mahadev Nagar</dd></div><div class="m"><dt>Added</dt><dd>28 Sep</dd></div></dl>
-        <p class="cat-note">Found alone and scared at a petrol pump, and safe at home since. Very friendly, loves being around people, and already litter-trained.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-5BD7-1.jpg" alt="1 kitten (&quot;Kittu&quot;), has been adopted" width="843" height="632" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-5BD7-2.jpg" alt="" width="843" height="632" loading="lazy"><img src="assets/cats/CP-5BD7-3.jpg" alt="" width="760" height="570" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten (&quot;Kittu&quot;)</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>3.5 months (as of 26 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Brahma Skycity, Kalwad</dd></div><div class="m"><dt>Added</dt><dd>28 Sep</dd></div></dl>
-        <p class="cat-note">A stray from the rescuer&#x27;s housing society. Very playful, vaccinated and litter-trained.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-7278-1.jpg" alt="3 kittens (&quot;Kila&quot;, &quot;Kiki&quot; &amp; &quot;Kiwi&quot;), has been adopted" width="843" height="1883" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-7278-2.jpg" alt="" width="843" height="1883" loading="lazy"><img src="assets/cats/CP-7278-3.jpg" alt="" width="843" height="1883" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">3 kittens (&quot;Kila&quot;, &quot;Kiki&quot; &amp; &quot;Kiwi&quot;)<span class="cat-count">3</span></h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>3.5 months (as of 10 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Kila male, Kiki &amp; Kiwi female</dd></div><div class="m"><dt>Area</dt><dd>Not given yet</dd></div><div class="m"><dt>Added</dt><dd>17 Sep</dd></div></dl>
-        <p class="cat-note">Three white-and-ginger siblings, rescued by an individual rescuer who already cares for many animals. Fully vaccinated and dewormed.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-FDF9-1.jpg" alt="3 cats, 8 months (&#x27;Zack&#x27;, &#x27;Zoey&#x27;, &#x27;Zizu&#x27;), has been adopted" width="1080" height="1920" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-FDF9-2.jpg" alt="" width="1080" height="1920" loading="lazy"><img src="assets/cats/CP-FDF9-3.jpg" alt="" width="1080" height="1920" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">3 cats, 8 months (&#x27;Zack&#x27;, &#x27;Zoey&#x27;, &#x27;Zizu&#x27;)<span class="cat-count">3</span></h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>8 months (as of 6 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>not stated</dd></div><div class="m"><dt>Area</dt><dd>Not given yet</dd></div><div class="m"><dt>Added</dt><dd>9 Sep</dd></div></dl>
-        <p class="cat-note">Three siblings raised at home since their stray mother gave birth; all three white — Zoey and Zizu each have one gold eye and one blue. Update, 5 Oct: Zack and Zizu are adopted now. Zoey is still looking.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-848D-1.jpg" alt="1 cat (male), has been adopted" width="843" height="1499" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-848D-2.jpg" alt="" width="843" height="1499" loading="lazy"><img src="assets/cats/CP-848D-3.jpg" alt="" width="843" height="1498" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 cat (male)</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>Not given yet</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Punawale</dd></div><div class="m"><dt>Added</dt><dd>9 Sep</dd></div></dl>
-        <p class="cat-note">Found on the roadside in Punawale.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-DE30-1.jpg" alt="Ginger kittens (four in the photo), has been adopted" width="1166" height="874" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-DE30-2.jpg" alt="" width="1170" height="1560" loading="lazy"><img src="assets/cats/CP-DE30-3.jpg" alt="" width="1170" height="1560" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">Ginger kittens (four in the photo)<span class="cat-count">4</span></h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>40 days (as of 6 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>male and female</dd></div><div class="m"><dt>Area</dt><dd>Wadgaon Sheri</dd></div><div class="m"><dt>Added</dt><dd>9 Sep</dd></div></dl>
-        <p class="cat-note">40-day-old kittens, Wadgaon Sheri.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-3D47-1.jpg" alt="1 kitten (calico girl), has been adopted" width="843" height="1124" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-3D47-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-3D47-3.jpg" alt="" width="843" height="1124" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten (calico girl)</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2 months (as of 4 Sep)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Pashan</dd></div><div class="m"><dt>Added</dt><dd>9 Sep</dd></div></dl>
-        <p class="cat-note">Calico kitten born to a stray on the rescuer&#x27;s balcony; her two sisters are already adopted. Litter trained, smart, loves to cuddle.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-E5EB-1.jpg" alt="Ana — ginger kitten, female, about 1.5 months, has been adopted" width="1200" height="1600" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-E5EB-2.jpg" alt="" width="1200" height="1600" loading="lazy"><img src="assets/cats/CP-E5EB-3.jpg" alt="" width="1200" height="1600" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">Ana — ginger kitten, female, about 1.5 months</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>1.5 months (as of 1 Sep 2026)</dd></div><div class="m"><dt>Sex</dt><dd>F</dd></div><div class="m"><dt>Area</dt><dd>Karve Nagar</dd></div><div class="m"><dt>Added</dt><dd>2 Sep</dd></div></dl>
-        <p class="cat-note">Litter-trained and dewormed, not yet vaccinated. Found in a garden in Karve Nagar and being looked after at home until she finds hers.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-91EA-1.jpg" alt="1 kitten (&quot;Lucy&quot;), has been adopted" width="455" height="1008" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-91EA-2.jpg" alt="" width="843" height="1871" loading="lazy"><img src="assets/cats/CP-91EA-3.jpg" alt="" width="843" height="1871" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten (&quot;Lucy&quot;)</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~3 months (as of 30 Aug)</dd></div><div class="m"><dt>Sex</dt><dd>Not stated</dd></div><div class="m"><dt>Area</dt><dd>Pune Camp</dd></div><div class="m"><dt>Added</dt><dd>31 Aug</dd></div></dl>
-        <p class="cat-note">A fully vaccinated Indie girl, booster included, litter trained and dewormed every fortnight on her vet&#x27;s advice. Roughly three months old.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-401E-1.jpg" alt="2 kittens, has been adopted" width="843" height="1479" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-401E-2.jpg" alt="" width="843" height="1499" loading="lazy"><img src="assets/cats/CP-401E-3.jpg" alt="" width="843" height="1124" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">2 kittens<span class="cat-count">2</span></h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>5 months and 2 months (as of 22 Aug)</dd></div><div class="m"><dt>Sex</dt><dd>1 male, 1 female</dd></div><div class="m"><dt>Area</dt><dd>Keshav Nagar, Pune</dd></div><div class="m"><dt>Added</dt><dd>31 Aug</dd></div></dl>
-        <p class="cat-note">Found struggling to survive in the locality and taken in. The white male, about 5 months, is gentle and playful and will curl up beside you asking for scratches. The black-and-white female, about 2 months, is curious and full of affection. Both are healthy and enjoy human company.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-6549-1.jpg" alt="3 kittens (&quot;Bhondu&quot;, &quot;Snow&quot; &amp; &quot;Angel&quot;), has been adopted" width="1260" height="1680" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-6549-2.jpg" alt="" width="1260" height="1680" loading="lazy"><img src="assets/cats/CP-6549-3.jpg" alt="" width="1260" height="1680" loading="lazy"><img src="assets/cats/CP-6549-4.jpg" alt="" width="800" height="600" loading="lazy"><img src="assets/cats/CP-6549-5.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-6549-6.jpg" alt="" width="843" height="1124" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">3 kittens (&quot;Bhondu&quot;, &quot;Snow&quot; &amp; &quot;Angel&quot;)<span class="cat-count">3</span></h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>Bhondu 1.5 months; Snow &amp; Angel 2.5 months</dd></div><div class="m"><dt>Sex</dt><dd>Bhondu male; Snow &amp; Angel one male one female</dd></div><div class="m"><dt>Area</dt><dd>Salunke Vihar, Pune</dd></div><div class="m"><dt>Added</dt><dd>31 Aug</dd></div></dl>
-        <p class="cat-note">Three kittens from one rescuer, all 1.5-2.5 months, all litter trained and none dewormed or vaccinated yet. Bhondu is a male; Snow and Angel are a male and a female.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-1B97-1.jpg" alt="1 kitten (&quot;Lightu&quot;), has been adopted" width="774" height="1032" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-1B97-2.jpg" alt="" width="774" height="1032" loading="lazy"><img src="assets/cats/CP-1B97-3.jpg" alt="" width="774" height="1032" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten (&quot;Lightu&quot;)</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~2 months (as of 20 Aug)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Kondhwa, Pune</dd></div><div class="m"><dt>Added</dt><dd>24 Aug</dd></div></dl>
-        <p class="cat-note">Litter trained and dewormed. His sister was adopted on 20 August; he is the one still looking.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-42FB-1.jpg" alt="2 kittens (brother and sister), has been adopted" width="843" height="1499" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-42FB-2.jpg" alt="" width="800" height="600" loading="lazy"><img src="assets/cats/CP-42FB-3.jpg" alt="" width="843" height="1124" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">2 kittens (brother and sister)<span class="cat-count">2</span></h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2-3 months</dd></div><div class="m"><dt>Sex</dt><dd>1 male, 1 female</dd></div><div class="m"><dt>Area</dt><dd>Not given yet</dd></div><div class="m"><dt>Added</dt><dd>23 Aug</dd></div></dl>
-        <p class="cat-note">Siblings found on a society road and taken in because of stray dogs. Both litter trained, and very attached to each other.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-3AE6-1.jpg" alt="1 ginger kitten (&quot;Bliss&quot;), has been adopted" width="800" height="600" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-3AE6-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-3AE6-3.jpg" alt="" width="800" height="600" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 ginger kitten (&quot;Bliss&quot;)</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~2 months (60 days, per rescuer 21 Aug)</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Magarpatta, Pune</dd></div><div class="m"><dt>Added</dt><dd>23 Aug</dd></div></dl>
-        <p class="cat-note">Rescued from the rain at ~40 days old and taken in, but the family has to move out of Pune and works 15-16 hour days. Dewormed, vet-checked and given a CRP shot; too young for vaccination until 3-4 months. Gained 400g to 850g in her first fortnight.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-3341-1.jpg" alt="2 kittens, has been adopted" width="1067" height="600" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-3341-2.jpg" alt="" width="1067" height="600" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">2 kittens<span class="cat-count">2</span></h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~5 months (4 months when photographed in July)</dd></div><div class="m"><dt>Sex</dt><dd>Both female</dd></div><div class="m"><dt>Area</dt><dd>Dapodi, PCMC</dd></div><div class="m"><dt>Added</dt><dd>23 Aug</dd></div></dl>
-        <p class="cat-note">Two sisters, very playful and loving.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-12F6-1.jpg" alt="1 kitten (&quot;Puchu&quot;), has been adopted" width="608" height="1080" loading="lazy"><span class="cat-adopted">Adopted</span></div>
-      <div class="cat-body">
-        <h2 class="cat-title">1 kitten (&quot;Puchu&quot;)</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2 months</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Sant Tukaram Nagar, Pimpri Chinchwad</dd></div><div class="m"><dt>Added</dt><dd>23 Aug</dd></div></dl>
-        <p class="cat-note">Found in a box near the rescuer&#x27;s PG. Vaccinated.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted cat--maybe">
-      <div class="cat-pic"><img src="assets/cats/CP-F12B-1.jpg" alt="One kitten, may have been adopted" width="843" height="1124" loading="lazy"><span class="cat-adopted">Maybe adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-F12B-2.jpg" alt="" width="800" height="600" loading="lazy"><img src="assets/cats/CP-F12B-3.jpg" alt="" width="843" height="1124" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">One kitten</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2–3 months (rescuer&#x27;s estimate; may be older)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Dighi, Pune</dd></div><div class="m"><dt>Added</dt><dd>21 Aug</dd></div></dl>
-        <p class="cat-note">A young ginger-and-white boy in Dighi. Litter trained. Not yet vaccinated or vet-checked — the rescuer says that is still to be done.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-B059-1.jpg" alt="Five ginger kittens, has been adopted" width="843" height="635" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-B059-2.jpg" alt="" width="843" height="635" loading="lazy"><img src="assets/cats/CP-B059-3.jpg" alt="" width="843" height="635" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">Five ginger kittens<span class="cat-count">5</span></h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2 months</dd></div><div class="m"><dt>Sex</dt><dd>Four female, one male</dd></div><div class="m"><dt>Area</dt><dd>Hadapsar</dd></div><div class="m"><dt>Added</dt><dd>21 Aug</dd></div></dl>
-        <p class="cat-note">A house cat slipped out one day and came home pregnant; these five are her litter, raised indoors with her. All ginger tabbies, two months old. The family is having the mother spayed and would like the kittens to go to homes together or in pairs if possible.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-3243-1.jpg" alt="One kitten, has been adopted" width="608" height="1080" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-3243-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-3243-3.jpg" alt="" width="843" height="1499" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">One kitten</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2 months</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Not given yet</dd></div><div class="m"><dt>Added</dt><dd>21 Aug</dd></div></dl>
-        <p class="cat-note">A ginger indie boy, two months old and already litter trained. He is staying with a friend of the rescuer for now.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-82CF-1.jpg" alt="One kitten, has been adopted" width="720" height="1280" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-82CF-2.jpg" alt="" width="720" height="1280" loading="lazy"><img src="assets/cats/CP-82CF-3.jpg" alt="" width="720" height="1280" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">One kitten</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~2–3 months (rescuer unsure)</dd></div><div class="m"><dt>Sex</dt><dd>Male</dd></div><div class="m"><dt>Area</dt><dd>Wadgaon Sheri, Pune</dd></div><div class="m"><dt>Added</dt><dd>21 Aug</dd></div></dl>
-        <p class="cat-note">A grey tabby boy found crying alone in the street in Wadgaon Sheri and taken in the same evening. The rescuer lives in a PG and cannot keep him, so he is looking for a family soon.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-F419-1.jpg" alt="One kitten, has been adopted" width="843" height="1124" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-F419-2.jpg" alt="" width="843" height="843" loading="lazy"><img src="assets/cats/CP-F419-3.jpg" alt="" width="843" height="843" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">One kitten</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>6–8 weeks</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Dhanori Rd, Lohegaon</dd></div><div class="m"><dt>Added</dt><dd>20 Aug</dd></div></dl>
-        <p class="cat-note">Very playful with humans, already litter trained. Rescued from Viman Nagar.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-553B-1.jpg" alt="One kitten, “Chiku”, has been adopted" width="843" height="1499" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-553B-2.jpg" alt="" width="843" height="1499" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">One kitten, “Chiku”</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>~2 months</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Not given yet</dd></div><div class="m"><dt>Added</dt><dd>20 Aug</dd></div></dl>
-        <p class="cat-note">Her mother was killed in an accident and a sibling died too. The rescuer can&#x27;t keep her.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-ABCE-1.jpg" alt="Two kittens, “Chiku” &amp; “Lolo”, has been adopted" width="843" height="1123" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-ABCE-2.jpg" alt="" width="843" height="1123" loading="lazy"><img src="assets/cats/CP-ABCE-3.jpg" alt="" width="827" height="960" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">Two kittens, “Chiku” &amp; “Lolo”<span class="cat-count">2</span></h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>7 months</dd></div><div class="m"><dt>Sex</dt><dd>Both male</dd></div><div class="m"><dt>Area</dt><dd>Vidhyanagar</dd></div><div class="m"><dt>Added</dt><dd>20 Aug</dd></div></dl>
-        <p class="cat-note">The rescuer&#x27;s adult cat is coming home from hospital and three males can&#x27;t share the space safely. They&#x27;d like the pair to stay together.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-FD2E-1.jpg" alt="One kitten, “Ginger”, has been adopted" width="843" height="1124" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-FD2E-2.jpg" alt="" width="843" height="1266" loading="lazy"><img src="assets/cats/CP-FD2E-3.jpg" alt="" width="843" height="1667" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">One kitten, “Ginger”</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>2 months</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Dhanori, near the airport</dd></div><div class="m"><dt>Added</dt><dd>20 Aug</dd></div></dl>
-        <p class="cat-note">A loving, playful, affectionate indie. The rescuer is sending basic cat essentials along, free.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-4270-1.jpg" alt="Two kittens, has been adopted" width="843" height="1124" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-4270-2.jpg" alt="" width="843" height="1124" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">Two kittens<span class="cat-count">2</span></h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>6 months</dd></div><div class="m"><dt>Sex</dt><dd>One male, one female</dd></div><div class="m"><dt>Area</dt><dd>Kharadi</dd></div><div class="m"><dt>Added</dt><dd>20 Aug</dd></div></dl>
-        <p class="cat-note">Litter trained. Not yet dewormed or vaccinated.</p>
-        
-      </div>
-    </article>
-    <article class="cat cat--adopted">
-      <div class="cat-pic"><img src="assets/cats/CP-A14C-1.jpg" alt="One kitten, “Burfy”, has been adopted" width="843" height="1124" loading="lazy"><span class="cat-adopted">Adopted</span></div><div class="cat-thumbs"><img src="assets/cats/CP-A14C-2.jpg" alt="" width="843" height="1124" loading="lazy"><img src="assets/cats/CP-A14C-3.jpg" alt="" width="843" height="1124" loading="lazy"></div>
-      <div class="cat-body">
-        <h2 class="cat-title">One kitten, “Burfy”</h2>
-        
-        <dl class="cat-meta"><div class="m"><dt>Age</dt><dd>5–6 months</dd></div><div class="m"><dt>Sex</dt><dd>Female</dd></div><div class="m"><dt>Area</dt><dd>Pimpri</dd></div><div class="m"><dt>Added</dt><dd>20 Aug</dd></div></dl>
-        <p class="cat-note">Dewormed, vaccinated and litter trained.</p>
-        
+        <div class="cat-contact"><a class="cat-call" href="tel:+919405935031" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"><span class="cat-who">Talk to the rescuer, <b>Sahil Sarode</b></span><span class="cat-num"><svg class="ico" aria-hidden="true"><use href="#i-call"/></svg><span class="vh">Call </span><b>9405935031</b></span></a><div class="cat-quiet cat-quiet--3"><a class="q" href="https://wa.me/919405935031?text=Hello%21%20I%20saw%20Two%20kittens%20on%20catadoption.in.%20Are%20they%20still%20looking%20for%20a%20home%3F%20I%20would%20like%20to%20adopt.%20I%20live%20in%20" rel="noopener" data-goatcounter-click="board-whatsapp" data-goatcounter-title="Board: WhatsApp a rescuer"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a><a class="q" href="https://www.instagram.com/sahil__183/" rel="noopener" data-goatcounter-click="board-instagram" data-goatcounter-title="Board: a rescuer's Instagram"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a><button class="q" type="button" data-share="CP-2E73" data-share-text="Two kittens are looking for a home in Pune." data-goatcounter-click="board-share" data-goatcounter-title="Board: share a cat"><svg class="ico" aria-hidden="true"><use href="#i-share"/></svg><span>Share</span></button></div></div>
+        <p class="cat-added">On the board since 20 Aug</p>
       </div>
     </article>
   </div>
 
-  <details class="acc why" id="rescuers" open>
+  <section class="homes" id="adopted">
+    <h2><span class="homes-n">33</span> from this board have gone home</h2>
+    <p>Their rescuers' numbers have come off the page. If the cat you came for is here, it has a family now.</p>
+    <div class="homes-grid"><article class="cat cat--adopted" id="CP-3D7B"><div class="home-pic"><img src="assets/cats/CP-3D7B-1.jpg" srcset="assets/cats/thumbs/CP-3D7B-1.webp 260w" sizes="132px" alt="1 kitten, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">1 kitten</h3></article><article class="cat cat--adopted" id="CP-0890"><div class="home-pic"><img src="assets/cats/CP-0890-1.jpg" srcset="assets/cats/thumbs/CP-0890-1.webp 260w" sizes="132px" alt="1 kitten (&quot;Broski&quot;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Broski</h3></article><article class="cat cat--adopted" id="CP-20F9"><div class="home-pic"><img src="assets/cats/CP-20F9-1.jpg" srcset="assets/cats/thumbs/CP-20F9-1.webp 260w" sizes="132px" alt="4 kittens, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">4 kittens</h3></article><article class="cat cat--adopted" id="CP-70E5"><div class="home-pic"><img src="assets/cats/CP-70E5-1.jpg" srcset="assets/cats/thumbs/CP-70E5-1.webp 260w" sizes="132px" alt="1 kitten, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">1 kitten</h3></article><article class="cat cat--adopted" id="CP-EE76"><div class="home-pic"><img src="assets/cats/CP-EE76-1.jpg" srcset="assets/cats/thumbs/CP-EE76-1.webp 260w" sizes="132px" alt="1 cat (&quot;Ginger&quot;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Ginger</h3></article><article class="cat cat--adopted" id="CP-C562"><div class="home-pic"><img src="assets/cats/CP-C562-1.jpg" srcset="assets/cats/thumbs/CP-C562-1.webp 260w" sizes="132px" alt="1 kitten, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">1 kitten</h3></article><article class="cat cat--adopted" id="CP-72A3"><div class="home-pic"><img src="assets/cats/CP-72A3-1.jpg" srcset="assets/cats/thumbs/CP-72A3-1.webp 260w" sizes="132px" alt="1 kitten (&quot;Lucifer&quot;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Lucifer</h3></article><article class="cat cat--adopted" id="CP-829D"><div class="home-pic"><img src="assets/cats/CP-829D-1.jpg" srcset="assets/cats/thumbs/CP-829D-1.webp 260w" sizes="132px" alt="1 kitten (&quot;Smoky&quot;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Smoky</h3></article><article class="cat cat--adopted" id="CP-E02F"><div class="home-pic"><img src="assets/cats/CP-E02F-1.jpg" srcset="assets/cats/thumbs/CP-E02F-1.webp 260w" sizes="132px" alt="1 kitten, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">1 kitten</h3></article></div><details class="homes-more"><summary>Show 25 more</summary><div class="homes-grid"><article class="cat cat--adopted" id="CP-5BD7"><div class="home-pic"><img src="assets/cats/CP-5BD7-1.jpg" srcset="assets/cats/thumbs/CP-5BD7-1.webp 260w" sizes="132px" alt="1 kitten (&quot;Kittu&quot;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Kittu</h3></article><article class="cat cat--adopted" id="CP-7278"><div class="home-pic"><img src="assets/cats/CP-7278-1.jpg" srcset="assets/cats/thumbs/CP-7278-1.webp 260w" sizes="132px" alt="3 kittens (&quot;Kila&quot;, &quot;Kiki&quot; &amp; &quot;Kiwi&quot;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Kila, Kiki &amp; others</h3></article><article class="cat cat--adopted" id="CP-FDF9"><div class="home-pic"><img src="assets/cats/CP-FDF9-1.jpg" srcset="assets/cats/thumbs/CP-FDF9-1.webp 260w" sizes="132px" alt="3 cats, 8 months (&#x27;Zack&#x27;, &#x27;Zoey&#x27;, &#x27;Zizu&#x27;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Zack, Zoey &amp; others</h3></article><article class="cat cat--adopted" id="CP-848D"><div class="home-pic"><img src="assets/cats/CP-848D-1.jpg" srcset="assets/cats/thumbs/CP-848D-1.webp 260w" sizes="132px" alt="1 cat (male), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">1 cat</h3></article><article class="cat cat--adopted" id="CP-DE30"><div class="home-pic"><img src="assets/cats/CP-DE30-1.jpg" srcset="assets/cats/thumbs/CP-DE30-1.webp 260w" sizes="132px" alt="Ginger kittens (four in the photo), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Ginger kittens</h3></article><article class="cat cat--adopted" id="CP-3D47"><div class="home-pic"><img src="assets/cats/CP-3D47-1.jpg" srcset="assets/cats/thumbs/CP-3D47-1.webp 260w" sizes="132px" alt="1 kitten (calico girl), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">1 kitten</h3></article><article class="cat cat--adopted" id="CP-E5EB"><div class="home-pic"><img src="assets/cats/CP-E5EB-1.jpg" srcset="assets/cats/thumbs/CP-E5EB-1.webp 260w" sizes="132px" alt="Ana — ginger kitten, female, about 1.5 months, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Ana</h3></article><article class="cat cat--adopted" id="CP-91EA"><div class="home-pic"><img src="assets/cats/CP-91EA-1.jpg" srcset="assets/cats/thumbs/CP-91EA-1.webp 260w" sizes="132px" alt="1 kitten (&quot;Lucy&quot;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Lucy</h3></article><article class="cat cat--adopted" id="CP-401E"><div class="home-pic"><img src="assets/cats/CP-401E-1.jpg" srcset="assets/cats/thumbs/CP-401E-1.webp 260w" sizes="132px" alt="2 kittens, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">2 kittens</h3></article><article class="cat cat--adopted" id="CP-6549"><div class="home-pic"><img src="assets/cats/CP-6549-1.jpg" srcset="assets/cats/thumbs/CP-6549-1.webp 260w" sizes="132px" alt="3 kittens (&quot;Bhondu&quot;, &quot;Snow&quot; &amp; &quot;Angel&quot;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Bhondu, Snow &amp; others</h3></article><article class="cat cat--adopted" id="CP-1B97"><div class="home-pic"><img src="assets/cats/CP-1B97-1.jpg" srcset="assets/cats/thumbs/CP-1B97-1.webp 260w" sizes="132px" alt="1 kitten (&quot;Lightu&quot;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Lightu</h3></article><article class="cat cat--adopted" id="CP-42FB"><div class="home-pic"><img src="assets/cats/CP-42FB-1.jpg" srcset="assets/cats/thumbs/CP-42FB-1.webp 260w" sizes="132px" alt="2 kittens (brother and sister), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">2 kittens</h3></article><article class="cat cat--adopted" id="CP-3AE6"><div class="home-pic"><img src="assets/cats/CP-3AE6-1.jpg" srcset="assets/cats/thumbs/CP-3AE6-1.webp 260w" sizes="132px" alt="1 ginger kitten (&quot;Bliss&quot;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Bliss</h3></article><article class="cat cat--adopted" id="CP-3341"><div class="home-pic"><img src="assets/cats/CP-3341-1.jpg" srcset="assets/cats/thumbs/CP-3341-1.webp 260w" sizes="132px" alt="2 kittens, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">2 kittens</h3></article><article class="cat cat--adopted" id="CP-12F6"><div class="home-pic"><img src="assets/cats/CP-12F6-1.jpg" srcset="assets/cats/thumbs/CP-12F6-1.webp 260w" sizes="132px" alt="1 kitten (&quot;Puchu&quot;), adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Puchu</h3></article><article class="cat cat--adopted cat--maybe" id="CP-F12B"><div class="home-pic"><img src="assets/cats/CP-F12B-1.jpg" srcset="assets/cats/thumbs/CP-F12B-1.webp 260w" sizes="132px" alt="One kitten, maybe adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Maybe adopted</span></div><h3 class="home-title">One kitten</h3></article><article class="cat cat--adopted" id="CP-B059"><div class="home-pic"><img src="assets/cats/CP-B059-1.jpg" srcset="assets/cats/thumbs/CP-B059-1.webp 260w" sizes="132px" alt="Five ginger kittens, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Five ginger kittens</h3></article><article class="cat cat--adopted" id="CP-3243"><div class="home-pic"><img src="assets/cats/CP-3243-1.jpg" srcset="assets/cats/thumbs/CP-3243-1.webp 260w" sizes="132px" alt="One kitten, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">One kitten</h3></article><article class="cat cat--adopted" id="CP-82CF"><div class="home-pic"><img src="assets/cats/CP-82CF-1.jpg" srcset="assets/cats/thumbs/CP-82CF-1.webp 260w" sizes="132px" alt="One kitten, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">One kitten</h3></article><article class="cat cat--adopted" id="CP-F419"><div class="home-pic"><img src="assets/cats/CP-F419-1.jpg" srcset="assets/cats/thumbs/CP-F419-1.webp 260w" sizes="132px" alt="One kitten, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">One kitten</h3></article><article class="cat cat--adopted" id="CP-553B"><div class="home-pic"><img src="assets/cats/CP-553B-1.jpg" srcset="assets/cats/thumbs/CP-553B-1.webp 260w" sizes="132px" alt="One kitten, “Chiku”, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Chiku</h3></article><article class="cat cat--adopted" id="CP-ABCE"><div class="home-pic"><img src="assets/cats/CP-ABCE-1.jpg" srcset="assets/cats/thumbs/CP-ABCE-1.webp 260w" sizes="132px" alt="Two kittens, “Chiku” &amp; “Lolo”, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Chiku &amp; Lolo</h3></article><article class="cat cat--adopted" id="CP-FD2E"><div class="home-pic"><img src="assets/cats/CP-FD2E-1.jpg" srcset="assets/cats/thumbs/CP-FD2E-1.webp 260w" sizes="132px" alt="One kitten, “Ginger”, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Ginger</h3></article><article class="cat cat--adopted" id="CP-4270"><div class="home-pic"><img src="assets/cats/CP-4270-1.jpg" srcset="assets/cats/thumbs/CP-4270-1.webp 260w" sizes="132px" alt="Two kittens, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Two kittens</h3></article><article class="cat cat--adopted" id="CP-A14C"><div class="home-pic"><img src="assets/cats/CP-A14C-1.jpg" srcset="assets/cats/thumbs/CP-A14C-1.webp 260w" sizes="132px" alt="One kitten, “Burfy”, adopted" width="260" height="260" loading="lazy"><span class="cat-adopted">Adopted</span></div><h3 class="home-title">Burfy</h3></article></div></details>
+  </section>
+
+<dialog class="lb" id="lb" aria-label="The cat's photos, larger">
+  <div class="lb-strip" tabindex="0"></div>
+  <p class="lb-count" aria-live="polite"></p>
+  <p class="lb-foot"><span class="lb-title"></span><a class="lb-call" data-goatcounter-click="board-call" data-goatcounter-title="Board: call a rescuer"></a></p>
+  <button class="lb-btn lb-prev" type="button" aria-label="Previous photo"><svg class="ico" aria-hidden="true"><use href="#i-prev"/></svg></button>
+  <button class="lb-btn lb-next" type="button" aria-label="Next photo"><svg class="ico" aria-hidden="true"><use href="#i-next"/></svg></button>
+  <button class="lb-btn lb-close" type="button" aria-label="Close the photo"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg></button>
+</dialog>
+  <details class="acc why" id="rescuers">
     <summary>Rescuers &mdash; sending us a cat? Send it like this.</summary>
     <div class="acc-body why-grid">
       <figure class="fmt-shot"><img src="assets/dm-format-redacted.jpg" width="885" height="1532" loading="lazy" alt="A rescuer's Instagram message sent the way that works best: one message carrying the photos and the words together, with the kitten's age, whether it is male or female, a phone number and an area. The contact details and the sender's handle are blacked out here."></figure>
@@ -836,18 +683,12 @@
 
   <section class="ask">
     <h2>Want to meet one of them?</h2>
-    <p>Contact the rescuer on the card — they know the cat best, and we don't stand in between.
-    They'll ask about your home and family. That's how they find the right match.
-    They'll also ask whether your windows and balconies are netted, so it's worth
-    <a href="adopt.html">reading that first</a>.</p>
-    <p class="ask-blog">Not ready to adopt yet? <a href="learn.html">Read what living with a cat in a Pune flat
-    actually takes</a> — the steps, the first-week shopping, litter in the monsoon, hair on everything, what a
-    kitten eats.</p>
-    <p class="ask-form">Picked one? The <a href="adopter-form.html">adopter form</a> is the five-minute way to
-    introduce yourself to the rescuer.</p>
+    <p>Call the rescuer on the card. They know the cat best, and we don't stand in between.</p>
     <p class="ask-adult"><strong>One quiet ask:</strong> if you're open to a grown cat rather than a
     kitten, say so. Kittens go quickly. Adult cats wait months for the same message, and they are
     very often the easier ones to live with.</p>
+    <p class="ask-links"><a href="adopt.html">How adopting works</a> &middot; <a href="adopter-form.html">The adopter form</a>
+    &middot; <a href="learn.html">Living with a cat in a Pune flat</a></p>
     <a class="btn" href="https://www.instagram.com/catadoption_pune/">Message us on Instagram</a>
   </section>
 </div>
@@ -874,6 +715,124 @@
   <p class="trust">★ 4.2 on Google (40+ reviews) · 1,200+ on Instagram · ~120 indies rehomed since May 2024</p>
 </footer>
 
+<script>
+/* The board's script. The page works without it: today's age, the photo counter, the photo
+   dialog, Share, and opening a folded box when the address points into it. */
+(function () {
+  // Today's age: the given age in days plus the days since its date, on the visitor's clock.
+  document.querySelectorAll(".age-now").forEach(function (el) {
+    var on = new Date(el.getAttribute("data-on") + "T00:00:00");
+    var gone = Math.floor((Date.now() - on.getTime()) / 864e5);
+    if (!(gone >= 21)) return;
+    var days = Number(el.getAttribute("data-days")) + gone, txt;
+    // weeks under six weeks, then months in halves, then years
+    if (days < 42) txt = Math.round(days / 7) + " weeks";
+    else if (days < 350) {
+      var half = Math.round(days / 30.4 * 2) / 2;
+      txt = Math.floor(half) + (half % 1 ? "½" : "") + " months";
+    } else {
+      var y = Math.round(days / 365 * 2) / 2;
+      txt = Math.floor(y) + (y % 1 ? "½" : "") + (y > 1 ? " years" : " year");
+    }
+    el.textContent = "About " + txt + " old";
+    // Label the given age, as real text so a translated page carries it.
+    var said = el.nextElementSibling;
+    if (said) said.textContent = "The rescuer said " + said.textContent.replace(/^~\s*/, "about ");
+  });
+
+  // "2 / 3" on a card's photos as they are swiped.
+  document.querySelectorAll(".cat-gal").forEach(function (gal) {
+    var tag = gal.parentNode.querySelector(".cat-more");
+    if (!tag) return;
+    var n = gal.children.length, t;
+    gal.addEventListener("scroll", function () {
+      clearTimeout(t);
+      t = setTimeout(function () {
+        var mid = gal.scrollLeft + gal.clientWidth / 2, best = 0;
+        for (var i = 0; i < n; i++) if (gal.children[i].offsetLeft - gal.offsetLeft <= mid) best = i;
+        tag.textContent = (best + 1) + " / " + n;
+      }, 60);
+    }, { passive: true });
+  });
+
+  // The photo dialog: one for the page, filled with the tapped card's photos. Esc closes it.
+  // Without showModal the photo's plain link works.
+  var lb = document.getElementById("lb");
+  if (lb && lb.showModal) {
+    var strip = lb.querySelector(".lb-strip"), count = lb.querySelector(".lb-count"),
+        prev = lb.querySelector(".lb-prev"), next = lb.querySelector(".lb-next"), lt;
+    var cur = function () { return Math.round(strip.scrollLeft / (strip.clientWidth || 1)); };
+    var upd = function () {
+      var n = strip.children.length, i = cur();
+      count.textContent = n > 1 ? (i + 1) + " / " + n : "";
+      prev.hidden = i <= 0; next.hidden = i >= n - 1;
+    };
+    var go = function (d) { strip.scrollTo({ left: (cur() + d) * strip.clientWidth, behavior: "smooth" }); };
+    document.addEventListener("click", function (ev) {
+      var a = ev.target.closest ? ev.target.closest(".cat-ph") : null;
+      if (!a) return;
+      ev.preventDefault();
+      var at = 0;
+      strip.textContent = "";
+      a.parentNode.querySelectorAll(".cat-ph").forEach(function (p, i) {
+        var im = p.querySelector("img"), big = new Image();
+        big.src = im.currentSrc || im.src;
+        big.alt = im.alt || "Photo " + (i + 1);
+        big.draggable = false;
+        strip.appendChild(big);
+        if (p === a) at = i;
+      });
+      // the card's title, and its tel: link where it has one
+      var card = a.closest(".cat"), call = card.querySelector('a.cat-call[href^="tel:"]'), foot = lb.querySelector(".lb-call");
+      lb.querySelector(".lb-title").textContent = card.querySelector(".cat-title").firstChild.textContent;
+      foot.innerHTML = call ? call.querySelector(".cat-num").innerHTML : "";
+      if (call) foot.href = call.href; else foot.removeAttribute("href");
+      lb.showModal();
+      strip.scrollLeft = at * strip.clientWidth;
+      upd();
+    });
+    strip.addEventListener("scroll", function () { clearTimeout(lt); lt = setTimeout(upd, 60); }, { passive: true });
+    lb.querySelector(".lb-close").addEventListener("click", function () { lb.close(); });
+    prev.addEventListener("click", function () { go(-1); });
+    next.addEventListener("click", function () { go(1); });
+    lb.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowLeft") go(-1);
+      if (ev.key === "ArrowRight") go(1);
+    });
+  }
+
+  // Share: the system share sheet where there is one, else copy the link. The link is the
+  // canonical address plus the card's id.
+  var canon = document.querySelector('link[rel="canonical"]');
+  var base = (canon && canon.href) || location.href.split("#")[0];
+  document.addEventListener("click", function (ev) {
+    var b = ev.target.closest ? ev.target.closest("[data-share]") : null;
+    if (!b) return;
+    var url = base + "#" + b.getAttribute("data-share"), text = b.getAttribute("data-share-text");
+    if (navigator.share) { navigator.share({ text: text, url: url }).catch(function () {}); return; }
+    var label = b.querySelector("span"), was = label.textContent;
+    var done = function () { label.textContent = "Link copied"; setTimeout(function () { label.textContent = was; }, 2200); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text + " " + url).then(done, function () {});
+    } else {
+      var t = document.createElement("textarea");
+      t.value = text + " " + url; document.body.appendChild(t); t.select();
+      try { if (document.execCommand("copy")) done(); } catch (e) {}
+      t.remove();
+    }
+  });
+
+  // Open a folded <details> when the address points inside it (#rescuers, or a closed card's tile).
+  function openBox() {
+    var el = location.hash.length > 1 ? document.getElementById(location.hash.slice(1)) : null;
+    if (!el) return;
+    var d = el.closest("details");
+    if (d && !d.open) { d.open = true; el.scrollIntoView(); }
+  }
+  window.addEventListener("hashchange", openBox);
+  openBox();
+})();
+</script>
 <script defer src="assets/analytics.js"></script>
 </body>
 </html>
