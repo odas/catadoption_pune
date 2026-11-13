@@ -118,7 +118,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   for the cat, and adoption here is free.
 - **`shop.html` is Amazon only, and every card carries the free or cheaper version.** One card per product the
   guides already link, in the owner's words from that guide, with the free version's label on butter (the sketchbook layer's
-  colour for it), one tagged Amazon link (`aff/shop/<merchant-item>`), and a link back to the guide; each guide's
+  colour for it), one tagged Amazon link (`aff/shop/<merchant-item>`), and a link back to the guide; a version that costs money is labelled
+  "Cheaper version", never "Free version" (the owner's 2026-10-23 fix to one card; two more corrected 2026-11-13); each guide's
   "Also on this site" box links to the shop. The Cuelinks links stay on their articles. A card with no guide yet
   is allowed for the bigger buys, until their guide exists; the scratcher pack's card links to the day-one guide,
   which names a cardboard scratcher without linking one (owner's call, 2026-09-28). The nav carries "Shop" on every page
@@ -132,7 +133,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   disclosure or a long shelf intro. **A card's photo is the owner's own**, never the merchant's: a card with none
   of hers has no photo. A shelf's round photo is hers too, except where a licensed photo shows the thing better: kitten
   food, and Safety's knotted net (owner, 2026-10-23: her own balcony is closed in with windows and mosquito screens, which
-  would confuse). Its alt text says what it shows. Where hers is no longer sold, the card says the link
+  would confuse). Its alt text says what it shows. The round photo is a small copy in `assets/shelf/` (WebP, short side
+  160 px, 2026-11-13), never the article's full photo: at 64 px they look the same, and the full ones came to 2.5 MB. Where hers is no longer sold, the card says the link
   is a similar one.
 - **A guide can open with its own Short as a silent clip** (2026-10-23; the day-one guide first, 2026-09-11):
   `figure.clip` under the byline, `<video data-clip … muted loop playsinline preload="none" controls>`, with
@@ -189,7 +191,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   stock photo that is on-topic. **Kitten wet food** got hers on 2026-10-10, her kittens at their bowls as the second
   image. It is a frame from a video and too soft to lead, so the stock photo stays on top until she shoots a still.
 - **`assets/day-one-checklist.mp4` is silent on purpose.** It is the day-one page's hero, cut from the
-  channel's Short; the Short's music is licensed for YouTube only, so the site's copy carries none.
+  channel's Short; the Short's music is licensed for YouTube only, so the site's copy carries none. Since 2026-11-13
+  it has no audio track at all (a silent one had been half its size) and plays on scroll through `assets/clips.js`.
   `assets/where-the-cats-are.mp4`, the map clip at the top of `about.html`, is silent for the same reason.
 - **The drawings are a system, not decoration.** `assets/style.css` § THE SKETCHBOOK LAYER holds
   the ladder, the card deck and the line-art rules (ink strokes, no fill, red used only for
