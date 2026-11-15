@@ -32,7 +32,7 @@
     });
   }
   function renderPicker() {
-    $('product-picker').innerHTML = products.map(p => `<button class="pick" data-select="${p.id}" aria-pressed="${p.id===selected}" aria-label="Choose ${p.shortName}, ${status(p)}"><img src="${scene.asset(p)}" alt="" width="130" height="70"><strong>${p.shortName}</strong><small class="${p.status}">${p.status==='owned'?'✓ In our house':'♡ On my wishlist'}</small></button>`).join('');
+    $('product-picker').innerHTML = products.map(p => `<button class="pick" data-select="${p.id}" aria-pressed="${p.id===selected}" aria-label="Choose ${p.shortName}, ${status(p)}"><img src="assets/scratching/thumbs/${p.file}" alt="" width="130" height="70" loading="lazy" decoding="async"><strong>${p.shortName}</strong><small class="${p.status}">${p.status==='owned'?'✓ In our house':'♡ On my wishlist'}</small></button>`).join('');
   }
   function render() {
     const p = current(), room = scene.room(selected,view,collection);

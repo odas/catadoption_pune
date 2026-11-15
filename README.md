@@ -165,7 +165,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   at all. Cards carry a 2px ink edge, things you can press lift on a hard ink shadow, and each page's coloured top ends
   in a scalloped edge. Side notes sit in a dashed ink box (the shop's affiliate note and its cards' free versions left it on 2026-10-23), and
   dashed lines divide lists. The board is the exception: a long list people read to decide, so it keeps thin lines,
-  no shadows and a flat top (`.page-hero--flat`). Headings stay in Martel; Kalam belongs to the drawn pages and the drawings. The `.hl` highlighter
+  no shadows and a flat top (`.page-hero--flat`). The cats' house (`cats-house.html`, its own `assets/house.css`) is the second exception: it was built
+  separately, with a white top and its own type sizes, and the owner kept that look on 2026-11-15. Headings stay in Martel; Kalam belongs to the drawn pages and the drawings. The `.hl` highlighter
   goes on the words in a page heading that carry the answer, and a guide's heading keeps its exact words when it gets
   one, because its share picture carries the heading.
 - **A page top's colour says which part of the site you are in:** sage for adopting (`adopt`, `adopter-form`,
