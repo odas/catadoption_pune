@@ -116,7 +116,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   aged without anyone noticing, and had already drifted into two different wordings. If a number
   looks wrong, say so in the commit message rather than correcting it here.
 - **How the site is paid for is said in one place, `about.html#paid-for`**, which the footer links
-  to. The one-sentence ask sits only after the affiliate disclosure, on pages that already carry
+  to. The one exception is the shop's banner, which carries the owner's own fuller note (2026-11-16: the ask, that rescuers
+  and adopters are never charged, the domain and AI it pays for, a volunteer on weekend hours) before Amazon's sentence. The one-sentence ask sits only after the affiliate disclosure, on pages that already carry
   links. Neither goes on the board or the emergency page: next to a cat, it could read as paying
   for the cat, and adoption here is free.
 - **`shop.html` is Amazon only, and every card carries the free or cheaper version.** One card per product the
@@ -128,10 +129,11 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   is allowed for the bigger buys, until their guide exists; the scratcher pack's card links to the day-one guide,
   which names a cardboard scratcher without linking one (owner's call, 2026-09-28). The nav carries "Shop" on every page
   except `resources.html` (owner's call, 2026-09-26; the emergency page keeps nothing about money, as with
-  the footer's paid-for link), placed after Emergency so the phone's one-row menu still shows Emergency
-  without a swipe. A video's end card will say `catadoption.in/shop`,
+  the footer's paid-for link), placed after Emergency so Shop is the item a phone's one-row menu cuts off. At 390 px
+  Emergency itself is clipped at the right edge; the owner accepts that (2026-11-16), as many sites do it. A video's end card will say `catadoption.in/shop`,
   so the path stays once that video is up. **The goods come first on the screen** (owner, 2026-10-23: *"Too much
-  text. Rarely see it like this on any website"*): the disclosure is one small line in the banner, still above the
+  text. Rarely see it like this on any website"*): the disclosure is one small paragraph in the banner (her fuller words since
+  2026-11-16, with the banner tightened on phones to make room), still above the
   first link; each shelf opens with a round photo, one sentence and its guide link; a card's reason folds under "Why
   this one" while its free or cheaper version stays visible; two cards a row on a phone. Don't bring back the boxed
   disclosure or a long shelf intro. **A card's photo is the owner's own**, never the merchant's: a card with none
@@ -142,7 +144,7 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   is a similar one. **Shelves, in order (2026-11-16):** Day one · Safety · Litter boxes · Litter · Scratchers (the cats'
   house doorway) · Kitten food · Cat hair · Accidents · Bigger buys. The first chip, "↻ Reorder", shows only the cards
   marked `data-runs` (what a cat uses up). **Every card has an address**, `shop.html#<id>`, for a Story link or a video
-  description, ringed on arrival: `carrier` `scoop` `small-litter` `bowl` `pee-pads` `wipes` `scratch-pads` · `net` ·
+  description, ringed on arrival: `carrier` `day-one-litter` `bowl` `scratch-pads` `pee-pads` `wipes` `scoop` · `net` ·
   `covered-box` `steel-box` `auto-litter-box` · `petcrux` `hipkoo` `foodie-puppies` · `kitten-pouches` `kitten-dry`
   `mother-babycat` `rc-kitten` · `lint-roller` `brush` `vacuum` `mop` · `mattress-protector` · `cat-tree` `camera`
   `feeder`. Don't rename one once a link carries it.

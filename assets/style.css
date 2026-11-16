@@ -679,3 +679,5 @@ footer strong{font-family:var(--font-head);color:var(--white);font-size:1rem;dis
 .shop-wrap .shelf[hidden],.shelf-nav a[hidden]{display:none;}
 .runs-only .shelf-head p{display:none;}
 .shelf-head p a.watch-link{margin-left:0.5rem;}
+/* shop: her fuller affiliate note (11-16) is longer, so on a phone the banner is tighter and the first card stays on the first screen */
+@media(max-width:620px){.page-hero.page-hero--shop{padding-block:0.9rem 1.15rem;margin-bottom:12px;}.page-hero--shop .disc-line{margin-top:0.45rem;}.page-hero--shop .hero-door{margin-top:0.3rem;}.shop-wrap .shelf-nav{margin-top:0.1rem;}}
