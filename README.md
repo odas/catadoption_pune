@@ -48,7 +48,10 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 - **`learn.html` carries no affiliate links, ever.** Care education is the trust layer and
   it stays clean. Since 2026-09-08 it is also the one care hub: the basics, then the article
   cards. `blog.html` is a redirect to it, kept so old links work; a new article gets its card
-  on `learn.html`, newest first within its topic group (the groups stay, the owner's 2026-09-28 ruling).
+  on `learn.html`, newest first within its topic group (the groups stay, the owner's 2026-09-28 ruling), and a tile
+  in its "Jump to a question" grid if it answers a new question. Each basics row and card has an address
+  (`learn.html#vet`, `#doodh-roti`; a row opens on arrival), a Send link (the share sheet through `assets/share.js`, else
+  WhatsApp) and, where her Short is posted, a ▶ Watch link to it (2026-11-16).
 - **A page's top stays light, so its first screen shows what the page is for** (2026-10-27): the cats on the board,
   the items on the shop, the answer on a guide. Readers scroll happily once they can see they are in the right place;
   what loses them is a top that delays the proof. So what sits above the first card, item or paragraph is what a
@@ -119,7 +122,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 - **`shop.html` is Amazon only, and every card carries the free or cheaper version.** One card per product the
   guides already link, in the owner's words from that guide, with the free version's label on butter (the sketchbook layer's
   colour for it), one tagged Amazon link (`aff/shop/<merchant-item>`), and a link back to the guide; a version that costs money is labelled
-  "Cheaper version", never "Free version" (the owner's 2026-10-23 fix to one card; two more corrected 2026-11-13); each guide's
+  "Cheaper instead", never "Free instead" (the owner's 2026-10-23 fix to one card; two more corrected 2026-11-13; the
+  labels said "… version" until 2026-11-16, when a reader with weak English took "Free version" for "this is free"); each guide's
   "Also on this site" box links to the shop. The Cuelinks links stay on their articles. A card with no guide yet
   is allowed for the bigger buys, until their guide exists; the scratcher pack's card links to the day-one guide,
   which names a cardboard scratcher without linking one (owner's call, 2026-09-28). The nav carries "Shop" on every page
@@ -135,7 +139,13 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
   food, and Safety's knotted net (owner, 2026-10-23: her own balcony is closed in with windows and mosquito screens, which
   would confuse). Its alt text says what it shows. The round photo is a small copy in `assets/shelf/` (WebP, short side
   160 px, 2026-11-13), never the article's full photo: at 64 px they look the same, and the full ones came to 2.5 MB. Where hers is no longer sold, the card says the link
-  is a similar one.
+  is a similar one. **Shelves, in order (2026-11-16):** Day one · Safety · Litter boxes · Litter · Scratchers (the cats'
+  house doorway) · Kitten food · Cat hair · Accidents · Bigger buys. The first chip, "↻ Reorder", shows only the cards
+  marked `data-runs` (what a cat uses up). **Every card has an address**, `shop.html#<id>`, for a Story link or a video
+  description, ringed on arrival: `carrier` `scoop` `small-litter` `bowl` `pee-pads` `wipes` `scratch-pads` · `net` ·
+  `covered-box` `steel-box` `auto-litter-box` · `petcrux` `hipkoo` `foodie-puppies` · `kitten-pouches` `kitten-dry`
+  `mother-babycat` `rc-kitten` · `lint-roller` `brush` `vacuum` `mop` · `mattress-protector` · `cat-tree` `camera`
+  `feeder`. Don't rename one once a link carries it.
 - **A guide can open with its own Short as a silent clip** (2026-10-23; the day-one guide first, 2026-09-11):
   `figure.clip` under the byline, `<video data-clip … muted loop playsinline preload="none" controls>`, with
   `assets/clips.js` on the page. The script plays a clip once it is on screen and pauses it off screen, so a reader who
@@ -154,7 +164,8 @@ these files *are* the site. GitHub Pages serves them; a push to `main` deploys.
 - **Each guide shares with its own picture**, `assets/share/<page>.jpg`: 1200×630, its top photo or drawn card, its
   heading, and `catadoption.in` beside `@catadoption_pune`. A script kept outside this repo makes them, so a changed
   heading means remaking the card. Keep each under 300 KB, because WhatsApp shows only a small thumbnail above that.
-  The medallion stays the picture for the other pages.
+  `learn.html` and `shop.html` have one each too (2026-11-16), made by the same script, since their addresses travel in
+  Stories and end cards. The medallion stays the picture for the other pages.
 - **A guide's "Updated" date is its `sitemap.xml` `lastmod`**, shown in the byline and repeated as `dateModified` in the
   page's `Article` markup, because Google asks for the markup to match what the page shows. Move all three together, and
   only when the content changes, never to make a page look fresh. The byline's name links to `about.html`.
