@@ -2,7 +2,7 @@
 window.SCRATCHER={
   cameraDegrees:20,
   mattress:{width:152,depth:198,height:55},
-  room:{file:'assets/scratching/house/bedroom-02.webp',bedYawDegrees:12,widthCm:400,heightCm:325},
+  room:{file:'assets/scratching/house/bedroom-02.webp',phoneFile:'assets/scratching/house/bedroom-02-1000.webp',bedYawDegrees:12,widthCm:400,heightCm:325},
   cats:{
     eevee:{file:'assets/scratching/cats/eevee-stand.webp',widthPx:2354,heightPx:1205,pixelsPerCm:32,groundPx:(864-10)*1.3962928494596583,shoulderCm:28},
     growlithe:{file:'assets/scratching/cats/growlithe-stand.webp',widthPx:1729,heightPx:972,pixelsPerCm:32,groundPx:(877-5)*1.0967840923458627,shoulderCm:24},

@@ -95,7 +95,7 @@
     setZoomBox();
   }
   $('enlarge').addEventListener('click',()=>{
-    const room=scene.room(selected,view,collection); $('large-stage').innerHTML=room.svg;
+    const room=scene.room(selected,view,collection,true); $('large-stage').innerHTML=room.svg;
     $('large-product-info').textContent=current().shortName+' · '+status(current())+' · '+dimensionLine(current());
     baseBox=[...room.viewBox]; zoomBox=[...baseBox]; zoom=1;
     openDialog('large-dialog'); setZoomBox();
